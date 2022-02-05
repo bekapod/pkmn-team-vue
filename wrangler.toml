@@ -1,0 +1,17 @@
+name = "pkmn-team"
+type = "javascript"
+compatibility_date = "2022-02-05"
+
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = ".output/public"
+entry-point = ".output"
+
+[build]
+command = "true"
+
+[build.upload]
+format = "service-worker"

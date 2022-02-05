@@ -3,9 +3,11 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "start:worker": "miniflare .output/server/index.mjs --build-command \"NITRO_PRESET=cloudflare npm run build\" --site .output/public"
   },
   "devDependencies": {
+    "miniflare": "^2.2.0",
     "nuxt3": "latest"
   }
 }
