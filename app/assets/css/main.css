@@ -1,0 +1,238 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --baseline: 1.5;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  html {
+    @apply box-border overflow-x-hidden;
+    @apply text-cool-grey-900 font-sans text-base bg-cool-grey-100 antialiased;
+  }
+
+  ::selection {
+    @apply text-cool-grey-900 bg-yellow-vivid-200;
+  }
+
+  body {
+    @apply m-0;
+  }
+
+  p {
+    @apply my-4 text-md font-light;
+  }
+
+  strong {
+    @apply font-bold;
+  }
+}
+
+@tailwind components;
+
+@layer components {
+  .input-text {
+    @apply w-full px-3 font-sans text-base leading-10 font-bold bg-white border-none;
+  }
+
+  @screen md {
+    .input-text {
+      @apply max-w-3xl;
+    }
+  }
+
+  .input-text[aria-invalid] {
+    @apply ring-red-vivid-400 ring-2;
+  }
+
+  .input-text[disabled] {
+    @apply bg-cool-grey-50;
+  }
+
+  .input-text:focus {
+    @apply outline-none;
+    @apply ring-yellow-vivid-400 ring-2;
+  }
+
+  .input-text::placeholder {
+    @apply text-cool-grey-300 font-black uppercase;
+  }
+
+  .spinner {
+    @apply relative border-8 border-cool-grey-200 animate-spin rounded-full w-6 h-6;
+    border-left-color: var(--colors-cool-grey-600);
+  }
+
+  .spinner-small {
+    @apply w-4 h-4 border-4;
+  }
+
+  .spinner-white {
+    @apply border-white border-opacity-50;
+    border-left-color: var(--colors-white);
+  }
+
+  .move-line-template {
+    @apply grid;
+    grid-template: var(--spacing-5) / 1fr 1fr 1fr;
+  }
+
+  .move-line-template[aria-expanded="true"] {
+    grid-template: var(--spacing-5) var(--spacing-11) / 1fr 1fr 1fr;
+  }
+
+  .move-line-template::before {
+    content: "";
+    @apply absolute block -top-1 w-full h-2;
+    background-image: var(--type-gradient);
+  }
+
+  .move-line-template-compressed {
+    grid-template: var(--spacing-5) var(--spacing-5) / 0.75fr 1.25fr;
+  }
+
+  .move-line-template-compressed[aria-expanded="true"] {
+    grid-template: var(--spacing-5) var(--spacing-5) var(--spacing-11) / 0.75fr 1.25fr;
+  }
+
+  .move-line-template-compressed .move-line-template-actions {
+    @apply w-full col-span-2 justify-between;
+  }
+
+  .move-line-template-compressed .move-line-template-details {
+    @apply mt-2 col-span-2;
+  }
+
+  .pokemon-line-template {
+    --outdent: 0px;
+  }
+
+  .pokemon-line-template::before {
+    content: "";
+    @apply block absolute -top-1 h-2;
+    left: calc(var(--outdent) * -1);
+    width: calc(100% + var(--outdent) * 2);
+    background-image: var(--type-gradient);
+  }
+
+  .sticky-bar {
+    --zig-zag-size: var(--spacing-5);
+    --color: var(--colors-indigo-500);
+    @apply sticky top-0 z-10 flex justify-center items-center h-8 -mt-5 mb-6 children:z-10 children:mx-4;
+  }
+
+  .sticky-bar::before {
+    content: "";
+    background-color: var(--color);
+    @apply absolute top-0 left-0 w-screen h-full -ml-4;
+  }
+
+  .sticky-bar::after {
+    content: "";
+    bottom: calc(var(--zig-zag-size) / 2 * -1.1);
+    height: calc(var(--zig-zag-size) / 2 + var(--spacing-2));
+    background: linear-gradient(
+        -45deg,
+        transparent var(--zig-zag-size),
+        var(--color) 0
+      ),
+      linear-gradient(45deg, transparent var(--zig-zag-size), var(--color) 0);
+    background-size: var(--zig-zag-size) var(--zig-zag-size);
+    background-position: var(--spacing-2) top;
+    @apply absolute left-0 w-screen -ml-4 bg-repeat-x;
+  }
+
+  @screen md {
+    .sticky-bar::before,
+    .sticky-bar::after {
+      @apply -ml-6;
+    }
+  }
+
+  .type-tag {
+    @apply inline-block px-2 text-white text-sm font-bold uppercase rounded-tl-sm rounded-br-sm;
+    text-shadow: 0 1px 0px var(--colors-cool-grey-900),
+      1px 0 0px var(--colors-cool-grey-800);
+    background-color: var(--type-color);
+  }
+}
+
+@tailwind utilities;
+
+@layer utilities {
+  .zig-zag-top-white {
+    --size: var(--spacing-5);
+    @apply relative;
+  }
+
+  .zig-zag-top-white::before {
+    content: "";
+    @apply absolute left-0 w-full bg-repeat-x;
+    top: calc(var(--size) / 2 * -1);
+    height: calc(var(--size) / 2);
+    background: linear-gradient(
+        -45deg,
+        var(--colors-white) var(--size),
+        transparent 0
+      ),
+      linear-gradient(45deg, var(--colors-white) var(--size), transparent 0);
+    background-position: var(--spacing-4) top;
+    background-size: var(--size) 3.2rem;
+
+    @screen md {
+      background-position: calc(var(--size) / 2) top;
+    }
+  }
+
+  .pokeball-button {
+    @apply relative flex items-center justify-center w-full h-10 text-white text-2xl font-bold leading-none;
+    background: linear-gradient(
+      to bottom,
+      var(--colors-red-vivid-500) 0%,
+      var(--colors-red-vivid-500) 41%,
+      var(--colors-cool-grey-900) 41%,
+      var(--colors-cool-grey-900) 59%,
+      var(--colors-white) 59%,
+      var(--colors-white) 100%
+    );
+  }
+
+  [aria-selected="true"] > .pokeball-button {
+    background: linear-gradient(
+      to bottom,
+      var(--colors-yellow-vivid-500) 0%,
+      var(--colors-yellow-vivid-500) 41%,
+      var(--colors-cool-grey-900) 41%,
+      var(--colors-cool-grey-900) 59%,
+      var(--colors-white) 59%,
+      var(--colors-white) 100%
+    );
+  }
+
+  .pokeball-button::before {
+    content: "";
+    @apply block absolute top-1/2 left-1/2 z-1 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-cool-grey-900 rounded-full;
+  }
+
+  .pokeball-button svg {
+    @apply z-2;
+  }
+
+  .shadow-text {
+    text-shadow: 0 1px 0px var(--colors-cool-grey-900),
+      1px 0 0px var(--colors-cool-grey-800),
+      1px 2px 0px var(--colors-cool-grey-900),
+      2px 1px 0px var(--colors-cool-grey-800),
+      2px 3px 0px var(--colors-cool-grey-900),
+      3px 2px 0px var(--colors-cool-grey-800);
+  }
+
+  .perspective {
+    transform: perspective(1px) translateZ(0);
+  }
+}
