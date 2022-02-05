@@ -14,4 +14,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["@/assets/css/main.css"],
+  head: {
+    link: [{ rel: "stylesheet", href: "https://use.typekit.net/jdl7nve.css" }],
+  },
 });
