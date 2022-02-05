@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const plugin = require("tailwindcss/plugin");
 const colors = require("tailwindcss/colors");
 
@@ -21,7 +22,7 @@ const createCustomProperties = (theme, propertyName) => {
               property[name][subPropertyName],
           };
         },
-        {}
+        {},
       ),
     };
   }, {});
@@ -225,11 +226,11 @@ module.exports = {
         4: "4",
         5: "5",
       },
-      fill: (theme) => ({
+      fill: theme => ({
         white: theme("colors.white"),
         "red-vivid": theme("colors.red-vivid"),
       }),
-      gridTemplateColumns: (theme) => ({
+      gridTemplateColumns: theme => ({
         md: `repeat(auto-fit, minmax(${theme("maxWidth.md")}, 1fr))`,
       }),
     },
