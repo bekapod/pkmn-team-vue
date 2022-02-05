@@ -5,7 +5,17 @@
     <NuxtLink
       title="Dashboard"
       to="/"
-      class="block mr-4 transition-transform duration-300 ease-out transform-gpu scale-100 hover:scale-110 focus:scale-110"
+      class="
+        block
+        mr-4
+        transition-transform
+        duration-300
+        ease-out
+        transform-gpu
+        scale-100
+        hover:scale-110
+        focus:scale-110
+      "
     >
       <PokeBall role="presentation" aria-hidden="true" class="block w-8 h-8" />
     </NuxtLink>
