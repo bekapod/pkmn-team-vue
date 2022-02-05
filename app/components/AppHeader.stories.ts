@@ -1,7 +1,7 @@
 import AppHeader from "./AppHeader.vue";
 
 export default {
-  title: "App Header",
+  title: "components/App Header",
   component: AppHeader,
   parameters: {
     layout: "fullscreen",
@@ -10,5 +10,5 @@ export default {
 
 export const appHeader = () => ({
   components: { AppHeader },
-  template: "<AppHeader>Header Text</AppHeader>",
+  template: "<AppHeader />",
 });

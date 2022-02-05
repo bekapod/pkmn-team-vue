@@ -161,38 +161,8 @@ module.exports = {
       status: "#7f8fa6",
     },
 
-    spacing: {
-      px: "1px",
-      0: 0,
-      1: "calc(var(--baseline) * 0.125rem)",
-      2: "calc(var(--baseline) * 0.25rem)",
-      3: "calc(var(--baseline) * 0.5rem)",
-      4: "calc(var(--baseline) * 1rem)",
-      5: "calc(var(--baseline) * 1.5rem)",
-      6: "calc(var(--baseline) * 2rem)",
-      7: "calc(var(--baseline) * 2.5rem)",
-      8: "calc(var(--baseline) * 3rem)",
-      9: "calc(var(--baseline) * 3.5rem)",
-      10: "calc(var(--baseline) * 4rem)",
-      11: "calc(var(--baseline) * 4.5rem)",
-      12: "calc(var(--baseline) * 5rem)",
-      13: "calc(var(--baseline) * 5.5rem)",
-      14: "calc(var(--baseline) * 6rem)",
-      "5-10": "calc(var(--baseline) * 20rem)",
-    },
-
-    fontSize: {
-      sm: ["0.875rem", { lineHeight: "1.5rem" }],
-      base: ["1rem", { lineHeight: "1.5rem" }],
-      md: ["1.25rem", { lineHeight: "1.5rem" }],
-      lg: ["1.5rem", { lineHeight: "2.25rem" }],
-      xl: ["2.25rem", { lineHeight: "3rem" }],
-      "2xl": ["3.375rem", { lineHeight: "4.5rem" }],
-      "3xl": ["5.0625rem", { lineHeight: "6rem" }],
-    },
-
     fontFamily: {
-      sans: ["brandon-grotesque", "sans-serif"],
+      sans: ["Poppins", "sans-serif"],
     },
 
     extend: {
@@ -237,6 +207,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-children"),
+    require("@tailwindcss/forms"),
     plugin(({ addBase, theme }) => {
       const customProperties = {
         ...createCustomProperties(theme, "spacing"),

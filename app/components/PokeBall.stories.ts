@@ -1,7 +1,7 @@
 import PokeBall from "./PokeBall.vue";
 
 export default {
-  title: "Poke Ball",
+  title: "components/Poke Ball",
   component: PokeBall,
   args: {
     class: "w-8 h-8",
