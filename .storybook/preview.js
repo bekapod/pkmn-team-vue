@@ -15,7 +15,7 @@ app.component("PokeBall", PokeBall);
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   backgrounds: {
-    grid: { cellSize: 12 },
+    grid: { cellSize: 16 },
   },
   controls: {
     matchers: {

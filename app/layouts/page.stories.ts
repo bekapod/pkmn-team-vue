@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const defaultLayout = () => ({
+export const page = () => ({
   components: { Page },
   template: "<Page />",
 });

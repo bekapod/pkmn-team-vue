@@ -206,11 +206,9 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwindcss-children"),
     require("@tailwindcss/forms"),
     plugin(({ addBase, theme }) => {
       const customProperties = {
-        ...createCustomProperties(theme, "spacing"),
         ...createCustomProperties(theme, "colors"),
       };
 

@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const pokeBall = args => ({
+export const pokeBall = (args: unknown) => ({
   components: { PokeBall },
   setup() {
     return { args };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { render, within, screen, waitFor } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
 import AppHeader from "./AppHeader.vue";
@@ -35,13 +36,13 @@ test("it toggles main menu when button is clicked", async () => {
     .getAttribute("aria-controls");
   expect(
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    within(container.querySelector(`#${menuId}`)).getByRole("link", {
+    within(container.querySelector(`#${menuId}`)!).getByRole("link", {
       name: "All Teams",
     }),
   ).toBeInTheDocument();
   expect(
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    within(container.querySelector(`#${menuId}`)).getByRole("link", {
+    within(container.querySelector(`#${menuId}`)!).getByRole("link", {
       name: "My Teams",
     }),
   ).toBeInTheDocument();
@@ -72,7 +73,7 @@ test("it toggles user menu when button is clicked", async () => {
     .getAttribute("aria-controls");
   expect(
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    within(container.querySelector(`#${menuId}`)).getByRole("menuitem", {
+    within(container.querySelector(`#${menuId}`)!).getByRole("menuitem", {
       name: "My Teams",
     }),
   ).toBeInTheDocument();
