@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  render: {
+    csp: true,
+  },
   css: ["@/assets/css/main.css"],
   meta: {
     link: [
