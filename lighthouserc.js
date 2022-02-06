@@ -6,6 +6,10 @@ module.exports = {
     },
     assert: {
       preset: "lighthouse:recommended",
+      assertions: {
+        "uses-text-compression": "off",
+        "csp-xss": "off",
+      },
     },
     upload: {
       target: "lhci",
