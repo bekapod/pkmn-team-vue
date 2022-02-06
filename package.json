@@ -5,6 +5,7 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs",
     "start:worker": "miniflare .output/server/index.mjs --build-command \"NITRO_PRESET=cloudflare npm run build\" --site .output/public",
+    "start:worker-without-build": "miniflare .output/server/index.mjs --site .output/public",
     "lint": "eslint .",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
