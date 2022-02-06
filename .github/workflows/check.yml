@@ -1,6 +1,14 @@
 name: check
 
 on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: The SHA-1 hash referring to the commit to check.
+        required: true
+      ref:
+        description: The head branch associated with the pull request.
+        required: true
   push:
     branches: [main]
   pull_request:
