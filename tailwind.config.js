@@ -162,7 +162,7 @@ module.exports = {
     },
 
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+      sans: ["Poppins", "Verdana", "sans-serif"],
     },
 
     extend: {
