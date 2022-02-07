@@ -9,7 +9,7 @@
       } as any"
     >
       <h2
-        class="overflow-hidden py-7 text-2xl font-bold text-center overflow-ellipsis whitespace-nowrap leading-5"
+        class="overflow-hidden py-9 text-2xl font-bold text-center overflow-ellipsis whitespace-nowrap leading-5"
       >
         <NuxtLink :to="to" class="text-current no-underline">
           <span class="absolute inset-0" aria-hidden="true" />

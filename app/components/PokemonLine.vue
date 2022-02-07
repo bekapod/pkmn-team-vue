@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pokemon-line-template relative flex items-center h-20"
+    class="pokemon-line-template relative flex items-center h-24"
     :style="{
       '--outdent': outdent,
       '--type-gradient': getTypeGradient(sortedTypes.map(t => t.slug)),

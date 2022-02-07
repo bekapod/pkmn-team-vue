@@ -209,6 +209,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     plugin(({ addBase, theme }) => {
       const customProperties = {
+        ...createCustomProperties(theme, "spacing"),
         ...createCustomProperties(theme, "colors"),
       };
 
