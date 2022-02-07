@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from "nuxt3";
+import { publicRuntimeConfig } from "./config";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
   render: {
     csp: true,
   },
+  publicRuntimeConfig,
   css: ["@/assets/css/main.css"],
   meta: {
     link: [

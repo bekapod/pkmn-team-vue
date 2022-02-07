@@ -34,5 +34,8 @@ test("it doesn't render an invalid gradient", () => {
 
 test("it can render a type gradient", async () => {
   setup({ types: ["electric", "electric", "psychic", "ghost"] });
-  expect(screen.getByRole("banner")).toHaveAttribute("style");
+  expect(screen.getByRole("banner")).toHaveStyle({
+    "--type-gradient":
+      "linear-gradient(90deg, var(--colors-electric) 0%, var(--colors-electric) 25%, var(--colors-electric) 25%, var(--colors-electric) 50%, var(--colors-psychic) 50%, var(--colors-psychic) 75%, var(--colors-ghost) 75%, var(--colors-ghost) 100%)",
+  });
 });

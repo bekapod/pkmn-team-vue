@@ -197,6 +197,7 @@ import {
 } from "@headlessui/vue";
 import { SearchIcon } from "@heroicons/vue/solid";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
+import PokeBall from "./PokeBall.vue";
 
 const user = {
   name: "Ash Ketchum",

@@ -72,10 +72,9 @@
 
   .pokemon-line-template::before {
     content: "";
-    @apply block absolute -top-1 h-2;
+    @apply block absolute -top-1 h-2 type-gradient;
     left: calc(var(--outdent) * -1);
     width: calc(100% + var(--outdent) * 2);
-    background-image: var(--type-gradient);
   }
 
   .type-tag {
@@ -89,6 +88,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .type-gradient {
+    background-image: var(--type-gradient);
+  }
+
   .zig-zag-top-white {
     @apply relative;
   }

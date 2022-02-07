@@ -3,8 +3,10 @@
     class="flex flex-col h-full relative transform-gpu motion-safe:hover:-translate-y-4 motion-safe:focus-within:-translate-y-4 transition-transform duration-300 ease-out"
   >
     <header
-      class="overflow-hidden -mb-5 px-4 pb-5 text-white rounded-tl-xl shadow-text"
-      :style="headerStyle"
+      class="overflow-hidden -mb-5 px-4 pb-5 text-white rounded-tl-xl shadow-text type-gradient"
+      :style="{
+        '--type-gradient': getTypeGradient(types),
+      } as any"
     >
       <h2
         class="overflow-hidden py-7 text-2xl font-bold text-center overflow-ellipsis whitespace-nowrap leading-5"
@@ -28,7 +30,7 @@
 import type { PropType } from "vue";
 import { getTypeGradient } from "../lib/gradients";
 
-const props = defineProps({
+defineProps({
   to: {
     type: String,
     required: true,
@@ -43,9 +45,4 @@ const props = defineProps({
     },
   },
 });
-
-const typeGradient = getTypeGradient(props.types ?? []);
-const headerStyle = typeGradient
-  ? `background-image: ${typeGradient}`
-  : undefined;
 </script>
