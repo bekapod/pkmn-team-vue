@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/vue";
-import Card from "./Card.vue";
+import Card from "../Card.vue";
 
 const setup = (props = {}) =>
   render(Card, {

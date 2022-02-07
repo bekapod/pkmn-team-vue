@@ -1,4 +1,4 @@
-import PokemonLine from "./PokemonLine.vue";
+import PokemonLine from "../PokemonLine.vue";
 
 export default {
   title: "components/Pokemon Line",

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/vue";
-import TypeTag from "./TypeTag.vue";
+import TypeTag from "../TypeTag.vue";
 
 const setup = () =>
   render(TypeTag, { props: { name: "Psychic", slug: "psychic" } });

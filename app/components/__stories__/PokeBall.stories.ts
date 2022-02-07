@@ -1,4 +1,4 @@
-import PokeBall from "./PokeBall.vue";
+import PokeBall from "../PokeBall.vue";
 
 export default {
   title: "components/Poke Ball",

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/vue";
-import PokemonLine from "./PokemonLine.vue";
+import PokemonLine from "../PokemonLine.vue";
 
 const setup = (props = {}) =>
   render(PokemonLine, {

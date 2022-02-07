@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { render, within, screen, waitFor } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
-import AppHeader from "./AppHeader.vue";
+import AppHeader from "../AppHeader.vue";
 
 const setup = (props = {}) =>
   render(AppHeader, { props, slots: { default: "Some page" } });

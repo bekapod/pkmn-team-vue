@@ -1,4 +1,4 @@
-import Page from "./page.vue";
+import Page from "../page.vue";
 
 export default {
   title: "layouts/Page",

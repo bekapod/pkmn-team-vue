@@ -1,4 +1,4 @@
-import TypeTag from "./TypeTag.vue";
+import TypeTag from "../TypeTag.vue";
 
 export default {
   title: "components/Type Tag",
