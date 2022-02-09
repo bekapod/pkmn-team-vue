@@ -1,9 +1,4 @@
-import { equals, toUpper } from "lodash/fp";
-
 export const percentage = (val: number): number => (val > 100 ? 100 : val);
-
-export const capitalize = (word = ""): string =>
-  `${toUpper(word.charAt(0))}${word.slice(1)}`;
 
 export const getTypeColor = (type: string): string => `var(--colors-${type})`;
 
@@ -12,7 +7,7 @@ export const sortBySlug = <T extends { slug: string }>(types: T[]): T[] =>
     const xSlug = x.slug;
     const ySlug = y.slug;
 
-    if (equals(xSlug, ySlug)) {
+    if (xSlug === ySlug) {
       return 0;
     }
     if (xSlug > ySlug) {
@@ -36,14 +31,6 @@ export const sortBySlot = <T extends { slot: number }>(items: T[]): T[] =>
 
     return -1;
   });
-
-export const getPokemonSpriteUrl = (sprite?: string): string | undefined =>
-  sprite
-    ? `/sprites/${sprite.replace(
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/",
-        "",
-      )}`
-    : undefined;
 
 export const reorder = <T>(
   list: T[],

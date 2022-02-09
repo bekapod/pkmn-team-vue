@@ -6,7 +6,7 @@ const setup = (props = {}) =>
     props: {
       pokedexId: 93,
       name: "Haunter",
-      sprite: "93.png",
+      sprite: "pokemon/93.png",
       types: [
         { name: "Poison", slug: "poison", slot: 2 },
         { name: "Ghost", slug: "ghost", slot: 1 },

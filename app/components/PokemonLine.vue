@@ -8,7 +8,7 @@
   >
     <img
       v-if="sprite"
-      :src="config.cloudinaryBasePath + 'pokemon/' + sprite"
+      :src="config.cloudinaryBasePath + sprite"
       :alt="`${name} sprite`"
       width="72"
       height="72"
@@ -30,6 +30,8 @@
 import type { PropType } from "vue";
 import { sortBySlot } from "../lib/general";
 import { getTypeGradient } from "../lib/gradients";
+import { Type } from "../lib/validators";
+import type { Type as TypeT } from "../lib/validators";
 import TypeTag from "./TypeTag.vue";
 
 const config = useRuntimeConfig();
@@ -49,15 +51,9 @@ const props = defineProps({
     default: undefined,
   },
   types: {
-    type: Array as PropType<{ name: string; slug: string; slot: number }[]>,
-    validator: (prop: { name: string; slug: string; slot: number }[]) =>
-      Array.isArray(prop) &&
-      prop.every(
-        e =>
-          typeof e.name === "string" &&
-          typeof e.slug === "string" &&
-          typeof e.slot === "number",
-      ),
+    type: Array as PropType<TypeT[]>,
+    validator: (prop: TypeT[]) =>
+      Array.isArray(prop) && prop.every(t => Type.safeParse(t).success),
     required: false,
     default() {
       return [];

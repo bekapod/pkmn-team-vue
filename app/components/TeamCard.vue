@@ -41,20 +41,11 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import * as dayjs from "dayjs";
 import { sortBySlug } from "../lib/general";
 import Card from "./Card.vue";
 import PokemonLine from "./PokemonLine.vue";
-
-type TeamMember = {
-  id: string;
-  pokemon: {
-    pokedexId: number;
-    name: string;
-    sprite?: string;
-    types: { name: string; slug: string; slot: number }[];
-  };
-};
+import { TeamMember } from "../lib/validators";
+import type { TeamMember as TeamMemberT } from "../lib/validators";
 
 const props = defineProps({
   id: {
@@ -70,19 +61,10 @@ const props = defineProps({
     required: true,
   },
   members: {
-    type: Array as PropType<TeamMember[]>,
-    validator: (prop: TeamMember[]) =>
+    type: Array as PropType<TeamMemberT[]>,
+    validator: (prop: TeamMemberT[]) =>
       Array.isArray(prop) &&
-      prop.every(
-        e =>
-          typeof e.id === "string" &&
-          typeof e.pokemon.pokedexId === "number" &&
-          typeof e.pokemon.name === "string" &&
-          (typeof e.pokemon.sprite === "string" ||
-            typeof e.pokemon.sprite === "undefined") &&
-          (Array.isArray(e.pokemon.types) ||
-            typeof e.pokemon.types === "undefined"),
-      ),
+      prop.every(member => TeamMember.safeParse(member).success),
     required: false,
     default() {
       return [];
@@ -94,5 +76,9 @@ const allSortedTypes = sortBySlug(
   props.members.flatMap(m => m.pokemon.types),
 ).map(t => t.slug);
 
-const formattedCreatedAt = dayjs(props.createdAt).format("D/M/YY");
+const formattedCreatedAt = new Intl.DateTimeFormat("en-GB", {
+  year: "2-digit",
+  month: "2-digit",
+  day: "2-digit",
+}).format(new Date(props.createdAt));
 </script>

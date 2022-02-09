@@ -1,4 +1,3 @@
-import { add, compose, divide, flatMap, join, multiply } from "lodash/fp";
 import { getTypeColor, percentage } from "./general";
 
 const getColourStopCss = (type: string, position: number) =>
@@ -7,21 +6,17 @@ const getColourStopCss = (type: string, position: number) =>
 export const getTypeGradient = (types: string[]): string | null => {
   if (!types.length) return null;
 
-  const colourWidth = divide(100, types.length);
-  const getColourStop = compose(percentage, multiply(colourWidth));
-  let index = 0;
+  const colourWidth = 100 / types.length;
+  const getColourStop = (idx: number) => percentage(idx * colourWidth);
 
-  const gradientString = compose(
-    join(", "),
-    flatMap((type: string) => {
-      const colourStops = [
-        getColourStopCss(type, getColourStop(index)),
-        getColourStopCss(type, getColourStop(add(1, index))),
+  const gradientString = types
+    .flatMap((type, idx) => {
+      return [
+        getColourStopCss(type, getColourStop(idx)),
+        getColourStopCss(type, getColourStop(idx + 1)),
       ];
-      index = add(1, index);
-      return colourStops;
-    }),
-  )(types);
+    })
+    .join(", ");
 
   return `linear-gradient(90deg, ${gradientString})`;
 };

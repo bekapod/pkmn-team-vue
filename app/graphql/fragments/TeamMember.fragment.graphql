@@ -1,0 +1,11 @@
+fragment teamMemberFields on TeamMember {
+  id
+  pokemon {
+    ...pokemonFields
+  }
+  moves {
+    edges {
+      ...teamMemberMoveFields
+    }
+  }
+}

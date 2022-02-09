@@ -1,0 +1,68 @@
+fragment pokemonFields on Pokemon {
+  id
+  name
+  slug
+  pokedexId
+  sprite
+  color
+  shape
+  habitat
+  hp
+  attack
+  defense
+  specialAttack
+  specialDefense
+  speed
+  height
+  weight
+  isDefaultVariant
+  isBaby
+  isLegendary
+  isMythical
+  description
+  abilities {
+    edges {
+      slot
+      isHidden
+      node {
+        ...abilityFields
+      }
+    }
+  }
+  eggGroups {
+    edges {
+      node {
+        id
+        name
+        slug
+      }
+    }
+  }
+  evolvesTo {
+    edges {
+      node {
+        ...pokemonEvolutionFields
+      }
+    }
+  }
+  evolvesFrom {
+    edges {
+      node {
+        ...pokemonEvolutionFields
+      }
+    }
+  }
+  types {
+    edges {
+      slot
+      node {
+        ...pokemonTypeFields
+      }
+    }
+  }
+  moves {
+    edges {
+      ...pokemonMoveFields
+    }
+  }
+}

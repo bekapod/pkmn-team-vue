@@ -1,12 +1,6 @@
 import * as general from "./general";
 
 describe("general lib", () => {
-  describe(general.capitalize, () => {
-    it("capitalises first letter of string", () => {
-      expect(general.capitalize("hello")).toBe("Hello");
-    });
-  });
-
   describe(general.getTypeColor, () => {
     it("returns the colour variable for a type", () => {
       expect(general.getTypeColor("electric")).toBe("var(--colors-electric)");
