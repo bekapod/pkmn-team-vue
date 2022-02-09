@@ -2,9 +2,19 @@
   <NuxtLayout name="wide-page">
     <template #page-title>All Teams</template>
 
-    <ul class="grid gap-5 grid-cols-1 md:grid-cols-md" role="list">
+    <ul v-if="teams" class="grid gap-5 grid-cols-1 md:grid-cols-md" role="list">
       <li v-for="team in teams" :key="team.id"><TeamCard v-bind="team" /></li>
     </ul>
+
+    <div v-else-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
+      <Notification
+        type="error"
+        :action="{ label: 'Try again', callback: refresh }"
+      >
+        <template #title>Error</template>
+        An error happened while fetching the team list.
+      </Notification>
+    </div>
   </NuxtLayout>
 </template>
 
@@ -16,16 +26,11 @@ const { $graphQLClient } = useNuxtApp();
 
 const {
   data: teams,
-  pending,
   error,
+  refresh,
 } = await useAsyncData(
   "all-teams",
-  async () => {
-    console.log("fetching");
-    const bla = await getSdk($graphQLClient).AllTeams();
-    console.log("fetched");
-    return bla;
-  },
+  async () => getSdk($graphQLClient).AllTeams(),
   {
     transform: data =>
       data.teams.edges?.map(function (team) {

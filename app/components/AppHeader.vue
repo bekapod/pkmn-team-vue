@@ -5,7 +5,7 @@
       as="nav"
       class="bg-indigo-700 border-b border-indigo-400 border-opacity-25 lg:border-none"
     >
-      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      <div class="container mx-auto px-2 sm:px-4 lg:px-8">
         <div
           class="relative h-16 flex items-center justify-between lg:border-b lg:border-indigo-500 lg:border-opacity-25"
         >
@@ -176,7 +176,7 @@
     </Disclosure>
 
     <header class="py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold text-white">
           <slot>Page Title</slot>
         </h1>
@@ -207,8 +207,8 @@ const user = {
 };
 
 const navigation = [
-  { name: "All Teams", href: "#", current: true },
-  { name: "Team Builder", href: "#", current: false },
+  { name: "All Teams", href: "/", current: true },
+  { name: "Team Builder", href: "/team-builder", current: false },
 ];
 
 const userNavigation = [

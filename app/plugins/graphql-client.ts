@@ -13,8 +13,7 @@ export default defineNuxtPlugin(_nuxtApp => {
       },
       ...options,
       body: JSON.stringify({
-        //query: print(document),
-        query: document,
+        query: print(document),
         variables,
       }),
     })
