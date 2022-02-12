@@ -27,6 +27,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
 
       - uses: actions/setup-node@v1
         with:
@@ -43,7 +44,12 @@ jobs:
         run: npm install
 
       - name: Build
-        run: NITRO_PRESET=cloudflare npm run build
+        run: npm run build
+        env:
+          GRAPHQL_ENDPOINT: https://pkmn-team.graphcdn.app
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          SENTRY_CLIENT_ID: ${{ secrets.SENTRY_CLIENT_ID }}
+          SENTRY_CLIENT_SECRET: ${{ secrets.SENTRY_CLIENT_SECRET }}
 
       - name: run Lighthouse CI
         run: |
@@ -53,3 +59,7 @@ jobs:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
           LHCI_SERVER_BASE_URL: ${{ secrets.LHCI_SERVER_BASE_URL }}
+          GRAPHQL_ENDPOINT: "https://pkmn-team.graphcdn.app"
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          SENTRY_CLIENT_ID: ${{ secrets.SENTRY_CLIENT_ID }}
+          SENTRY_CLIENT_SECRET: ${{ secrets.SENTRY_CLIENT_SECRET }}

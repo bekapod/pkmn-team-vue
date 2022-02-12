@@ -48,6 +48,8 @@ jobs:
 
       - name: Lint
         run: npm run lint
+        env:
+          GRAPHQL_ENDPOINT: https://pkmn-team.graphcdn.app
 
       - name: Tests
         run: npm run test

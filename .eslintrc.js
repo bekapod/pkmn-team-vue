@@ -62,13 +62,6 @@ module.exports = {
       files: ["*.graphql"],
       extends: "plugin:@graphql-eslint/schema-recommended",
     },
-    {
-      files: ["generated.ts"],
-      rules: {
-        "@typescript-eslint/no-explicit-any": "off",
-        "import/no-named-as-default": "off",
-      },
-    },
   ],
   settings: {
     "import/parser": "@typescript-eslint/parser",

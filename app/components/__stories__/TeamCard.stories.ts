@@ -13,7 +13,7 @@ export default {
         pokemon: {
           name: "Charmander",
           pokedexId: 4,
-          sprite: "4.png",
+          sprite: "pokemon/4.png",
           types: [{ name: "Fire", slug: "fire", slot: 1 }],
         },
       },
@@ -22,7 +22,7 @@ export default {
         pokemon: {
           name: "Pikachu",
           pokedexId: 25,
-          sprite: "25.png",
+          sprite: "pokemon/25.png",
           types: [{ name: "Electric", slug: "electric", slot: 1 }],
         },
       },
@@ -31,7 +31,7 @@ export default {
         pokemon: {
           name: "Haunter",
           pokedexId: 93,
-          sprite: "93.png",
+          sprite: "pokemon/93.png",
           types: [
             { name: "Poison", slug: "poison", slot: 2 },
             { name: "Ghost", slug: "ghost", slot: 1 },

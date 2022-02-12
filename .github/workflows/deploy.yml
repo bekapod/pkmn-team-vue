@@ -44,7 +44,6 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NITRO_PRESET: cloudflare
           GRAPHQL_ENDPOINT: https://pkmn-team.graphcdn.app
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_CLIENT_ID: ${{ secrets.SENTRY_CLIENT_ID }}
