@@ -1,0 +1,13 @@
+diff --git a/node_modules/stacktrace-gps/stacktrace-gps.js b/node_modules/stacktrace-gps/stacktrace-gps.js
+index 6b5dc44..5b6fad1 100644
+--- a/node_modules/stacktrace-gps/stacktrace-gps.js
++++ b/node_modules/stacktrace-gps/stacktrace-gps.js
+@@ -6,7 +6,7 @@
+     if (typeof define === 'function' && define.amd) {
+         define('stacktrace-gps', ['source-map', 'stackframe'], factory);
+     } else if (typeof exports === 'object') {
+-        module.exports = factory(require('source-map/lib/source-map-consumer'), require('stackframe'));
++        module.exports = factory(require('../source-map/lib/source-map-consumer'), require('stackframe'));
+     } else {
+         root.StackTraceGPS = factory(root.SourceMap || root.sourceMap, root.StackFrame);
+     }

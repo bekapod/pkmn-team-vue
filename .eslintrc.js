@@ -57,6 +57,12 @@ module.exports = {
     ],
     "vue/singleline-html-element-content-newline": "off",
   },
+  overrides: [
+    {
+      files: ["*.graphql"],
+      extends: "plugin:@graphql-eslint/schema-recommended",
+    },
+  ],
   settings: {
     "import/parser": "@typescript-eslint/parser",
     "import/resolver": {

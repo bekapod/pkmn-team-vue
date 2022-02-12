@@ -1,4 +1,4 @@
-import Page from "./page.vue";
+import Page from "../page.vue";
 
 export default {
   title: "layouts/Page",
@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const defaultLayout = () => ({
+export const page = () => ({
   components: { Page },
   template: "<Page />",
 });

@@ -44,9 +44,12 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NITRO_PRESET: cloudflare
+          GRAPHQL_ENDPOINT: https://pkmn-team.graphcdn.app
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+        env:
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}

@@ -1,0 +1,55 @@
+fragment typeFields on Type {
+  id
+  name
+  slug
+}
+
+fragment pokemonTypeFields on Type {
+  ...typeFields
+  noDamageFrom {
+    edges {
+      node {
+        ...typeFields
+      }
+    }
+  }
+  halfDamageFrom {
+    edges {
+      node {
+        ...typeFields
+      }
+    }
+  }
+  doubleDamageFrom {
+    edges {
+      node {
+        ...typeFields
+      }
+    }
+  }
+}
+
+fragment moveTypeFields on Type {
+  ...typeFields
+  noDamageTo {
+    edges {
+      node {
+        ...typeFields
+      }
+    }
+  }
+  halfDamageTo {
+    edges {
+      node {
+        ...typeFields
+      }
+    }
+  }
+  doubleDamageTo {
+    edges {
+      node {
+        ...typeFields
+      }
+    }
+  }
+}

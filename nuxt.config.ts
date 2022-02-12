@@ -1,8 +1,13 @@
 import { defineNuxtConfig } from "nuxt3";
+import { resolve } from "path";
+import { publicRuntimeConfig } from "./config";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   srcDir: "app",
+  nitro: {
+    preset: resolve(__dirname, "preset"),
+  },
   build: {
     postcss: {
       postcssOptions: {
@@ -16,6 +21,7 @@ export default defineNuxtConfig({
   render: {
     csp: true,
   },
+  publicRuntimeConfig,
   css: ["@/assets/css/main.css"],
   meta: {
     link: [

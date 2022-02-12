@@ -1,0 +1,9 @@
+query AllTeams {
+  teams {
+    edges {
+      node {
+        ...teamFields
+      }
+    }
+  }
+}

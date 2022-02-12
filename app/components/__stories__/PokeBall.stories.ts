@@ -1,4 +1,4 @@
-import PokeBall from "./PokeBall.vue";
+import PokeBall from "../PokeBall.vue";
 
 export default {
   title: "components/Poke Ball",
@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const pokeBall = args => ({
+export const pokeBall = (args: unknown) => ({
   components: { PokeBall },
   setup() {
     return { args };

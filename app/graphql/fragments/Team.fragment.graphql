@@ -1,0 +1,18 @@
+fragment teamFields on Team {
+  id
+  name
+  createdAt
+  members {
+    edges {
+      cursor
+      ...teamMemberInTeamFields
+    }
+  }
+}
+
+fragment teamMemberInTeamFields on TeamMemberEdge {
+  slot
+  node {
+    ...teamMemberFields
+  }
+}

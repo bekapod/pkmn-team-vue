@@ -1,0 +1,12 @@
+fragment itemFields on Item {
+  id
+  slug
+  name
+  cost
+  flingPower
+  flingEffect
+  effect
+  sprite
+  category
+  attributes
+}

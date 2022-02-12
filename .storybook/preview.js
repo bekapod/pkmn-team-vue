@@ -1,21 +1,21 @@
 import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import AppHeader from "../app/components/AppHeader.vue";
-import PokeBall from "../app/components/PokeBall.vue";
+import { publicRuntimeConfig } from "../config.ts";
 import "../app/assets/css/main.css";
+
+window.useRuntimeConfig = () => ({
+  ...publicRuntimeConfig,
+});
 
 app.component("NuxtLink", {
   props: ["to"],
   template: `<a :href="to"><slot /></a>`,
 });
 
-app.component("AppHeader", AppHeader);
-app.component("PokeBall", PokeBall);
-
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   backgrounds: {
-    grid: { cellSize: 12 },
+    grid: { cellSize: 16 },
   },
   controls: {
     matchers: {

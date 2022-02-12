@@ -37,11 +37,11 @@
 @layer components {
   .move-line-template {
     @apply grid;
-    grid-template: var(--spacing-5) / 1fr 1fr 1fr;
+    grid-template: theme("spacing.5") / 1fr 1fr 1fr;
   }
 
   .move-line-template[aria-expanded="true"] {
-    grid-template: var(--spacing-5) var(--spacing-11) / 1fr 1fr 1fr;
+    grid-template: theme("spacing.5") theme("spacing.11") / 1fr 1fr 1fr;
   }
 
   .move-line-template::before {
@@ -51,11 +51,11 @@
   }
 
   .move-line-template-compressed {
-    grid-template: var(--spacing-5) var(--spacing-5) / 0.75fr 1.25fr;
+    grid-template: theme("spacing.5") theme("spacing.5") / 0.75fr 1.25fr;
   }
 
   .move-line-template-compressed[aria-expanded="true"] {
-    grid-template: var(--spacing-5) var(--spacing-5) var(--spacing-11) / 0.75fr 1.25fr;
+    grid-template: theme("spacing.5") theme("spacing.5") theme("spacing.11") / 0.75fr 1.25fr;
   }
 
   .move-line-template-compressed .move-line-template-actions {
@@ -72,16 +72,15 @@
 
   .pokemon-line-template::before {
     content: "";
-    @apply block absolute -top-1 h-2;
+    @apply block absolute -top-1 h-2 type-gradient;
     left: calc(var(--outdent) * -1);
     width: calc(100% + var(--outdent) * 2);
-    background-image: var(--type-gradient);
   }
 
   .type-tag {
     @apply inline-block px-2 text-white text-sm font-bold uppercase rounded-tl-sm rounded-br-sm;
-    text-shadow: 0 1px 0px var(--colors-cool-grey-900),
-      1px 0 0px var(--colors-cool-grey-800);
+    text-shadow: 0 1px 0px theme("colors.cool-grey.900"),
+      1px 0 0px theme("colors.cool-grey.800");
     background-color: var(--type-color);
   }
 }
@@ -89,37 +88,43 @@
 @tailwind utilities;
 
 @layer utilities {
+  .type-gradient {
+    background-image: var(--type-gradient);
+  }
+
   .zig-zag-top-white {
-    --size: var(--spacing-5);
     @apply relative;
   }
 
   .zig-zag-top-white::before {
+    --size: theme("spacing.9");
     content: "";
     @apply absolute left-0 w-full bg-repeat-x;
     top: calc(var(--size) / 2 * -1);
     height: calc(var(--size) / 2);
     background: linear-gradient(
         -45deg,
-        var(--colors-white) var(--size),
+        theme("colors.white") theme("spacing.9"),
         transparent 0
       ),
-      linear-gradient(45deg, var(--colors-white) var(--size), transparent 0);
-    background-position: var(--spacing-4) top;
+      linear-gradient(45deg, theme("colors.white") var(--size), transparent 0);
+    background-position: theme("spacing.4") top;
     background-size: var(--size) 3.2rem;
+  }
 
-    @screen md {
+  @media screen(md) {
+    .zig-zag-top-white::before {
       background-position: calc(var(--size) / 2) top;
     }
   }
 
   .shadow-text {
-    text-shadow: 0 1px 0px var(--colors-cool-grey-900),
-      1px 0 0px var(--colors-cool-grey-800),
-      1px 2px 0px var(--colors-cool-grey-900),
-      2px 1px 0px var(--colors-cool-grey-800),
-      2px 3px 0px var(--colors-cool-grey-900),
-      3px 2px 0px var(--colors-cool-grey-800);
+    text-shadow: 0 1px 0px theme("colors.cool-grey.900"),
+      1px 0 0px theme("colors.cool-grey.800"),
+      1px 2px 0px theme("colors.cool-grey.900"),
+      2px 1px 0px theme("colors.cool-grey.800"),
+      2px 3px 0px theme("colors.cool-grey.900"),
+      3px 2px 0px theme("colors.cool-grey.800");
   }
 
   .perspective {
