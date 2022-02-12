@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "Miniflare (npm)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start:worker"
+      ], // same script name as in package.json
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}

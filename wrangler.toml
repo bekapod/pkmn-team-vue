@@ -2,8 +2,7 @@ name = "pkmn-team"
 type = "javascript"
 compatibility_date = "2022-02-05"
 
-workers_dev = true
-route = ""
+route = "pkmn-team.bekapod.codes/*"
 zone_id = ""
 
 [site]
@@ -15,3 +14,12 @@ command = "true"
 
 [build.upload]
 format = "service-worker"
+
+[vars]
+SENTRY_ENABLE_DEBUG = "false"
+SENTRY_ENVIRONMENT = "production"
+
+# [secrets]
+# SENTRY_DSN
+# SENTRY_CLIENT_ID
+# SENTRY_CLIENT_SECRET

@@ -9,7 +9,10 @@
     <div v-else-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
       <Notification
         type="error"
-        :action="{ label: 'Try again', callback: refresh }"
+        :action="{
+          label: 'Try again',
+          callback: refresh,
+        }"
       >
         <template #title>Error</template>
         An error happened while fetching the team list.
@@ -33,31 +36,8 @@ const {
   async () => getSdk($graphQLClient).AllTeams(),
   {
     transform: data =>
-      data.teams.edges?.map(function (team) {
-        console.log(
-          Team.safeParse({
-            id: team?.node?.id,
-            name: team?.node?.name ?? "",
-            createdAt: team?.node?.createdAt ?? "",
-            members: team?.node?.members.edges?.map(member => ({
-              id: member?.node?.id,
-              pokemon: {
-                pokedexId: member?.node?.pokemon.pokedexId,
-                name: member?.node?.pokemon.name,
-                sprite: member?.node?.pokemon.sprite.replace(
-                  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/",
-                  "",
-                ),
-                types: member?.node?.pokemon.types.edges?.map(type => ({
-                  name: type?.node?.name,
-                  slug: type?.node?.slug,
-                  slot: type?.slot,
-                })),
-              },
-            })),
-          }),
-        );
-        return Team.parse({
+      data.teams.edges?.map(team =>
+        Team.parse({
           id: team?.node?.id,
           name: team?.node?.name ?? "",
           createdAt: team?.node?.createdAt ?? "",
@@ -77,8 +57,8 @@ const {
               })),
             },
           })),
-        });
-      }),
+        }),
+      ),
   },
 );
 </script>
