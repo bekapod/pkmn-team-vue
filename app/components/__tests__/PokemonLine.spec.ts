@@ -20,7 +20,7 @@ test("renders pokemon information", () => {
   expect(screen.getByText(`#93 Haunter`)).toBeInTheDocument();
   expect(screen.getByAltText(`Haunter sprite`)).toHaveAttribute(
     "src",
-    "https://res.cloudinary.com/difh5qveq/image/upload/t_pokemon_sprite/v1644257162/pokemon/93.png",
+    "https://res.cloudinary.com/difh5qveq/image/upload/t_pokemon_sprite/f_auto/v1644257162/pokemon/93.png",
   );
   expect(screen.getByText("Ghost")).toBeInTheDocument();
   expect(screen.getByText("Poison")).toBeInTheDocument();
