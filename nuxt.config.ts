@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: resolve(__dirname, "preset"),
   },
+  modules: ["@formkit/nuxt"],
   build: {
     postcss: {
       postcssOptions: {

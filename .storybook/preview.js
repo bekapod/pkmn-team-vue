@@ -1,5 +1,7 @@
 import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { plugin, defaultConfig } from "@formkit/vue";
+import customConfig from "../formkit.config";
 import { publicRuntimeConfig } from "../config.ts";
 import "../app/assets/css/main.css";
 
@@ -11,6 +13,8 @@ app.component("NuxtLink", {
   props: ["to"],
   template: `<a :href="to"><slot /></a>`,
 });
+
+app.use(plugin, defaultConfig(customConfig));
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
