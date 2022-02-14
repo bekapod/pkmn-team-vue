@@ -114,7 +114,8 @@ function createCall(handle: Handle) {
 }
 
 function assetsCacheControl(request: Request) {
-  if (request.url.startsWith(buildAssetsURL())) {
+  const url = new URL(request.url);
+  if (url.pathname.startsWith(buildAssetsURL())) {
     return {
       browserTTL: 31536000,
       edgeTTL: 31536000,
