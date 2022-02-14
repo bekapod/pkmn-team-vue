@@ -30,6 +30,19 @@
   strong {
     @apply font-bold;
   }
+
+  [type="text"],
+  [type="search"] {
+    @apply text-base bg-white border-none text-cool-grey-900;
+  }
+
+  [role="menu"]:focus-visible,
+  [type="text"]:focus-visible,
+  [type="search"]:focus-visible,
+  button:focus-visible,
+  a:focus-visible {
+    @apply ring-0 outline-dashed outline-2 outline-cyan-vivid-600 outline-offset-2;
+  }
 }
 
 @tailwind components;
@@ -129,5 +142,9 @@
 
   .perspective {
     transform: perspective(1px) translateZ(0);
+  }
+
+  .container {
+    @apply w-full max-w-screen-xl;
   }
 }

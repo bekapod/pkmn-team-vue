@@ -1,5 +1,6 @@
 module.exports = {
   stories: ["../app/**/*.stories.ts"],
+  staticDirs: ["../app/static"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   framework: "@storybook/vue3",
   core: {

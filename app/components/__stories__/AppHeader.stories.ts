@@ -1,4 +1,5 @@
 import AppHeader from "../AppHeader.vue";
+import TeamCreator from "../TeamCreator.vue";
 
 export default {
   title: "components/App Header",
@@ -11,4 +12,13 @@ export default {
 export const appHeader = () => ({
   components: { AppHeader },
   template: "<AppHeader />",
+});
+
+export const appHeaderWithForm = () => ({
+  components: { AppHeader, TeamCreator },
+  template: `
+    <AppHeader>
+      <template #action><TeamCreator /></template>
+    </AppHeader>
+  `,
 });
