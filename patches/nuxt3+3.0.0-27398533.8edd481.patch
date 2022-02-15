@@ -1,0 +1,20 @@
+diff --git a/node_modules/nuxt3/dist/index.mjs b/node_modules/nuxt3/dist/index.mjs
+index c708ce1..3cbe864 100644
+--- a/node_modules/nuxt3/dist/index.mjs
++++ b/node_modules/nuxt3/dist/index.mjs
+@@ -1271,6 +1271,15 @@ const appViewTemplate = {
+ 
+ <body {{ BODY_ATTRS }}>
+   {{ APP }}
++  <div
++    aria-live="assertive"
++    class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
++  >
++    <div
++      id="toast-teleport-target"
++      class="w-full flex flex-col items-center space-y-4 sm:items-end"
++    ></div>
++  </div>
+ </body>
+ 
+ </html>
