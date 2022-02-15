@@ -1,12 +1,21 @@
 import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { action } from "@storybook/addon-actions";
 import { plugin, defaultConfig } from "@formkit/vue";
 import customConfig from "../formkit.config";
-import { publicRuntimeConfig } from "../config.ts";
+import { publicRuntimeConfig } from "../config";
+import { client } from "../app/lib/graphql-client";
 import "../app/assets/css/main.css";
 
 window.useRuntimeConfig = () => ({
   ...publicRuntimeConfig,
+});
+
+window.useNuxtApp = () => ({
+  $graphQLClient: client,
+  $sentry: {
+    captureException: action("sentry:capture-exception"),
+  },
 });
 
 app.component("NuxtLink", {
@@ -61,3 +70,9 @@ export const parameters = {
     },
   },
 };
+
+if (typeof global === "undefined") {
+  import("../app/mocks/browser")
+    .then(mod => mod.worker.start())
+    .catch(console.error);
+}

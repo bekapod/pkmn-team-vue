@@ -53,6 +53,7 @@
     "graphql-config": "^4.1.0",
     "jest": "^27.5.0",
     "miniflare": "^2.3.0",
+    "msw": "^0.36.8",
     "nuxt3": "latest",
     "patch-package": "^6.4.7",
     "path-browserify": "^1.0.1",
@@ -79,5 +80,8 @@
     "vue": "^3.2.29",
     "yn": "^5.0.0",
     "zod": "^3.11.6"
+  },
+  "msw": {
+    "workerDirectory": "app/static"
   }
 }
