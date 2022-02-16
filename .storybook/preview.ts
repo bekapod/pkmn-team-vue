@@ -2,8 +2,8 @@ import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { action } from "@storybook/addon-actions";
 import { plugin, defaultConfig } from "@formkit/vue";
-import customConfig from "../formkit.config";
-import { publicRuntimeConfig } from "../config";
+import customConfig from "../app/formkit.config";
+import { publicRuntimeConfig } from "../app/config";
 import { client } from "../app/lib/graphql-client";
 import "../app/assets/css/main.css";
 
@@ -16,6 +16,10 @@ window.useNuxtApp = () => ({
   $sentry: {
     captureException: action("sentry:capture-exception"),
   },
+});
+
+window.useRouter = () => ({
+  push: action("router:push"),
 });
 
 app.component("NuxtLink", {

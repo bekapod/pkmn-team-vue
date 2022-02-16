@@ -8,6 +8,9 @@
 
   <NuxtLayout name="wide-page">
     <template #page-title>All Teams</template>
+    <template #header-action>
+      <TeamCreator @team-created="() => refresh()" />
+    </template>
 
     <ul v-if="teams" class="grid gap-5 grid-cols-1 md:grid-cols-md" role="list">
       <li v-for="team in teams" :key="team.id"><TeamCard v-bind="team" /></li>

@@ -3,7 +3,7 @@ index 9e29b94..b5d6d2f 100644
 --- a/node_modules/nuxt3/dist/chunks/index.mjs
 +++ b/node_modules/nuxt3/dist/chunks/index.mjs
 @@ -1211,6 +1211,15 @@ const appViewTemplate = {
- 
+
  <body {{ BODY_ATTRS }}>
    {{ APP }}
 +  <div
@@ -12,9 +12,9 @@ index 9e29b94..b5d6d2f 100644
 +  >
 +    <div
 +      id="toast-teleport-target"
-+      class="w-full flex flex-col items-center space-y-4 sm:items-end"
++      class="w-full flex flex-col items-center space-y-4"
 +    ></div>
 +  </div>
  </body>
- 
+
  </html>

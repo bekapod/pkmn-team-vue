@@ -8,6 +8,9 @@ const csf: Meta = {
   parameters: {
     layout: "fullscreen",
   },
+  argTypes: {
+    teamCreated: { action: "@team-created" },
+  },
 };
 
 export const appHeader: Story = () => ({
@@ -15,11 +18,14 @@ export const appHeader: Story = () => ({
   template: "<AppHeader />",
 });
 
-export const appHeaderWithForm: Story = () => ({
+export const appHeaderWithForm: Story = ({ teamCreated, ...args }) => ({
   components: { AppHeader, TeamCreator },
+  setup() {
+    return { args, teamCreated };
+  },
   template: `
-    <AppHeader>
-      <template #action><TeamCreator /></template>
+    <AppHeader v-bind="args">
+      <template #action><TeamCreator @team-created="teamCreated" /></template>
     </AppHeader>
   `,
 });

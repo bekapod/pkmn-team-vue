@@ -35,8 +35,9 @@ module.exports = {
     "./app/pages/**/*.vue",
     "./app/plugins/**/*.{js,ts}",
     "./app/app.vue",
-    "./formkit.config.ts",
+    "./app/formkit.config.ts",
     "./.nuxt/**/*.template.mjs",
+    "./.storybook/**/*.html",
   ],
   theme: {
     screens: {
