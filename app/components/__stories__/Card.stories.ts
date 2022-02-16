@@ -1,6 +1,7 @@
+import { Story } from "@storybook/vue3";
 import Card from "../Card.vue";
 
-export default {
+const csf = {
   title: "components/Card",
   component: Card,
   args: {
@@ -9,7 +10,7 @@ export default {
   },
 };
 
-export const card = (args: unknown) => ({
+export const card: Story = args => ({
   components: { Card },
   setup() {
     return { args };
@@ -34,3 +35,5 @@ export const card = (args: unknown) => ({
     </Card>
   `,
 });
+
+export default csf;

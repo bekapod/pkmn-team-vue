@@ -1,6 +1,7 @@
+import { Meta, Story } from "@storybook/vue3";
 import TypeTag from "../TypeTag.vue";
 
-export default {
+const csf: Meta = {
   title: "components/Type Tag",
   component: TypeTag,
   args: {
@@ -9,7 +10,7 @@ export default {
   },
 };
 
-export const typeTag = (args: unknown) => ({
+export const typeTag: Story = args => ({
   components: { TypeTag },
   setup() {
     return { args };
@@ -18,3 +19,5 @@ export const typeTag = (args: unknown) => ({
     <TypeTag v-bind="args" />
   `,
 });
+
+export default csf;

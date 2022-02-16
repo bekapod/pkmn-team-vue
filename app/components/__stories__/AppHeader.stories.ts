@@ -1,7 +1,8 @@
+import { Meta, Story } from "@storybook/vue3";
 import AppHeader from "../AppHeader.vue";
 import TeamCreator from "../TeamCreator.vue";
 
-export default {
+const csf: Meta = {
   title: "components/App Header",
   component: AppHeader,
   parameters: {
@@ -9,12 +10,12 @@ export default {
   },
 };
 
-export const appHeader = () => ({
+export const appHeader: Story = () => ({
   components: { AppHeader },
   template: "<AppHeader />",
 });
 
-export const appHeaderWithForm = () => ({
+export const appHeaderWithForm: Story = () => ({
   components: { AppHeader, TeamCreator },
   template: `
     <AppHeader>
@@ -22,3 +23,5 @@ export const appHeaderWithForm = () => ({
     </AppHeader>
   `,
 });
+
+export default csf;

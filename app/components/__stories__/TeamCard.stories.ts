@@ -1,6 +1,7 @@
+import { Meta, Story } from "@storybook/vue3";
 import TeamCard from "../TeamCard.vue";
 
-export default {
+const csf: Meta = {
   title: "components/Team Card",
   component: TeamCard,
   args: {
@@ -42,7 +43,7 @@ export default {
   },
 };
 
-export const teamCard = (args: unknown) => ({
+export const teamCard: Story = (args: unknown) => ({
   components: { TeamCard },
   setup() {
     return { args };
@@ -51,3 +52,5 @@ export const teamCard = (args: unknown) => ({
     <TeamCard class="w-[500px]" v-bind="args" />
   `,
 });
+
+export default csf;

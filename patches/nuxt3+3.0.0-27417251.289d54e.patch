@@ -1,8 +1,8 @@
-diff --git a/node_modules/nuxt3/dist/index.mjs b/node_modules/nuxt3/dist/index.mjs
-index c708ce1..3cbe864 100644
---- a/node_modules/nuxt3/dist/index.mjs
-+++ b/node_modules/nuxt3/dist/index.mjs
-@@ -1271,6 +1271,15 @@ const appViewTemplate = {
+diff --git a/node_modules/nuxt3/dist/chunks/index.mjs b/node_modules/nuxt3/dist/chunks/index.mjs
+index 9e29b94..b5d6d2f 100644
+--- a/node_modules/nuxt3/dist/chunks/index.mjs
++++ b/node_modules/nuxt3/dist/chunks/index.mjs
+@@ -1211,6 +1211,15 @@ const appViewTemplate = {
  
  <body {{ BODY_ATTRS }}>
    {{ APP }}
