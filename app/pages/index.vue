@@ -1,5 +1,5 @@
 <template>
-  <Html lang="en-GB">
+  <Html lang="en-gb">
     <Head>
       <Title>Pokémon Team Builder</Title>
       <Meta name="description" content="A WIP Pokémon team builder." />
