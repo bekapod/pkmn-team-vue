@@ -1,16 +1,33 @@
 import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { publicRuntimeConfig } from "../config.ts";
+import { action } from "@storybook/addon-actions";
+import { plugin, defaultConfig } from "@formkit/vue";
+import customConfig from "../app/formkit.config";
+import { publicRuntimeConfig } from "../app/config";
+import { client } from "../app/lib/graphql-client";
 import "../app/assets/css/main.css";
 
 window.useRuntimeConfig = () => ({
   ...publicRuntimeConfig,
 });
 
+window.useNuxtApp = () => ({
+  $graphQLClient: client,
+  $sentry: {
+    captureException: action("sentry:capture-exception"),
+  },
+});
+
+window.useRouter = () => ({
+  push: action("router:push"),
+});
+
 app.component("NuxtLink", {
   props: ["to"],
   template: `<a :href="to"><slot /></a>`,
 });
+
+app.use(plugin, defaultConfig(customConfig));
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -57,3 +74,9 @@ export const parameters = {
     },
   },
 };
+
+if (typeof global === "undefined") {
+  import("../app/mocks/browser")
+    .then(mod => mod.worker.start())
+    .catch(console.error);
+}

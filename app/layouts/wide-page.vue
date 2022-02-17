@@ -1,6 +1,7 @@
 <template>
   <AppHeader>
     <slot name="page-title" />
+    <template #action><slot name="header-action" /></template>
   </AppHeader>
 
   <main class="-mt-32">

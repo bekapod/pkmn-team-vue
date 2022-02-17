@@ -35,6 +35,9 @@ module.exports = {
     "./app/pages/**/*.vue",
     "./app/plugins/**/*.{js,ts}",
     "./app/app.vue",
+    "./app/formkit.config.ts",
+    "./.nuxt/**/*.template.mjs",
+    "./.storybook/**/*.html",
   ],
   theme: {
     screens: {
@@ -170,12 +173,6 @@ module.exports = {
         "-1": "-1",
         1: "1",
         2: "2",
-      },
-      minHeight: {
-        5: "calc(var(--baseline) * 1.5rem)",
-        6: "calc(var(--baseline) * 2rem)",
-        8: "calc(var(--baseline) * 3rem)",
-        "screen-1/4": "25vh",
       },
       minWidth: {
         "250px": "250px",

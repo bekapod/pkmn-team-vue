@@ -13,6 +13,7 @@ module.exports = {
         "apple-touch-icon": "off",
         "installable-manifest": "off",
         "maskable-icon": "off",
+        "html-has-lang": "off",
         "meta-description": "off",
         "service-worker": "off",
         "splash-screen": "off",

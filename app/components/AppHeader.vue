@@ -23,7 +23,7 @@
                     item.current
                       ? 'bg-indigo-800 text-white'
                       : 'text-white hover:bg-indigo-600 hover:bg-opacity-75',
-                    'rounded-md py-2 px-3 text-sm font-medium',
+                    'rounded-tl-md rounded-br-md py-2 px-3 text-sm font-medium',
                   ]"
                   :aria-current="item.current ? 'page' : undefined"
                 >
@@ -35,9 +35,7 @@
           <div class="flex-1 px-2 flex justify-center lg:ml-6 lg:justify-end">
             <div class="max-w-lg w-full lg:max-w-xs">
               <label for="search" class="sr-only">Search</label>
-              <div
-                class="relative text-cool-grey-400 focus-within:text-cool-grey-600"
-              >
+              <div class="relative text-cool-grey-400">
                 <div
                   class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center"
                 >
@@ -45,7 +43,7 @@
                 </div>
                 <input
                   id="search"
-                  class="block w-full bg-white py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-cool-grey-900 placeholder-cool-grey-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white focus:border-white sm:text-sm"
+                  class="block w-full pl-10"
                   placeholder="Search"
                   type="search"
                   name="search"
@@ -56,7 +54,7 @@
           <div class="flex lg:hidden">
             <!-- Mobile menu button -->
             <DisclosureButton
-              class="bg-indigo-700 p-2 rounded-md inline-flex items-center justify-center text-indigo-300 hover:text-white hover:bg-indigo-600 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white"
+              class="bg-indigo-700 p-2 rounded-tl-md rounded-br-md inline-flex items-center justify-center text-indigo-300 hover:text-white hover:bg-indigo-600 hover:bg-opacity-75"
             >
               <span class="sr-only">Open main menu</span>
               <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
@@ -67,7 +65,7 @@
             <div class="flex items-center">
               <button
                 type="button"
-                class="bg-indigo-700 flex-shrink-0 rounded-full p-1 text-indigo-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white"
+                class="bg-indigo-700 flex-shrink-0 rounded-full p-1 text-indigo-300 hover:text-white"
               >
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="h-6 w-6" aria-hidden="true" />
@@ -77,7 +75,7 @@
               <Menu as="div" class="ml-3 relative flex-shrink-0">
                 <div>
                   <MenuButton
-                    class="bg-indigo-700 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white"
+                    class="bg-indigo-700 rounded-full flex text-sm text-white"
                   >
                     <span class="sr-only">Open user menu</span>
                     <img
@@ -97,7 +95,7 @@
                   leave-to-class="transform opacity-0 scale-95"
                 >
                   <MenuItems
-                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-tl-md rounded-br-md shadow-lg py-1 bg-white"
                   >
                     <MenuItem
                       v-for="item in userNavigation"
@@ -133,7 +131,7 @@
               item.current
                 ? 'bg-indigo-800 text-white'
                 : 'text-white hover:bg-indigo-600 hover:bg-opacity-75',
-              'block rounded-md py-2 px-3 text-base font-medium',
+              'block rounded-tl-md rounded-br-md py-2 px-3 text-base font-medium',
             ]"
             :aria-current="item.current ? 'page' : undefined"
           >
@@ -155,7 +153,7 @@
             </div>
             <button
               type="button"
-              class="ml-auto bg-indigo-700 flex-shrink-0 rounded-full p-1 text-indigo-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white"
+              class="ml-auto bg-indigo-700 flex-shrink-0 rounded-full p-1 text-indigo-300 hover:text-white"
             >
               <span class="sr-only">View notifications</span>
               <BellIcon class="h-6 w-6" aria-hidden="true" />
@@ -167,7 +165,7 @@
               :key="item.name"
               as="a"
               :href="item.href"
-              class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-600 hover:bg-opacity-75"
+              class="block rounded-tl-md rounded-br-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-600 hover:bg-opacity-75"
             >
               {{ item.name }}
             </DisclosureButton>
@@ -177,10 +175,12 @@
     </Disclosure>
 
     <header class="py-10">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-5">
         <h1 class="text-3xl font-bold text-white">
           <slot>Page Title</slot>
         </h1>
+
+        <slot name="action" />
       </div>
     </header>
   </div>

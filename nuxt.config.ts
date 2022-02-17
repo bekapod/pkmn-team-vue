@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from "nuxt3";
 import { resolve } from "path";
-import { publicRuntimeConfig } from "./config";
+import { publicRuntimeConfig } from "./app/config";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: resolve(__dirname, "preset"),
   },
+  modules: ["@formkit/nuxt"],
   build: {
     postcss: {
       postcssOptions: {

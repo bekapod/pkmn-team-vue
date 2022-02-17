@@ -1,6 +1,7 @@
+import { Meta, Story } from "@storybook/vue3";
 import PokeBall from "../PokeBall.vue";
 
-export default {
+const csf: Meta = {
   title: "components/Poke Ball",
   component: PokeBall,
   args: {
@@ -8,10 +9,12 @@ export default {
   },
 };
 
-export const pokeBall = (args: unknown) => ({
+export const pokeBall: Story = args => ({
   components: { PokeBall },
   setup() {
     return { args };
   },
   template: '<PokeBall v-bind="args" />',
 });
+
+export default csf;

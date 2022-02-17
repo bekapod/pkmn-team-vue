@@ -1,6 +1,7 @@
+import { Meta, Story } from "@storybook/vue3";
 import PokemonLine from "../PokemonLine.vue";
 
-export default {
+const csf: Meta = {
   title: "components/Pokemon Line",
   component: PokemonLine,
   args: {
@@ -14,7 +15,7 @@ export default {
   },
 };
 
-export const pokemonLine = (args: unknown) => ({
+export const pokemonLine: Story = args => ({
   components: { PokemonLine },
   setup() {
     return { args };
@@ -23,3 +24,5 @@ export const pokemonLine = (args: unknown) => ({
     <PokemonLine v-bind="args" />
   `,
 });
+
+export default csf;

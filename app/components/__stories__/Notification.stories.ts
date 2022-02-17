@@ -1,7 +1,8 @@
 import { action } from "@storybook/addon-actions";
+import { Meta, Story } from "@storybook/vue3";
 import Notification from "../Notification.vue";
 
-export default {
+const csf: Meta = {
   title: "components/Notification",
   component: Notification,
   args: {
@@ -15,7 +16,7 @@ export default {
   },
 };
 
-const Template = (args: unknown) => ({
+const Template: Story = args => ({
   components: { Notification },
   setup() {
     return { args };
@@ -27,11 +28,14 @@ const Template = (args: unknown) => ({
     </Notification>`,
 });
 
-export const notification = Template.bind({});
+export const success = Template.bind({});
+
+export const error = Template.bind({});
+error.args = {
+  type: "error",
+};
 
 export const notificationWithAction = Template.bind({});
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 notificationWithAction.args = {
   type: "error",
   action: {
@@ -39,3 +43,5 @@ notificationWithAction.args = {
     callback: action("action-click"),
   },
 };
+
+export default csf;
