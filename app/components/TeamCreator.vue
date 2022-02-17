@@ -34,7 +34,7 @@
       <img
         v-if="isSlowLoading"
         alt="Loading"
-        src="/icons/three-dots.svg"
+        :src="'/icons/three-dots.svg'"
         class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-12"
       />
     </FormKit>
