@@ -57,9 +57,10 @@
     grid-template: theme("spacing.5") theme("spacing.11") / 1fr 1fr 1fr;
   }
 
-  .move-line-template::before {
+  .move-line-template::before,
+  .team-member-move-template::before {
     content: "";
-    @apply absolute block -top-1 w-full h-2;
+    @apply absolute block -top-1 left-0 w-full h-2;
     background-image: var(--type-gradient);
   }
 
