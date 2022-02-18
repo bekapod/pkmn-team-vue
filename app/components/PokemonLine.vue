@@ -63,7 +63,7 @@ const props = defineProps({
   outdent: {
     type: String,
     required: false,
-    default: undefined,
+    default: "0px",
   },
 });
 
