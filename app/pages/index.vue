@@ -1,12 +1,12 @@
 <template>
-  <Html lang="en-gb">
-    <Head>
-      <Title>Pokémon Team Builder</Title>
-      <Meta name="description" content="A WIP Pokémon team builder." />
-    </Head>
-  </Html>
-
   <NuxtLayout name="wide-page">
+    <Html lang="en-gb">
+      <Head>
+        <Title>Pokémon Team Builder</Title>
+        <Meta name="description" content="A WIP Pokémon team builder." />
+      </Head>
+    </Html>
+
     <template #page-title>All Teams</template>
     <template #header-action>
       <TeamCreator @team-created="() => refresh()" />

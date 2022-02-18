@@ -40,21 +40,23 @@
     </FormKit>
   </FormKit>
 
-  <ToastContainer>
-    <Toast
-      v-if="error"
-      type="error"
-      class="w-full max-w-3xl"
-      @close="() => (error = false)"
-    >
-      <template #title>Error</template>
-      An error happened while creating your team.
-    </Toast>
-  </ToastContainer>
+  <Teleport v-if="isMounted" to="#toast-teleport-target">
+    <ToastContainer>
+      <Toast
+        v-if="error"
+        type="error"
+        class="w-full max-w-3xl"
+        @close="() => (error = false)"
+      >
+        <template #title>Error</template>
+        An error happened while creating your team.
+      </Toast>
+    </ToastContainer>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { CreateTeamMutation, getSdk } from "~~/generated";
 import ToastContainer from "./ToastContainer.vue";
 import Toast from "./Toast.vue";
@@ -63,6 +65,7 @@ const emit = defineEmits<{
   (e: "team-created", team: CreateTeamMutation["createTeam"]): void;
 }>();
 
+const isMounted = ref(false);
 const isSubmitting = ref(false);
 const timeTaken = ref(0);
 const error = ref(false);
@@ -90,4 +93,8 @@ const submitHandler = async (formData: any) => {
     isSubmitting.value = false;
   }
 };
+
+onMounted(() => {
+  isMounted.value = true;
+});
 </script>
