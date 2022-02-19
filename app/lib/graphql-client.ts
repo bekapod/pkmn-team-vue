@@ -1,6 +1,6 @@
 import { print } from "graphql/language/printer";
 import { Severity } from "@sentry/vue";
-import { Requester } from "~~/generated";
+import { Requester } from "@/graphql";
 
 class GraphQLError extends Error {
   errors: string[];

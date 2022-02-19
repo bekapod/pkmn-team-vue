@@ -22,6 +22,10 @@ window.useRouter = () => ({
   push: action("router:push"),
 });
 
+window.useRoute = () => ({
+  name: "index",
+});
+
 app.component("NuxtLink", {
   props: ["to"],
   template: `<a :href="to"><slot /></a>`,

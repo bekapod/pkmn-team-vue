@@ -1,0 +1,8 @@
+{
+  "explorer.experimental.fileNesting.enabled": true,
+  "explorer.experimental.fileNesting.patterns": {
+    "*.vue": "$(capture).stories.ts, $(capture).spec.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc"
+  }
+}

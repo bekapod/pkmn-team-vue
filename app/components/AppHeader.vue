@@ -200,6 +200,8 @@ import { SearchIcon } from "@heroicons/vue/solid";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
 import PokeBall from "./PokeBall.vue";
 
+const route = useRoute();
+
 const user = {
   name: "Ash Ketchum",
   email: "ash@example.com",
@@ -208,8 +210,12 @@ const user = {
 };
 
 const navigation = [
-  { name: "All Teams", href: "/", current: true },
-  { name: "Team Builder", href: "/team-builder", current: false },
+  { name: "All Teams", href: "/", current: route.name === "index" },
+  {
+    name: "Team Builder",
+    href: "/team-builder",
+    current: route.name === "team-id",
+  },
 ];
 
 const userNavigation = [

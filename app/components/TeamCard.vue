@@ -42,11 +42,10 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { sortBySlug } from "../lib/general";
+import { sortBySlug } from "@/lib";
 import Card from "./Card.vue";
 import PokemonLine from "./PokemonLine.vue";
-import { TeamMember } from "../lib/validators";
-import type { TeamMember as TeamMemberT } from "../lib/validators";
+import { TeamMember } from "@/data";
 
 const props = defineProps({
   id: {
@@ -62,8 +61,8 @@ const props = defineProps({
     required: true,
   },
   members: {
-    type: Array as PropType<TeamMemberT[]>,
-    validator: (prop: TeamMemberT[]) =>
+    type: Array as PropType<TeamMember[]>,
+    validator: (prop: TeamMember[]) =>
       Array.isArray(prop) &&
       prop.every(member => TeamMember.safeParse(member).success),
     required: false,

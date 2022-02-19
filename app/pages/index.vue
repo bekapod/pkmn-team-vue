@@ -1,15 +1,15 @@
 <template>
-  <Html lang="en-gb">
-    <Head>
-      <Title>Pokémon Team Builder</Title>
-      <Meta name="description" content="A WIP Pokémon team builder." />
-    </Head>
-  </Html>
-
   <NuxtLayout name="wide-page">
+    <Html lang="en-gb">
+      <Head>
+        <Title>Pokémon Team Builder</Title>
+        <Meta name="description" content="A WIP Pokémon team builder." />
+      </Head>
+    </Html>
+
     <template #page-title>All Teams</template>
     <template #header-action>
-      <TeamCreator @team-created="() => refresh()" />
+      <TeamCreator @team-created="({ id }) => router.push(`/team/${id}`)" />
     </template>
 
     <ul v-if="teams" class="grid gap-5 grid-cols-1 md:grid-cols-md" role="list">
@@ -32,10 +32,11 @@
 </template>
 
 <script setup lang="ts">
-import { getSdk } from "~~/generated";
-import { Team } from "../lib/validators";
+import { getSdk } from "@/graphql";
+import { parseTeam } from "@/data";
 
-const { $graphQLClient } = useNuxtApp();
+const { $graphQLClient, $sentry } = useNuxtApp();
+const router = useRouter();
 
 const {
   data: teams,
@@ -46,29 +47,7 @@ const {
   async () => getSdk($graphQLClient).AllTeams(),
   {
     transform: data =>
-      data.teams.edges?.map(team =>
-        Team.parse({
-          id: team?.node?.id,
-          name: team?.node?.name ?? "",
-          createdAt: team?.node?.createdAt ?? "",
-          members: team?.node?.members.edges?.map(member => ({
-            id: member?.node?.id,
-            pokemon: {
-              pokedexId: member?.node?.pokemon.pokedexId,
-              name: member?.node?.pokemon.name,
-              sprite: member?.node?.pokemon.sprite.replace(
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/",
-                "",
-              ),
-              types: member?.node?.pokemon.types.edges?.map(type => ({
-                name: type?.node?.name,
-                slug: type?.node?.slug,
-                slot: type?.slot,
-              })),
-            },
-          })),
-        }),
-      ),
+      data.teams.edges?.map(team => parseTeam(team?.node, { $sentry })),
   },
 );
 </script>

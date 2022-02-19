@@ -1,7 +1,10 @@
 module.exports = {
   ci: {
     collect: {
-      url: ["http://localhost:8787"],
+      url: [
+        "http://localhost:8787",
+        "http://localhost:8787/team/cks2cvpel025314dyaqobuqyu",
+      ],
       startServerCommand:
         "npm run start:worker-without-build -- --binding SENTRY_DSN=$SENTRY_DSN --binding SENTRY_CLIENT_ID=$SENTRY_CLIENT_ID --binding SENTRY_CLIENT_SECRET=$SENTRY_CLIENT_SECRET",
     },

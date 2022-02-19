@@ -22,6 +22,11 @@ window.useNuxtApp = () => ({
 window.useRouter = () => router;
 
 // @ts-ignore
+window.useRoute = () => ({
+  name: "index",
+});
+
+// @ts-ignore
 config.global.stubs["NuxtLink"] = {
   props: ["to"],
   template: `<a :href="to"><slot /></a>`,

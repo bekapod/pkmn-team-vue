@@ -29,10 +29,8 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { sortBySlot } from "../lib/general";
-import { getTypeGradient } from "../lib/gradients";
-import { Type } from "../lib/validators";
-import type { Type as TypeT } from "../lib/validators";
+import { sortBySlot, getTypeGradient } from "@/lib";
+import { Type } from "@/data";
 import TypeTag from "./TypeTag.vue";
 
 const config = useRuntimeConfig();
@@ -52,8 +50,8 @@ const props = defineProps({
     default: undefined,
   },
   types: {
-    type: Array as PropType<TypeT[]>,
-    validator: (prop: TypeT[]) =>
+    type: Array as PropType<Type[]>,
+    validator: (prop: Type[]) =>
       Array.isArray(prop) && prop.every(t => Type.safeParse(t).success),
     required: false,
     default() {
@@ -63,7 +61,7 @@ const props = defineProps({
   outdent: {
     type: String,
     required: false,
-    default: undefined,
+    default: "0px",
   },
 });
 
