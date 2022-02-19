@@ -54,21 +54,22 @@ const toasts = useToasts();
 const isSubmitting = ref(false);
 const timeTaken = ref(0);
 const isSlowLoading = computed(() => timeTaken.value > 1);
-const errorToast = {
-  type: "error",
-  title: "Error",
-  content: "An error happened while creating your team.",
-} as const;
-const successToast = {
-  type: "success",
-  title: "Team created!",
-  content: "Your team has been successfully created.",
-} as const;
 let timer;
 
 const { $graphQLClient } = useNuxtApp();
 
 const submitHandler = async (formData: any) => {
+  const errorToast = {
+    type: "error",
+    title: "Error",
+    content: "An error happened while creating your team.",
+  } as const;
+  const successToast = {
+    type: "success",
+    title: "Team created!",
+    content: "Your team has been successfully created.",
+  } as const;
+
   toasts.removeToast(errorToast);
   toasts.removeToast(successToast);
   isSubmitting.value = true;

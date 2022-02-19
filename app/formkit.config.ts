@@ -17,7 +17,7 @@ const config: Partial<FormKitConfig> = {
         }
 
         if (["submit"].includes(node.props.type)) {
-          return "relative w-full sm:w-auto overflow-hidden text-white text-center uppercase border-none rounded-tl-lg rounded-br-lg shadow perspective transition-colors duration-300 ease-out disabled:opacity-75 bg-pink-vivid-500 leading-10 py-3 px-6 text-lg font-bold";
+          return "button button--primary";
         }
       },
     };

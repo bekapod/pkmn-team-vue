@@ -48,6 +48,38 @@
 @tailwind components;
 
 @layer components {
+  .button {
+    @apply relative w-full sm:w-auto flex items-center overflow-hidden text-center uppercase border-none rounded-tl-lg rounded-br-lg shadow transition-colors duration-300 ease-out disabled:opacity-75 leading-10 py-3 px-6 text-lg font-bold;
+  }
+
+  .button__icon {
+    @apply relative w-5 h-5 -left-2;
+  }
+
+  .button--primary {
+    @apply bg-pink-vivid-500 text-white;
+  }
+
+  .button--primary:hover {
+    @apply bg-pink-vivid-400;
+  }
+
+  .button--secondary {
+    @apply bg-cyan-vivid-600 text-white;
+  }
+
+  .button--secondary:hover {
+    @apply bg-cyan-vivid-500;
+  }
+
+  .button--destructive {
+    @apply bg-red-vivid-500 text-white;
+  }
+
+  .button--destructive:hover {
+    @apply bg-red-vivid-400;
+  }
+
   .move-line-template {
     @apply grid;
     grid-template: theme("spacing.5") / 1fr 1fr 1fr;
