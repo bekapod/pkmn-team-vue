@@ -44,7 +44,7 @@ export const teamMember: Story = ({ remove, ...args }) => ({
     return { args, remove };
   },
   template: `
-    <TeamMember v-bind="args" @remove="remove" />
+    <ul class="list-none"><TeamMember v-bind="args" @remove="remove" /></ul>
   `,
 });
 

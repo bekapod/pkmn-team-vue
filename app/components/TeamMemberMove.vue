@@ -1,7 +1,7 @@
 <template>
-  <li class="relative list-none">
+  <li class="relative list-none" :aria-labelledby="`team-member-move-${id}`">
     <span
-      role="option"
+      :id="`team-member-move-${id}`"
       class="block relative p-4 text-indigo-900 bg-cool-grey-50 leading-none text-sm font-bold uppercase rounded-br-lg team-member-move-template cursor-grab active:cursor-grabbing"
       :style="{
         '--type-gradient': getTypeGradient(

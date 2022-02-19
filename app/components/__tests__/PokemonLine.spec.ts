@@ -1,16 +1,11 @@
 import { render, screen } from "@testing-library/vue";
+import { haunter } from "@/data/mocks";
 import PokemonLine from "../PokemonLine.vue";
 
 const setup = (props = {}) =>
   render(PokemonLine, {
     props: {
-      pokedexId: 93,
-      name: "Haunter",
-      sprite: "pokemon/93.png",
-      types: [
-        { name: "Poison", slug: "poison", slot: 2 },
-        { name: "Ghost", slug: "ghost", slot: 1 },
-      ],
+      ...haunter,
       ...props,
     },
   });

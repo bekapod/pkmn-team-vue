@@ -29,7 +29,14 @@
             lowestStat === stat.value && highestStat !== lowestStat,
         }"
       >
-        <dt class="text-indigo-400 text-sm font-bold uppercase">
+        <dt
+          class="text-indigo-500 text-sm font-bold uppercase"
+          :class="{
+            'text-indigo-700':
+              (highestStat === stat.value && highestStat !== lowestStat) ||
+              (lowestStat === stat.value && highestStat !== lowestStat),
+          }"
+        >
           {{ stat.label }}
         </dt>
         <dd class="ml-auto text-indigo-800 text-lg font-bold">

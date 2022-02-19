@@ -17,7 +17,7 @@ export const teamMemberMove: Story = ({ remove, ...args }) => ({
     return { args, remove };
   },
   template: `
-    <TeamMemberMove v-bind="args" @remove="remove" />
+    <ul class="list-none"><TeamMemberMove v-bind="args" @remove="remove" /></ul>
   `,
 });
 

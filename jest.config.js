@@ -8,7 +8,6 @@ module.exports = {
   moduleFileExtensions: ["vue", "js", "json", "ts"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
-    "~~/(.*)$": "<rootDir>/$1",
-    "~/(.*)$": "<rootDir>/app/$1",
+    "@/(.*)$": "<rootDir>/app/$1",
   },
 };
