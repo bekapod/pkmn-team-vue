@@ -11,7 +11,10 @@
       @remove-move="(id, moveId) => $emit('remove-move', id, moveId)"
     />
 
-    <li v-for="i in 6 - members.length" :key="i">
+    <li
+      v-for="i in members.length < 6 ? new Array(6 - members.length) : []"
+      :key="i"
+    >
       <button
         type="button"
         class="w-full h-full rounded-br-xl border-4 border-dashed bg-cool-grey-100 border-cool-grey-200 flex items-center justify-center cursor-pointer"
