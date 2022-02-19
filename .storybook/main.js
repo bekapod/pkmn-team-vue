@@ -35,6 +35,7 @@ module.exports = {
       "@/graphql": path.resolve(__dirname, "../app/graphql"),
       "@/lib": path.resolve(__dirname, "../app/lib"),
       "@/mocks/browser": path.resolve(__dirname, "../app/mocks/browser"),
+      "@/stores": path.resolve(__dirname, "../app/stores"),
       ...[
         "sad",
         "search-alt",

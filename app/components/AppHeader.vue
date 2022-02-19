@@ -184,9 +184,14 @@
       </div>
     </header>
   </div>
+
+  <Teleport v-if="isMounted" to="#toast-teleport-target">
+    <ToastContainer />
+  </Teleport>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import {
   Disclosure,
   DisclosureButton,
@@ -201,8 +206,10 @@ import BellIcon from "@/assets/icons/bell.svg?component";
 import MenuIcon from "@/assets/icons/menu.svg?component";
 import XIcon from "@/assets/icons/x.svg?component";
 import PokeBall from "./PokeBall.vue";
+import ToastContainer from "./ToastContainer.vue";
 
 const route = useRoute();
+const isMounted = ref(false);
 
 const user = {
   name: "Ash Ketchum",
@@ -225,4 +232,8 @@ const userNavigation = [
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
+
+onMounted(() => {
+  isMounted.value = true;
+});
 </script>

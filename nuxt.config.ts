@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     preset: resolve(__dirname, "preset"),
   },
   modules: ["@formkit/nuxt"],
+  buildModules: ["@pinia/nuxt"],
   build: {
     postcss: {
       postcssOptions: {
