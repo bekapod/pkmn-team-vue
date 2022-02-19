@@ -48,3 +48,12 @@ test("emits remove event when remove button is clicked", () => {
   userEvent.click(screen.getByRole("button", { name: "Remove team member" }));
   expect(emitted()).toHaveProperty("remove", [[Meta.args?.id]]);
 });
+
+test("emits remove-move event when remove button on move is clicked", () => {
+  const { emitted } = setup();
+  expect(emitted()).not.toHaveProperty("remove-move");
+  userEvent.click(screen.getAllByRole("button", { name: "Remove move" })[1]);
+  expect(emitted()).toHaveProperty("remove-move", [
+    [Meta.args?.id, Meta.args?.moves?.[1]?.id],
+  ]);
+});

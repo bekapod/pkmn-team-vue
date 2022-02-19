@@ -35,16 +35,21 @@ const csf: Meta = {
   },
   argTypes: {
     remove: { action: "@remove" },
+    "remove-move": { action: "@remove-move" },
   },
 };
 
-export const teamMember: Story = ({ remove, ...args }) => ({
+export const teamMember: Story = ({
+  remove,
+  "remove-move": removeMove,
+  ...args
+}) => ({
   components: { TeamMember },
   setup() {
-    return { args, remove };
+    return { args, remove, removeMove };
   },
   template: `
-    <ul class="list-none"><TeamMember v-bind="args" @remove="remove" /></ul>
+    <ul class="list-none"><TeamMember v-bind="args" @remove="remove" @remove-move="removeMove" /></ul>
   `,
 });
 

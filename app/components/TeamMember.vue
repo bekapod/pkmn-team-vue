@@ -53,6 +53,7 @@
         :name="move.move.name"
         :damage-class="move.move.damageClass"
         :type="move.move.type"
+        @remove="moveId => $emit('remove-move', id, moveId)"
       />
     </ol>
   </li>
@@ -91,6 +92,7 @@ const props = defineProps({
 
 defineEmits<{
   (e: "remove", id: string): void;
+  (e: "remove-move", id: string, moveId: string): void;
 }>();
 
 const stats = [
