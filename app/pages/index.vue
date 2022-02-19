@@ -9,7 +9,7 @@
 
     <template #page-title>All Teams</template>
     <template #header-action>
-      <TeamCreator @team-created="() => refresh()" />
+      <TeamCreator @team-created="({ id }) => router.push(`/team/${id}`)" />
     </template>
 
     <ul v-if="teams" class="grid gap-5 grid-cols-1 md:grid-cols-md" role="list">
@@ -36,6 +36,7 @@ import { getSdk } from "@/graphql";
 import { parseTeam } from "@/data";
 
 const { $graphQLClient, $sentry } = useNuxtApp();
+const router = useRouter();
 
 const {
   data: teams,

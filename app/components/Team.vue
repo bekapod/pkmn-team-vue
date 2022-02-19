@@ -14,7 +14,7 @@
     <li v-for="i in 6 - members.length" :key="i">
       <button
         type="button"
-        class="w-full h-full rounded-br-xl border-4 border-dashed border-cool-grey-200 flex items-center justify-center cursor-pointer"
+        class="w-full h-full rounded-br-xl border-4 border-dashed bg-cool-grey-100 border-cool-grey-200 flex items-center justify-center cursor-pointer"
       >
         <span class="sr-only">Add team member</span>
         <PlusIcon class="w-10 h-10 text-cool-grey-300" />
