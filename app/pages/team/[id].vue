@@ -9,7 +9,8 @@
 
     <template #page-title>{{ team?.name }}</template>
 
-    <div v-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
+    <Team v-if="team" v-bind="team" />
+    <div v-else-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
       <Notification
         type="error"
         :action="{

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { TeamMember } from "./team-member";
-import { Maybe, Team as TeamGQL } from "@/graphql";
+import { Maybe, TeamFieldsFragment } from "@/graphql";
 import { Severity } from "@sentry/vue";
 
 export const Team = z.object({
@@ -11,16 +11,10 @@ export const Team = z.object({
 });
 export type Team = z.infer<typeof Team>;
 
-type DeepPartial<T> = T extends object
-  ? {
-      [P in keyof T]?: DeepPartial<T[P]>;
-    }
-  : T;
-
 export const parseTeam = (
-  team: Maybe<DeepPartial<TeamGQL>> | undefined,
+  team: Maybe<TeamFieldsFragment> | undefined,
   { $sentry }: { $sentry: any },
-) => {
+): Team => {
   try {
     return Team.parse({
       id: team?.id,
@@ -47,6 +41,28 @@ export const parseTeam = (
             slot: type?.slot,
           })),
         },
+        moves: member?.node?.moves?.edges?.map(move => ({
+          id: move?.id,
+          slot: move?.slot,
+          learnMethod: move?.learnMethod,
+          levelLearnedAt: move?.levelLearnedAt ?? undefined,
+          move: {
+            id: move?.node?.id,
+            name: move?.node?.name,
+            slug: move?.node?.slug,
+            accuracy: move?.node?.accuracy ?? undefined,
+            pp: move?.node?.pp,
+            power: move?.node?.power ?? undefined,
+            damageClass: move?.node?.damageClass,
+            effect: move?.node?.effect ?? undefined,
+            effectChance: move?.node?.effectChance ?? undefined,
+            target: move?.node?.target,
+            type: {
+              name: move?.node?.type?.name,
+              slug: move?.node?.type?.slug,
+            },
+          },
+        })),
       })),
     });
   } catch (err) {

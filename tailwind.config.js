@@ -43,10 +43,10 @@ module.exports = {
     screens: {
       sm: `${440 / 16}em`,
       md: `${768 / 16}em`,
-      lg: `${980 / 16}em`,
+      lg: `${1024 / 16}em`,
       xl: `${1280 / 16}em`,
       "sm-max": { max: `${439 / 16}em` },
-      "md-to-lg": { min: `${768 / 16}em`, max: `${1279 / 16}em` },
+      "md-to-lg": { min: `${768 / 16}em`, max: `${1023 / 16}em` },
     },
 
     colors: {

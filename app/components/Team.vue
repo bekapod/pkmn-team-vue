@@ -1,5 +1,5 @@
 <template>
-  <ol class="grid grid-cols-3 grid-rows-2 gap-5">
+  <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     <TeamMember
       v-for="member in members"
       :key="member.id"
