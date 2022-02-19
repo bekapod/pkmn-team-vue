@@ -8,12 +8,12 @@
   >
     <div class="flex">
       <div class="flex-shrink-0">
-        <XCircleIcon
+        <SadIcon
           v-if="type === 'error'"
           class="h-5 w-5 text-red-vivid-400"
           aria-hidden="true"
         />
-        <CheckCircleIcon
+        <HappyBeamingIcon
           v-if="type === 'success'"
           class="h-5 w-5 text-green-vivid-400"
           aria-hidden="true"
@@ -63,7 +63,8 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { XCircleIcon, CheckCircleIcon } from "@heroicons/vue/solid";
+import SadIcon from "@/assets/icons/sad.svg?component";
+import HappyBeamingIcon from "@/assets/icons/happy-beaming.svg?component";
 
 type NotificationType = "error" | "success";
 type NotificationAction = { label: string; callback: () => void };

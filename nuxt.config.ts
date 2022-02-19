@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from "nuxt3";
 import { resolve } from "path";
+import svgLoader from "vite-svg-loader";
 import { publicRuntimeConfig } from "./app/config";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
@@ -18,6 +19,23 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  vite: {
+    plugins: [
+      svgLoader({
+        svgoConfig: {
+          multipass: true,
+          plugins: [
+            "removeDimensions",
+            "convertStyleToAttrs",
+            {
+              name: "convertColors",
+              params: { currentColor: "rgba(0, 0, 0, 1)" },
+            },
+          ],
+        },
+      }),
+    ],
   },
   render: {
     csp: true,
