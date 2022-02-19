@@ -55,13 +55,23 @@
         :type="move.move.type"
         @remove="moveId => $emit('remove-move', id, moveId)"
       />
+
+      <li v-for="i in 4 - moves.length" :key="i">
+        <button
+          type="button"
+          class="w-full h-full rounded-br-lg border-2 border-dashed border-cool-grey-100 flex items-center justify-center cursor-pointer"
+        >
+          <span class="sr-only">Add move</span>
+          <PlusIcon class="w-5 h-5 text-cool-grey-200" />
+        </button>
+      </li>
     </ol>
   </li>
 </template>
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { TrashIcon } from "@heroicons/vue/outline";
+import { TrashIcon, PlusIcon } from "@heroicons/vue/outline";
 import PokemonLine from "./PokemonLine.vue";
 import TeamMemberMove from "./TeamMemberMove.vue";
 import { Pokemon, TeamMemberMove as TeamMemberMoveT } from "@/data";
