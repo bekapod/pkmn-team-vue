@@ -14,11 +14,11 @@
       <div
         v-for="stat in [
           { label: 'HP', value: pokemon.hp },
-          { label: 'Attack', value: pokemon.attack },
-          { label: 'Defense', value: pokemon.defense },
+          { label: 'Atk', value: pokemon.attack },
+          { label: 'Def', value: pokemon.defense },
           { label: 'Sp. Atk', value: pokemon.specialAttack },
           { label: 'Sp. Def', value: pokemon.specialDefense },
-          { label: 'Speed', value: pokemon.speed },
+          { label: 'Spd', value: pokemon.speed },
         ]"
         :key="stat.label"
         class="flex items-center py-2 px-3"

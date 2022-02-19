@@ -17,19 +17,15 @@ test("renders the pokemon's stats", () => {
   setup();
   /* eslint-disable testing-library/no-node-access */
   expect(screen.getByText(/hp/i).nextElementSibling).toHaveTextContent("39");
-  expect(screen.getByText(/attack/i).nextElementSibling).toHaveTextContent(
-    "52",
-  );
-  expect(screen.getByText(/defense/i).nextElementSibling).toHaveTextContent(
-    "43",
-  );
+  expect(screen.getByText(/^atk/i).nextElementSibling).toHaveTextContent("52");
+  expect(screen.getByText(/^def/i).nextElementSibling).toHaveTextContent("43");
   expect(screen.getByText(/sp\. atk/i).nextElementSibling).toHaveTextContent(
     "60",
   );
   expect(screen.getByText(/sp\. def/i).nextElementSibling).toHaveTextContent(
     "50",
   );
-  expect(screen.getByText(/speed/i).nextElementSibling).toHaveTextContent("65");
+  expect(screen.getByText(/spd/i).nextElementSibling).toHaveTextContent("65");
   /* eslint-enable testing-library/no-node-access */
 });
 
