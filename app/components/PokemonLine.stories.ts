@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/vue3";
 import { haunter } from "@/data/mocks";
-import PokemonLine from "../PokemonLine.vue";
+import PokemonLine from "./PokemonLine.vue";
 
 const csf: Meta = {
   title: "components/Pokemon Line",

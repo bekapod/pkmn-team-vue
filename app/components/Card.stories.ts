@@ -1,5 +1,5 @@
 import { Story } from "@storybook/vue3";
-import Card from "../Card.vue";
+import Card from "./Card.vue";
 
 const csf = {
   title: "components/Card",

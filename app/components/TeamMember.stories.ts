@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/vue3";
 import { MoveLearnMethod } from "@/graphql";
-import TeamMember from "../TeamMember.vue";
+import TeamMember from "./TeamMember.vue";
 import { charmander, rest, slash, substitute } from "@/data/mocks";
 
 const csf: Meta = {

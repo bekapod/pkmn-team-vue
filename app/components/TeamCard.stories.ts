@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/vue3";
 import { charmander, haunter, pikachu } from "@/data/mocks";
-import TeamCard from "../TeamCard.vue";
+import TeamCard from "./TeamCard.vue";
 
 const csf: Meta = {
   title: "components/Team Card",

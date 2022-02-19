@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/vue3";
 import { graphql } from "msw";
 import { userEvent, screen } from "@storybook/testing-library";
 import { worker } from "@/mocks/browser";
-import TeamCreator from "../TeamCreator.vue";
+import TeamCreator from "./TeamCreator.vue";
 
 const csf: Meta = {
   title: "components/Team Creator",

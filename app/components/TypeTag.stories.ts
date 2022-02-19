@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/vue3";
 import { ghost } from "@/data/mocks";
-import TypeTag from "../TypeTag.vue";
+import TypeTag from "./TypeTag.vue";
 
 const csf: Meta = {
   title: "components/Type Tag",

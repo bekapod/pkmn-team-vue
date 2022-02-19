@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/vue3";
-import Toast from "../Toast.vue";
-import ToastContainer from "../ToastContainer.vue";
+import Toast from "./Toast.vue";
+import ToastContainer from "./ToastContainer.vue";
 
 const csf: Meta = {
   title: "components/Toast",

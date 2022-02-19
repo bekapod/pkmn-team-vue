@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/vue";
 import { charmander, haunter, pikachu } from "@/data/mocks";
-import TeamCard from "../TeamCard.vue";
+import TeamCard from "./TeamCard.vue";
 
 const setup = (props = {}) =>
   render(TeamCard, {

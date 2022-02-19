@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/vue3";
-import TeamMemberMove from "../TeamMemberMove.vue";
+import TeamMemberMove from "./TeamMemberMove.vue";
 import { explosion } from "@/data/mocks";
 
 const csf: Meta = {

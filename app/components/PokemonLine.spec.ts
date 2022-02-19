@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/vue";
 import { haunter } from "@/data/mocks";
-import PokemonLine from "../PokemonLine.vue";
+import PokemonLine from "./PokemonLine.vue";
 
 const setup = (props = {}) =>
   render(PokemonLine, {

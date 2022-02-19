@@ -1,6 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, Story } from "@storybook/vue3";
-import Notification from "../Notification.vue";
+import Notification from "./Notification.vue";
 
 const csf: Meta = {
   title: "components/Notification",

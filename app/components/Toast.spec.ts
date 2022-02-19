@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/vue";
-import Meta from "../__stories__/Notification.stories";
-import Toast from "../Toast.vue";
+import Meta from "./Toast.stories";
+import Toast from "./Toast.vue";
 import userEvent from "@testing-library/user-event";
 
 const setup = (props = {}) =>

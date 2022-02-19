@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/vue";
-import Meta from "../__stories__/TeamMember.stories";
-import TeamMember from "../TeamMember.vue";
+import Meta from "./TeamMember.stories";
+import TeamMember from "./TeamMember.vue";
 import userEvent from "@testing-library/user-event";
 
 const setup = (props = {}) =>

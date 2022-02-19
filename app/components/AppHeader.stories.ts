@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/vue3";
-import AppHeader from "../AppHeader.vue";
-import TeamCreator from "../TeamCreator.vue";
+import AppHeader from "./AppHeader.vue";
+import TeamCreator from "./TeamCreator.vue";
 
 const csf: Meta = {
   title: "components/App Header",

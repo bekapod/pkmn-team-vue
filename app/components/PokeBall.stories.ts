@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/vue3";
-import PokeBall from "../PokeBall.vue";
+import PokeBall from "./PokeBall.vue";
 
 const csf: Meta = {
   title: "components/Poke Ball",

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/vue";
-import TeamCreator from "../TeamCreator.vue";
+import TeamCreator from "./TeamCreator.vue";
 
 const setup = (props = {}) =>
   render(TeamCreator, {

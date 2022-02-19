@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
-import Notification from "../Notification.vue";
+import Notification from "./Notification.vue";
 
 const setup = (props = {}) =>
   render(Notification, {
