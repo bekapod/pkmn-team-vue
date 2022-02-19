@@ -7,16 +7,9 @@
       </Head>
     </Html>
 
-    <template #page-title>All Teams</template>
-    <template #header-action>
-      <TeamCreator @team-created="() => refresh()" />
-    </template>
+    <template #page-title>{{ team?.name }}</template>
 
-    <ul v-if="teams" class="grid gap-5 grid-cols-1 md:grid-cols-md" role="list">
-      <li v-for="team in teams" :key="team.id"><TeamCard v-bind="team" /></li>
-    </ul>
-
-    <div v-else-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
+    <div v-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
       <Notification
         type="error"
         :action="{
@@ -25,28 +18,29 @@
         }"
       >
         <template #title>Error</template>
-        An error happened while fetching the team list.
+        An error happened while fetching the team.
       </Notification>
     </div>
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { getSdk } from "@/graphql";
 import { parseTeam } from "@/data";
 
 const { $graphQLClient, $sentry } = useNuxtApp();
+const route = useRoute();
+const { id } = route.params;
 
 const {
-  data: teams,
+  data: team,
   error,
   refresh,
 } = await useAsyncData(
-  "all-teams",
-  async () => getSdk($graphQLClient).AllTeams(),
+  `team-${id}`,
+  async () => getSdk($graphQLClient).TeamById({ id }),
   {
-    transform: data =>
-      data.teams.edges?.map(team => parseTeam(team?.node, { $sentry })),
+    transform: ({ teamById }) => parseTeam(teamById, { $sentry }),
   },
 );
 </script>
