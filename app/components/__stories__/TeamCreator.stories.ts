@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/vue3";
 import { graphql } from "msw";
 import { userEvent, screen } from "@storybook/testing-library";
-import { worker } from "~~/app/mocks/browser";
+import { worker } from "@/mocks/browser";
 import TeamCreator from "../TeamCreator.vue";
 
 const csf: Meta = {

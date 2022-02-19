@@ -30,9 +30,10 @@ module.exports = {
   viteFinal(config) {
     config.resolve.alias = {
       ...(config.resolve.alias ?? {}),
-      "~~/generated": path.resolve(__dirname, "../generated"),
-      "~~/app/mocks/browser": path.resolve(__dirname, "../app/mocks/browser"),
-      "~/lib/general": path.resolve(__dirname, "../app/lib/general"),
+      "@/data": path.resolve(__dirname, "../app/data"),
+      "@/graphql": path.resolve(__dirname, "../app/graphql"),
+      "@/lib": path.resolve(__dirname, "../app/lib"),
+      "@/mocks/browser": path.resolve(__dirname, "../app/mocks/browser"),
     };
     return config;
   },

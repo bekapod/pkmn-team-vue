@@ -1,18 +1,11 @@
 import { Meta, Story } from "@storybook/vue3";
+import { haunter } from "@/data/mocks";
 import PokemonLine from "../PokemonLine.vue";
 
 const csf: Meta = {
   title: "components/Pokemon Line",
   component: PokemonLine,
-  args: {
-    pokedexId: 93,
-    name: "Haunter",
-    sprite: "pokemon/93.png",
-    types: [
-      { name: "Poison", slug: "poison", slot: 2 },
-      { name: "Ghost", slug: "ghost", slot: 1 },
-    ],
-  },
+  args: haunter,
 };
 
 export const pokemonLine: Story = args => ({

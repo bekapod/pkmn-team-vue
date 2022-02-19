@@ -1,4 +1,5 @@
 import { Meta, Story } from "@storybook/vue3";
+import { charmander, haunter, pikachu } from "@/data/mocks";
 import TeamCard from "../TeamCard.vue";
 
 const csf: Meta = {
@@ -11,33 +12,15 @@ const csf: Meta = {
     members: [
       {
         id: "1",
-        pokemon: {
-          name: "Charmander",
-          pokedexId: 4,
-          sprite: "pokemon/4.png",
-          types: [{ name: "Fire", slug: "fire", slot: 1 }],
-        },
+        pokemon: charmander,
       },
       {
         id: "2",
-        pokemon: {
-          name: "Pikachu",
-          pokedexId: 25,
-          sprite: "pokemon/25.png",
-          types: [{ name: "Electric", slug: "electric", slot: 1 }],
-        },
+        pokemon: pikachu,
       },
       {
         id: "3",
-        pokemon: {
-          name: "Haunter",
-          pokedexId: 93,
-          sprite: "pokemon/93.png",
-          types: [
-            { name: "Poison", slug: "poison", slot: 2 },
-            { name: "Ghost", slug: "ghost", slot: 1 },
-          ],
-        },
+        pokemon: haunter,
       },
     ],
   },

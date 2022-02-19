@@ -39,7 +39,14 @@
     </dl>
 
     <ol class="grid grid-cols-2 grid-rows-2 gap-3 p-3 flex-grow">
-      <TeamMemberMove v-for="move in moves" :key="move.id" v-bind="move.move" />
+      <TeamMemberMove
+        v-for="move in moves"
+        :id="move.id"
+        :key="move.id"
+        :name="move.move.name"
+        :damage-class="move.move.damageClass"
+        :type="move.move.type"
+      />
     </ol>
   </li>
 </template>
@@ -49,7 +56,7 @@ import type { PropType } from "vue";
 import { TrashIcon } from "@heroicons/vue/outline";
 import PokemonLine from "./PokemonLine.vue";
 import TeamMemberMove from "./TeamMemberMove.vue";
-import { Pokemon, TeamMemberMove as TeamMemberMoveT } from "../lib/validators";
+import { Pokemon, TeamMemberMove as TeamMemberMoveT } from "@/data";
 
 const props = defineProps({
   id: {

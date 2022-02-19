@@ -27,9 +27,9 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
 import { TrashIcon } from "@heroicons/vue/outline";
-import { DamageClass } from "~~/generated";
-import { Type } from "../lib/validators";
-import { getTypeGradient } from "../lib/gradients";
+import { DamageClass } from "@/graphql";
+import { getTypeGradient } from "@/lib";
+import { Type } from "@/data";
 
 defineProps({
   id: {
@@ -44,10 +44,10 @@ defineProps({
     },
   },
   type: {
-    type: Object as PropType<Type>,
+    type: Object as PropType<Omit<Type, "slot">>,
     required: true,
     validator: (val: unknown) => {
-      return Type.safeParse(val).success;
+      return Type.omit({ slot: true }).safeParse(val).success;
     },
   },
   name: {

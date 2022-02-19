@@ -1,20 +1,11 @@
 import { Meta, Story } from "@storybook/vue3";
-import { DamageClass } from "~~/generated";
 import TeamMemberMove from "../TeamMemberMove.vue";
+import { explosion } from "@/data/mocks";
 
 const csf: Meta = {
   title: "components/Team Member Move",
   component: TeamMemberMove,
-  args: {
-    id: "226c7a31-fcbd-4557-b432-8abe86767879",
-    name: "Explosion",
-    type: {
-      id: "normal",
-      name: "Normal",
-      slug: "normal",
-    },
-    damageClass: DamageClass.Physical,
-  },
+  args: explosion,
   argTypes: {
     remove: { action: "@remove" },
   },

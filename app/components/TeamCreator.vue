@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
-import { CreateTeamMutation, getSdk } from "~~/generated";
+import { CreateTeamMutation, getSdk } from "@/graphql";
 import ToastContainer from "./ToastContainer.vue";
 import Toast from "./Toast.vue";
 

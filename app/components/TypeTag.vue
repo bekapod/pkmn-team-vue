@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { getTypeColor } from "../lib/general";
+import { getTypeColor } from "@/lib";
 
 defineProps({
   name: {

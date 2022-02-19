@@ -2,4 +2,3 @@
 .output
 node_modules
 storybook-static
-generated.ts
