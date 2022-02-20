@@ -9,6 +9,7 @@ const csf: Meta = {
   title: "components/Team Name",
   component: TeamName,
   args: {
+    id: "1",
     name: "A team name!",
   },
   argTypes: {
@@ -69,7 +70,7 @@ loadingState.decorators = [
   story => {
     worker &&
       worker.use(
-        graphql.mutation("CreateTeam", (_req, res, ctx) => {
+        graphql.mutation("UpdateTeam", (_req, res, ctx) => {
           return res(ctx.delay("infinite"));
         }),
       );
@@ -87,12 +88,12 @@ errorState.decorators = [
   story => {
     worker &&
       worker.use(
-        graphql.mutation("CreateTeam", (_req, res, ctx) => {
+        graphql.mutation("UpdateTeam", (_req, res, ctx) => {
           return res(
             ctx.errors([
               {
-                message: "error creating team members",
-                path: ["createTeam"],
+                message: "error updating the team",
+                path: ["updateTeam"],
               },
             ]),
           );

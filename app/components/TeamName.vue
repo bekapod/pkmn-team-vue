@@ -59,6 +59,7 @@
 import { ref, computed, watch } from "vue";
 import PencilIcon from "@/assets/icons/pencil.svg?component";
 import { useToasts } from "@/stores";
+import { getSdk } from "@/graphql";
 
 const toasts = useToasts();
 const mode = ref("display");
@@ -69,7 +70,13 @@ const timeTaken = ref(0);
 const isSlowLoading = computed(() => timeTaken.value > 1);
 let timer;
 
-defineProps({
+const { $graphQLClient } = useNuxtApp();
+
+const props = defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -110,9 +117,11 @@ const submitHandler = async (formData: any) => {
     timeTaken.value += 1;
   }, 1000);
   try {
-    // const { createTeam: team } = await getSdk($graphQLClient).CreateTeam({
-    //   name: formData["team-name"],
-    // });
+    await getSdk($graphQLClient).UpdateTeam({
+      id: props.id,
+      name: formData["team-name"],
+      membersToDelete: [],
+    });
     toasts.addToast(successToast);
     mode.value = "display";
     emit("team-renamed", formData["team-name"]);
