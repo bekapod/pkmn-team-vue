@@ -2,7 +2,6 @@ import { Meta, Story } from "@storybook/vue3";
 import { graphql } from "msw";
 import { userEvent, screen } from "@storybook/testing-library";
 import { worker } from "@/mocks/browser";
-import { useToasts } from "@/stores";
 import TeamCreator from "./TeamCreator.vue";
 import ToastContainer from "./ToastContainer.vue";
 
@@ -13,11 +12,6 @@ const csf: Meta = {
     teamCreated: { action: "@team-created" },
   },
   decorators: [
-    story => {
-      const toasts = useToasts();
-      toasts.reset();
-      return story();
-    },
     story => ({
       components: { ToastContainer, story },
       template: `
