@@ -8,6 +8,8 @@
     "start:worker-without-build": "miniflare .output/server/index.mjs --site .output/public",
     "lint": "eslint .",
     "test": "jest",
+    "test:coverage": "jest --coverage",
+    "check": "npm run lint && npm run test:coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "generate": "graphql-codegen",
