@@ -84,12 +84,12 @@ const deleteHandler = async () => {
   const errorToast = {
     type: "error",
     title: "Error",
-    content: "An error happened while creating your team.",
+    content: "An error happened while deleting your team.",
   } as const;
   const successToast = {
     type: "success",
-    title: "Team created!",
-    content: "Your team has been successfully created.",
+    title: "Team deleted!",
+    content: "Your team has been successfully deleted.",
   } as const;
 
   toasts.removeToast(errorToast);
