@@ -65,11 +65,11 @@
   }
 
   .button--secondary {
-    @apply bg-cyan-vivid-600 text-white;
+    @apply bg-indigo-900 text-white;
   }
 
   .button--secondary:hover {
-    @apply bg-cyan-vivid-500;
+    @apply bg-indigo-800;
   }
 
   .button--destructive {
