@@ -49,17 +49,4 @@ describe(useToasts, () => {
     toasts.removeToast(toast2);
     expect(toasts.list).toEqual([]);
   });
-
-  test("resetting the state", () => {
-    const toasts = useToasts();
-    expect(toasts.list).toEqual([]);
-
-    toasts.addToast(toast1);
-    toasts.addToast(toast2);
-    toasts.addToast(toast1);
-    expect(toasts.list).toEqual([toast1, toast2, toast1]);
-
-    toasts.reset();
-    expect(toasts.list).toEqual([]);
-  });
 });

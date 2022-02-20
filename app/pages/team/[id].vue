@@ -7,7 +7,10 @@
       </Head>
     </Html>
 
-    <template #page-title>{{ team?.name }}</template>
+    <template #page-title>
+      <TeamName v-if="team.id" />
+      <span v-else>&hellip;<span class="sr-only">Loading team</span></span>
+    </template>
     <template #header-action>
       <div class="flex justify-center items-center gap-5">
         <button type="button" class="button button--secondary py-2">
@@ -35,7 +38,7 @@
       </div>
     </template>
 
-    <Team v-if="team" v-bind="team" />
+    <Team v-if="team.id" :members="team.members" />
     <div v-else-if="error" class="container mx-auto px-2 sm:px-4 lg:px-8">
       <Notification
         type="error"
@@ -54,29 +57,25 @@
 <script setup lang="ts">
 import SearchAltIcon from "@/assets/icons/search-alt.svg?component";
 import TrashIcon from "@/assets/icons/trash.svg?component";
+import { useToasts, useTeam } from "@/stores";
 import { getSdk } from "@/graphql";
-import { parseTeam } from "@/data";
-import { useToasts } from "@/stores";
 
-const toasts = useToasts();
-const { $graphQLClient, $sentry } = useNuxtApp();
-const router = useRouter();
+const { $graphQLClient } = useNuxtApp();
 const route = useRoute();
-const { id } = route.params;
+const team = useTeam();
+const toasts = useToasts();
+const router = useRouter();
+
 const isSubmitting = ref(false);
 const timeTaken = ref(0);
 const isSlowLoading = computed(() => timeTaken.value > 1);
 let timer;
 
-const {
-  data: team,
-  error,
-  refresh,
-} = await useAsyncData(
-  `team-${id}`,
-  async () => getSdk($graphQLClient).TeamById({ id: id.toString() }),
+const { error, refresh } = await useAsyncData(
+  `team-${route.params.id}`,
+  async () => team.getTeam(route.params.id.toString()),
   {
-    transform: ({ teamById }) => parseTeam(teamById, { $sentry }),
+    pick: [],
   },
 );
 
@@ -100,7 +99,7 @@ const deleteHandler = async () => {
   }, 1000);
   try {
     await getSdk($graphQLClient).DeleteTeams({
-      ids: Array.isArray(id) ? id : [id],
+      ids: [team.id],
     });
     toasts.addToast(successToast);
     router.replace("/");
