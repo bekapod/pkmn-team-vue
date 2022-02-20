@@ -6,7 +6,7 @@ import { createPinia } from "pinia";
 import customConfig from "../app/formkit.config";
 import { publicRuntimeConfig } from "../app/config";
 import { client } from "@/lib";
-import { useToasts } from "@/stores";
+import { useToasts, useTeam } from "@/stores";
 import "../app/assets/css/main.css";
 
 window.useRuntimeConfig = () => ({
@@ -33,13 +33,20 @@ app.component("NuxtLink", {
   template: `<a :href="to"><slot /></a>`,
 });
 
+const pinia = createPinia();
+app.use(pinia);
+pinia.use(() => ({
+  $nuxt: useNuxtApp(),
+}));
+
 app.use(createFormkit, defaultConfig(customConfig));
-app.use(createPinia());
 
 export const decorators = [
   story => {
     const toasts = useToasts();
-    toasts.reset();
+    const team = useTeam();
+    toasts.$reset();
+    team.$reset();
     return story();
   },
 ];

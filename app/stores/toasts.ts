@@ -33,8 +33,5 @@ export const useToasts = defineStore("toasts", {
           t.content !== toast.content,
       );
     },
-    reset() {
-      this.list = [];
-    },
   },
 });

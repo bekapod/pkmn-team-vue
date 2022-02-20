@@ -6,7 +6,7 @@
     class="invisible-button inline-flex items-center"
     @click="() => (mode = 'update')"
   >
-    {{ name }}
+    {{ team.name }}
     <PencilIcon aria-label="Edit team name" class="fill-current w-8 h-8 ml-5" />
   </button>
 
@@ -27,7 +27,7 @@
       name="team-name"
       label="Team name"
       placeholder="Team name"
-      :value="name"
+      :value="team.name"
       validation="required"
       validation-visibility="dirty"
       outer-class="flex-1 mb-4 w-full sm:w-auto sm:mb-0 sm:mr-3"
@@ -58,10 +58,10 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
 import PencilIcon from "@/assets/icons/pencil.svg?component";
-import { useToasts } from "@/stores";
-import { getSdk } from "@/graphql";
+import { useTeam, useToasts } from "@/stores";
 
 const toasts = useToasts();
+const team = useTeam();
 const mode = ref("display");
 const input = ref<any | null>(null);
 const button = ref<HTMLElement | null>(null);
@@ -70,30 +70,17 @@ const timeTaken = ref(0);
 const isSlowLoading = computed(() => timeTaken.value > 1);
 let timer;
 
-const { $graphQLClient } = useNuxtApp();
-
-const props = defineProps({
-  id: {
-    type: String,
-    required: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-});
-
 const emit = defineEmits<{
   (e: "team-renamed", name: string): void;
 }>();
 
-watch([input, button], async ([newInput, newButton]) => {
-  if (newInput && !newButton) {
+watch([input, button], async ([newInput, newButton], [oldInput, oldButton]) => {
+  if (newInput && !newButton && oldButton) {
     // TODO: what is this
     newInput?.$el?.parentNode?.querySelector("input")?.focus();
   }
 
-  if (!newInput && newButton) {
+  if (newButton && !newInput && oldInput) {
     newButton.focus();
   }
 });
@@ -117,14 +104,10 @@ const submitHandler = async (formData: any) => {
     timeTaken.value += 1;
   }, 1000);
   try {
-    await getSdk($graphQLClient).UpdateTeam({
-      id: props.id,
-      name: formData["team-name"],
-      membersToDelete: [],
-    });
+    const newName = await team.setTeamName(formData["team-name"]);
     toasts.addToast(successToast);
     mode.value = "display";
-    emit("team-renamed", formData["team-name"]);
+    emit("team-renamed", newName);
   } catch (err: any) {
     toasts.addToast(errorToast);
   } finally {

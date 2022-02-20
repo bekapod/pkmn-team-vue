@@ -8,6 +8,7 @@ import { publicRuntimeConfig } from "./app/config";
 import { client } from "./app/lib/graphql-client";
 import { server } from "./app/mocks/server";
 import { router } from "./app/mocks/router";
+import "isomorphic-fetch";
 
 // @ts-ignore
 window.useRuntimeConfig = () => ({
@@ -17,6 +18,9 @@ window.useRuntimeConfig = () => ({
 // @ts-ignore
 window.useNuxtApp = () => ({
   $graphQLClient: client,
+  $sentry: {
+    captureException: console.error,
+  },
 });
 
 // @ts-ignore

@@ -1,6 +1,22 @@
 import { graphql } from "msw";
 
 export const handlers = [
+  graphql.query("TeamById", (req, res, ctx) => {
+    return res(
+      ctx.data({
+        teamById: {
+          __typename: "Team",
+          id: req.variables.id,
+          name: "A team name!",
+          createdAt: new Date(Date.now()).toISOString(),
+          updatedAt: new Date(Date.now()).toISOString(),
+          members: {
+            edges: [],
+          },
+        },
+      }),
+    );
+  }),
   graphql.mutation("CreateTeam", (req, res, ctx) => {
     return res(
       ctx.data({

@@ -1,11 +1,15 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
+import { useTeam } from "@/stores";
 import TeamName from "./TeamName.vue";
 
-const setup = (props = {}) =>
-  render(TeamName, {
+const setup = ({ name, ...props } = { name: "" }) => {
+  const team = useTeam();
+  team.name = name;
+  return render(TeamName, {
     props,
   });
+};
 
 test("renders team name update button", () => {
   setup({ name: "A team name!" });

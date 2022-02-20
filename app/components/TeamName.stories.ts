@@ -2,20 +2,23 @@ import { Meta, Story } from "@storybook/vue3";
 import { graphql } from "msw";
 import { userEvent, screen } from "@storybook/testing-library";
 import { worker } from "@/mocks/browser";
+import { useTeam } from "@/stores";
 import TeamName from "./TeamName.vue";
 import ToastContainer from "./ToastContainer.vue";
 
 const csf: Meta = {
   title: "components/Team Name",
   component: TeamName,
-  args: {
-    id: "1",
-    name: "A team name!",
-  },
   argTypes: {
     teamRenamed: { action: "@team-renamed" },
   },
   decorators: [
+    story => {
+      const team = useTeam();
+      team.id = "1";
+      team.name = "A team name!";
+      return story();
+    },
     story => ({
       components: { ToastContainer, story },
       template: `
