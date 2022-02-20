@@ -45,6 +45,7 @@ module.exports = {
         "trash",
         "x",
         "menu",
+        "pencil",
       ].reduce((icons, name) => {
         return {
           ...icons,

@@ -180,4 +180,35 @@
   .container {
     @apply w-full max-w-screen-xl;
   }
+
+  .invisible-button,
+  .invisible-input {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  .invisible-input {
+    @apply ring-0 outline-dashed outline-2 outline-offset-8;
+    padding: 0;
+    background-color: transparent;
+    outline-color: currentColor;
+  }
+
+  .invisible-input-action {
+    @apply ml-3 py-2;
+    margin-top: calc((theme(spacing.3) - 1px) * -1);
+  }
+
+  .invisible-input-message {
+    @apply -mx-2 mt-4;
+    width: calc(100% + theme(spacing.2));
+  }
+
+  .invisible-button:focus-visible,
+  .invisible-input:focus-visible {
+    @apply outline-offset-8;
+  }
 }
