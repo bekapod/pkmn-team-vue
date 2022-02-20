@@ -39,6 +39,7 @@ module.exports = {
       "never",
       {
         json: "always",
+        svg: "always",
       },
     ],
     "vue/max-attributes-per-line": "off",

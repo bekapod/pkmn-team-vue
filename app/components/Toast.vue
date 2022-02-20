@@ -5,12 +5,12 @@
     <div class="p-4">
       <div class="flex items-start">
         <div class="flex-shrink-0">
-          <CheckCircleIcon
+          <HappyBeamingIcon
             v-if="type === 'success'"
             class="h-6 w-6 text-green-vivid-400"
             aria-hidden="true"
           />
-          <XCircleIcon
+          <SadIcon
             v-if="type === 'error'"
             class="h-6 w-6 text-red-vivid-400"
             aria-hidden="true"
@@ -40,8 +40,9 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/vue/outline";
-import { XIcon } from "@heroicons/vue/solid";
+import SadIcon from "@/assets/icons/sad.svg?component";
+import HappyBeamingIcon from "@/assets/icons/happy-beaming.svg?component";
+import XIcon from "@/assets/icons/x.svg?component";
 
 type ToastType = "error" | "success";
 

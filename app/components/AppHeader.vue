@@ -39,7 +39,7 @@
                 <div
                   class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center"
                 >
-                  <SearchIcon class="h-5 w-5" aria-hidden="true" />
+                  <SearchAltIcon class="h-5 w-5" aria-hidden="true" />
                 </div>
                 <input
                   id="search"
@@ -184,9 +184,14 @@
       </div>
     </header>
   </div>
+
+  <Teleport v-if="isMounted" to="#toast-teleport-target">
+    <ToastContainer />
+  </Teleport>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import {
   Disclosure,
   DisclosureButton,
@@ -196,11 +201,15 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import { SearchIcon } from "@heroicons/vue/solid";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
+import SearchAltIcon from "@/assets/icons/search-alt.svg?component";
+import BellIcon from "@/assets/icons/bell.svg?component";
+import MenuIcon from "@/assets/icons/menu.svg?component";
+import XIcon from "@/assets/icons/x.svg?component";
 import PokeBall from "./PokeBall.vue";
+import ToastContainer from "./ToastContainer.vue";
 
 const route = useRoute();
+const isMounted = ref(false);
 
 const user = {
   name: "Ash Ketchum",
@@ -223,4 +232,8 @@ const userNavigation = [
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
+
+onMounted(() => {
+  isMounted.value = true;
+});
 </script>

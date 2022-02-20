@@ -39,43 +39,39 @@
       />
     </FormKit>
   </FormKit>
-
-  <Teleport v-if="isMounted" to="#toast-teleport-target">
-    <ToastContainer>
-      <Toast
-        v-if="error"
-        type="error"
-        class="w-full max-w-3xl"
-        @close="() => (error = false)"
-      >
-        <template #title>Error</template>
-        An error happened while creating your team.
-      </Toast>
-    </ToastContainer>
-  </Teleport>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed } from "vue";
 import { CreateTeamMutation, getSdk } from "@/graphql";
-import ToastContainer from "./ToastContainer.vue";
-import Toast from "./Toast.vue";
+import { useToasts } from "@/stores";
 
 const emit = defineEmits<{
   (e: "team-created", team: CreateTeamMutation["createTeam"]): void;
 }>();
 
-const isMounted = ref(false);
+const toasts = useToasts();
 const isSubmitting = ref(false);
 const timeTaken = ref(0);
-const error = ref(false);
 const isSlowLoading = computed(() => timeTaken.value > 1);
 let timer;
 
 const { $graphQLClient } = useNuxtApp();
 
 const submitHandler = async (formData: any) => {
-  error.value = false;
+  const errorToast = {
+    type: "error",
+    title: "Error",
+    content: "An error happened while creating your team.",
+  } as const;
+  const successToast = {
+    type: "success",
+    title: "Team created!",
+    content: "Your team has been successfully created.",
+  } as const;
+
+  toasts.removeToast(errorToast);
+  toasts.removeToast(successToast);
   isSubmitting.value = true;
   timer = window.setInterval(() => {
     timeTaken.value += 1;
@@ -84,17 +80,14 @@ const submitHandler = async (formData: any) => {
     const { createTeam: team } = await getSdk($graphQLClient).CreateTeam({
       name: formData["team-name"],
     });
+    toasts.addToast(successToast);
     emit("team-created", team);
   } catch (err: any) {
-    error.value = true;
+    toasts.addToast(errorToast);
   } finally {
     window.clearInterval(timer);
     timeTaken.value = 0;
     isSubmitting.value = false;
   }
 };
-
-onMounted(() => {
-  isMounted.value = true;
-});
 </script>

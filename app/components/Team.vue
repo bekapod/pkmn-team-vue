@@ -11,13 +11,16 @@
       @remove-move="(id, moveId) => $emit('remove-move', id, moveId)"
     />
 
-    <li v-for="i in 6 - members.length" :key="i">
+    <li
+      v-for="i in members.length < 6 ? new Array(6 - members.length) : []"
+      :key="i"
+    >
       <button
         type="button"
         class="w-full h-full rounded-br-xl border-4 border-dashed bg-cool-grey-100 border-cool-grey-200 flex items-center justify-center cursor-pointer"
       >
         <span class="sr-only">Add team member</span>
-        <PlusIcon class="w-10 h-10 text-cool-grey-300" />
+        <MehBlankIcon class="w-10 h-10 text-cool-grey-300" />
       </button>
     </li>
   </ol>
@@ -25,7 +28,7 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { PlusIcon } from "@heroicons/vue/outline";
+import MehBlankIcon from "@/assets/icons/meh-blank.svg?component";
 import { TeamMember as TeamMemberT } from "@/data";
 import TeamMember from "./TeamMember.vue";
 

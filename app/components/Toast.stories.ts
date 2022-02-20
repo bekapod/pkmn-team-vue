@@ -24,12 +24,10 @@ const Template: Story = ({ close, ...args }) => ({
     return { args, close };
   },
   template: `
-    <ToastContainer>
-      <Toast v-bind="args" @close="close">
-        <template #title>Some notification</template>
-        Bear claw donut dessert chocolate bar donut. Sesame snaps donut donut dragée gummies. Lollipop icing candy canes jujubes toffee.
-      </Toast>
-    </ToastContainer>
+    <Toast v-bind="args" @close="close">
+      <template #title>Some notification</template>
+      Bear claw donut dessert chocolate bar donut. Sesame snaps donut donut dragée gummies. Lollipop icing candy canes jujubes toffee.
+    </Toast>
   `,
 });
 

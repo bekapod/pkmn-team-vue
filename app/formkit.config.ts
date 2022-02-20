@@ -10,14 +10,14 @@ const config: Partial<FormKitConfig> = {
       },
       label: "text-indigo-400 text-sm font-bold uppercase",
       message:
-        "w-full mt-3 p-2 pl-10 text-white text-sm font-normal flex items-center bg-red-vivid-500 bg-[url('/icons/exclamation-circle-outline.svg')] bg-[length:1.5rem_1.5rem] bg-no-repeat bg-[center_left_0.5rem] rounded-lg",
+        "w-full mt-3 p-2 pl-10 text-white text-sm font-normal flex items-center bg-red-vivid-500 bg-[url('/icons/error-circle.svg')] bg-[length:1.5rem_1.5rem] bg-no-repeat bg-[center_left_0.5rem] rounded-lg",
       input() {
         if (["text"].includes(node.props.type)) {
           return "w-full p-3 leading-10 md:max-w-3xl";
         }
 
         if (["submit"].includes(node.props.type)) {
-          return "relative w-full sm:w-auto overflow-hidden text-white text-center uppercase border-none rounded-tl-lg rounded-br-lg shadow perspective transition-colors duration-300 ease-out disabled:opacity-75 bg-pink-vivid-500 leading-10 py-3 px-6 text-lg font-bold";
+          return "button button--primary";
         }
       },
     };

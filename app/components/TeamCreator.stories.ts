@@ -3,6 +3,7 @@ import { graphql } from "msw";
 import { userEvent, screen } from "@storybook/testing-library";
 import { worker } from "@/mocks/browser";
 import TeamCreator from "./TeamCreator.vue";
+import ToastContainer from "./ToastContainer.vue";
 
 const csf: Meta = {
   title: "components/Team Creator",
@@ -10,6 +11,17 @@ const csf: Meta = {
   argTypes: {
     teamCreated: { action: "@team-created" },
   },
+  decorators: [
+    story => ({
+      components: { ToastContainer, story },
+      template: `
+        <story />
+        <Teleport to="#toast-teleport-target">
+          <ToastContainer />
+        </Teleport>
+      `,
+    }),
+  ],
 };
 
 const Template: Story = ({ teamCreated, ...args }) => ({
@@ -23,6 +35,12 @@ const Template: Story = ({ teamCreated, ...args }) => ({
 });
 
 export const defaultBehaviour = Template.bind({});
+defaultBehaviour.decorators = [
+  story => {
+    worker && worker.resetHandlers();
+    return story();
+  },
+];
 defaultBehaviour.play = async () => {
   await userEvent.type(
     screen.getByRole("textbox", { name: "Team name" }),
@@ -39,7 +57,7 @@ invalidState.play = async () => {
 
 export const loadingState = Template.bind({});
 loadingState.decorators = [
-  Story => {
+  story => {
     worker &&
       worker.use(
         graphql.mutation("CreateTeam", (_req, res, ctx) => {
@@ -47,7 +65,7 @@ loadingState.decorators = [
         }),
       );
 
-    return Story();
+    return story();
   },
 ];
 loadingState.play = async () => {
@@ -61,7 +79,7 @@ loadingState.play = async () => {
 
 export const errorState = Template.bind({});
 errorState.decorators = [
-  Story => {
+  story => {
     worker &&
       worker.use(
         graphql.mutation("CreateTeam", (_req, res, ctx) => {
@@ -76,7 +94,7 @@ errorState.decorators = [
         }),
       );
 
-    return Story();
+    return story();
   },
 ];
 errorState.play = async () => {

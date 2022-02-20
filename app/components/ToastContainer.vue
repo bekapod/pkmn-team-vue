@@ -7,6 +7,21 @@
     leave-from-class="opacity-100"
     leave-to-class="opacity-0"
   >
-    <slot />
+    <Toast
+      v-if="toasts.toast"
+      :type="toasts.toast.type"
+      class="w-full max-w-3xl"
+      @close="() => toasts.toast && toasts.removeToast(toasts.toast)"
+    >
+      <template #title>{{ toasts.toast.title }}</template>
+      {{ toasts.toast.content }}
+    </Toast>
   </Transition>
 </template>
+
+<script setup lang="ts">
+import { useToasts } from "@/stores";
+import Toast from "./Toast.vue";
+
+const toasts = useToasts();
+</script>

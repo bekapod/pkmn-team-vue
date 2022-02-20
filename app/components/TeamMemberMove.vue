@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import { TrashIcon } from "@heroicons/vue/outline";
+import TrashIcon from "@/assets/icons/trash.svg?component";
 import { DamageClass } from "@/graphql";
 import { getTypeGradient } from "@/lib";
 import { Type } from "@/data";
