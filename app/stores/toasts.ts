@@ -1,4 +1,4 @@
-import { defineStore, acceptHMRUpdate } from "pinia";
+import { defineStore } from "pinia";
 
 type Toast = {
   type: "success" | "error";
@@ -38,7 +38,3 @@ export const useToasts = defineStore("toasts", {
     },
   },
 });
-
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useToasts, import.meta.hot));
-}

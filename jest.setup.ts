@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import "@testing-library/jest-dom";
 import { config } from "@vue/test-utils";
-import { plugin, defaultConfig } from "@formkit/vue";
+import { plugin as createFormkit, defaultConfig } from "@formkit/vue";
+import { createTestingPinia } from "@pinia/testing";
 import customConfig from "./app/formkit.config";
 import { publicRuntimeConfig } from "./app/config";
 import { client } from "./app/lib/graphql-client";
@@ -32,7 +33,10 @@ config.global.stubs["NuxtLink"] = {
   template: `<a :href="to"><slot /></a>`,
 };
 
-config.global.plugins = [[plugin, defaultConfig(customConfig)]];
+config.global.plugins = [
+  [createFormkit, defaultConfig(customConfig)],
+  createTestingPinia(),
+];
 
 beforeAll(() => server.listen());
 
