@@ -1,0 +1,13 @@
+fragment teamMemberFields on TeamMember {
+  id
+  createdAt
+  updatedAt
+  slot
+  pokemon {
+    ...pokemonFields
+    species {
+      name
+      pokedexId
+    }
+  }
+}

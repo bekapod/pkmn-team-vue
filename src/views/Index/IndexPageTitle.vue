@@ -1,0 +1,1 @@
+<template>All teams</template>

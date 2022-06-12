@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const plugin = require("tailwindcss/plugin");
+/* eslint-env node */
 const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 
 const createCustomProperties = (theme, propertyName) => {
   const property = theme(propertyName);
@@ -22,23 +22,15 @@ const createCustomProperties = (theme, propertyName) => {
               property[name][subPropertyName],
           };
         },
-        {},
+        {}
       ),
     };
   }, {});
 };
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/components/**/*.{js,vue,ts}",
-    "./app/layouts/**/*.vue",
-    "./app/pages/**/*.vue",
-    "./app/plugins/**/*.{js,ts}",
-    "./app/app.vue",
-    "./app/formkit.config.ts",
-    "./.nuxt/**/*.template.mjs",
-    "./.storybook/**/*.html",
-  ],
+  content: ["./src/**/*.{js,vue,ts}", "./.storybook/**/*.html", "./index.html"],
   theme: {
     screens: {
       sm: `${440 / 16}em`,
@@ -193,11 +185,11 @@ module.exports = {
         4: "4",
         5: "5",
       },
-      fill: theme => ({
+      fill: (theme) => ({
         white: theme("colors.white"),
         "red-vivid": theme("colors.red-vivid"),
       }),
-      gridTemplateColumns: theme => ({
+      gridTemplateColumns: (theme) => ({
         md: `repeat(auto-fit, minmax(${theme("maxWidth.md")}, 1fr))`,
       }),
     },

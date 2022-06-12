@@ -1,5 +1,0 @@
-query TeamById($id: ID!) {
-  teamById(id: $id) {
-    ...teamFields
-  }
-}

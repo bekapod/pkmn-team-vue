@@ -1,55 +1,145 @@
-name: deploy
-
+name: 🚀 Deploy
 on:
-  workflow_dispatch:
-  workflow_run:
-    workflows: [check]
-    types: [completed]
-    branches: [main]
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+permissions:
+  actions: write
+  contents: read
 
 jobs:
-  on-failure:
+  lint:
+    name: ⬣ ESLint
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-      - run: echo 'The triggering workflow failed'
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
 
-  on-success:
-    runs-on: ${{ matrix.os }}
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [16]
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🔬 Lint
+        run: npm run lint
+
+  typecheck:
+    name: ʦ TypeScript
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v1
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
         with:
-          node-version: ${{ matrix.node }}
+          access_token: ${{ github.token }}
 
-      - name: Checkout
-        uses: actions/checkout@master
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Cache node_modules
-        uses: actions/cache@v2
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
         with:
-          path: node_modules
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
+          node-version: 16
 
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
 
-      - name: Build
-        run: npm run build
+      - name: 🔎 Type check
+        run: npm run type-check --if-present
+
+  vitest:
+    name: ⚡ Vitest
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: ⚡ Run vitest
+        run: npm run test:unit -- --coverage
+
+  cypress:
+    name: ⚫️ Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🌳 Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          record: false
+          build: npm run build
+          start: npm run preview
+          wait-on: "http://localhost:4173"
         env:
-          GRAPHQL_ENDPOINT: https://pkmn-team.graphcdn.app
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          PORT: "4173"
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Publish to Cloudflare
-        uses: cloudflare/wrangler-action@1.3.0
+  chromatic:
+    name: 📚 Publish to Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-        env:
-          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+          access_token: ${{ github.token }}
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 📚 Build and publish Storybook
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: "build-storybook"
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+          autoAcceptChanges: "main"

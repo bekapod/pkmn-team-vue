@@ -1,8 +1,14 @@
 {
-  // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "types": ["jest", "@testing-library/jest-dom", "@pinia/nuxt"],
-    "strict": true
-  }
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ]
 }

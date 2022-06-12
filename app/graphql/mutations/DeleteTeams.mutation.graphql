@@ -1,5 +1,0 @@
-mutation DeleteTeams($ids: [ID!]!) {
-  deleteTeams(ids: $ids) {
-    ...teamFields
-  }
-}

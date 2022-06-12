@@ -1,0 +1,5 @@
+mutation CreateTeam($input: CreateTeamInput!) {
+  createTeam(createTeamInput: $input) {
+    ...teamFields
+  }
+}

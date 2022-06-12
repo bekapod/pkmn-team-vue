@@ -1,0 +1,21 @@
+fragment pokemonSpeciesFields on PokemonSpecies {
+  id
+  name
+  slug
+  color
+  description
+  genus
+  habitat
+  isBaby
+  isLegendary
+  isMythical
+  pokedexId
+  shape
+  varieties {
+    edges {
+      node {
+        ...pokemonFields
+      }
+    }
+  }
+}

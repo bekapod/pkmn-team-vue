@@ -1,0 +1,12 @@
+fragment teamFields on Team {
+  id
+  name
+  createdAt
+  members {
+    edges {
+      node {
+        ...teamMemberFields
+      }
+    }
+  }
+}

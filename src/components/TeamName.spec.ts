@@ -1,0 +1,32 @@
+import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/vue";
+import TeamName from "./TeamName.vue";
+import { useTeam } from "@/stores";
+import { globalPlugins } from "@/test-helpers";
+
+const setup = ({ name, ...props } = { name: "" }) => {
+  const team = useTeam();
+  team.name = name;
+  return render(TeamName, {
+    props,
+    global: {
+      plugins: globalPlugins,
+    },
+  });
+};
+
+test("renders team name update button", () => {
+  setup({ name: "A team name!" });
+  expect(
+    screen.getByRole("button", { name: /a team name!/i })
+  ).toBeInTheDocument();
+});
+
+test("renders team name update form when button is clicked", async () => {
+  setup({ name: "A team name!" });
+  userEvent.click(screen.getByRole("button", { name: /a team name!/i }));
+  expect(await screen.findByRole("textbox", { name: "Team name" })).toHaveValue(
+    "A team name!"
+  );
+  expect(screen.getByRole("button", { name: "Update" })).toBeInTheDocument();
+});

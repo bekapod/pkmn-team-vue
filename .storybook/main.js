@@ -1,20 +1,13 @@
-const path = require("path");
+const { mergeConfig } = require("vite");
 const svgLoader = require("vite-svg-loader");
+const path = require("path");
 
 module.exports = {
-  stories: ["../app/**/*.stories.ts"],
-  staticDirs: ["../app/public"],
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-  ],
-  framework: "@storybook/vue3",
-  core: {
-    builder: "storybook-builder-vite",
-  },
-  addons: [
-    "@storybook/addon-essentials",
     "@storybook/addon-a11y",
     {
       name: "@storybook/addon-postcss",
@@ -28,51 +21,63 @@ module.exports = {
       },
     },
   ],
-  viteFinal(config) {
-    config.resolve.alias = {
-      ...(config.resolve.alias ?? {}),
-      "@/data": path.resolve(__dirname, "../app/data"),
-      "@/graphql": path.resolve(__dirname, "../app/graphql"),
-      "@/lib": path.resolve(__dirname, "../app/lib"),
-      "@/mocks/browser": path.resolve(__dirname, "../app/mocks/browser"),
-      "@/stores": path.resolve(__dirname, "../app/stores"),
-      ...[
-        "sad",
-        "search-alt",
-        "happy-beaming",
-        "meh-blank",
-        "bell",
-        "trash",
-        "x",
-        "menu",
-        "pencil",
-      ].reduce((icons, name) => {
-        return {
-          ...icons,
-          [`@/assets/icons/${name}.svg?component`]: path.resolve(
+  framework: "@storybook/vue3",
+  core: {
+    builder: "@storybook/builder-vite",
+  },
+  features: {
+    storyStoreV7: true,
+  },
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [
+        svgLoader({
+          svgoConfig: {
+            multipass: true,
+            plugins: [
+              "removeDimensions",
+              "convertStyleToAttrs",
+              {
+                name: "convertColors",
+                params: { currentColor: "rgba(0, 0, 0, 1)" },
+              },
+            ],
+          },
+        }),
+      ],
+      resolve: {
+        alias: {
+          ...(config.resolve.alias ?? {}),
+          "@/components": path.resolve(__dirname, "../src/components"),
+          "@/data": path.resolve(__dirname, "../src/data"),
+          "@/formkit.config": path.resolve(
             __dirname,
-            `../app/assets/icons/${name}.svg`,
+            "../src/formkit.config.ts"
           ),
-        };
-      }, {}),
-    };
-
-    config.plugins = [
-      ...config.plugins,
-      svgLoader({
-        svgoConfig: {
-          multipass: true,
-          plugins: [
-            "removeDimensions",
-            "convertStyleToAttrs",
-            {
-              name: "convertColors",
-              params: { currentColor: "rgba(0, 0, 0, 1)" },
-            },
-          ],
+          "@/graphql": path.resolve(__dirname, "../src/graphql"),
+          "@/lib": path.resolve(__dirname, "../src/lib"),
+          "@/stores": path.resolve(__dirname, "../src/stores"),
+          ...[
+            "sad",
+            "search-alt",
+            "happy-beaming",
+            "meh-blank",
+            "bell",
+            "trash",
+            "x",
+            "menu",
+            "pencil",
+          ].reduce((icons, name) => {
+            return {
+              ...icons,
+              [`@/assets/icons/${name}.svg`]: path.resolve(
+                __dirname,
+                `../src/assets/icons/${name}.svg`
+              ),
+            };
+          }, {}),
         },
-      }),
-    ];
-    return config;
+      },
+    });
   },
 };

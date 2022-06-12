@@ -1,5 +1,0 @@
-mutation CreateTeam($name: String!) {
-  createTeam(input: { name: $name }) {
-    ...teamFields
-  }
-}

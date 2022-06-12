@@ -6,7 +6,7 @@ module.exports = {
   extensions: {
     codegen: {
       generates: {
-        "./app/graphql/index.ts": {
+        "./src/graphql/index.ts": {
           plugins: [
             "@graphql-codegen/typescript",
             "@graphql-codegen/typescript-operations",
