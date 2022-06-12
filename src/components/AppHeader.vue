@@ -71,15 +71,17 @@
               <Menu as="div" class="relative ml-3 flex-shrink-0">
                 <div>
                   <MenuButton
-                    class="flex rounded-full bg-indigo-700 text-sm text-white"
+                    class="flex rounded-full bg-indigo-700 text-sm text-indigo-300 hover:text-white"
                   >
                     <span class="sr-only">Open user menu</span>
                     <img
+                      v-if="me.id"
                       class="h-8 w-8 rounded-full"
-                      :src="user.imageUrl"
+                      :src="me.picture"
                       alt=""
                       lazy="true"
                     />
+                    <UserCircleIcon class="h-8 w-8" v-else />
                   </MenuButton>
                 </div>
                 <transition
@@ -93,20 +95,29 @@
                   <MenuItems
                     class="absolute right-0 mt-2 w-48 origin-top-right rounded-tl-md rounded-br-md bg-white py-1 shadow-lg"
                   >
-                    <MenuItem
-                      v-for="item in userNavigation"
-                      :key="item.name"
-                      v-slot="{ active }"
-                    >
-                      <a
-                        :href="item.href"
+                    <MenuItem v-if="!me.id" v-slot="{ active }">
+                      <button
+                        type="button"
                         :class="[
                           active ? 'bg-yellow-vivid-100' : '',
-                          'block py-2 px-4 text-sm text-cool-grey-700',
+                          'block w-full py-2 px-4 text-left text-sm text-cool-grey-700',
                         ]"
+                        @click="login"
                       >
-                        {{ item.name }}
-                      </a>
+                        Login
+                      </button>
+                    </MenuItem>
+                    <MenuItem v-if="me.id" v-slot="{ active }">
+                      <button
+                        type="button"
+                        :class="[
+                          active ? 'bg-yellow-vivid-100' : '',
+                          'block w-full py-2 px-4 text-left text-sm text-cool-grey-700',
+                        ]"
+                        @click="logout"
+                      >
+                        Logout
+                      </button>
                     </MenuItem>
                   </MenuItems>
                 </transition>
@@ -132,14 +143,20 @@
         <div class="border-t border-indigo-800 pt-4 pb-3">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" />
+              <img
+                v-if="me.id"
+                class="h-10 w-10 rounded-full"
+                :src="me.picture"
+                alt=""
+              />
+              <UserCircleIcon class="h-10 w-10 text-white" v-else />
             </div>
             <div class="ml-3">
               <div class="text-base font-medium text-white">
-                {{ user.name }}
+                {{ me.username ?? "Anonymous" }}
               </div>
               <div class="text-sm font-medium text-indigo-400">
-                {{ user.email }}
+                {{ me.id ? "Trainer" : "Visiting trainer" }}
               </div>
             </div>
             <button
@@ -152,13 +169,22 @@
           </div>
           <div class="mt-3 space-y-1 px-2">
             <DisclosureButton
-              v-for="item in userNavigation"
-              :key="item.name"
-              as="a"
-              :href="item.href"
-              class="block rounded-tl-md rounded-br-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-600 hover:bg-opacity-75"
+              v-if="!me.id"
+              as="button"
+              type="button"
+              class="block w-full rounded-tl-md rounded-br-md py-2 px-3 text-left text-base font-medium text-white hover:bg-indigo-600 hover:bg-opacity-75"
+              @click="login"
             >
-              {{ item.name }}
+              Login
+            </DisclosureButton>
+            <DisclosureButton
+              v-if="me.id"
+              as="button"
+              type="button"
+              class="block w-full rounded-tl-md rounded-br-md py-2 px-3 text-left text-base font-medium text-white hover:bg-indigo-600 hover:bg-opacity-75"
+              @click="logout"
+            >
+              Logout
             </DisclosureButton>
           </div>
         </div>
@@ -176,12 +202,13 @@
     </header>
   </div>
 
-  <Teleport v-if="isMounted" to="#toast-teleport-target">
+  <Teleport to="#toast-teleport-target">
     <ToastContainer />
   </Teleport>
 </template>
 
 <script setup lang="ts">
+import { useAuth0 } from "@auth0/auth0-vue";
 import {
   Disclosure,
   DisclosureButton,
@@ -191,22 +218,51 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import { ref, onMounted } from "vue";
+import { ref, watch } from "vue";
 import { RouterLink } from "vue-router";
 import PokeBall from "./PokeBall.vue";
 import ToastContainer from "./ToastContainer.vue";
 import BellIcon from "@/assets/icons/bell.svg";
 import MenuIcon from "@/assets/icons/menu.svg";
 import SearchAltIcon from "@/assets/icons/search-alt.svg";
+import UserCircleIcon from "@/assets/icons/user-circle.svg";
 import XIcon from "@/assets/icons/x.svg";
+import { useToasts, useTrainer } from "@/stores";
 
-const isMounted = ref(false);
+const toasts = useToasts();
 
-const user = {
-  name: "Ash Ketchum",
-  email: "ash@example.com",
-  imageUrl:
-    "https://img.search.brave.com/2PHuqlwRKOiydkzclVzCt8oinsuaTWtitP_tW68YeV0/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUFUWEFKekstckVp/bEltY1VOQ3FkS2NV/NjVjaTlBNzRwWmVO/Nzl5cjRRPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v",
+const {
+  error,
+  loginWithRedirect: login,
+  logout: originalLogout,
+  isAuthenticated,
+  getAccessTokenSilently,
+} = useAuth0();
+
+const me = useTrainer();
+
+watch(
+  isAuthenticated,
+  async (value) => {
+    console.log({ value });
+    if (value) {
+      const token = await getAccessTokenSilently();
+      me.getMe(token);
+    }
+  },
+  { immediate: true }
+);
+
+if (error.value) {
+  toasts.addToast({
+    type: "error",
+    title: "Error",
+    content: "An unexpected error happened. Please try logging in/out again.",
+  });
+}
+
+const logout = () => {
+  originalLogout({ returnTo: window.location.origin });
 };
 
 const navigation = ref([
@@ -216,14 +272,4 @@ const navigation = ref([
     href: "/team/123",
   },
 ]);
-
-const userNavigation = [
-  { name: "My Teams", href: "/" },
-  { name: "Settings", href: "/" },
-  { name: "Sign out", href: "/" },
-];
-
-onMounted(() => {
-  isMounted.value = true;
-});
 </script>

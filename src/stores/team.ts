@@ -89,7 +89,7 @@ export const useTeam = defineStore("team", {
         return { error: "Team has not been set", data: null };
       }
     },
-    async createTeam(name: string) {
+    async createTeam(name: string, token: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -106,26 +106,37 @@ export const useTeam = defineStore("team", {
       toasts.removeToast(errorToast);
       toasts.removeToast(successToast);
 
-      try {
-        const data = await getSdk(client).CreateTeam({
-          input: {
-            name: name,
-            members: [],
-          },
-        });
-        const parsed = parseTeam(data.createTeam);
-        this.$state = parsed;
-        toasts.addToast(successToast);
-        return { error: null, data: parsed };
-      } catch (error) {
-        Sentry.captureException(error, {
+      if (token) {
+        try {
+          const data = await getSdk(client).CreateTeam(
+            {
+              input: {
+                name: name,
+                members: [],
+              },
+            },
+            { token }
+          );
+          const parsed = parseTeam(data.createTeam);
+          this.$state = parsed;
+          toasts.addToast(successToast);
+          return { error: null, data: parsed };
+        } catch (error) {
+          Sentry.captureException(error, {
+            level: "error",
+            extra: {
+              name,
+            },
+          });
+          toasts.addToast(errorToast);
+          return { error, data: null };
+        }
+      } else {
+        Sentry.captureMessage("Tried to create team without a token.", {
           level: "error",
-          extra: {
-            name,
-          },
         });
         toasts.addToast(errorToast);
-        return { error, data: null };
+        return { error: "No token was provided", data: null };
       }
     },
     async removeTeam() {

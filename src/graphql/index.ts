@@ -1772,6 +1772,13 @@ export type TeamMemberFieldsFragment = {
   };
 };
 
+export type TrainerFieldsFragment = {
+  __typename?: "Trainer";
+  id: string;
+  username: string;
+  picture?: string | null;
+};
+
 export type TypeFieldsFragment = {
   __typename?: "Type";
   id: string;
@@ -2525,6 +2532,18 @@ export type AllTeamsQuery = {
   };
 };
 
+export type MeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type MeQuery = {
+  __typename?: "Query";
+  me?: {
+    __typename?: "Trainer";
+    id: string;
+    username: string;
+    picture?: string | null;
+  } | null;
+};
+
 export type TeamByIdQueryVariables = Exact<{
   id: Scalars["ID"];
 }>;
@@ -2926,6 +2945,13 @@ export const TeamFieldsFragmentDoc = gql`
   }
   ${TeamMemberFieldsFragmentDoc}
 `;
+export const TrainerFieldsFragmentDoc = gql`
+  fragment trainerFields on Trainer {
+    id
+    username
+    picture
+  }
+`;
 export const CreateTeamDocument = gql`
   mutation CreateTeam($input: CreateTeamInput!) {
     createTeam(createTeamInput: $input) {
@@ -2961,6 +2987,15 @@ export const AllTeamsDocument = gql`
     }
   }
   ${TeamFieldsFragmentDoc}
+`;
+export const MeDocument = gql`
+  query Me {
+    me {
+      id
+      username
+      picture
+    }
+  }
 `;
 export const TeamByIdDocument = gql`
   query TeamById($id: ID!) {
@@ -3013,6 +3048,13 @@ export function getSdk<C>(requester: Requester<C>) {
     ): Promise<AllTeamsQuery> {
       return requester<AllTeamsQuery, AllTeamsQueryVariables>(
         AllTeamsDocument,
+        variables,
+        options
+      );
+    },
+    Me(variables?: MeQueryVariables, options?: C): Promise<MeQuery> {
+      return requester<MeQuery, MeQueryVariables>(
+        MeDocument,
         variables,
         options
       );

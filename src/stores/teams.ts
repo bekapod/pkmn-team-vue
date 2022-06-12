@@ -15,7 +15,6 @@ export const useTeams = defineStore("teams", {
         const data = await getSdk(client).AllTeams();
         const parsedTeams =
           data.teams.edges?.map((team) => parseTeam(team.node)) ?? [];
-        this.$state.list = parsedTeams;
         this.list = parsedTeams;
 
         return { error: null, data: parsedTeams };

@@ -27,7 +27,7 @@
 
     <FormKit
       type="submit"
-      :config="{ disabled: isSubmitting }"
+      :config="{ disabled: isSubmitting || !isAuthenticated }"
       input-class="relative"
     >
       <span :class="{ invisible: isSlowLoading }">Create team</span>
@@ -42,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+import { useAuth0 } from "@auth0/auth0-vue";
 import { ref, computed } from "vue";
 import type { Team } from "@/data";
 import type { FormKitGroupValue } from "@formkit/core";
@@ -51,6 +52,7 @@ const emit = defineEmits<{
   (e: "team-created", team: Team): void;
 }>();
 
+const { isAuthenticated, getAccessTokenSilently } = useAuth0();
 const team = useTeam();
 const isSubmitting = ref(false);
 const timeTaken = ref(0);
@@ -62,7 +64,11 @@ const submitHandler = async (formData: FormKitGroupValue) => {
   timer = window.setInterval(() => {
     timeTaken.value += 1;
   }, 1000);
-  const { data } = await team.createTeam(formData["team-name"] as string);
+  const token = await getAccessTokenSilently();
+  const { data } = await team.createTeam(
+    formData["team-name"] as string,
+    token
+  );
 
   window.clearInterval(timer);
   timeTaken.value = 0;

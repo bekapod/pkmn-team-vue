@@ -1,3 +1,4 @@
+import { createAuth0 } from "@auth0/auth0-vue";
 import { plugin, defaultConfig } from "@formkit/vue";
 import { BrowserTracing } from "@sentry/tracing";
 import * as Sentry from "@sentry/vue";
@@ -22,7 +23,14 @@ Sentry.init({
   ],
   tracesSampleRate: 1.0,
 });
-
+app.use(
+  createAuth0({
+    domain: import.meta.env.VITE_AUTH0_DOMAIN,
+    client_id: import.meta.env.VITE_AUTH0_CLIENT_ID,
+    audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+    redirect_uri: window.location.origin,
+  })
+);
 app.use(createPinia());
 app.use(plugin, defaultConfig({ config: formkitConfig }));
 app.use(router);
