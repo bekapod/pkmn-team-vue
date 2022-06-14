@@ -1,5 +1,5 @@
-import type { Maybe, TrainerFieldsFragment } from "@/graphql";
 import { z } from "zod";
+import type { Maybe, TrainerFieldsFragment } from "@/graphql";
 
 export const Trainer = z.object({
   id: z.string(),

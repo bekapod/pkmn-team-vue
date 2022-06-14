@@ -1,5 +1,5 @@
 import { userEvent, screen } from "@storybook/testing-library";
-import { graphql, rest } from "msw";
+import { graphql } from "msw";
 import TeamCreator from "./TeamCreator.vue";
 import ToastContainer from "./ToastContainer.vue";
 import type { Meta, Story } from "@storybook/vue3";

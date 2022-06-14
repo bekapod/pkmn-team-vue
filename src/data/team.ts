@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { TeamMember } from "./team-member";
-import type { Maybe, TeamFieldsFragment } from "@/graphql";
 import { parseTrainer, Trainer } from "./trainer";
+import type { Maybe, TeamFieldsFragment } from "@/graphql";
 
 export const Team = z.object({
   id: z.string(),

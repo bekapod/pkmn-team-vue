@@ -1,11 +1,11 @@
 import * as Sentry from "@sentry/vue";
 import { defineStore } from "pinia";
 import { useToasts } from "./toasts";
+import { useTrainer } from "./trainer";
 import type { Team } from "@/data";
 import { parseTeam } from "@/data";
 import { getSdk } from "@/graphql";
 import { client } from "@/lib";
-import { useTrainer } from "./trainer";
 
 export const useTeam = defineStore("team", {
   state: () => {

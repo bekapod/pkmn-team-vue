@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { useAuth0 } from "@auth0/auth0-vue";
 import userEvent from "@testing-library/user-event";
 import { render, within, screen, waitFor } from "@testing-library/vue";
 import AppHeader from "./AppHeader.vue";
-import { globalPlugins } from "@/test-helpers";
-import { useAuth0 } from "@auth0/auth0-vue";
-import type { MockedFunction, Vitest } from "vitest";
+import type { MockedFunction } from "vitest";
 import { useTrainer } from "@/stores";
+import { globalPlugins } from "@/test-helpers";
 
 vitest.mock("@auth0/auth0-vue", () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { ref } = require("vue");
   return {
     useAuth0: vitest.fn().mockReturnValue({
@@ -124,7 +125,9 @@ describe("when logged in", () => {
     me.id = "TRA123";
     me.username = "example";
     me.picture = "https://example.com/picture.png";
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { ref } = require("vue");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (useAuth0 as MockedFunction<any>).mockReturnValue({
       loginWithRedirect: vitest.fn(),
       logout: vitest.fn(),
