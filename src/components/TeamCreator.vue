@@ -44,6 +44,7 @@
 <script setup lang="ts">
 import { useAuth0 } from "@auth0/auth0-vue";
 import { ref, computed, type PropType } from "vue";
+import { useRouter } from "vue-router";
 import type { Team } from "@/data";
 import type { FormKitGroupValue } from "@formkit/core";
 import { useTeam, useTrainer } from "@/stores";
@@ -59,6 +60,7 @@ const props = defineProps({
   },
 });
 
+const router = useRouter();
 const { getAccessTokenSilently } = useAuth0();
 const me = useTrainer();
 const team = useTeam();
@@ -81,12 +83,13 @@ const submitHandler = async (formData: FormKitGroupValue) => {
     token
   );
 
-  if (data) {
-    emit("team-created", data);
-  }
-
   window.clearInterval(timer);
   timeTaken.value = 0;
   isSubmitting.value = false;
+
+  if (data) {
+    emit("team-created", data);
+    router.push(`/team/${data.id}`);
+  }
 };
 </script>
