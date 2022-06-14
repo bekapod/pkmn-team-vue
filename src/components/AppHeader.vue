@@ -244,9 +244,8 @@ const me = useTrainer();
 watch(
   isAuthenticated,
   async (value) => {
-    console.log({ value });
     if (value) {
-      const token = await getAccessTokenSilently();
+      const token = await getAccessTokenSilently().catch(() => "");
       me.getMe(token);
     }
   },

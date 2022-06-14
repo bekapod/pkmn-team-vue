@@ -1467,6 +1467,12 @@ export type TeamFieldsFragment = {
   id: string;
   name: string;
   createdAt: any;
+  createdBy: {
+    __typename?: "Trainer";
+    id: string;
+    username: string;
+    picture?: string | null;
+  };
   members: {
     __typename?: "TeamMemberConnection";
     edges?: Array<{
@@ -1847,6 +1853,12 @@ export type CreateTeamMutation = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2020,6 +2032,12 @@ export type RemoveTeamMutation = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2193,6 +2211,12 @@ export type UpdateTeamMutation = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2368,6 +2392,12 @@ export type AllTeamsQuery = {
         id: string;
         name: string;
         createdAt: any;
+        createdBy: {
+          __typename?: "Trainer";
+          id: string;
+          username: string;
+          picture?: string | null;
+        };
         members: {
           __typename?: "TeamMemberConnection";
           edges?: Array<{
@@ -2555,6 +2585,12 @@ export type TeamByIdQuery = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2914,6 +2950,13 @@ export const PokemonSpeciesFieldsFragmentDoc = gql`
   }
   ${PokemonFieldsFragmentDoc}
 `;
+export const TrainerFieldsFragmentDoc = gql`
+  fragment trainerFields on Trainer {
+    id
+    username
+    picture
+  }
+`;
 export const TeamMemberFieldsFragmentDoc = gql`
   fragment teamMemberFields on TeamMember {
     id
@@ -2935,6 +2978,9 @@ export const TeamFieldsFragmentDoc = gql`
     id
     name
     createdAt
+    createdBy {
+      ...trainerFields
+    }
     members {
       edges {
         node {
@@ -2943,14 +2989,8 @@ export const TeamFieldsFragmentDoc = gql`
       }
     }
   }
+  ${TrainerFieldsFragmentDoc}
   ${TeamMemberFieldsFragmentDoc}
-`;
-export const TrainerFieldsFragmentDoc = gql`
-  fragment trainerFields on Trainer {
-    id
-    username
-    picture
-  }
 `;
 export const CreateTeamDocument = gql`
   mutation CreateTeam($input: CreateTeamInput!) {

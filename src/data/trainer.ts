@@ -14,6 +14,6 @@ export const parseTrainer = (
   return Trainer.parse({
     id: trainer?.id,
     username: trainer?.username,
-    picture: trainer?.picture,
+    picture: trainer?.picture ?? undefined,
   });
 };

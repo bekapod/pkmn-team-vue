@@ -1,11 +1,13 @@
 import { z } from "zod";
 import { TeamMember } from "./team-member";
 import type { Maybe, TeamFieldsFragment } from "@/graphql";
+import { parseTrainer, Trainer } from "./trainer";
 
 export const Team = z.object({
   id: z.string(),
   name: z.string(),
   createdAt: z.string(),
+  createdBy: Trainer,
   members: z.array(TeamMember),
 });
 export type Team = z.infer<typeof Team>;
@@ -17,6 +19,7 @@ export const parseTeam = (
     id: team?.id,
     name: team?.name ?? "",
     createdAt: team?.createdAt ?? "",
+    createdBy: parseTrainer(team?.createdBy),
     members: team?.members?.edges?.map((member) => ({
       id: member?.node?.id,
       pokemon: {

@@ -3,6 +3,21 @@ import userEvent from "@testing-library/user-event";
 import { render, within, screen, waitFor } from "@testing-library/vue";
 import AppHeader from "./AppHeader.vue";
 import { globalPlugins } from "@/test-helpers";
+import { useAuth0 } from "@auth0/auth0-vue";
+import type { MockedFunction, Vitest } from "vitest";
+import { useTrainer } from "@/stores";
+
+vitest.mock("@auth0/auth0-vue", () => {
+  const { ref } = require("vue");
+  return {
+    useAuth0: vitest.fn().mockReturnValue({
+      loginWithRedirect: vitest.fn(),
+      logout: vitest.fn(),
+      isAuthenticated: ref(false),
+      error: ref(null),
+    }),
+  };
+});
 
 const setup = (props = {}) =>
   render(AppHeader, {
@@ -49,8 +64,8 @@ test("it toggles main menu when button is clicked", async () => {
   ).toBeInTheDocument();
   expect(
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    within(container.querySelector(`#${menuId}`)!).getByRole("link", {
-      name: "My Teams",
+    within(container.querySelector(`#${menuId}`)!).getByRole("button", {
+      name: "Login",
     })
   ).toBeInTheDocument();
 
@@ -81,7 +96,7 @@ test("it toggles user menu when button is clicked", async () => {
   expect(
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     within(container.querySelector(`#${menuId}`)!).getByRole("menuitem", {
-      name: "My Teams",
+      name: "Login",
     })
   ).toBeInTheDocument();
 
@@ -101,4 +116,33 @@ test("it renders menu links", () => {
   expect(
     screen.getByRole("link", { name: "Team Builder" })
   ).toBeInTheDocument();
+});
+
+describe("when logged in", () => {
+  test("it renders user details & logout", async () => {
+    const me = useTrainer();
+    me.id = "TRA123";
+    me.username = "example";
+    me.picture = "https://example.com/picture.png";
+    const { ref } = require("vue");
+    (useAuth0 as MockedFunction<any>).mockReturnValue({
+      loginWithRedirect: vitest.fn(),
+      logout: vitest.fn(),
+      isAuthenticated: ref(false),
+      error: ref(null),
+    });
+    setup();
+    userEvent.click(screen.getByRole("button", { name: "Open main menu" }));
+
+    await waitFor(() =>
+      expect(
+        screen
+          .getByRole("button", { name: "Open main menu" })
+          .getAttribute("aria-controls")
+      ).not.toBeNull()
+    );
+
+    expect(screen.getByText("example")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Logout" })).toBeInTheDocument();
+  });
 });

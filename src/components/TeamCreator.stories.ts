@@ -1,15 +1,24 @@
 import { userEvent, screen } from "@storybook/testing-library";
-import { graphql } from "msw";
+import { graphql, rest } from "msw";
 import TeamCreator from "./TeamCreator.vue";
 import ToastContainer from "./ToastContainer.vue";
 import type { Meta, Story } from "@storybook/vue3";
+import { useTrainer } from "@/stores";
 
 const csf: Meta = {
   component: TeamCreator,
+  args: {
+    authTimeout: 0.5,
+  },
   argTypes: {
     teamCreated: { action: "@team-created" },
   },
   decorators: [
+    (story) => {
+      const trainer = useTrainer();
+      trainer.id = "TRA123";
+      return story();
+    },
     (story) => ({
       components: { ToastContainer, story },
       template: `
@@ -48,6 +57,12 @@ DefaultBehaviour.parameters = {
               members: {
                 edges: [],
               },
+              createdBy: {
+                __typename: "Trainer",
+                id: "TRA123",
+                username: "A user",
+                picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
+              },
             },
           })
         );
@@ -62,6 +77,7 @@ DefaultBehaviour.play = async () => {
     { delay: 100 }
   );
   await userEvent.click(screen.getByRole("button", { name: "Create team" }));
+  await screen.findByText("Team created!");
 };
 
 export const InvalidState = Template.bind({});
@@ -112,6 +128,7 @@ ErrorState.play = async () => {
     { delay: 100 }
   );
   await userEvent.click(screen.getByRole("button", { name: "Create team" }));
+  await screen.findByText("Error");
 };
 
 export default csf;
