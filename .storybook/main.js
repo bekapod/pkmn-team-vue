@@ -67,6 +67,7 @@ module.exports = {
             "x",
             "menu",
             "pencil",
+            "user-circle",
           ].reduce((icons, name) => {
             return {
               ...icons,

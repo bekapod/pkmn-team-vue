@@ -17,7 +17,12 @@ export const Default: Story = () => ({
   template: "<AppHeader />",
 });
 
-export const AppHeaderWithForm: Story = ({ teamCreated, ...args }) => ({
+export const LoggedIn: Story = () => ({
+  components: { AppHeader },
+  template: "<AppHeader />",
+});
+
+export const WithForm: Story = ({ teamCreated, ...args }) => ({
   components: { AppHeader, TeamCreator },
   setup() {
     return { args, teamCreated };

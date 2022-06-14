@@ -1467,6 +1467,12 @@ export type TeamFieldsFragment = {
   id: string;
   name: string;
   createdAt: any;
+  createdBy: {
+    __typename?: "Trainer";
+    id: string;
+    username: string;
+    picture?: string | null;
+  };
   members: {
     __typename?: "TeamMemberConnection";
     edges?: Array<{
@@ -1772,6 +1778,13 @@ export type TeamMemberFieldsFragment = {
   };
 };
 
+export type TrainerFieldsFragment = {
+  __typename?: "Trainer";
+  id: string;
+  username: string;
+  picture?: string | null;
+};
+
 export type TypeFieldsFragment = {
   __typename?: "Type";
   id: string;
@@ -1840,6 +1853,12 @@ export type CreateTeamMutation = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2013,6 +2032,12 @@ export type RemoveTeamMutation = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2186,6 +2211,12 @@ export type UpdateTeamMutation = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2361,6 +2392,12 @@ export type AllTeamsQuery = {
         id: string;
         name: string;
         createdAt: any;
+        createdBy: {
+          __typename?: "Trainer";
+          id: string;
+          username: string;
+          picture?: string | null;
+        };
         members: {
           __typename?: "TeamMemberConnection";
           edges?: Array<{
@@ -2525,6 +2562,18 @@ export type AllTeamsQuery = {
   };
 };
 
+export type MeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type MeQuery = {
+  __typename?: "Query";
+  me?: {
+    __typename?: "Trainer";
+    id: string;
+    username: string;
+    picture?: string | null;
+  } | null;
+};
+
 export type TeamByIdQueryVariables = Exact<{
   id: Scalars["ID"];
 }>;
@@ -2536,6 +2585,12 @@ export type TeamByIdQuery = {
     id: string;
     name: string;
     createdAt: any;
+    createdBy: {
+      __typename?: "Trainer";
+      id: string;
+      username: string;
+      picture?: string | null;
+    };
     members: {
       __typename?: "TeamMemberConnection";
       edges?: Array<{
@@ -2895,6 +2950,13 @@ export const PokemonSpeciesFieldsFragmentDoc = gql`
   }
   ${PokemonFieldsFragmentDoc}
 `;
+export const TrainerFieldsFragmentDoc = gql`
+  fragment trainerFields on Trainer {
+    id
+    username
+    picture
+  }
+`;
 export const TeamMemberFieldsFragmentDoc = gql`
   fragment teamMemberFields on TeamMember {
     id
@@ -2916,6 +2978,9 @@ export const TeamFieldsFragmentDoc = gql`
     id
     name
     createdAt
+    createdBy {
+      ...trainerFields
+    }
     members {
       edges {
         node {
@@ -2924,6 +2989,7 @@ export const TeamFieldsFragmentDoc = gql`
       }
     }
   }
+  ${TrainerFieldsFragmentDoc}
   ${TeamMemberFieldsFragmentDoc}
 `;
 export const CreateTeamDocument = gql`
@@ -2961,6 +3027,15 @@ export const AllTeamsDocument = gql`
     }
   }
   ${TeamFieldsFragmentDoc}
+`;
+export const MeDocument = gql`
+  query Me {
+    me {
+      id
+      username
+      picture
+    }
+  }
 `;
 export const TeamByIdDocument = gql`
   query TeamById($id: ID!) {
@@ -3013,6 +3088,13 @@ export function getSdk<C>(requester: Requester<C>) {
     ): Promise<AllTeamsQuery> {
       return requester<AllTeamsQuery, AllTeamsQueryVariables>(
         AllTeamsDocument,
+        variables,
+        options
+      );
+    },
+    Me(variables?: MeQueryVariables, options?: C): Promise<MeQuery> {
+      return requester<MeQuery, MeQueryVariables>(
+        MeDocument,
         variables,
         options
       );

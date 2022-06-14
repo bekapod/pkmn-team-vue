@@ -1,6 +1,18 @@
 import { graphql } from "msw";
 
 export const handlers = [
+  graphql.query("Me", (req, res, ctx) => {
+    return res(
+      ctx.data({
+        me: {
+          __typename: "Trainer",
+          id: "TRA123",
+          username: "A user",
+          picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
+        },
+      })
+    );
+  }),
   graphql.query("TeamById", (req, res, ctx) => {
     return res(
       ctx.data({
@@ -12,6 +24,12 @@ export const handlers = [
           updatedAt: new Date(Date.now()).toISOString(),
           members: {
             edges: [],
+          },
+          createdBy: {
+            __typename: "Trainer",
+            id: "TRA123",
+            username: "A user",
+            picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
           },
         },
       })
@@ -29,6 +47,12 @@ export const handlers = [
           members: {
             edges: [],
           },
+          createdBy: {
+            __typename: "Trainer",
+            id: "TRA123",
+            username: "A user",
+            picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
+          },
         },
       })
     );
@@ -44,6 +68,12 @@ export const handlers = [
           updatedAt: new Date(Date.now()).toISOString(),
           members: {
             edges: [],
+          },
+          createdBy: {
+            __typename: "Trainer",
+            id: "TRA123",
+            username: "A user",
+            picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
           },
         },
       })

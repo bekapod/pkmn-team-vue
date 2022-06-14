@@ -2,6 +2,9 @@ fragment teamFields on Team {
   id
   name
   createdAt
+  createdBy {
+    ...trainerFields
+  }
   members {
     edges {
       node {

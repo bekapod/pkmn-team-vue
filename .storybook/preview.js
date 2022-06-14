@@ -1,3 +1,4 @@
+import { createAuth0 } from "@auth0/auth0-vue";
 import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { plugin as formkitPlugin, defaultConfig } from "@formkit/vue";
@@ -14,6 +15,15 @@ const pinia = createPinia();
 app.use(pinia);
 
 app.use(formkitPlugin, defaultConfig({ config: formkitConfig }));
+
+app.use(
+  createAuth0({
+    domain: "https://example.com",
+    client_id: "test",
+    audience: "https://example.com",
+    redirect_uri: window.location.origin,
+  })
+);
 
 export const decorators = [
   mswDecorator,

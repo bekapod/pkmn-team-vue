@@ -3,18 +3,24 @@ import { graphql } from "msw";
 import TeamName from "./TeamName.vue";
 import ToastContainer from "./ToastContainer.vue";
 import type { Meta, Story } from "@storybook/vue3";
-import { useTeam } from "@/stores";
+import { useTeam, useTrainer } from "@/stores";
 
 const csf: Meta = {
   component: TeamName,
+  args: {
+    authTimeout: 0.5,
+  },
   argTypes: {
     teamRenamed: { action: "@team-renamed" },
   },
   decorators: [
     (story) => {
+      const trainer = useTrainer();
+      trainer.id = "TRA123";
       const team = useTeam();
       team.id = "1";
       team.name = "A team name!";
+      team.createdBy = { id: "TRA123", username: "Some user" };
       return story();
     },
     (story) => ({
@@ -53,6 +59,12 @@ DefaultBehaviour.parameters = {
               updatedAt: new Date(Date.now()).toISOString(),
               members: {
                 edges: [],
+              },
+              createdBy: {
+                __typename: "Trainer",
+                id: "TRA123",
+                username: "A user",
+                picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
               },
             },
           })

@@ -11,13 +11,21 @@ class GraphQLError extends Error {
   }
 }
 
-export const client: Requester = (document, variables, options) => {
+type ClientConfig = {
+  token?: string;
+};
+
+export const client: Requester<ClientConfig> = (
+  document,
+  variables,
+  options = {}
+) => {
   return fetch(import.meta.env.VITE_GRAPHQL_ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      ...(options.token ? { Authorization: `Bearer ${options.token}` } : {}),
     },
-    ...options,
     body: JSON.stringify({
       query: print(document),
       variables,

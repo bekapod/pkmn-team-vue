@@ -1,0 +1,5 @@
+fragment trainerFields on Trainer {
+  id
+  username
+  picture
+}

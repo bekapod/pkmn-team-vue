@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center gap-5">
+  <div class="flex items-center justify-center gap-5" v-if="team.canEdit">
     <button
       type="button"
       class="button button--secondary py-2"
