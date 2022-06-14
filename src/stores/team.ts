@@ -144,7 +144,7 @@ export const useTeam = defineStore("team", {
         return { error, data: null };
       }
     },
-    async removeTeam() {
+    async removeTeam(token: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -163,9 +163,12 @@ export const useTeam = defineStore("team", {
 
       if (this.id) {
         try {
-          const data = await getSdk(client).RemoveTeam({
-            id: this.id,
-          });
+          const data = await getSdk(client).RemoveTeam(
+            {
+              id: this.id,
+            },
+            { token }
+          );
           const parsed = parseTeam(data.removeTeam);
           this.$state = parsed;
           toasts.addToast(successToast);
