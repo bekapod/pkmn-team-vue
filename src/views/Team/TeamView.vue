@@ -30,7 +30,7 @@ const props = defineProps({
 const team = useTeam();
 
 const fetch = async () => {
-  const res = await team.getTeam(props.id);
+  const res = await team.get(props.id);
   if (res.error) {
     error.value = res.error;
   }

@@ -53,7 +53,7 @@ const deleteHandler = async () => {
     timeTaken.value += 1;
   }, 1000);
   const token = await getAccessTokenSilently().catch(() => "");
-  await team.removeTeam(token);
+  await team.remove(token);
   window.clearInterval(timer);
   timeTaken.value = 0;
   isSubmitting.value = false;

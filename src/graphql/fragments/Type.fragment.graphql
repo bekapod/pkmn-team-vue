@@ -3,29 +3,3 @@ fragment typeFields on Type {
   name
   slug
 }
-
-fragment pokemonTypeFields on Type {
-  ...typeFields
-  noDamageFrom {
-    ...typeFields
-  }
-  halfDamageFrom {
-    ...typeFields
-  }
-  doubleDamageFrom {
-    ...typeFields
-  }
-}
-
-fragment moveTypeFields on Type {
-  ...typeFields
-  noDamageTo {
-    ...typeFields
-  }
-  halfDamageTo {
-    ...typeFields
-  }
-  doubleDamageTo {
-    ...typeFields
-  }
-}

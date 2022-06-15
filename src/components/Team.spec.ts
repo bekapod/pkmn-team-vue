@@ -1,12 +1,94 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen, within } from "@testing-library/vue";
+import { useTeam } from "@/stores";
+import {
+  charmander,
+  pikachu,
+  substitute,
+  flash,
+  haunter,
+  explosion,
+  rest,
+} from "@/data/mocks";
+import { MoveLearnMethod } from "@/graphql";
 import Meta from "./Team.stories";
 import Team from "./Team.vue";
+import { globalPlugins } from "@/test-helpers";
 
-const setup = (props = {}) =>
-  render(Team, {
+const setup = (props = {}) => {
+  const team = useTeam();
+  team.id = "1";
+  team.name = "A team name!";
+  team.members = [
+    {
+      id: "1",
+      slot: 1,
+      pokemon: charmander,
+    },
+    {
+      id: "2",
+      slot: 2,
+      pokemon: pikachu,
+      moves: [
+        {
+          id: "1",
+          slot: 1,
+          learnMethod: MoveLearnMethod.LevelUp,
+          levelLearnedAt: 0,
+          move: substitute,
+        },
+        {
+          id: "2",
+          slot: 2,
+          learnMethod: MoveLearnMethod.LevelUp,
+          levelLearnedAt: 0,
+          move: rest,
+        },
+        {
+          id: "3",
+          slot: 3,
+          learnMethod: MoveLearnMethod.LevelUp,
+          levelLearnedAt: 0,
+          move: flash,
+        },
+      ],
+    },
+    {
+      id: "3",
+      slot: 3,
+      pokemon: haunter,
+      moves: [
+        {
+          id: "4",
+          slot: 1,
+          learnMethod: MoveLearnMethod.LevelUp,
+          levelLearnedAt: 0,
+          move: substitute,
+        },
+        {
+          id: "5",
+          slot: 2,
+          learnMethod: MoveLearnMethod.LevelUp,
+          levelLearnedAt: 0,
+          move: rest,
+        },
+        {
+          id: "6",
+          slot: 3,
+          learnMethod: MoveLearnMethod.LevelUp,
+          levelLearnedAt: 0,
+          move: explosion,
+        },
+      ],
+    },
+  ];
+  return render(Team, {
     props: { ...Meta.args, ...props },
+    global: {
+      plugins: globalPlugins,
+    },
   });
+};
 
 test("renders the members", () => {
   setup();
@@ -56,9 +138,7 @@ test("emits remove-member event when remove button is clicked", () => {
   userEvent.click(
     screen.getAllByRole("button", { name: "Remove team member" })[1]
   );
-  expect(emitted()).toHaveProperty("remove-member", [
-    [Meta.args?.members?.[1]?.id],
-  ]);
+  expect(emitted()).toHaveProperty("remove-member", [["2"]]);
 });
 
 test("emits remove-move event when remove button on move is clicked", () => {
@@ -69,7 +149,5 @@ test("emits remove-move event when remove button on move is clicked", () => {
       name: "Remove move",
     })[2]
   );
-  expect(emitted()).toHaveProperty("remove-move", [
-    [Meta.args?.members?.[1]?.id, Meta.args?.members?.[1]?.moves?.[2]?.id],
-  ]);
+  expect(emitted()).toHaveProperty("remove-move", [["2", "3"]]);
 });

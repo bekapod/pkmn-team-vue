@@ -2,6 +2,7 @@ import { electric, fire, ghost, poison } from "./types";
 import type { Pokemon } from "../pokemon";
 
 export const charmander: Pokemon = {
+  id: "POK1",
   name: "Charmander",
   pokedexId: 4,
   sprite: "pokemon/4.png",
@@ -15,6 +16,7 @@ export const charmander: Pokemon = {
 };
 
 export const pikachu: Pokemon = {
+  id: "POK2",
   name: "Pikachu",
   pokedexId: 25,
   sprite: "pokemon/25.png",
@@ -28,6 +30,7 @@ export const pikachu: Pokemon = {
 };
 
 export const haunter: Pokemon = {
+  id: "POK3",
   name: "Haunter",
   pokedexId: 93,
   sprite: "pokemon/93.png",

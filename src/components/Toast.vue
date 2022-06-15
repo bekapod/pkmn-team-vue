@@ -15,6 +15,11 @@
             class="h-6 w-6 text-red-vivid-400"
             aria-hidden="true"
           />
+          <LoadingAltIcon
+            v-if="type === 'loading'"
+            class="h-6 w-6 animate-spin text-cool-grey-200"
+            aria-hidden="true"
+          />
         </div>
         <div class="ml-3 w-0 flex-1 pt-0.5">
           <p class="my-0 text-sm font-medium text-cool-grey-900">
@@ -39,19 +44,19 @@
 </template>
 
 <script setup lang="ts">
+import type { Toast } from "@/stores";
 import type { PropType } from "vue";
 import HappyBeamingIcon from "@/assets/icons/happy-beaming.svg";
+import LoadingAltIcon from "@/assets/icons/loading-alt.svg";
 import SadIcon from "@/assets/icons/sad.svg";
 import XIcon from "@/assets/icons/x.svg";
 
-type ToastType = "error" | "success";
-
 defineProps({
   type: {
-    type: String as PropType<ToastType>,
+    type: String as PropType<Toast["type"]>,
     required: true,
-    validator: (val: ToastType) => {
-      return ["error", "success"].includes(val);
+    validator: (val: Toast["type"]) => {
+      return ["error", "success", "loading"].includes(val);
     },
   },
 });

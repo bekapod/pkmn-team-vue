@@ -2,6 +2,7 @@ import { z } from "zod";
 import { Type } from "./type";
 
 export const Pokemon = z.object({
+  id: z.string(),
   pokedexId: z.number(),
   name: z.string(),
   sprite: z.string(),

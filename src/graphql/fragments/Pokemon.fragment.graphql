@@ -1,24 +1,11 @@
 fragment pokemonFields on Pokemon {
   id
-  isDefault
-  slug
   attack
   defense
   specialAttack
   specialDefense
   speed
-  height
-  weight
   hp
-  abilities {
-    edges {
-      slot
-      isHidden
-      node {
-        ...abilityFields
-      }
-    }
-  }
   moves {
     edges {
       ...pokemonMoveFields

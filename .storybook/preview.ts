@@ -5,6 +5,7 @@ import { plugin as formkitPlugin, defaultConfig } from "@formkit/vue";
 import { createPinia } from "pinia";
 import formkitConfig from "@/formkit.config";
 import { useToasts, useTeam, useTeams } from "@/stores";
+import { debounceActions } from "@/lib";
 import vueRouter from "storybook-vue3-router";
 import { initialize, mswDecorator } from "msw-storybook-addon";
 import "../src/assets/base.css";
@@ -12,6 +13,7 @@ import "../src/assets/base.css";
 initialize();
 
 const pinia = createPinia();
+pinia.use(debounceActions);
 app.use(pinia);
 
 app.use(formkitPlugin, defaultConfig({ config: formkitConfig }));

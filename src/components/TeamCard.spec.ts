@@ -12,14 +12,17 @@ const setup = (props = {}) =>
       members: [
         {
           id: "1",
+          slot: 1,
           pokemon: charmander,
         },
         {
           id: "2",
+          slot: 2,
           pokemon: pikachu,
         },
         {
           id: "3",
+          slot: 3,
           pokemon: haunter,
         },
       ],

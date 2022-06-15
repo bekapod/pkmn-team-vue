@@ -1002,30 +1002,7 @@ export type MoveFieldsFragment = {
   power?: number | null;
   pp?: number | null;
   target: MoveTarget;
-  type: {
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-    noDamageTo: Array<{
-      __typename?: "Type";
-      id: string;
-      name: string;
-      slug: string;
-    }>;
-    halfDamageTo: Array<{
-      __typename?: "Type";
-      id: string;
-      name: string;
-      slug: string;
-    }>;
-    doubleDamageTo: Array<{
-      __typename?: "Type";
-      id: string;
-      name: string;
-      slug: string;
-    }>;
-  };
+  type: { __typename?: "Type"; id: string; name: string; slug: string };
 };
 
 export type PokemonMoveFieldsFragment = {
@@ -1045,30 +1022,7 @@ export type PokemonMoveFieldsFragment = {
     power?: number | null;
     pp?: number | null;
     target: MoveTarget;
-    type: {
-      __typename?: "Type";
-      id: string;
-      name: string;
-      slug: string;
-      noDamageTo: Array<{
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-      }>;
-      halfDamageTo: Array<{
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-      }>;
-      doubleDamageTo: Array<{
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-      }>;
-    };
+    type: { __typename?: "Type"; id: string; name: string; slug: string };
   };
 };
 
@@ -1090,61 +1044,19 @@ export type TeamMemberMoveFieldsFragment = {
     power?: number | null;
     pp?: number | null;
     target: MoveTarget;
-    type: {
-      __typename?: "Type";
-      id: string;
-      name: string;
-      slug: string;
-      noDamageTo: Array<{
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-      }>;
-      halfDamageTo: Array<{
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-      }>;
-      doubleDamageTo: Array<{
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-      }>;
-    };
+    type: { __typename?: "Type"; id: string; name: string; slug: string };
   };
 };
 
 export type PokemonFieldsFragment = {
   __typename?: "Pokemon";
   id: string;
-  isDefault: boolean;
-  slug: string;
   attack: number;
   defense: number;
   specialAttack: number;
   specialDefense: number;
   speed: number;
-  height: number;
-  weight: number;
   hp: number;
-  abilities: {
-    __typename?: "PokemonAbilityConnection";
-    edges?: Array<{
-      __typename?: "PokemonAbilityEdge";
-      slot: number;
-      isHidden: boolean;
-      node: {
-        __typename?: "Ability";
-        id: string;
-        slug: string;
-        name: string;
-        effect?: string | null;
-      };
-    }> | null;
-  };
   moves: {
     __typename?: "PokemonMoveConnection";
     edges?: Array<{
@@ -1164,30 +1076,7 @@ export type PokemonFieldsFragment = {
         power?: number | null;
         pp?: number | null;
         target: MoveTarget;
-        type: {
-          __typename?: "Type";
-          id: string;
-          name: string;
-          slug: string;
-          noDamageTo: Array<{
-            __typename?: "Type";
-            id: string;
-            name: string;
-            slug: string;
-          }>;
-          halfDamageTo: Array<{
-            __typename?: "Type";
-            id: string;
-            name: string;
-            slug: string;
-          }>;
-          doubleDamageTo: Array<{
-            __typename?: "Type";
-            id: string;
-            name: string;
-            slug: string;
-          }>;
-        };
+        type: { __typename?: "Type"; id: string; name: string; slug: string };
       };
     }> | null;
   };
@@ -1197,23 +1086,6 @@ export type PokemonFieldsFragment = {
       __typename?: "PokemonFormEdge";
       node: {
         __typename?: "PokemonForm";
-        id: string;
-        name: string;
-        slug: string;
-        formName?: string | null;
-        formSlug?: string | null;
-        isBattleOnly: boolean;
-        isDefault: boolean;
-        sprites: {
-          __typename?: "PokemonSprites";
-          frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
-          frontShiny?: { __typename?: "PokemonSprite"; path: string } | null;
-          frontFemale?: { __typename?: "PokemonSprite"; path: string } | null;
-          frontFemaleShiny?: {
-            __typename?: "PokemonSprite";
-            path: string;
-          } | null;
-        };
         types: {
           __typename?: "PokemonFormTypeConnection";
           edges?: Array<{
@@ -1224,26 +1096,12 @@ export type PokemonFieldsFragment = {
               id: string;
               name: string;
               slug: string;
-              noDamageFrom: Array<{
-                __typename?: "Type";
-                id: string;
-                name: string;
-                slug: string;
-              }>;
-              halfDamageFrom: Array<{
-                __typename?: "Type";
-                id: string;
-                name: string;
-                slug: string;
-              }>;
-              doubleDamageFrom: Array<{
-                __typename?: "Type";
-                id: string;
-                name: string;
-                slug: string;
-              }>;
             };
           }> | null;
+        };
+        sprites: {
+          __typename?: "PokemonSprites";
+          frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
         };
       };
     }> | null;
@@ -1252,50 +1110,17 @@ export type PokemonFieldsFragment = {
 
 export type PokemonFormFieldsFragment = {
   __typename?: "PokemonForm";
-  id: string;
-  name: string;
-  slug: string;
-  formName?: string | null;
-  formSlug?: string | null;
-  isBattleOnly: boolean;
-  isDefault: boolean;
-  sprites: {
-    __typename?: "PokemonSprites";
-    frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
-    frontShiny?: { __typename?: "PokemonSprite"; path: string } | null;
-    frontFemale?: { __typename?: "PokemonSprite"; path: string } | null;
-    frontFemaleShiny?: { __typename?: "PokemonSprite"; path: string } | null;
-  };
   types: {
     __typename?: "PokemonFormTypeConnection";
     edges?: Array<{
       __typename?: "PokemonFormTypeEdge";
       slot: number;
-      node: {
-        __typename?: "Type";
-        id: string;
-        name: string;
-        slug: string;
-        noDamageFrom: Array<{
-          __typename?: "Type";
-          id: string;
-          name: string;
-          slug: string;
-        }>;
-        halfDamageFrom: Array<{
-          __typename?: "Type";
-          id: string;
-          name: string;
-          slug: string;
-        }>;
-        doubleDamageFrom: Array<{
-          __typename?: "Type";
-          id: string;
-          name: string;
-          slug: string;
-        }>;
-      };
+      node: { __typename?: "Type"; id: string; name: string; slug: string };
     }> | null;
+  };
+  sprites: {
+    __typename?: "PokemonSprites";
+    frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
   };
 };
 
@@ -1320,31 +1145,12 @@ export type PokemonSpeciesFieldsFragment = {
       node: {
         __typename?: "Pokemon";
         id: string;
-        isDefault: boolean;
-        slug: string;
         attack: number;
         defense: number;
         specialAttack: number;
         specialDefense: number;
         speed: number;
-        height: number;
-        weight: number;
         hp: number;
-        abilities: {
-          __typename?: "PokemonAbilityConnection";
-          edges?: Array<{
-            __typename?: "PokemonAbilityEdge";
-            slot: number;
-            isHidden: boolean;
-            node: {
-              __typename?: "Ability";
-              id: string;
-              slug: string;
-              name: string;
-              effect?: string | null;
-            };
-          }> | null;
-        };
         moves: {
           __typename?: "PokemonMoveConnection";
           edges?: Array<{
@@ -1369,24 +1175,6 @@ export type PokemonSpeciesFieldsFragment = {
                 id: string;
                 name: string;
                 slug: string;
-                noDamageTo: Array<{
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                }>;
-                halfDamageTo: Array<{
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                }>;
-                doubleDamageTo: Array<{
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                }>;
               };
             };
           }> | null;
@@ -1397,32 +1185,6 @@ export type PokemonSpeciesFieldsFragment = {
             __typename?: "PokemonFormEdge";
             node: {
               __typename?: "PokemonForm";
-              id: string;
-              name: string;
-              slug: string;
-              formName?: string | null;
-              formSlug?: string | null;
-              isBattleOnly: boolean;
-              isDefault: boolean;
-              sprites: {
-                __typename?: "PokemonSprites";
-                frontDefault?: {
-                  __typename?: "PokemonSprite";
-                  path: string;
-                } | null;
-                frontShiny?: {
-                  __typename?: "PokemonSprite";
-                  path: string;
-                } | null;
-                frontFemale?: {
-                  __typename?: "PokemonSprite";
-                  path: string;
-                } | null;
-                frontFemaleShiny?: {
-                  __typename?: "PokemonSprite";
-                  path: string;
-                } | null;
-              };
               types: {
                 __typename?: "PokemonFormTypeConnection";
                 edges?: Array<{
@@ -1433,26 +1195,15 @@ export type PokemonSpeciesFieldsFragment = {
                     id: string;
                     name: string;
                     slug: string;
-                    noDamageFrom: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    halfDamageFrom: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    doubleDamageFrom: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
                   };
                 }> | null;
+              };
+              sprites: {
+                __typename?: "PokemonSprites";
+                frontDefault?: {
+                  __typename?: "PokemonSprite";
+                  path: string;
+                } | null;
               };
             };
           }> | null;
@@ -1480,41 +1231,20 @@ export type TeamFieldsFragment = {
       node: {
         __typename?: "TeamMember";
         id: string;
-        createdAt: any;
-        updatedAt: any;
         slot: number;
         pokemon: {
           __typename?: "Pokemon";
           id: string;
-          isDefault: boolean;
-          slug: string;
           attack: number;
           defense: number;
           specialAttack: number;
           specialDefense: number;
           speed: number;
-          height: number;
-          weight: number;
           hp: number;
           species: {
             __typename?: "PokemonSpecies";
             name: string;
             pokedexId: number;
-          };
-          abilities: {
-            __typename?: "PokemonAbilityConnection";
-            edges?: Array<{
-              __typename?: "PokemonAbilityEdge";
-              slot: number;
-              isHidden: boolean;
-              node: {
-                __typename?: "Ability";
-                id: string;
-                slug: string;
-                name: string;
-                effect?: string | null;
-              };
-            }> | null;
           };
           moves: {
             __typename?: "PokemonMoveConnection";
@@ -1540,24 +1270,6 @@ export type TeamFieldsFragment = {
                   id: string;
                   name: string;
                   slug: string;
-                  noDamageTo: Array<{
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  }>;
-                  halfDamageTo: Array<{
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  }>;
-                  doubleDamageTo: Array<{
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  }>;
                 };
               };
             }> | null;
@@ -1568,32 +1280,6 @@ export type TeamFieldsFragment = {
               __typename?: "PokemonFormEdge";
               node: {
                 __typename?: "PokemonForm";
-                id: string;
-                name: string;
-                slug: string;
-                formName?: string | null;
-                formSlug?: string | null;
-                isBattleOnly: boolean;
-                isDefault: boolean;
-                sprites: {
-                  __typename?: "PokemonSprites";
-                  frontDefault?: {
-                    __typename?: "PokemonSprite";
-                    path: string;
-                  } | null;
-                  frontShiny?: {
-                    __typename?: "PokemonSprite";
-                    path: string;
-                  } | null;
-                  frontFemale?: {
-                    __typename?: "PokemonSprite";
-                    path: string;
-                  } | null;
-                  frontFemaleShiny?: {
-                    __typename?: "PokemonSprite";
-                    path: string;
-                  } | null;
-                };
                 types: {
                   __typename?: "PokemonFormTypeConnection";
                   edges?: Array<{
@@ -1604,26 +1290,15 @@ export type TeamFieldsFragment = {
                       id: string;
                       name: string;
                       slug: string;
-                      noDamageFrom: Array<{
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      }>;
-                      halfDamageFrom: Array<{
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      }>;
-                      doubleDamageFrom: Array<{
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      }>;
                     };
                   }> | null;
+                };
+                sprites: {
+                  __typename?: "PokemonSprites";
+                  frontDefault?: {
+                    __typename?: "PokemonSprite";
+                    path: string;
+                  } | null;
                 };
               };
             }> | null;
@@ -1637,38 +1312,17 @@ export type TeamFieldsFragment = {
 export type TeamMemberFieldsFragment = {
   __typename?: "TeamMember";
   id: string;
-  createdAt: any;
-  updatedAt: any;
   slot: number;
   pokemon: {
     __typename?: "Pokemon";
     id: string;
-    isDefault: boolean;
-    slug: string;
     attack: number;
     defense: number;
     specialAttack: number;
     specialDefense: number;
     speed: number;
-    height: number;
-    weight: number;
     hp: number;
     species: { __typename?: "PokemonSpecies"; name: string; pokedexId: number };
-    abilities: {
-      __typename?: "PokemonAbilityConnection";
-      edges?: Array<{
-        __typename?: "PokemonAbilityEdge";
-        slot: number;
-        isHidden: boolean;
-        node: {
-          __typename?: "Ability";
-          id: string;
-          slug: string;
-          name: string;
-          effect?: string | null;
-        };
-      }> | null;
-    };
     moves: {
       __typename?: "PokemonMoveConnection";
       edges?: Array<{
@@ -1688,30 +1342,7 @@ export type TeamMemberFieldsFragment = {
           power?: number | null;
           pp?: number | null;
           target: MoveTarget;
-          type: {
-            __typename?: "Type";
-            id: string;
-            name: string;
-            slug: string;
-            noDamageTo: Array<{
-              __typename?: "Type";
-              id: string;
-              name: string;
-              slug: string;
-            }>;
-            halfDamageTo: Array<{
-              __typename?: "Type";
-              id: string;
-              name: string;
-              slug: string;
-            }>;
-            doubleDamageTo: Array<{
-              __typename?: "Type";
-              id: string;
-              name: string;
-              slug: string;
-            }>;
-          };
+          type: { __typename?: "Type"; id: string; name: string; slug: string };
         };
       }> | null;
     };
@@ -1721,26 +1352,6 @@ export type TeamMemberFieldsFragment = {
         __typename?: "PokemonFormEdge";
         node: {
           __typename?: "PokemonForm";
-          id: string;
-          name: string;
-          slug: string;
-          formName?: string | null;
-          formSlug?: string | null;
-          isBattleOnly: boolean;
-          isDefault: boolean;
-          sprites: {
-            __typename?: "PokemonSprites";
-            frontDefault?: {
-              __typename?: "PokemonSprite";
-              path: string;
-            } | null;
-            frontShiny?: { __typename?: "PokemonSprite"; path: string } | null;
-            frontFemale?: { __typename?: "PokemonSprite"; path: string } | null;
-            frontFemaleShiny?: {
-              __typename?: "PokemonSprite";
-              path: string;
-            } | null;
-          };
           types: {
             __typename?: "PokemonFormTypeConnection";
             edges?: Array<{
@@ -1751,26 +1362,15 @@ export type TeamMemberFieldsFragment = {
                 id: string;
                 name: string;
                 slug: string;
-                noDamageFrom: Array<{
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                }>;
-                halfDamageFrom: Array<{
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                }>;
-                doubleDamageFrom: Array<{
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                }>;
               };
             }> | null;
+          };
+          sprites: {
+            __typename?: "PokemonSprites";
+            frontDefault?: {
+              __typename?: "PokemonSprite";
+              path: string;
+            } | null;
           };
         };
       }> | null;
@@ -1790,56 +1390,6 @@ export type TypeFieldsFragment = {
   id: string;
   name: string;
   slug: string;
-};
-
-export type PokemonTypeFieldsFragment = {
-  __typename?: "Type";
-  id: string;
-  name: string;
-  slug: string;
-  noDamageFrom: Array<{
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-  }>;
-  halfDamageFrom: Array<{
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-  }>;
-  doubleDamageFrom: Array<{
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-  }>;
-};
-
-export type MoveTypeFieldsFragment = {
-  __typename?: "Type";
-  id: string;
-  name: string;
-  slug: string;
-  noDamageTo: Array<{
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-  }>;
-  halfDamageTo: Array<{
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-  }>;
-  doubleDamageTo: Array<{
-    __typename?: "Type";
-    id: string;
-    name: string;
-    slug: string;
-  }>;
 };
 
 export type CreateTeamMutationVariables = Exact<{
@@ -1866,41 +1416,20 @@ export type CreateTeamMutation = {
         node: {
           __typename?: "TeamMember";
           id: string;
-          createdAt: any;
-          updatedAt: any;
           slot: number;
           pokemon: {
             __typename?: "Pokemon";
             id: string;
-            isDefault: boolean;
-            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
-            height: number;
-            weight: number;
             hp: number;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
-            };
-            abilities: {
-              __typename?: "PokemonAbilityConnection";
-              edges?: Array<{
-                __typename?: "PokemonAbilityEdge";
-                slot: number;
-                isHidden: boolean;
-                node: {
-                  __typename?: "Ability";
-                  id: string;
-                  slug: string;
-                  name: string;
-                  effect?: string | null;
-                };
-              }> | null;
             };
             moves: {
               __typename?: "PokemonMoveConnection";
@@ -1926,24 +1455,6 @@ export type CreateTeamMutation = {
                     id: string;
                     name: string;
                     slug: string;
-                    noDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    halfDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    doubleDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
                   };
                 };
               }> | null;
@@ -1954,32 +1465,6 @@ export type CreateTeamMutation = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  id: string;
-                  name: string;
-                  slug: string;
-                  formName?: string | null;
-                  formSlug?: string | null;
-                  isBattleOnly: boolean;
-                  isDefault: boolean;
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemale?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemaleShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
                   types: {
                     __typename?: "PokemonFormTypeConnection";
                     edges?: Array<{
@@ -1990,26 +1475,15 @@ export type CreateTeamMutation = {
                         id: string;
                         name: string;
                         slug: string;
-                        noDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        halfDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        doubleDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
                       };
                     }> | null;
+                  };
+                  sprites: {
+                    __typename?: "PokemonSprites";
+                    frontDefault?: {
+                      __typename?: "PokemonSprite";
+                      path: string;
+                    } | null;
                   };
                 };
               }> | null;
@@ -2045,41 +1519,20 @@ export type RemoveTeamMutation = {
         node: {
           __typename?: "TeamMember";
           id: string;
-          createdAt: any;
-          updatedAt: any;
           slot: number;
           pokemon: {
             __typename?: "Pokemon";
             id: string;
-            isDefault: boolean;
-            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
-            height: number;
-            weight: number;
             hp: number;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
-            };
-            abilities: {
-              __typename?: "PokemonAbilityConnection";
-              edges?: Array<{
-                __typename?: "PokemonAbilityEdge";
-                slot: number;
-                isHidden: boolean;
-                node: {
-                  __typename?: "Ability";
-                  id: string;
-                  slug: string;
-                  name: string;
-                  effect?: string | null;
-                };
-              }> | null;
             };
             moves: {
               __typename?: "PokemonMoveConnection";
@@ -2105,24 +1558,6 @@ export type RemoveTeamMutation = {
                     id: string;
                     name: string;
                     slug: string;
-                    noDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    halfDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    doubleDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
                   };
                 };
               }> | null;
@@ -2133,32 +1568,6 @@ export type RemoveTeamMutation = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  id: string;
-                  name: string;
-                  slug: string;
-                  formName?: string | null;
-                  formSlug?: string | null;
-                  isBattleOnly: boolean;
-                  isDefault: boolean;
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemale?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemaleShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
                   types: {
                     __typename?: "PokemonFormTypeConnection";
                     edges?: Array<{
@@ -2169,26 +1578,15 @@ export type RemoveTeamMutation = {
                         id: string;
                         name: string;
                         slug: string;
-                        noDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        halfDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        doubleDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
                       };
                     }> | null;
+                  };
+                  sprites: {
+                    __typename?: "PokemonSprites";
+                    frontDefault?: {
+                      __typename?: "PokemonSprite";
+                      path: string;
+                    } | null;
                   };
                 };
               }> | null;
@@ -2224,41 +1622,20 @@ export type UpdateTeamMutation = {
         node: {
           __typename?: "TeamMember";
           id: string;
-          createdAt: any;
-          updatedAt: any;
           slot: number;
           pokemon: {
             __typename?: "Pokemon";
             id: string;
-            isDefault: boolean;
-            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
-            height: number;
-            weight: number;
             hp: number;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
-            };
-            abilities: {
-              __typename?: "PokemonAbilityConnection";
-              edges?: Array<{
-                __typename?: "PokemonAbilityEdge";
-                slot: number;
-                isHidden: boolean;
-                node: {
-                  __typename?: "Ability";
-                  id: string;
-                  slug: string;
-                  name: string;
-                  effect?: string | null;
-                };
-              }> | null;
             };
             moves: {
               __typename?: "PokemonMoveConnection";
@@ -2284,24 +1661,6 @@ export type UpdateTeamMutation = {
                     id: string;
                     name: string;
                     slug: string;
-                    noDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    halfDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    doubleDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
                   };
                 };
               }> | null;
@@ -2312,32 +1671,6 @@ export type UpdateTeamMutation = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  id: string;
-                  name: string;
-                  slug: string;
-                  formName?: string | null;
-                  formSlug?: string | null;
-                  isBattleOnly: boolean;
-                  isDefault: boolean;
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemale?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemaleShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
                   types: {
                     __typename?: "PokemonFormTypeConnection";
                     edges?: Array<{
@@ -2348,26 +1681,15 @@ export type UpdateTeamMutation = {
                         id: string;
                         name: string;
                         slug: string;
-                        noDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        halfDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        doubleDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
                       };
                     }> | null;
+                  };
+                  sprites: {
+                    __typename?: "PokemonSprites";
+                    frontDefault?: {
+                      __typename?: "PokemonSprite";
+                      path: string;
+                    } | null;
                   };
                 };
               }> | null;
@@ -2405,41 +1727,20 @@ export type AllTeamsQuery = {
             node: {
               __typename?: "TeamMember";
               id: string;
-              createdAt: any;
-              updatedAt: any;
               slot: number;
               pokemon: {
                 __typename?: "Pokemon";
                 id: string;
-                isDefault: boolean;
-                slug: string;
                 attack: number;
                 defense: number;
                 specialAttack: number;
                 specialDefense: number;
                 speed: number;
-                height: number;
-                weight: number;
                 hp: number;
                 species: {
                   __typename?: "PokemonSpecies";
                   name: string;
                   pokedexId: number;
-                };
-                abilities: {
-                  __typename?: "PokemonAbilityConnection";
-                  edges?: Array<{
-                    __typename?: "PokemonAbilityEdge";
-                    slot: number;
-                    isHidden: boolean;
-                    node: {
-                      __typename?: "Ability";
-                      id: string;
-                      slug: string;
-                      name: string;
-                      effect?: string | null;
-                    };
-                  }> | null;
                 };
                 moves: {
                   __typename?: "PokemonMoveConnection";
@@ -2465,24 +1766,6 @@ export type AllTeamsQuery = {
                         id: string;
                         name: string;
                         slug: string;
-                        noDamageTo: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        halfDamageTo: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        doubleDamageTo: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
                       };
                     };
                   }> | null;
@@ -2493,32 +1776,6 @@ export type AllTeamsQuery = {
                     __typename?: "PokemonFormEdge";
                     node: {
                       __typename?: "PokemonForm";
-                      id: string;
-                      name: string;
-                      slug: string;
-                      formName?: string | null;
-                      formSlug?: string | null;
-                      isBattleOnly: boolean;
-                      isDefault: boolean;
-                      sprites: {
-                        __typename?: "PokemonSprites";
-                        frontDefault?: {
-                          __typename?: "PokemonSprite";
-                          path: string;
-                        } | null;
-                        frontShiny?: {
-                          __typename?: "PokemonSprite";
-                          path: string;
-                        } | null;
-                        frontFemale?: {
-                          __typename?: "PokemonSprite";
-                          path: string;
-                        } | null;
-                        frontFemaleShiny?: {
-                          __typename?: "PokemonSprite";
-                          path: string;
-                        } | null;
-                      };
                       types: {
                         __typename?: "PokemonFormTypeConnection";
                         edges?: Array<{
@@ -2529,26 +1786,15 @@ export type AllTeamsQuery = {
                             id: string;
                             name: string;
                             slug: string;
-                            noDamageFrom: Array<{
-                              __typename?: "Type";
-                              id: string;
-                              name: string;
-                              slug: string;
-                            }>;
-                            halfDamageFrom: Array<{
-                              __typename?: "Type";
-                              id: string;
-                              name: string;
-                              slug: string;
-                            }>;
-                            doubleDamageFrom: Array<{
-                              __typename?: "Type";
-                              id: string;
-                              name: string;
-                              slug: string;
-                            }>;
                           };
                         }> | null;
+                      };
+                      sprites: {
+                        __typename?: "PokemonSprites";
+                        frontDefault?: {
+                          __typename?: "PokemonSprite";
+                          path: string;
+                        } | null;
                       };
                     };
                   }> | null;
@@ -2598,41 +1844,20 @@ export type TeamByIdQuery = {
         node: {
           __typename?: "TeamMember";
           id: string;
-          createdAt: any;
-          updatedAt: any;
           slot: number;
           pokemon: {
             __typename?: "Pokemon";
             id: string;
-            isDefault: boolean;
-            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
-            height: number;
-            weight: number;
             hp: number;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
-            };
-            abilities: {
-              __typename?: "PokemonAbilityConnection";
-              edges?: Array<{
-                __typename?: "PokemonAbilityEdge";
-                slot: number;
-                isHidden: boolean;
-                node: {
-                  __typename?: "Ability";
-                  id: string;
-                  slug: string;
-                  name: string;
-                  effect?: string | null;
-                };
-              }> | null;
             };
             moves: {
               __typename?: "PokemonMoveConnection";
@@ -2658,24 +1883,6 @@ export type TeamByIdQuery = {
                     id: string;
                     name: string;
                     slug: string;
-                    noDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    halfDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
-                    doubleDamageTo: Array<{
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    }>;
                   };
                 };
               }> | null;
@@ -2686,32 +1893,6 @@ export type TeamByIdQuery = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  id: string;
-                  name: string;
-                  slug: string;
-                  formName?: string | null;
-                  formSlug?: string | null;
-                  isBattleOnly: boolean;
-                  isDefault: boolean;
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemale?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                    frontFemaleShiny?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
                   types: {
                     __typename?: "PokemonFormTypeConnection";
                     edges?: Array<{
@@ -2722,26 +1903,15 @@ export type TeamByIdQuery = {
                         id: string;
                         name: string;
                         slug: string;
-                        noDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        halfDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
-                        doubleDamageFrom: Array<{
-                          __typename?: "Type";
-                          id: string;
-                          name: string;
-                          slug: string;
-                        }>;
                       };
                     }> | null;
+                  };
+                  sprites: {
+                    __typename?: "PokemonSprites";
+                    frontDefault?: {
+                      __typename?: "PokemonSprite";
+                      path: string;
+                    } | null;
                   };
                 };
               }> | null;
@@ -2753,6 +1923,14 @@ export type TeamByIdQuery = {
   } | null;
 };
 
+export const AbilityFieldsFragmentDoc = gql`
+  fragment abilityFields on Ability {
+    id
+    slug
+    name
+    effect
+  }
+`;
 export const ItemFieldsFragmentDoc = gql`
   fragment itemFields on Item {
     id
@@ -2774,21 +1952,6 @@ export const TypeFieldsFragmentDoc = gql`
     slug
   }
 `;
-export const MoveTypeFieldsFragmentDoc = gql`
-  fragment moveTypeFields on Type {
-    ...typeFields
-    noDamageTo {
-      ...typeFields
-    }
-    halfDamageTo {
-      ...typeFields
-    }
-    doubleDamageTo {
-      ...typeFields
-    }
-  }
-  ${TypeFieldsFragmentDoc}
-`;
 export const MoveFieldsFragmentDoc = gql`
   fragment moveFields on Move {
     id
@@ -2802,10 +1965,10 @@ export const MoveFieldsFragmentDoc = gql`
     pp
     target
     type {
-      ...moveTypeFields
+      ...typeFields
     }
   }
-  ${MoveTypeFieldsFragmentDoc}
+  ${TypeFieldsFragmentDoc}
 `;
 export const TeamMemberMoveFieldsFragmentDoc = gql`
   fragment teamMemberMoveFields on TeamMemberMove {
@@ -2819,14 +1982,6 @@ export const TeamMemberMoveFieldsFragmentDoc = gql`
   }
   ${MoveFieldsFragmentDoc}
 `;
-export const AbilityFieldsFragmentDoc = gql`
-  fragment abilityFields on Ability {
-    id
-    slug
-    name
-    effect
-  }
-`;
 export const PokemonMoveFieldsFragmentDoc = gql`
   fragment pokemonMoveFields on PokemonMoveEdge {
     id: cursor
@@ -2838,77 +1993,33 @@ export const PokemonMoveFieldsFragmentDoc = gql`
   }
   ${MoveFieldsFragmentDoc}
 `;
-export const PokemonTypeFieldsFragmentDoc = gql`
-  fragment pokemonTypeFields on Type {
-    ...typeFields
-    noDamageFrom {
-      ...typeFields
-    }
-    halfDamageFrom {
-      ...typeFields
-    }
-    doubleDamageFrom {
-      ...typeFields
-    }
-  }
-  ${TypeFieldsFragmentDoc}
-`;
 export const PokemonFormFieldsFragmentDoc = gql`
   fragment pokemonFormFields on PokemonForm {
-    id
-    name
-    slug
-    formName
-    formSlug
-    isBattleOnly
-    isDefault
-    sprites {
-      frontDefault {
-        path
-      }
-      frontShiny {
-        path
-      }
-      frontFemale {
-        path
-      }
-      frontFemaleShiny {
-        path
-      }
-    }
     types {
       edges {
         slot
         node {
-          ...pokemonTypeFields
+          ...typeFields
         }
       }
     }
+    sprites {
+      frontDefault {
+        path
+      }
+    }
   }
-  ${PokemonTypeFieldsFragmentDoc}
+  ${TypeFieldsFragmentDoc}
 `;
 export const PokemonFieldsFragmentDoc = gql`
   fragment pokemonFields on Pokemon {
     id
-    isDefault
-    slug
     attack
     defense
     specialAttack
     specialDefense
     speed
-    height
-    weight
     hp
-    abilities {
-      edges {
-        slot
-        isHidden
-        node {
-          ...abilityFields
-        }
-      }
-    }
     moves {
       edges {
         ...pokemonMoveFields
@@ -2922,7 +2033,6 @@ export const PokemonFieldsFragmentDoc = gql`
       }
     }
   }
-  ${AbilityFieldsFragmentDoc}
   ${PokemonMoveFieldsFragmentDoc}
   ${PokemonFormFieldsFragmentDoc}
 `;
@@ -2960,8 +2070,6 @@ export const TrainerFieldsFragmentDoc = gql`
 export const TeamMemberFieldsFragmentDoc = gql`
   fragment teamMemberFields on TeamMember {
     id
-    createdAt
-    updatedAt
     slot
     pokemon {
       ...pokemonFields

@@ -22,7 +22,9 @@ export const parseTeam = (
     createdBy: parseTrainer(team?.createdBy),
     members: team?.members?.edges?.map((member) => ({
       id: member?.node?.id,
+      slot: member?.node?.slot,
       pokemon: {
+        id: member?.node?.pokemon.id,
         pokedexId: member?.node?.pokemon.species.pokedexId,
         name: member?.node?.pokemon.species.name,
         sprite:

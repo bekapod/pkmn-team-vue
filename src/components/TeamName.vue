@@ -110,10 +110,7 @@ const submitHandler = async (formData: FormKitGroupValue) => {
   const token = await getAccessTokenSilently({
     timeoutInSeconds: props.authTimeout,
   }).catch(() => "");
-  const { data } = await team.setTeamName(
-    formData["team-name"] as string,
-    token
-  );
+  const { data } = await team.setName(formData["team-name"] as string, token);
   if (data) {
     mode.value = "display";
     emit("team-renamed", data);

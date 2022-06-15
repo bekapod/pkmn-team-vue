@@ -6,6 +6,7 @@ import { createPinia } from "pinia";
 import { createApp } from "vue";
 import App from "./App.vue";
 import formkitConfig from "./formkit.config";
+import { debounceActions } from "./lib";
 import router from "./router";
 
 const app = createApp(App);
@@ -35,5 +36,9 @@ app.use(
 app.use(createPinia());
 app.use(plugin, defaultConfig({ config: formkitConfig }));
 app.use(router);
+
+const pinia = createPinia();
+pinia.use(debounceActions);
+app.use(pinia);
 
 app.mount("#app");

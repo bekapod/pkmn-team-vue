@@ -78,10 +78,7 @@ const submitHandler = async (formData: FormKitGroupValue) => {
   const token = await getAccessTokenSilently({
     timeoutInSeconds: props.authTimeout,
   }).catch(() => "");
-  const { data } = await team.createTeam(
-    formData["team-name"] as string,
-    token
-  );
+  const { data } = await team.create(formData["team-name"] as string, token);
 
   window.clearInterval(timer);
   timeTaken.value = 0;

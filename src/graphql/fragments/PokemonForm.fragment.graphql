@@ -1,31 +1,15 @@
 fragment pokemonFormFields on PokemonForm {
-  id
-  name
-  slug
-  formName
-  formSlug
-  isBattleOnly
-  isDefault
-  sprites {
-    frontDefault {
-      path
-    }
-    frontShiny {
-      path
-    }
-    frontFemale {
-      path
-    }
-    frontFemaleShiny {
-      path
-    }
-  }
   types {
     edges {
       slot
       node {
-        ...pokemonTypeFields
+        ...typeFields
       }
+    }
+  }
+  sprites {
+    frontDefault {
+      path
     }
   }
 }

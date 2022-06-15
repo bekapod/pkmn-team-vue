@@ -2,20 +2,28 @@ import * as Sentry from "@sentry/vue";
 import { defineStore } from "pinia";
 import { useToasts } from "./toasts";
 import { useTrainer } from "./trainer";
-import type { Team } from "@/data";
+import type { Team, TeamMember } from "@/data";
 import { parseTeam } from "@/data";
-import { getSdk } from "@/graphql";
+import { getSdk, type UpdateTeamMutationVariables } from "@/graphql";
 import { client } from "@/lib";
 
+type TeamState = Partial<Team> & {
+  deletedMembers: string[];
+  dirty: boolean;
+  members: TeamMember[];
+};
+
 export const useTeam = defineStore("team", {
-  state: () => {
+  state: (): TeamState => {
     return {
       id: undefined,
       name: undefined,
       members: [],
       createdAt: undefined,
       createdBy: undefined,
-    } as Partial<Team>;
+      deletedMembers: [],
+      dirty: false,
+    };
   },
   getters: {
     canEdit: (state) => {
@@ -24,7 +32,7 @@ export const useTeam = defineStore("team", {
     },
   },
   actions: {
-    async getTeam(id: string) {
+    async get(id: string) {
       if (this.id === id) return { error: null, data: this.$state };
 
       try {
@@ -33,10 +41,11 @@ export const useTeam = defineStore("team", {
           id,
         });
         const parsed = parseTeam(data.team);
-        this.$state = parsed;
+        this.$state = { ...parsed, dirty: false, deletedMembers: [] };
 
         return { error: null, data: parsed };
       } catch (error) {
+        console.log({ error });
         Sentry.captureException(error, {
           level: "error",
           extra: {
@@ -46,7 +55,7 @@ export const useTeam = defineStore("team", {
         return { error, data: null };
       }
     },
-    async setTeamName(name: string, token: string) {
+    async setName(name: string, token: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -102,7 +111,7 @@ export const useTeam = defineStore("team", {
         return { error: "Team has not been set", data: null };
       }
     },
-    async createTeam(name: string, token: string) {
+    async create(name: string, token: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -130,7 +139,7 @@ export const useTeam = defineStore("team", {
           { token }
         );
         const parsed = parseTeam(data.createTeam);
-        this.$state = parsed;
+        this.$state = { ...parsed, dirty: false, deletedMembers: [] };
         toasts.addToast(successToast);
         return { error: null, data: parsed };
       } catch (error) {
@@ -144,7 +153,7 @@ export const useTeam = defineStore("team", {
         return { error, data: null };
       }
     },
-    async removeTeam(token: string) {
+    async remove(token: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -170,7 +179,7 @@ export const useTeam = defineStore("team", {
             { token }
           );
           const parsed = parseTeam(data.removeTeam);
-          this.$state = parsed;
+          this.$state = { ...parsed, dirty: false, deletedMembers: [] };
           toasts.addToast(successToast);
           return { error: null, data: parsed };
         } catch (error) {
@@ -191,5 +200,78 @@ export const useTeam = defineStore("team", {
         return { error: "Team has not been set", data: null };
       }
     },
+    removeMember(id: string) {
+      this.members = this.members.filter(
+        (currentMember) => currentMember.id !== id
+      );
+      this.deletedMembers.push(id);
+      this.dirty = true;
+      this.saveMembers();
+      return [this.members, this.deletedMembers];
+    },
+    addMember(member: TeamMember) {
+      this.members.push(member);
+      this.dirty = true;
+      this.saveMembers();
+      return this.members;
+    },
+    async saveMembers() {
+      const toasts = useToasts();
+
+      const errorToast = {
+        type: "error",
+        title: "Error",
+        content: "An error happened while saving your team.",
+      } as const;
+      const successToast = {
+        type: "success",
+        title: "Team saved!",
+        content: "Your team has been successfully saved.",
+      } as const;
+
+      if (!this.id) {
+        Sentry.captureMessage("Tried to save team without team being set", {
+          level: "error",
+        });
+        toasts.addToast(errorToast);
+        return { error: "Team has not been set", data: null };
+      }
+
+      if (this.dirty) {
+        try {
+          // const membersToDelete: UpdateTeamMutationVariables['input']["membersToDelete"] =
+          //   this.deletedMembers;
+
+          const membersToUpdate: UpdateTeamMutationVariables["input"]["members"] =
+            this.members.map((member) => ({
+              id: member.id,
+              slot: member.slot,
+              pokemonId: member.pokemon.id,
+            }));
+
+          const data = await getSdk(client).UpdateTeam({
+            input: {
+              id: this.id,
+              name: this.name,
+              // membersToDelete,
+              members: membersToUpdate,
+            },
+          });
+          const parsed = parseTeam(data.updateTeam);
+          this.members = parsed.members;
+          this.dirty = false;
+          toasts.addToast(successToast);
+          return parsed.members;
+        } catch {
+          // TODO: add retry link
+          toasts.addToast(errorToast);
+        }
+      } else {
+        return this.members;
+      }
+    },
+  },
+  debounce: {
+    saveMembers: 3000,
   },
 });
