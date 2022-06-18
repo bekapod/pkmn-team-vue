@@ -79,6 +79,12 @@
           />
         </ul>
       </div>
+
+      <ul>
+        <li v-for="move in moves" :key="move.id">
+          {{ move.name }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -90,7 +96,7 @@ import XIcon from "@/assets/icons/x.svg";
 import Ability from "@/components/Ability.vue";
 import PokemonLine from "@/components/PokemonLine.vue";
 import PokemonStats from "@/components/PokemonStats.vue";
-import { Ability as AbilityT, Type } from "@/data";
+import { Ability as AbilityT, Move, Type } from "@/data";
 import { sortBySlot } from "@/lib";
 
 const props = defineProps({
@@ -154,6 +160,15 @@ const props = defineProps({
     type: Array as PropType<AbilityT[]>,
     validator: (prop: AbilityT[]) =>
       Array.isArray(prop) && prop.every((a) => AbilityT.safeParse(a).success),
+    required: false,
+    default() {
+      return [];
+    },
+  },
+  moves: {
+    type: Array as PropType<Move[]>,
+    validator: (prop: Move[]) =>
+      Array.isArray(prop) && prop.every((m) => Move.safeParse(m).success),
     required: false,
     default() {
       return [];

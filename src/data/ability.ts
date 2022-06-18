@@ -4,7 +4,7 @@ export const Ability = z.object({
   name: z.string(),
   slug: z.string(),
   effect: z.string(),
-  slot: z.number().optional().default(0),
-  isHidden: z.boolean().optional().default(false),
+  slot: z.number(),
+  isHidden: z.boolean(),
 });
 export type Ability = z.infer<typeof Ability>;

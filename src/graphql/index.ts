@@ -1024,7 +1024,6 @@ export type PokemonMoveFieldsFragment = {
   __typename?: "PokemonMoveEdge";
   learnMethod: MoveLearnMethod;
   levelLearnedAt: number;
-  id: string;
   node: {
     __typename?: "Move";
     id: string;
@@ -1109,6 +1108,28 @@ export type PokemonFieldsFragment = {
         isBattleOnly: boolean;
         name: string;
         slug: string;
+      };
+    }> | null;
+  };
+  moves: {
+    __typename?: "PokemonMoveConnection";
+    edges?: Array<{
+      __typename?: "PokemonMoveEdge";
+      learnMethod: MoveLearnMethod;
+      levelLearnedAt: number;
+      node: {
+        __typename?: "Move";
+        id: string;
+        name: string;
+        slug: string;
+        accuracy?: number | null;
+        damageClass: DamageClass;
+        effect?: string | null;
+        effectChance?: number | null;
+        power?: number | null;
+        pp?: number | null;
+        target: MoveTarget;
+        type: { __typename?: "Type"; id: string; name: string; slug: string };
       };
     }> | null;
   };
@@ -1247,6 +1268,33 @@ export type TeamFieldsFragment = {
               };
             }> | null;
           };
+          moves: {
+            __typename?: "PokemonMoveConnection";
+            edges?: Array<{
+              __typename?: "PokemonMoveEdge";
+              learnMethod: MoveLearnMethod;
+              levelLearnedAt: number;
+              node: {
+                __typename?: "Move";
+                id: string;
+                name: string;
+                slug: string;
+                accuracy?: number | null;
+                damageClass: DamageClass;
+                effect?: string | null;
+                effectChance?: number | null;
+                power?: number | null;
+                pp?: number | null;
+                target: MoveTarget;
+                type: {
+                  __typename?: "Type";
+                  id: string;
+                  name: string;
+                  slug: string;
+                };
+              };
+            }> | null;
+          };
           sprites: {
             __typename?: "PokemonSprites";
             frontDefault?: {
@@ -1325,6 +1373,28 @@ export type TeamMemberFieldsFragment = {
           isBattleOnly: boolean;
           name: string;
           slug: string;
+        };
+      }> | null;
+    };
+    moves: {
+      __typename?: "PokemonMoveConnection";
+      edges?: Array<{
+        __typename?: "PokemonMoveEdge";
+        learnMethod: MoveLearnMethod;
+        levelLearnedAt: number;
+        node: {
+          __typename?: "Move";
+          id: string;
+          name: string;
+          slug: string;
+          accuracy?: number | null;
+          damageClass: DamageClass;
+          effect?: string | null;
+          effectChance?: number | null;
+          power?: number | null;
+          pp?: number | null;
+          target: MoveTarget;
+          type: { __typename?: "Type"; id: string; name: string; slug: string };
         };
       }> | null;
     };
@@ -1443,6 +1513,33 @@ export type CreateTeamMutation = {
                 };
               }> | null;
             };
+            moves: {
+              __typename?: "PokemonMoveConnection";
+              edges?: Array<{
+                __typename?: "PokemonMoveEdge";
+                learnMethod: MoveLearnMethod;
+                levelLearnedAt: number;
+                node: {
+                  __typename?: "Move";
+                  id: string;
+                  name: string;
+                  slug: string;
+                  accuracy?: number | null;
+                  damageClass: DamageClass;
+                  effect?: string | null;
+                  effectChance?: number | null;
+                  power?: number | null;
+                  pp?: number | null;
+                  target: MoveTarget;
+                  type: {
+                    __typename?: "Type";
+                    id: string;
+                    name: string;
+                    slug: string;
+                  };
+                };
+              }> | null;
+            };
             sprites: {
               __typename?: "PokemonSprites";
               frontDefault?: {
@@ -1551,6 +1648,33 @@ export type RemoveTeamMutation = {
                 };
               }> | null;
             };
+            moves: {
+              __typename?: "PokemonMoveConnection";
+              edges?: Array<{
+                __typename?: "PokemonMoveEdge";
+                learnMethod: MoveLearnMethod;
+                levelLearnedAt: number;
+                node: {
+                  __typename?: "Move";
+                  id: string;
+                  name: string;
+                  slug: string;
+                  accuracy?: number | null;
+                  damageClass: DamageClass;
+                  effect?: string | null;
+                  effectChance?: number | null;
+                  power?: number | null;
+                  pp?: number | null;
+                  target: MoveTarget;
+                  type: {
+                    __typename?: "Type";
+                    id: string;
+                    name: string;
+                    slug: string;
+                  };
+                };
+              }> | null;
+            };
             sprites: {
               __typename?: "PokemonSprites";
               frontDefault?: {
@@ -1656,6 +1780,33 @@ export type UpdateTeamMutation = {
                   isBattleOnly: boolean;
                   name: string;
                   slug: string;
+                };
+              }> | null;
+            };
+            moves: {
+              __typename?: "PokemonMoveConnection";
+              edges?: Array<{
+                __typename?: "PokemonMoveEdge";
+                learnMethod: MoveLearnMethod;
+                levelLearnedAt: number;
+                node: {
+                  __typename?: "Move";
+                  id: string;
+                  name: string;
+                  slug: string;
+                  accuracy?: number | null;
+                  damageClass: DamageClass;
+                  effect?: string | null;
+                  effectChance?: number | null;
+                  power?: number | null;
+                  pp?: number | null;
+                  target: MoveTarget;
+                  type: {
+                    __typename?: "Type";
+                    id: string;
+                    name: string;
+                    slug: string;
+                  };
                 };
               }> | null;
             };
@@ -1769,6 +1920,33 @@ export type AllTeamsQuery = {
                     };
                   }> | null;
                 };
+                moves: {
+                  __typename?: "PokemonMoveConnection";
+                  edges?: Array<{
+                    __typename?: "PokemonMoveEdge";
+                    learnMethod: MoveLearnMethod;
+                    levelLearnedAt: number;
+                    node: {
+                      __typename?: "Move";
+                      id: string;
+                      name: string;
+                      slug: string;
+                      accuracy?: number | null;
+                      damageClass: DamageClass;
+                      effect?: string | null;
+                      effectChance?: number | null;
+                      power?: number | null;
+                      pp?: number | null;
+                      target: MoveTarget;
+                      type: {
+                        __typename?: "Type";
+                        id: string;
+                        name: string;
+                        slug: string;
+                      };
+                    };
+                  }> | null;
+                };
                 sprites: {
                   __typename?: "PokemonSprites";
                   frontDefault?: {
@@ -1849,6 +2027,28 @@ export type PokemonByIdQuery = {
           isBattleOnly: boolean;
           name: string;
           slug: string;
+        };
+      }> | null;
+    };
+    moves: {
+      __typename?: "PokemonMoveConnection";
+      edges?: Array<{
+        __typename?: "PokemonMoveEdge";
+        learnMethod: MoveLearnMethod;
+        levelLearnedAt: number;
+        node: {
+          __typename?: "Move";
+          id: string;
+          name: string;
+          slug: string;
+          accuracy?: number | null;
+          damageClass: DamageClass;
+          effect?: string | null;
+          effectChance?: number | null;
+          power?: number | null;
+          pp?: number | null;
+          target: MoveTarget;
+          type: { __typename?: "Type"; id: string; name: string; slug: string };
         };
       }> | null;
     };
@@ -1968,6 +2168,33 @@ export type TeamByIdQuery = {
                 };
               }> | null;
             };
+            moves: {
+              __typename?: "PokemonMoveConnection";
+              edges?: Array<{
+                __typename?: "PokemonMoveEdge";
+                learnMethod: MoveLearnMethod;
+                levelLearnedAt: number;
+                node: {
+                  __typename?: "Move";
+                  id: string;
+                  name: string;
+                  slug: string;
+                  accuracy?: number | null;
+                  damageClass: DamageClass;
+                  effect?: string | null;
+                  effectChance?: number | null;
+                  power?: number | null;
+                  pp?: number | null;
+                  target: MoveTarget;
+                  type: {
+                    __typename?: "Type";
+                    id: string;
+                    name: string;
+                    slug: string;
+                  };
+                };
+              }> | null;
+            };
             sprites: {
               __typename?: "PokemonSprites";
               frontDefault?: {
@@ -2021,17 +2248,6 @@ export const MoveFieldsFragmentDoc = gql`
   }
   ${TypeFieldsFragmentDoc}
 `;
-export const PokemonMoveFieldsFragmentDoc = gql`
-  fragment pokemonMoveFields on PokemonMoveEdge {
-    id: cursor
-    learnMethod
-    levelLearnedAt
-    node {
-      ...moveFields
-    }
-  }
-  ${MoveFieldsFragmentDoc}
-`;
 export const TeamMemberMoveFieldsFragmentDoc = gql`
   fragment teamMemberMoveFields on TeamMemberMove {
     id
@@ -2068,6 +2284,16 @@ export const PokemonFormFieldsFragmentDoc = gql`
     name
     slug
   }
+`;
+export const PokemonMoveFieldsFragmentDoc = gql`
+  fragment pokemonMoveFields on PokemonMoveEdge {
+    learnMethod
+    levelLearnedAt
+    node {
+      ...moveFields
+    }
+  }
+  ${MoveFieldsFragmentDoc}
 `;
 export const PokemonSpeciesFieldsFragmentDoc = gql`
   fragment pokemonSpeciesFields on PokemonSpecies {
@@ -2120,6 +2346,11 @@ export const PokemonFieldsFragmentDoc = gql`
         }
       }
     }
+    moves {
+      edges {
+        ...pokemonMoveFields
+      }
+    }
     species {
       ...pokemonSpeciesFields
     }
@@ -2132,6 +2363,7 @@ export const PokemonFieldsFragmentDoc = gql`
   ${AbilityFieldsFragmentDoc}
   ${TypeFieldsFragmentDoc}
   ${PokemonFormFieldsFragmentDoc}
+  ${PokemonMoveFieldsFragmentDoc}
   ${PokemonSpeciesFieldsFragmentDoc}
 `;
 export const TeamMemberFieldsFragmentDoc = gql`

@@ -1,6 +1,7 @@
 import type { Maybe, PokemonFieldsFragment } from "@/graphql";
 import { z } from "zod";
 import { Ability } from "./ability";
+import { Move } from "./move";
 import { parsePokemonForm, PokemonForm } from "./pokemon-form";
 import { parsePokemonSpecies, PokemonSpecies } from "./pokemon-species";
 import { Type } from "./type";
@@ -21,6 +22,7 @@ export const Pokemon = z.object({
   defaultSprite: z.string(),
   types: z.array(Type),
   abilities: z.array(Ability),
+  moves: z.array(Move),
 });
 export type Pokemon = z.infer<typeof Pokemon>;
 
@@ -57,6 +59,25 @@ export const parsePokemon = (
         effect: ability.node.effect,
         slot: ability.slot,
         isHidden: ability.isHidden,
+      })) ?? [],
+    moves:
+      pokemon?.moves?.edges?.map((move) => ({
+        id: move.node.id,
+        name: move.node.name,
+        slug: move.node.slug,
+        accuracy: move.node.accuracy ?? undefined,
+        pp: move.node.pp ?? undefined,
+        power: move.node.power ?? undefined,
+        damageclass: move.node.damageClass ?? undefined,
+        effect: move.node.effect ?? undefined,
+        effectChance: move.node.effectChance ?? undefined,
+        target: move.node.target,
+        learnMethod: move.learnMethod,
+        levelLearnedAt: move.levelLearnedAt,
+        type: {
+          name: move.node.type.name,
+          slug: move.node.type.slug,
+        },
       })) ?? [],
   });
 };

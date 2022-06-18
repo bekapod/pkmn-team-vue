@@ -15,7 +15,6 @@ fragment moveFields on Move {
 }
 
 fragment pokemonMoveFields on PokemonMoveEdge {
-  id: cursor
   learnMethod
   levelLearnedAt
   node {

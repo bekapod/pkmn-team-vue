@@ -32,6 +32,11 @@ fragment pokemonFields on Pokemon {
       }
     }
   }
+  moves {
+    edges {
+      ...pokemonMoveFields
+    }
+  }
   species {
     ...pokemonSpeciesFields
   }
