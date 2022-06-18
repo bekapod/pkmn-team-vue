@@ -45,7 +45,6 @@ export const useTeam = defineStore("team", {
 
         return { error: null, data: parsed };
       } catch (error) {
-        console.log({ error });
         Sentry.captureException(error, {
           level: "error",
           extra: {
@@ -88,7 +87,6 @@ export const useTeam = defineStore("team", {
           toasts.addToast(successToast);
           return { error: null, data: parsed.name };
         } catch (error) {
-          console.log({ error });
           Sentry.captureException(error, {
             level: "error",
             extra: {
@@ -100,7 +98,6 @@ export const useTeam = defineStore("team", {
           return { error, data: null };
         }
       } else {
-        console.log("Tried to set team name without team being set");
         Sentry.captureMessage("Tried to set team name without team being set", {
           level: "error",
           extra: {

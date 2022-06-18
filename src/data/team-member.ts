@@ -5,10 +5,10 @@ import { TeamMemberMove } from "./team-member-move";
 export const TeamMember = z.object({
   id: z.string(),
   slot: z.number(),
-  pokemon: z.union([
+  pokemon: z.intersection(
     Pokemon,
-    z.object({ pokedexId: z.string(), name: z.string() }),
-  ]),
+    z.object({ pokedexId: z.string(), name: z.string() })
+  ),
   moves: z.array(TeamMemberMove).optional(),
 });
 export type TeamMember = z.infer<typeof TeamMember>;

@@ -1692,6 +1692,68 @@ export type MeQuery = {
   } | null;
 };
 
+export type PokemonByIdQueryVariables = Exact<{
+  id: Scalars["ID"];
+}>;
+
+export type PokemonByIdQuery = {
+  __typename?: "Query";
+  pokemonOne?: {
+    __typename?: "Pokemon";
+    id: string;
+    slug: string;
+    attack: number;
+    defense: number;
+    specialAttack: number;
+    specialDefense: number;
+    speed: number;
+    hp: number;
+    isDefault: boolean;
+    types: {
+      __typename?: "PokemonTypeConnection";
+      edges?: Array<{
+        __typename?: "PokemonTypeEdge";
+        slot: number;
+        node: { __typename?: "Type"; id: string; name: string; slug: string };
+      }> | null;
+    };
+    forms: {
+      __typename?: "PokemonFormConnection";
+      edges?: Array<{
+        __typename?: "PokemonFormEdge";
+        node: {
+          __typename?: "PokemonForm";
+          id: string;
+          formName?: string | null;
+          isDefault: boolean;
+          isBattleOnly: boolean;
+          name: string;
+          slug: string;
+        };
+      }> | null;
+    };
+    species: {
+      __typename?: "PokemonSpecies";
+      id: string;
+      name: string;
+      slug: string;
+      color: Color;
+      description?: string | null;
+      genus: string;
+      habitat?: Habitat | null;
+      isBaby: boolean;
+      isLegendary: boolean;
+      isMythical: boolean;
+      pokedexId: number;
+      shape?: Shape | null;
+    };
+    sprites: {
+      __typename?: "PokemonSprites";
+      frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
+    };
+  } | null;
+};
+
 export type TeamByIdQueryVariables = Exact<{
   id: Scalars["ID"];
 }>;
@@ -2005,6 +2067,14 @@ export const MeDocument = gql`
     }
   }
 `;
+export const PokemonByIdDocument = gql`
+  query PokemonById($id: ID!) {
+    pokemonOne(id: $id) {
+      ...pokemonFields
+    }
+  }
+  ${PokemonFieldsFragmentDoc}
+`;
 export const TeamByIdDocument = gql`
   query TeamById($id: ID!) {
     team(id: $id) {
@@ -2063,6 +2133,16 @@ export function getSdk<C>(requester: Requester<C>) {
     Me(variables?: MeQueryVariables, options?: C): Promise<MeQuery> {
       return requester<MeQuery, MeQueryVariables>(
         MeDocument,
+        variables,
+        options
+      );
+    },
+    PokemonById(
+      variables: PokemonByIdQueryVariables,
+      options?: C
+    ): Promise<PokemonByIdQuery> {
+      return requester<PokemonByIdQuery, PokemonByIdQueryVariables>(
+        PokemonByIdDocument,
         variables,
         options
       );

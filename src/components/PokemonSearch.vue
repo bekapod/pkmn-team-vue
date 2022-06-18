@@ -78,10 +78,10 @@
       </template>
     </AisRefinementList>
 
-    <div class="relative flex-1 bg-white md:grid md:grid-cols-2">
+    <div class="relative flex-1 md:grid md:grid-cols-2 md:gap-4">
       <AisInfiniteHits
         :transformItems="transformPokemonItems"
-        class="md:relative"
+        class="overflow-hidden rounded-tl-lg rounded-br-lg bg-white md:relative"
       >
         <template v-slot="{ items, refineNext, isLastPage }">
           <ul>
@@ -93,12 +93,15 @@
             >
               <template v-slot="{ item }">
                 <PokemonLine
+                  role="button"
                   :key="item.id"
                   :name="item.defaultForm.name"
                   :pokedex-id="item.species.pokedexId"
                   :sprite="item.defaultSprite"
                   :types="item.types"
-                  class="relative top-1"
+                  tabindex="0"
+                  class="focus-visible:manual-focus relative top-1 focus-visible:outline-offset-[-8px]"
+                  @click="search.selectPokemon(item.id)"
                 />
               </template>
 
@@ -114,6 +117,10 @@
           </ul>
         </template>
       </AisInfiniteHits>
+
+      <div v-if="search.selectedPokemon">
+        {{ search.selectedPokemon.species.name }}
+      </div>
     </div>
   </AisInstantSearch>
 </template>
@@ -134,6 +141,8 @@ import PokemonLine from "./PokemonLine.vue";
 import TypeTag from "./TypeTag.vue";
 import CheckIcon from "@/assets/icons/check.svg";
 import { parsePokemon } from "@/data";
+import { useSearch } from "@/stores";
+import { nextTick, onUpdated } from "vue";
 
 const searchClient = algoliasearch(
   "VKYNMD4NA5",
@@ -145,6 +154,14 @@ const transformPokemonItems = (items: any[]) => {
     parsePokemon({ id: objectID, ...item.node })
   );
 };
+
+const search = useSearch();
+
+onUpdated(() => {
+  nextTick(() => {
+    console.log("updated");
+  });
+});
 </script>
 
 <style scoped>
