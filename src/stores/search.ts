@@ -16,6 +16,9 @@ export const useSearch = defineStore("search", {
     };
   },
   actions: {
+    clearSelectedPokemon() {
+      this.selectedPokemon = null;
+    },
     async selectPokemon(id: string) {
       const toasts = useToasts();
 

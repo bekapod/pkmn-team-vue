@@ -1,6 +1,12 @@
 <template>
   <li class="relative flex list-none flex-col rounded-br-xl bg-white">
-    <PokemonLine v-bind="pokemon" class="cursor-grab active:cursor-grabbing" />
+    <PokemonLine
+      :pokedex-id="pokemon.species.pokedexId"
+      :name="pokemon.defaultForm.name"
+      :sprite="pokemon.defaultSprite"
+      :types="pokemon.types"
+      class="cursor-grab active:cursor-grabbing"
+    />
 
     <button
       class="absolute top-4 right-4 rounded-md text-indigo-900 hover:text-red-vivid-400 focus-visible:outline-red-vivid-400"
@@ -10,40 +16,15 @@
       <TrashIcon aria-hidden="true" class="h-5 w-5" />
     </button>
 
-    <dl class="mb-2 grid grid-cols-3 grid-rows-2 gap-2 p-3">
-      <div
-        v-for="stat in [
-          { label: 'HP', value: pokemon.hp },
-          { label: 'Atk', value: pokemon.attack },
-          { label: 'Def', value: pokemon.defense },
-          { label: 'Sp. Atk', value: pokemon.specialAttack },
-          { label: 'Sp. Def', value: pokemon.specialDefense },
-          { label: 'Spd', value: pokemon.speed },
-        ]"
-        :key="stat.label"
-        class="flex items-center py-2 px-3"
-        :class="{
-          'bg-green-vivid-200':
-            highestStat === stat.value && highestStat !== lowestStat,
-          'bg-red-vivid-100':
-            lowestStat === stat.value && highestStat !== lowestStat,
-        }"
-      >
-        <dt
-          class="text-sm font-bold uppercase text-indigo-500"
-          :class="{
-            'text-indigo-700':
-              (highestStat === stat.value && highestStat !== lowestStat) ||
-              (lowestStat === stat.value && highestStat !== lowestStat),
-          }"
-        >
-          {{ stat.label }}
-        </dt>
-        <dd class="ml-auto text-lg font-bold text-indigo-800">
-          {{ stat.value }}
-        </dd>
-      </div>
-    </dl>
+    <PokemonStats
+      class="mb-2 p-3"
+      :hp="pokemon.hp"
+      :attack="pokemon.attack"
+      :defense="pokemon.defense"
+      :special-attack="pokemon.specialAttack"
+      :special-defense="pokemon.specialDefense"
+      :speed="pokemon.speed"
+    />
 
     <ol class="grid flex-grow grid-cols-2 grid-rows-2 gap-3 p-3">
       <TeamMemberMove
@@ -70,14 +51,16 @@
 </template>
 
 <script setup lang="ts">
-import PokemonLine from "./PokemonLine.vue";
 import TeamMemberMove from "./TeamMemberMove.vue";
 import type { PropType } from "vue";
 import MehBlankIcon from "@/assets/icons/meh-blank.svg";
 import TrashIcon from "@/assets/icons/trash.svg";
+import PokemonLine from "@/components/PokemonLine.vue";
+import PokemonStats from "@/components/PokemonStats.vue";
 import { Pokemon, TeamMemberMove as TeamMemberMoveT } from "@/data";
+undefined;
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     required: true,
@@ -105,15 +88,4 @@ defineEmits<{
   (e: "remove", id: string): void;
   (e: "remove-move", id: string, moveId: string): void;
 }>();
-
-const stats = [
-  props.pokemon.hp,
-  props.pokemon.attack,
-  props.pokemon.defense,
-  props.pokemon.specialAttack,
-  props.pokemon.specialDefense,
-  props.pokemon.speed,
-];
-const highestStat = Math.max(...stats);
-const lowestStat = Math.min(...stats);
 </script>

@@ -34,7 +34,10 @@
         v-for="member in members"
         :key="member.id"
         outdent="var(--spacing-6)"
-        v-bind="member.pokemon"
+        :pokedex-id="member.pokemon.species.pokedexId"
+        :name="member.pokemon.defaultForm.name"
+        :sprite="member.pokemon.defaultSprite"
+        :types="member.pokemon.types"
       />
     </slot>
   </Card>

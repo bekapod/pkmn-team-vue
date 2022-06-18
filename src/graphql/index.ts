@@ -1074,6 +1074,21 @@ export type PokemonFieldsFragment = {
   speed: number;
   hp: number;
   isDefault: boolean;
+  abilities: {
+    __typename?: "PokemonAbilityConnection";
+    edges?: Array<{
+      __typename?: "PokemonAbilityEdge";
+      slot: number;
+      isHidden: boolean;
+      node: {
+        __typename?: "Ability";
+        id: string;
+        slug: string;
+        name: string;
+        effect?: string | null;
+      };
+    }> | null;
+  };
   types: {
     __typename?: "PokemonTypeConnection";
     edges?: Array<{
@@ -1189,6 +1204,21 @@ export type TeamFieldsFragment = {
             isMythical: boolean;
             shape?: Shape | null;
           };
+          abilities: {
+            __typename?: "PokemonAbilityConnection";
+            edges?: Array<{
+              __typename?: "PokemonAbilityEdge";
+              slot: number;
+              isHidden: boolean;
+              node: {
+                __typename?: "Ability";
+                id: string;
+                slug: string;
+                name: string;
+                effect?: string | null;
+              };
+            }> | null;
+          };
           types: {
             __typename?: "PokemonTypeConnection";
             edges?: Array<{
@@ -1259,6 +1289,21 @@ export type TeamMemberFieldsFragment = {
       isLegendary: boolean;
       isMythical: boolean;
       shape?: Shape | null;
+    };
+    abilities: {
+      __typename?: "PokemonAbilityConnection";
+      edges?: Array<{
+        __typename?: "PokemonAbilityEdge";
+        slot: number;
+        isHidden: boolean;
+        node: {
+          __typename?: "Ability";
+          id: string;
+          slug: string;
+          name: string;
+          effect?: string | null;
+        };
+      }> | null;
     };
     types: {
       __typename?: "PokemonTypeConnection";
@@ -1355,6 +1400,21 @@ export type CreateTeamMutation = {
               isMythical: boolean;
               shape?: Shape | null;
             };
+            abilities: {
+              __typename?: "PokemonAbilityConnection";
+              edges?: Array<{
+                __typename?: "PokemonAbilityEdge";
+                slot: number;
+                isHidden: boolean;
+                node: {
+                  __typename?: "Ability";
+                  id: string;
+                  slug: string;
+                  name: string;
+                  effect?: string | null;
+                };
+              }> | null;
+            };
             types: {
               __typename?: "PokemonTypeConnection";
               edges?: Array<{
@@ -1448,6 +1508,21 @@ export type RemoveTeamMutation = {
               isMythical: boolean;
               shape?: Shape | null;
             };
+            abilities: {
+              __typename?: "PokemonAbilityConnection";
+              edges?: Array<{
+                __typename?: "PokemonAbilityEdge";
+                slot: number;
+                isHidden: boolean;
+                node: {
+                  __typename?: "Ability";
+                  id: string;
+                  slug: string;
+                  name: string;
+                  effect?: string | null;
+                };
+              }> | null;
+            };
             types: {
               __typename?: "PokemonTypeConnection";
               edges?: Array<{
@@ -1540,6 +1615,21 @@ export type UpdateTeamMutation = {
               isLegendary: boolean;
               isMythical: boolean;
               shape?: Shape | null;
+            };
+            abilities: {
+              __typename?: "PokemonAbilityConnection";
+              edges?: Array<{
+                __typename?: "PokemonAbilityEdge";
+                slot: number;
+                isHidden: boolean;
+                node: {
+                  __typename?: "Ability";
+                  id: string;
+                  slug: string;
+                  name: string;
+                  effect?: string | null;
+                };
+              }> | null;
             };
             types: {
               __typename?: "PokemonTypeConnection";
@@ -1636,6 +1726,21 @@ export type AllTeamsQuery = {
                   isMythical: boolean;
                   shape?: Shape | null;
                 };
+                abilities: {
+                  __typename?: "PokemonAbilityConnection";
+                  edges?: Array<{
+                    __typename?: "PokemonAbilityEdge";
+                    slot: number;
+                    isHidden: boolean;
+                    node: {
+                      __typename?: "Ability";
+                      id: string;
+                      slug: string;
+                      name: string;
+                      effect?: string | null;
+                    };
+                  }> | null;
+                };
                 types: {
                   __typename?: "PokemonTypeConnection";
                   edges?: Array<{
@@ -1709,6 +1814,21 @@ export type PokemonByIdQuery = {
     speed: number;
     hp: number;
     isDefault: boolean;
+    abilities: {
+      __typename?: "PokemonAbilityConnection";
+      edges?: Array<{
+        __typename?: "PokemonAbilityEdge";
+        slot: number;
+        isHidden: boolean;
+        node: {
+          __typename?: "Ability";
+          id: string;
+          slug: string;
+          name: string;
+          effect?: string | null;
+        };
+      }> | null;
+    };
     types: {
       __typename?: "PokemonTypeConnection";
       edges?: Array<{
@@ -1805,6 +1925,21 @@ export type TeamByIdQuery = {
               isMythical: boolean;
               shape?: Shape | null;
             };
+            abilities: {
+              __typename?: "PokemonAbilityConnection";
+              edges?: Array<{
+                __typename?: "PokemonAbilityEdge";
+                slot: number;
+                isHidden: boolean;
+                node: {
+                  __typename?: "Ability";
+                  id: string;
+                  slug: string;
+                  name: string;
+                  effect?: string | null;
+                };
+              }> | null;
+            };
             types: {
               __typename?: "PokemonTypeConnection";
               edges?: Array<{
@@ -1847,14 +1982,6 @@ export type TeamByIdQuery = {
   } | null;
 };
 
-export const AbilityFieldsFragmentDoc = gql`
-  fragment abilityFields on Ability {
-    id
-    slug
-    name
-    effect
-  }
-`;
 export const ItemFieldsFragmentDoc = gql`
   fragment itemFields on Item {
     id
@@ -1924,6 +2051,14 @@ export const TrainerFieldsFragmentDoc = gql`
     picture
   }
 `;
+export const AbilityFieldsFragmentDoc = gql`
+  fragment abilityFields on Ability {
+    id
+    slug
+    name
+    effect
+  }
+`;
 export const PokemonFormFieldsFragmentDoc = gql`
   fragment pokemonFormFields on PokemonForm {
     id
@@ -1961,6 +2096,15 @@ export const PokemonFieldsFragmentDoc = gql`
     speed
     hp
     isDefault
+    abilities {
+      edges {
+        slot
+        isHidden
+        node {
+          ...abilityFields
+        }
+      }
+    }
     types {
       edges {
         slot
@@ -1985,6 +2129,7 @@ export const PokemonFieldsFragmentDoc = gql`
       }
     }
   }
+  ${AbilityFieldsFragmentDoc}
   ${TypeFieldsFragmentDoc}
   ${PokemonFormFieldsFragmentDoc}
   ${PokemonSpeciesFieldsFragmentDoc}

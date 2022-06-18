@@ -71,6 +71,8 @@ module.exports = {
             "user-circle",
             "loading-alt",
             "check",
+            "hide",
+            "show",
           ].reduce((icons, name) => {
             return {
               ...icons,

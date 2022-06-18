@@ -4,7 +4,12 @@ import { haunter } from "@/data/mocks";
 
 const csf: Meta = {
   component: PokemonLine,
-  args: haunter,
+  args: {
+    pokedexId: haunter.species.pokedexId,
+    name: haunter.defaultForm.name,
+    sprite: haunter.defaultSprite,
+    types: haunter.types,
+  },
 };
 
 export const Default: Story = (args) => ({

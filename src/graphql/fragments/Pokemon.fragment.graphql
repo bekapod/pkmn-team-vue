@@ -8,6 +8,15 @@ fragment pokemonFields on Pokemon {
   speed
   hp
   isDefault
+  abilities {
+    edges {
+      slot
+      isHidden
+      node {
+        ...abilityFields
+      }
+    }
+  }
   types {
     edges {
       slot

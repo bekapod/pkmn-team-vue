@@ -1,5 +1,6 @@
 import type { Maybe, PokemonFieldsFragment } from "@/graphql";
 import { z } from "zod";
+import { Ability } from "./ability";
 import { parsePokemonForm, PokemonForm } from "./pokemon-form";
 import { parsePokemonSpecies, PokemonSpecies } from "./pokemon-species";
 import { Type } from "./type";
@@ -19,6 +20,7 @@ export const Pokemon = z.object({
   speed: z.number(),
   defaultSprite: z.string(),
   types: z.array(Type),
+  abilities: z.array(Ability),
 });
 export type Pokemon = z.infer<typeof Pokemon>;
 
@@ -47,5 +49,14 @@ export const parsePokemon = (
       slug: type.node.slug,
       slot: type.slot,
     })),
+    abilities:
+      pokemon?.abilities?.edges?.map((ability) => ({
+        id: ability.node.id,
+        name: ability.node.name,
+        slug: ability.node.slug,
+        effect: ability.node.effect,
+        slot: ability.slot,
+        isHidden: ability.isHidden,
+      })) ?? [],
   });
 };

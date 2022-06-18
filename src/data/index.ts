@@ -1,3 +1,4 @@
+export * from "./ability";
 export * from "./move";
 export * from "./pokemon";
 export * from "./pokemon-form";

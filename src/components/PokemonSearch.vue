@@ -44,7 +44,7 @@
       :limit="20"
     >
       <template v-slot="{ items, refine }">
-        <ul class="-mx-2 flex gap-2 overflow-x-auto px-2 py-4">
+        <ul class="-mx-2 flex gap-2 overflow-x-auto px-2 py-5">
           <li v-for="item in items" :key="item.value">
             <input
               :key="item.value"
@@ -81,10 +81,12 @@
       </template>
     </AisRefinementList>
 
-    <div class="relative flex-1 md:grid md:grid-cols-2 md:gap-4">
+    <div
+      class="relative flex-1 overflow-hidden md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3"
+    >
       <AisHits
         :transformItems="transformPokemonItems"
-        class="overflow-hidden rounded-tl-lg rounded-br-lg bg-white md:relative"
+        class="relative h-full overflow-hidden rounded-tl-lg rounded-br-lg bg-white md:rounded-br-none"
       >
         <template v-slot="{ items }">
           <ul class="scroller">
@@ -105,8 +107,39 @@
         </template>
       </AisHits>
 
-      <div v-if="search.selectedPokemon">
-        {{ search.selectedPokemon.species.name }}
+      <div
+        class="absolute top-0 left-0 h-full overflow-hidden md:static lg:col-span-2"
+      >
+        <Transition
+          enter-active-class="transform transition ease-in-out duration-500 sm:duration-700 motion-reduce:transition-none"
+          enter-from-class="-translate-y-full md:translate-y-0 md:opacity-0"
+          enter-to-class="translate-y-0 opacity-100"
+          leave-active-class="transform transition ease-in-out duration-500 sm:duration-700 motion-reduce:transition-none"
+          leave-from-class="translate-y-0  opacity-100"
+          leave-to-class="-translate-y-full md:translate-y-0 md:opacity-0"
+        >
+          <PokemonDetail
+            v-if="search.selectedPokemon"
+            class="h-full md:rounded-tl-none"
+            :pokedex-id="search.selectedPokemon.species.pokedexId"
+            :name="search.selectedPokemon.defaultForm.name"
+            :description="search.selectedPokemon.species.description"
+            :genus="search.selectedPokemon.species.genus"
+            :is-baby="search.selectedPokemon.species.isBaby"
+            :is-legendary="search.selectedPokemon.species.isLegendary"
+            :is-mythical="search.selectedPokemon.species.isMythical"
+            :sprite="search.selectedPokemon.defaultSprite"
+            :abilities="search.selectedPokemon.abilities"
+            :types="search.selectedPokemon.types"
+            :hp="search.selectedPokemon.hp"
+            :attack="search.selectedPokemon.attack"
+            :defense="search.selectedPokemon.defense"
+            :special-attack="search.selectedPokemon.specialAttack"
+            :special-defense="search.selectedPokemon.specialDefense"
+            :speed="search.selectedPokemon.speed"
+            @click="search.clearSelectedPokemon()"
+          />
+        </Transition>
       </div>
     </div>
 
@@ -125,9 +158,10 @@ import {
   AisPagination,
 } from "vue-instantsearch/vue3/es";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
-import PokemonLine from "./PokemonLine.vue";
-import TypeTag from "./TypeTag.vue";
 import CheckIcon from "@/assets/icons/check.svg";
+import PokemonDetail from "@/components/PokemonDetail.vue";
+import PokemonLine from "@/components/PokemonLine.vue";
+import TypeTag from "@/components/TypeTag.vue";
 import { parsePokemon } from "@/data";
 import { useSearch } from "@/stores";
 
