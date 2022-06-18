@@ -28,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed, type PropType } from "vue";
 import TypeTag from "./TypeTag.vue";
-import type { PropType } from "vue";
 import { Type } from "@/data";
 import { sortBySlot, getTypeGradient } from "@/lib";
 
@@ -63,7 +63,7 @@ const props = defineProps({
   },
 });
 
-const sortedTypes = sortBySlot(props.types);
+const sortedTypes = computed(() => sortBySlot(props.types));
 const imageBasePath = import.meta.env.VITE_CLOUDINARY_BASE_PATH.replace(
   "image/upload",
   "image/upload/t_pokemon_sprite"

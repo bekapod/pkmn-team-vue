@@ -4,7 +4,10 @@
     :search-client="searchClient"
     class="absolute flex h-full w-full flex-col"
   >
-    <AisConfigure filters="node.forms.totalCount > 0" />
+    <AisConfigure
+      :hits-per-page.camel="100"
+      filters="node.forms.totalCount > 0"
+    />
     <AisSearchBox>
       <template v-slot="{ currentRefinement, isSearchStalled, refine }">
         <FormKit
@@ -79,70 +82,54 @@
     </AisRefinementList>
 
     <div class="relative flex-1 md:grid md:grid-cols-2 md:gap-4">
-      <AisInfiniteHits
+      <AisHits
         :transformItems="transformPokemonItems"
         class="overflow-hidden rounded-tl-lg rounded-br-lg bg-white md:relative"
       >
-        <template v-slot="{ items, refineNext, isLastPage }">
-          <ul>
-            <RecycleScroller
-              class="scroller"
-              :items="items"
-              :item-size="96"
-              key-field="id"
-            >
-              <template v-slot="{ item }">
-                <PokemonLine
-                  role="button"
-                  :key="item.id"
-                  :name="item.defaultForm.name"
-                  :pokedex-id="item.species.pokedexId"
-                  :sprite="item.defaultSprite"
-                  :types="item.types"
-                  tabindex="0"
-                  class="focus-visible:manual-focus relative top-1 focus-visible:outline-offset-[-8px]"
-                  @click="search.selectPokemon(item.id)"
-                />
-              </template>
-
-              <template #after v-if="!isLastPage">
-                <button
-                  v-intersection-observer="refineNext"
-                  @click="refineNext"
-                >
-                  Show more results
-                </button>
-              </template>
-            </RecycleScroller>
+        <template v-slot="{ items }">
+          <ul class="scroller">
+            <li v-for="item of items" :key="item.id">
+              <PokemonLine
+                role="button"
+                :id="item.id"
+                :name="item.defaultForm.name"
+                :pokedex-id="item.species.pokedexId"
+                :sprite="item.defaultSprite"
+                :types="item.types"
+                tabindex="0"
+                class="focus-visible:manual-focus relative top-1 focus-visible:outline-offset-[-8px]"
+                @click="search.selectPokemon(item.id)"
+              />
+            </li>
           </ul>
         </template>
-      </AisInfiniteHits>
+      </AisHits>
 
       <div v-if="search.selectedPokemon">
         {{ search.selectedPokemon.species.name }}
       </div>
     </div>
+
+    <AisPagination hidden />
   </AisInstantSearch>
 </template>
 
 <script setup lang="ts">
-import { vIntersectionObserver } from "@vueuse/components";
 import algoliasearch from "algoliasearch/lite";
 import {
   AisInstantSearch,
   AisSearchBox,
-  AisInfiniteHits,
+  AisHits,
   AisRefinementList,
   AisConfigure,
+  AisPagination,
 } from "vue-instantsearch/vue3/es";
-import { RecycleScroller } from "vue-virtual-scroller";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 import PokemonLine from "./PokemonLine.vue";
 import TypeTag from "./TypeTag.vue";
 import CheckIcon from "@/assets/icons/check.svg";
 import { parsePokemon } from "@/data";
 import { useSearch } from "@/stores";
-import { nextTick, onUpdated } from "vue";
 
 const searchClient = algoliasearch(
   "VKYNMD4NA5",
@@ -150,23 +137,18 @@ const searchClient = algoliasearch(
 );
 
 const transformPokemonItems = (items: any[]) => {
-  return items.map(({ objectID, ...item }) =>
+  const transformed = items.map(({ objectID, ...item }) =>
     parsePokemon({ id: objectID, ...item.node })
   );
+  return transformed;
 };
 
 const search = useSearch();
-
-onUpdated(() => {
-  nextTick(() => {
-    console.log("updated");
-  });
-});
 </script>
 
 <style scoped>
 .scroller {
-  @apply absolute h-full w-full;
+  @apply absolute h-full w-full overflow-y-scroll;
 }
 .count-tag {
   text-shadow: none;
