@@ -27,11 +27,7 @@ export const parseTeam = (
         id: member?.node?.pokemon.id,
         pokedexId: member?.node?.pokemon.species.pokedexId,
         name: member?.node?.pokemon.species.name,
-        sprite:
-          member?.node?.pokemon?.forms.edges?.[0].node?.sprites.frontDefault?.path?.replace(
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/",
-            ""
-          ),
+        sprite: member?.node?.pokemon?.sprites.frontDefault?.path,
         hp: member?.node?.pokemon?.hp,
         attack: member?.node?.pokemon?.attack,
         defense: member?.node?.pokemon?.defense,
@@ -46,28 +42,6 @@ export const parseTeam = (
           })
         ),
       },
-      // moves: member?.node?.moves?.edges?.map(move => ({
-      //   id: move?.id,
-      //   slot: move?.slot,
-      //   learnMethod: move?.learnMethod,
-      //   levelLearnedAt: move?.levelLearnedAt ?? undefined,
-      //   move: {
-      //     id: move?.node?.id,
-      //     name: move?.node?.name,
-      //     slug: move?.node?.slug,
-      //     accuracy: move?.node?.accuracy ?? undefined,
-      //     pp: move?.node?.pp,
-      //     power: move?.node?.power ?? undefined,
-      //     damageClass: move?.node?.damageClass,
-      //     effect: move?.node?.effect ?? undefined,
-      //     effectChance: move?.node?.effectChance ?? undefined,
-      //     target: move?.node?.target,
-      //     type: {
-      //       name: move?.node?.type?.name,
-      //       slug: move?.node?.type?.slug,
-      //     },
-      //   },
-      // })),
     })),
   });
 };

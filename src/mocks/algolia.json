@@ -1,0 +1,1852 @@
+{
+  "results": [
+    {
+      "hits": [
+        {
+          "node": {
+            "attack": 49,
+            "defense": 49,
+            "height": 7,
+            "hp": 45,
+            "isDefault": true,
+            "slug": "bulbasaur",
+            "specialAttack": 65,
+            "specialDefense": 65,
+            "speed": 45,
+            "sprites": { "frontDefault": { "path": "pokemon/1.png" } },
+            "weight": 69,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhpkue026c22xfdx2t9js3",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Bulbasaur",
+                    "slug": "bulbasaur"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhpkn8024j22xfcp9z4dp5",
+              "color": "GREEN",
+              "description": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.\n\nA strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.\n\nIt can go for days\nwithout eating a\nsingle morsel.\fIn the bulb on\nits back, it\nstores energy.\n\nThe seed on its\nback is filled\nwith nutrients.\fThe seed grows\nsteadily larger as\nits body grows.\n\nIt carries a seed\non its back right\nfrom birth. As it\fgrows older, the\nseed also grows\nlarger.\n\nWhile it is young,\nit uses the\nnutrients that are\fstored in the\nseeds on its back\nin order to grow.\n\nBULBASAUR can be seen napping in\nbright sunlight.\nThere is a seed on its back.\fBy soaking up the sun’s rays, the seed\ngrows progressively larger.\n\nBULBASAUR can be seen napping in\nbright sunlight.\nThere is a seed on its back.\fBy soaking up the sun’s rays, the seed\ngrows progressively larger.\n\nBULBASAUR can be seen napping in bright\nsunlight. There is a seed on its back.\nBy soaking up the sun’s rays, the seed\ngrows progressively larger.\n\nThere is a plant seed on its back right\nfrom the day this POKéMON is born.\nThe seed slowly grows larger.\n\nA strange seed was planted on its back at\nbirth. The plant sprouts and grows with\nthis POKéMON.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nThe seed on its back is filled\nwith nutrients. The seed grows\nsteadily larger as its body grows.\n\nIt carries a seed on its back right\nfrom birth. As it grows older, the\nseed also grows larger.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nFor some time after its birth, it\ngrows by gaining nourishment from\nthe seed on its back.\n\nA strange seed was planted on its back at birth.\nThe plant sprouts and grows with this Pokémon.\n\nFor some time after its birth, it grows by gaining\nnourishment from the seed on its back.\n\nBulbasaur can be seen napping in bright sunlight.\nThere is a seed on its back. By soaking up the sun’s rays,\nthe seed grows progressively larger.\n\nBulbasaur can be seen napping in bright sunlight.\nThere is a seed on its back. By soaking up the sun’s rays,\nthe seed grows progressively larger.\n\nIt can go for days without eating a single morsel.\nIn the bulb on its back, it stores energy.\n\nIt can go for days without eating a single morsel.\nIn the bulb on its back, it stores energy.\n\nThere is a plant seed on its back right from the\nday this Pokémon is born. The seed slowly\ngrows larger.\n\nWhile it is young, it uses the nutrients that are\nstored in the seed on its back in order to grow.",
+              "genus": "Seed Pokémon",
+              "habitat": "GRASSLAND",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Bulbasaur",
+              "pokedexId": 1,
+              "shape": "QUADRUPED",
+              "slug": "bulbasaur"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gu22xf4wjx3rxh",
+                    "name": "Grass",
+                    "slug": "grass"
+                  }
+                },
+                {
+                  "slot": 2,
+                  "node": {
+                    "id": "TYPcl2hhnjlc01gm22xf18mj5i7v",
+                    "name": "Poison",
+                    "slug": "poison"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhpknj024m22xfc24xh1qp",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Bulbasaur",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Bulbasaur",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "1",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 62,
+            "defense": 63,
+            "height": 10,
+            "hp": 60,
+            "isDefault": true,
+            "slug": "ivysaur",
+            "specialAttack": 80,
+            "specialDefense": 80,
+            "speed": 60,
+            "sprites": { "frontDefault": { "path": "pokemon/2.png" } },
+            "weight": 130,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhplvw028222xf1gy07mrz",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Ivysaur",
+                    "slug": "ivysaur"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhplrq026f22xfbmmwdo57",
+              "color": "GREEN",
+              "description": "When the bulb on\nits back grows\nlarge, it appears\fto lose the\nability to stand\non its hind legs.\n\nWhen the bulb on\nits back grows\nlarge, it appears\fto lose the\nability to stand\non its hind legs.\n\nThe bulb on its\nback grows by\ndrawing energy.\fIt gives off an\naroma when it is\nready to bloom.\n\nExposure to sun­\nlight adds to its\nstrength. Sunlight\falso makes the bud\non its back grow\nlarger.\n\nIf the bud on its\nback starts to\nsmell sweet, it\fis evidence that\nthe large flower\nwill soon bloom.\n\nThe bulb on its\nback grows as it\nabsorbs nutrients.\fThe bulb gives off\na pleasant aroma\nwhen it blooms.\n\nThere is a bud on this POKéMON’s back.\nTo support its weight, IVYSAUR’s legs\nand trunk grow thick and strong.\fIf it starts spending more time lying\nin the sunlight, it’s a sign that the\nbud will bloom into a large flower soon.\n\nThere is a bud on this POKéMON’s back.\nTo support its weight, IVYSAUR’s legs\nand trunk grow thick and strong.\fIf it starts spending more time lying\nin the sunlight, it’s a sign that the\nbud will bloom into a large flower soon.\n\nTo support its bulb, IVYSAUR’s legs\ngrow sturdy. If it spends more time lying in\nthe sunlight, the bud will soon bloom into\na large flower.\n\nThere is a plant bulb on its back.\nWhen it absorbs nutrients, the bulb is said\nto blossom into a large flower.\n\nWhen the bulb on its back grows large, it\nappears to lose the ability to stand on\nits hind legs.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nExposure to sunlight adds to its\nstrength. Sunlight also makes the\nbud on its back grow larger.\n\nIf the bud on its back starts to\nsmell sweet, it is evidence that\nthe large flower will soon bloom.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nWhen the bud on its back starts\nswelling, a sweet aroma wafts to\nindicate the flower’s coming bloom.\n\nThere is a plant bulb on its back.\nWhen it absorbs nutrients, the bulb is said to\nblossom into a large flower.\n\nWhen the bud on its back starts swelling, a sweet\naroma wafts to indicate the flower’s coming bloom.\n\nThere is a bud on this Pokémon’s back. To support its weight,\nIvysaur’s legs and trunk grow thick and strong.\nIf it starts spending more time lying in the sunlight,\nit’s a sign that the bud will bloom into a large flower soon.\n\nThere is a bud on this Pokémon’s back. To support its weight,\nIvysaur’s legs and trunk grow thick and strong.\nIf it starts spending more time lying in the sunlight,\nit’s a sign that the bud will bloom into a large flower soon.\n\nThe bud on its back grows by drawing energy. It\ngives off an aroma when it is ready to bloom.\n\nThe bud on its back grows by drawing energy. It\ngives off an aroma when it is ready to bloom.\n\nWhen the bulb on its back grows large, it\nappears to lose the ability to stand on its\nhind legs.\n\nExposure to sunlight adds to its strength.\nSunlight also makes the bud on its back\ngrow larger.",
+              "genus": "Seed Pokémon",
+              "habitat": "GRASSLAND",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Ivysaur",
+              "pokedexId": 2,
+              "shape": "QUADRUPED",
+              "slug": "ivysaur"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gu22xf4wjx3rxh",
+                    "name": "Grass",
+                    "slug": "grass"
+                  }
+                },
+                {
+                  "slot": 2,
+                  "node": {
+                    "id": "TYPcl2hhnjlc01gm22xf18mj5i7v",
+                    "name": "Poison",
+                    "slug": "poison"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhplrx026i22xf1kmf0wje",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Ivysaur",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Ivysaur",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "2",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 82,
+            "defense": 83,
+            "height": 20,
+            "hp": 80,
+            "isDefault": true,
+            "slug": "venusaur",
+            "specialAttack": 100,
+            "specialDefense": 100,
+            "speed": 80,
+            "sprites": { "frontDefault": { "path": "pokemon/3.png" } },
+            "weight": 1000,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhpnod02a822xffv9d9gcw",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Venusaur",
+                    "slug": "venusaur"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhpnjw028522xfb455508u",
+              "color": "GREEN",
+              "description": "The plant blooms\nwhen it is\nabsorbing solar\fenergy. It stays\non the move to\nseek sunlight.\n\nThe plant blooms\nwhen it is\nabsorbing solar\fenergy. It stays\non the move to\nseek sunlight.\n\nThe flower on its\nback catches the\nsun's rays.\fThe sunlight is\nthen absorbed and\nused for energy.\n\nBy spreading the\nbroad petals of\nits flower and\fcatching the sun's\nrays, it fills its\nbody with power.\n\nIt is able to con­\nvert sunlight into\nenergy. As a\fresult, it is more\npowerful in the\nsummertime.\n\nAs it warms it­\nself and absorbs\nthe sunlight, its\fflower petals\nrelease a pleasant\nfragrance.\n\nThere is a large flower on VENUSAUR’s\nback. The flower is said to take on vivid\ncolors if it gets plenty of nutrition\fand sunlight. The flower’s aroma\nsoothes the emotions of people.\n\nThere is a large flower on VENUSAUR’s\nback. The flower is said to take on vivid\ncolors if it gets plenty of nutrition\fand sunlight. The flower’s aroma\nsoothes the emotions of people.\n\nVENUSAUR’s flower is said to take on vivid\ncolors if it gets plenty of nutrition and\nsunlight. The flower’s aroma soothes the\nemotions of people.\n\nA bewitching aroma wafts from its flower.\nThe fragrance becalms those engaged in\na battle.\n\nIts plant blooms when it is absorbing\nsolar energy. It stays on the move to\nseek sunlight.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nBy spreading the broad petals of\nits flower and catching the sun’s\nrays, it fills its body with power.\n\nIt is able to convert sunlight into\nenergy. As a result, it is more\npowerful in the summertime.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nAfter a rainy day, the flower on\nits back smells stronger. The\nscent attracts other Pokémon.\n\nBy spreading the broad petals of its flower\nand catching the sun’s rays, it fills its body\nwith power.\n\nAfter a rainy day, the flower on its back smells\nstronger. The scent attracts other Pokémon.\n\nThere is a large flower on Venusaur’s back. The flower is said\nto take on vivid colors if it gets plenty of nutrition and sunlight.\nThe flower’s aroma soothes the emotions of people.\n\nThere is a large flower on Venusaur’s back. The flower is said\nto take on vivid colors if it gets plenty of nutrition and sunlight.\nThe flower’s aroma soothes the emotions of people.\n\nThe flower on its back catches the sun’s rays.\nThe sunlight is then absorbed and\nused for energy.\n\nThe flower on its back catches the sun’s rays.\nThe sunlight is then absorbed and\nused for energy.\n\nIts plant blooms when it is absorbing solar\nenergy. It stays on the move to seek sunlight.\n\nA bewitching aroma wafts from its flower.\nThe fragrance becalms those engaged\nin a battle.",
+              "genus": "Seed Pokémon",
+              "habitat": "GRASSLAND",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Venusaur",
+              "pokedexId": 3,
+              "shape": "QUADRUPED",
+              "slug": "venusaur"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gu22xf4wjx3rxh",
+                    "name": "Grass",
+                    "slug": "grass"
+                  }
+                },
+                {
+                  "slot": 2,
+                  "node": {
+                    "id": "TYPcl2hhnjlc01gm22xf18mj5i7v",
+                    "name": "Poison",
+                    "slug": "poison"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhpnk3028a22xf3qrtft1i",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Venusaur",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Venusaur",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "3",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 52,
+            "defense": 43,
+            "height": 6,
+            "hp": 39,
+            "isDefault": true,
+            "slug": "charmander",
+            "specialAttack": 60,
+            "specialDefense": 50,
+            "speed": 65,
+            "sprites": { "frontDefault": { "path": "pokemon/4.png" } },
+            "weight": 85,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hi367o0vg222xf6bou7cj6",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Charmander",
+                    "slug": "charmander"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hi363k0ve022xfavup78rc",
+              "color": "RED",
+              "description": "Obviously prefers\nhot places. When\nit rains, steam\fis said to spout\nfrom the tip of\nits tail.\n\nObviously prefers\nhot places. When\nit rains, steam\fis said to spout\nfrom the tip of\nits tail.\n\nThe flame at the\ntip of its tail\nmakes a sound as\fit burns. You can\nonly hear it in\nquiet places.\n\nThe flame on its\ntail shows the\nstrength of its\flife force. If it\nis weak, the flame\nalso burns weakly.\n\nThe flame on its\ntail indicates\nCHARMANDER's life\fforce. If it is\nhealthy, the flame\nburns brightly.\n\nIf it's healthy,\nthe flame on the\ntip of its tail\fwill burn vigor­\nously, even if it\ngets a bit wet.\n\nThe flame that burns at the tip of its\ntail is an indication of its emotions.\nThe flame wavers when CHARMANDER is\fenjoying itself. If the POKéMON becomes\nenraged, the flame burns fiercely.\n\nThe flame that burns at the tip of its\ntail is an indication of its emotions.\nThe flame wavers when CHARMANDER is\fenjoying itself. If the POKéMON becomes\nenraged, the flame burns fiercely.\n\nThe flame that burns at the tip of its\ntail is an indication of its emotions.\nThe flame wavers when CHARMANDER is\nhappy, and blazes when it is enraged.\n\nFrom the time it is born, a flame burns\nat the tip of its tail. Its life would end\nif the flame were to go out.\n\nIt has a preference for hot things.\nWhen it rains, steam is said to spout from\nthe tip of its tail.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe flame on its tail shows the\nstrength of its life force. If it is weak,\nthe flame also burns weakly.\n\nThe flame on its tail indicates\nCHARMANDER’s life force. If it is\nhealthy, the flame burns brightly.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe fire on the tip of its tail is a\nmeasure of its life. If healthy,\nits tail burns intensely.\n\nThe flame on its tail indicates Charmander’s life\nforce. If it is healthy, the flame burns brightly.\n\nFrom the time it is born, a flame burns at the tip of\nits tail. Its life would end if the flame were to\ngo out.\n\nThe flame that burns at the tip of its tail is an indication\nof its emotions. The flame wavers when Charmander\nis enjoying itself. If the Pokémon becomes enraged,\nthe flame burns fiercely.\n\nThe flame that burns at the tip of its tail is an indication\nof its emotions. The flame wavers when Charmander\nis enjoying itself. If the Pokémon becomes enraged,\nthe flame burns fiercely.\n\nThe flame at the tip of its tail makes a sound as\nit burns. You can only hear it in quiet places.\n\nThe flame at the tip of its tail makes a sound as\nit burns. You can only hear it in quiet places.\n\nIt has a preference for hot things. When it rains,\nsteam is said to spout from the tip of its tail.\n\nFrom the time it is born, a flame burns at the tip\nof its tail. Its life would end if the flame were to\ngo out.",
+              "genus": "Lizard Pokémon",
+              "habitat": "MOUNTAIN",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Charmander",
+              "pokedexId": 4,
+              "shape": "UPRIGHT",
+              "slug": "charmander"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm001gs22xf5d5ycl44",
+                    "name": "Fire",
+                    "slug": "fire"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hi363o0ve322xf1k8a38zo",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Charmander",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Charmander",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "4",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 64,
+            "defense": 58,
+            "height": 11,
+            "hp": 58,
+            "isDefault": true,
+            "slug": "charmeleon",
+            "specialAttack": 80,
+            "specialDefense": 65,
+            "speed": 80,
+            "sprites": { "frontDefault": { "path": "pokemon/5.png" } },
+            "weight": 190,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hi37be0vhy22xf0tyrbpyu",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Charmeleon",
+                    "slug": "charmeleon"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hi377o0vg422xfgaa78dxt",
+              "color": "RED",
+              "description": "When it swings\nits burning tail,\nit elevates the\ftemperature to\nunbearably high\nlevels.\n\nWhen it swings\nits burning tail,\nit elevates the\ftemperature to\nunbearably high\nlevels.\n\nTough fights could\nexcite this\nPOKéMON. When\fexcited, it may\nblow out bluish-\nwhite flames.\n\nIt is very hot­\nheaded by nature,\nso it constantly\fseeks opponents.\nIt calms down only\nwhen it wins.\n\nIt has a barbaric\nnature. In battle,\nit whips its\ffiery tail around\nand slashes away\nwith sharp claws.\n\nIf it becomes\nagitated during\nbattle, it spouts\fintense flames,\nincinerating its\nsurroundings.\n\nCHARMELEON mercilessly destroys its\nfoes using its sharp claws.\nIf it encounters a strong foe, it turns\faggressive. In this excited state, the\nflame at the tip of its tail flares with a\nbluish white color.\n\nCHARMELEON mercilessly destroys its\nfoes using its sharp claws.\nIf it encounters a strong foe, it turns\faggressive. In this excited state, the\nflame at the tip of its tail flares with a\nbluish white color.\n\nWithout pity, its sharp claws destroy foes.\nIf it encounters a strong enemy, it\nbecomes agitated, and the flame on its\ntail flares with a bluish white color.\n\nIt lashes about with its tail to knock\ndown its foe. It then tears up the fallen\nopponent with sharp claws.\n\nWhen it swings its burning tail, it\nelevates the air temperature to \nunbearably high levels.\n\nIn the rocky mountains where\nCHARMELEON live, their fiery\ntails shine at night like stars.\n\nIn the rocky mountains where\nCHARMELEON live, their fiery\ntails shine at night like stars.\n\nIn the rocky mountains where\nCHARMELEON live, their fiery\ntails shine at night like stars.\n\nIt is very hotheaded by nature,\nso it constantly seeks opponents.\nIt calms down only when it wins.\n\nIt has a barbaric nature. In battle,\nit whips its fiery tail around\nand slashes away with sharp claws.\n\nIn the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.\n\nIn the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.\n\nIn the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.\n\nIn the rocky mountains where\nCharmeleon live, their fiery\ntails shine at night like stars.\n\nIt lashes about with its tail to knock down its foe.\nIt then tears up the fallen opponent with\nsharp claws.\n\nWhen it swings its burning tail, it elevates the air\ntemperature to unbearably high levels.\n\nCharmeleon mercilessly destroys its foes using its sharp claws.\nIf it encounters a strong foe, it turns aggressive.\nIn this excited state, the flame at the tip of its tail flares with a\nbluish white color.\n\nCharmeleon mercilessly destroys its foes using its sharp\nclaws. If it encounters a strong foe, it turns aggressive.\nIn this excited state, the flame at the tip of its tail flares with\na bluish white color.\n\nTough fights could excite this Pokémon. When\nexcited, it may breathe out bluish-white flames.\n\nTough fights could excite this Pokémon. When\nexcited, it may breathe out bluish-white flames.\n\nIt has a barbaric nature. In battle, it whips its\nfiery tail around and slashes away with sharp claws.\n\nIf it becomes agitated during battle, it spouts\nintense flames, incinerating its surroundings.",
+              "genus": "Flame Pokémon",
+              "habitat": "MOUNTAIN",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Charmeleon",
+              "pokedexId": 5,
+              "shape": "UPRIGHT",
+              "slug": "charmeleon"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm001gs22xf5d5ycl44",
+                    "name": "Fire",
+                    "slug": "fire"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hi377t0vg722xf742ca07s",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Charmeleon",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Charmeleon",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "5",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 84,
+            "defense": 78,
+            "height": 17,
+            "hp": 78,
+            "isDefault": true,
+            "slug": "charizard",
+            "specialAttack": 109,
+            "specialDefense": 85,
+            "speed": 100,
+            "sprites": { "frontDefault": { "path": "pokemon/6.png" } },
+            "weight": 905,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hi3a7l0vki22xf2ze3fc40",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Charizard",
+                    "slug": "charizard"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hi3a1w0vi022xfcaneaw4w",
+              "color": "RED",
+              "description": "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.\n\nSpits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.\n\nWhen expelling a\nblast of super\nhot fire, the red\fflame at the tip\nof its tail burns\nmore intensely.\n\nIf CHARIZARD be­\ncomes furious, the\nflame at the tip\fof its tail flares\nup in a whitish-\nblue color.\n\nBreathing intense,\nhot flames, it can\nmelt almost any­\fthing. Its breath\ninflicts terrible\npain on enemies.\n\nIt uses its wings\nto fly high. The\ntemperature of its\ffire increases as\nit gains exper­\nience in battle.\n\nCHARIZARD flies around the sky in\nsearch of powerful opponents.\nIt breathes fire of such great heat\fthat it melts anything. However, it\nnever turns its fiery breath on any\nopponent weaker than itself.\n\nCHARIZARD flies around the sky in\nsearch of powerful opponents.\nIt breathes fire of such great heat\fthat it melts anything. However, it\nnever turns its fiery breath on any\nopponent weaker than itself.\n\nA CHARIZARD flies about in search of\nstrong opponents. It breathes intense\nflames that can melt any material. However,\nit will never torch a weaker foe.\n\nIts wings can carry this POKéMON close to\nan altitude of 4,600 feet. It blows out\nfire at very high temperatures.\n\nIt spits fire that is hot enough to melt\nboulders. It may cause forest fires by\nblowing flames.\n\nIt is said that CHARIZARD’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nIt is said that CHARIZARD’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nIt is said that CHARIZARD’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nIf CHARIZARD becomes furious,\nthe flame at the tip of its tail flares\nup in a light blue shade.\n\nBreathing intense, hot flames, it can\nmelt almost anything. Its breath\ninflicts terrible pain on enemies.\n\nIt is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nIt is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nIt is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nIt is said that Charizard’s fire\nburns hotter if it has\nexperienced harsh battles.\n\nWhen expelling a blast of superhot fire,\nthe red flame at the tip of its tail burns\nmore intensely.\n\nIts wings can carry this Pokémon close to an\naltitude of 4,600 feet. It blows out fire at very\nhigh temperatures.\n\nCharizard flies around the sky in search of powerful opponents.\nIt breathes fire of such great heat that it melts anything.\nHowever, it never turns its fiery breath on any opponent\nweaker than itself.\n\nCharizard flies around the sky in search of powerful opponents.\nIt breathes fire of such great heat that it melts anything.\nHowever, it never turns its fiery breath on any opponent\nweaker than itself.\n\nWhen this Pokémon expels a blast of superhot\nfire, the red flame at the tip of its tail burns\nmore intensely.\n\nWhen this Pokémon expels a blast of superhot\nfire, the red flame at the tip of its tail burns\nmore intensely.\n\nIt spits fire that is hot enough to melt boulders.\nIt may cause forest fires by blowing flames.\n\nIts wings can carry this Pokémon close to an\naltitude of 4,600 feet. It blows out fire at very\nhigh temperatures.",
+              "genus": "Flame Pokémon",
+              "habitat": "MOUNTAIN",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Charizard",
+              "pokedexId": 6,
+              "shape": "UPRIGHT",
+              "slug": "charizard"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 2,
+                  "node": {
+                    "id": "TYPcl2hhnjlc01gl22xf22w3af7i",
+                    "name": "Flying",
+                    "slug": "flying"
+                  }
+                },
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm001gs22xf5d5ycl44",
+                    "name": "Fire",
+                    "slug": "fire"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hi3a220vi322xf6yr527df",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Charizard",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Charizard",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "6",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 48,
+            "defense": 65,
+            "height": 5,
+            "hp": 44,
+            "isDefault": true,
+            "slug": "squirtle",
+            "specialAttack": 50,
+            "specialDefense": 64,
+            "speed": 43,
+            "sprites": { "frontDefault": { "path": "pokemon/7.png" } },
+            "weight": 90,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhpp1n02d322xfaermcyx9",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Squirtle",
+                    "slug": "squirtle"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhpoxc02b022xfen867sk8",
+              "color": "BLUE",
+              "description": "After birth, its\nback swells and\nhardens into a\fshell. Powerfully\nsprays foam from\nits mouth.\n\nAfter birth, its\nback swells and\nhardens into a\fshell. Powerfully\nsprays foam from\nits mouth.\n\nShoots water at\nprey while in the\nwater.\fWithdraws into\nits shell when in\ndanger.\n\nThe shell is soft\nwhen it is born.\nIt soon becomes so\fresilient, prod­\nding fingers will\nbounce off it.\n\nThe shell, which\nhardens soon after\nit is born, is\fresilient. If you\npoke it, it will\nbounce back out.\n\nWhen it feels\nthreatened, it\ndraws its legs\finside its shell\nand sprays water\nfrom its mouth.\n\nSQUIRTLE’s shell is not merely used\nfor protection.\nThe shell’s rounded shape and the\fgrooves on its surface help minimize\nresistance in water, enabling this\nPOKéMON to swim at high speeds.\n\nSQUIRTLE’s shell is not merely used\nfor protection.\nThe shell’s rounded shape and the\fgrooves on its surface help minimize\nresistance in water, enabling this\nPOKéMON to swim at high speeds.\n\nIts shell is not just for protection.\nIts rounded shape and the grooves on its\nsurface minimize resistance in water,\nenabling SQUIRTLE to swim at high speeds.\n\nWhen it retracts its long neck into its\nshell, it squirts out water with vigorous\nforce.\n\nAfter birth, its back swells and hardens\ninto a shell. It powerfully sprays foam \nfrom its mouth.\n\nIt shelters itself in its shell,\nthen strikes back with spouts of\nwater at every opportunity.\n\nIt shelters itself in its shell,\nthen strikes back with spouts of\nwater at every opportunity.\n\nIt shelters itself in its shell,\nthen strikes back with spouts of\nwater at every opportunity.\n\nThe shell is soft when it is born.\nIt soon becomes so resilient,\nprodding fingers will bounce off it.\n\nThe shell, which hardens soon after\nit is born, is resilient. If you\npoke it, it will bounce back out.\n\nIt shelters itself in its shell,\nthen strikes back with spouts of\nwater at every opportunity.\n\nIt shelters itself in its shell,\nthen strikes back with spouts of\nwater at every opportunity.\n\nIt shelters itself in its shell\nthen strikes back with spouts of\nwater at every opportunity.\n\nIt shelters itself in its shell\nthen strikes back with spouts of\nwater at every opportunity.\n\nIt shelters itself in its shell, then strikes back\nwith spouts of water at every opportunity.\n\nShoots water at prey while in the water. Withdraws\ninto its shell when in danger.\n\nSquirtle’s shell is not merely used for protection.\nThe shell’s rounded shape and the grooves on its surface\nhelp minimize resistance in water, enabling this Pokémon\nto swim at high speeds.\n\nSquirtle’s shell is not merely used for protection.\nThe shell’s rounded shape and the grooves on its\nsurface help minimize resistance in water,\nenabling this Pokémon to swim at high speeds.\n\nShoots water at prey while in the water.\nWithdraws into its shell when in danger.\n\nShoots water at prey while in the water.\nWithdraws into its shell when in danger.\n\nWhen it retracts its long neck into its shell, it\nsquirts out water with vigorous force.\n\nWhen it feels threatened, it draws its limbs inside\nits shell and sprays water from its mouth.",
+              "genus": "Tiny Turtle Pokémon",
+              "habitat": "WATERS_EDGE",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Squirtle",
+              "pokedexId": 7,
+              "shape": "UPRIGHT",
+              "slug": "squirtle"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm001gt22xffefca2w0",
+                    "name": "Water",
+                    "slug": "water"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhpoxi02b322xf2fg4d0g2",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Squirtle",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Squirtle",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "7",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 63,
+            "defense": 80,
+            "height": 10,
+            "hp": 59,
+            "isDefault": true,
+            "slug": "wartortle",
+            "specialAttack": 65,
+            "specialDefense": 80,
+            "speed": 58,
+            "sprites": { "frontDefault": { "path": "pokemon/8.png" } },
+            "weight": 225,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhpq5602ey22xf7aljbtxj",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Wartortle",
+                    "slug": "wartortle"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhpq0j02d522xff6b13kla",
+              "color": "BLUE",
+              "description": "Often hides in\nwater to stalk\nunwary prey. For\fswimming fast, it\nmoves its ears to\nmaintain balance.\n\nOften hides in\nwater to stalk\nunwary prey. For\fswimming fast, it\nmoves its ears to\nmaintain balance.\n\nWhen tapped, this\nPOKéMON will pull\nin its head, but\fits tail will\nstill stick out a\nlittle bit.\n\nIt is recognized\nas a symbol of\nlongevity. If its\fshell has algae on\nit, that WARTORTLE\nis very old.\n\nIt cleverly con­\ntrols its furry\nears and tail to\fmaintain its\nbalance while\nswimming.\n\nIts long, furry\ntail is a symbol\nof longevity,\fmaking it quite\npopular among\nolder people.\n\nIts tail is large and covered with a rich,\nthick fur. The tail becomes increasingly\ndeeper in color as WARTORTLE ages.\fThe scratches on its shell are evidence\nof this POKéMON’s toughness as a\nbattler.\n\nIts tail is large and covered with a rich,\nthick fur. The tail becomes increasingly\ndeeper in color as WARTORTLE ages.\fThe scratches on its shell are evidence\nof this POKéMON’s toughness as a\nbattler.\n\nIts large tail is covered with rich, thick\nfur that deepens in color with age.\nThe scratches on its shell are evidence\nof this POKéMON’s toughness in battle.\n\nThis POKéMON is very popular as a pet.\nIts fur-covered tail is a symbol of its\nlongevity.\n\nIt often hides in water to stalk unwary\nprey. For fast swimming, it moves its\nears to maintain balance.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nIt is a well-established symbol of\nlongevity. If its shell has algae on it,\nthat WARTORTLE is very old.\n\nIt cleverly controls its furry\nears and tail to maintain its\nbalance while swimming.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nIt is said to live 10,000 years.\nIts furry tail is popular as a\nsymbol of longevity.\n\nWhen tapped, this Pokémon will pull in its head,\nbut its tail will still stick out a little bit.\n\nIt is said to live 10,000 years. Its furry tail is\npopular as a symbol of longevity.\n\nIts tail is large and covered with a rich, thick fur. The tail\nbecomes increasingly deeper in color as Wartortle ages.\nThe scratches on its shell are evidence of this Pokémon’s\ntoughness as a battler.\n\nIts tail is large and covered with a rich, thick fur. The tail\nbecomes increasingly deeper in color as Wartortle ages.\nThe scratches on its shell are evidence of this Pokémon’s\ntoughness as a battler.\n\nWhen tapped on its head, this Pokémon will pull\nit in, but its tail will still stick out a little bit.\n\nWhen tapped on its head, this Pokémon will pull\nit in, but its tail will still stick out a little bit.\n\nIt is recognized as a symbol of longevity. If its\nshell has algae on it, that Wartortle is very old.\n\nIt cleverly controls its furry ears and tail to\nmaintain its balance while swimming.",
+              "genus": "Turtle Pokémon",
+              "habitat": "WATERS_EDGE",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Wartortle",
+              "pokedexId": 8,
+              "shape": "UPRIGHT",
+              "slug": "wartortle"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm001gt22xffefca2w0",
+                    "name": "Water",
+                    "slug": "water"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhpq0p02d822xfbeq35h6y",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Wartortle",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Wartortle",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "8",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 83,
+            "defense": 100,
+            "height": 16,
+            "hp": 79,
+            "isDefault": true,
+            "slug": "blastoise",
+            "specialAttack": 85,
+            "specialDefense": 105,
+            "speed": 78,
+            "sprites": { "frontDefault": { "path": "pokemon/9.png" } },
+            "weight": 855,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhpsb902ha22xfev5y0fbx",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Blastoise",
+                    "slug": "blastoise"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhps6r02f022xf5530g1pe",
+              "color": "BLUE",
+              "description": "A brutal POKéMON\nwith pressurized\nwater jets on its\fshell. They are\nused for high\nspeed tackles.\n\nA brutal POKéMON\nwith pressurized\nwater jets on its\fshell. They are\nused for high\nspeed tackles.\n\nOnce it takes aim\nat its enemy, it\nblasts out water\fwith even more\nforce than a fire\nhose.\n\nIt deliberately\nmakes itself heavy\nso it can with­\fstand the recoil\nof the water jets\nit fires.\n\nThe rocket cannons\non its shell fire\njets of water\fcapable of punch­\ning holes through\nthick steel.\n\nIt firmly plants\nits feet on the\nground before\fshooting water\nfrom the jets on\nits back.\n\nBLASTOISE has water spouts that\nprotrude from its shell. The water\nspouts are very accurate.\fThey can shoot bullets of water with\nenough accuracy to strike empty cans\nfrom a distance of over 160 feet.\n\nBLASTOISE has water spouts that\nprotrude from its shell. The water\nspouts are very accurate.\fThey can shoot bullets of water with\nenough accuracy to strike empty cans\nfrom a distance of over 160 feet.\n\nThe waterspouts that protrude from its\nshell are highly accurate. Their bullets of\nwater can precisely nail tin cans from\na distance of over 160 feet.\n\nIt crushes its foe under its heavy body\nto cause fainting. In a pinch, it will\nwithdraw inside its shell.\n\nThe pressurized water jets on this brutal\nPOKéMON’s shell are used for high-\nspeed tackles.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nIt deliberately makes itself heavy\nso it can withstand the recoil\nof the water jets it fires.\n\nThe rocket cannons on its shell fire\njets of water capable of punching\nholes through thick steel.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nThe jets of water it spouts from\nthe rocket cannons on its shell\ncan punch through thick steel.\n\nIt crushes its foe under its heavy body to cause\nfainting. In a pinch, it will withdraw inside its shell.\n\nThe pressurized water jets on this brutal Pokémon’s\nshell are used for high-speed tackles.\n\nBlastoise has water spouts that protrude from its shell.\nThe water spouts are very accurate. They can shoot bullets of\nwater with enough accuracy to strike empty cans from a\ndistance of over 160 feet.\n\nBlastoise has water spouts that protrude from its shell.\nThe water spouts are very accurate.\nThey can shoot bullets of water with enough accuracy\nto strike empty cans from a distance of over 160 feet.\n\nOnce it takes aim at its enemy, it blasts out\nwater with even more force than a fire hose.\n\nOnce it takes aim at its enemy, it blasts out\nwater with even more force than a fire hose.\n\nIt crushes its foe under its heavy body to cause\nfainting. In a pinch, it will withdraw inside its shell.\n\nThe rocket cannons on its shell fire jets of water\ncapable of punching holes through thick steel.",
+              "genus": "Shellfish Pokémon",
+              "habitat": "WATERS_EDGE",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Blastoise",
+              "pokedexId": 9,
+              "shape": "UPRIGHT",
+              "slug": "blastoise"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm001gt22xffefca2w0",
+                    "name": "Water",
+                    "slug": "water"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhps6v02f322xf9n71gube",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Blastoise",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Blastoise",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "9",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 30,
+            "defense": 35,
+            "height": 3,
+            "hp": 45,
+            "isDefault": true,
+            "slug": "caterpie",
+            "specialAttack": 20,
+            "specialDefense": 20,
+            "speed": 45,
+            "sprites": { "frontDefault": { "path": "pokemon/10.png" } },
+            "weight": 29,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhsl4208ec22xf24fs0rpq",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Caterpie",
+                    "slug": "caterpie"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhsl2l08dz22xfb0s39n5b",
+              "color": "GREEN",
+              "description": "Its short feet are tipped with suction\npads that enable it to tirelessly climb\nslopes and walls.\n\nIts short feet\nare tipped with\nsuction pads that\fenable it to\ntirelessly climb\nslopes and walls.\n\nIts short feet\nare tipped with\nsuction pads that\fenable it to\ntirelessly climb\nslopes and walls.\n\nIf you touch the\nfeeler on top of\nits head, it will\frelease a horrible\nstink to protect\nitself.\n\nFor protection, it\nreleases a horri­\nble stench from\fthe antenna on its\nhead to drive away\nenemies.\n\nIts feet have\nsuction cups\ndesigned to stick\fto any surface. It\ntenaciously climbs\ntrees to forage.\n\nIt crawls into\nfoliage where it\ncamouflages itself\famong leaves that\nare the same color\nas its body.\n\nCATERPIE has a voracious appetite.\nIt can devour leaves bigger than its\nbody right before your eyes.\fFrom its antenna, this POKéMON releases\na terrifically strong odor.\n\nCATERPIE has a voracious appetite.\nIt can devour leaves bigger than its\nbody right before your eyes.\fFrom its antenna, this POKéMON releases\na terrifically strong odor.\n\nIts voracious appetite compels it to\ndevour leaves bigger than itself without\nhesitation. It releases a terribly strong\nodor from its antennae.\n\nIt is covered with a green skin. When it\ngrows, it sheds the skin, covers itself\nwith silk, and becomes a cocoon.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nFor protection, it releases a horrible\nstench from the antennae on its\nhead to drive away enemies.\n\nIts feet have suction cups\ndesigned to stick to any surface. It\ntenaciously climbs trees to forage.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nIt releases a stench from its red\nantenna to repel enemies. It\ngrows by molting repeatedly.\n\nFor protection, it releases a horrible stench from\nthe antennae on its head to drive away enemies.\n\nIts feet have suction cups designed to stick to any\nsurface. It tenaciously climbs trees to forage.\n\nCaterpie has a voracious appetite. It can devour leaves bigger\nthan its body right before your eyes. From its antenna, this\nPokémon releases a terrifically strong odor.\n\nCaterpie has a voracious appetite. It can devour leaves\nbigger than its body right before your eyes. From its antenna,\nthis Pokémon releases a terrifically strong odor.\n\nWhen attacked by bird Pokémon, it resists by\nreleasing a terrifically strong odor from its\nantennae, but it often becomes their prey.\n\nIt’s easy to catch, and it grows quickly, making\nit one of the top recommendations for novice\nPokémon Trainers.\n\nPerhaps because it would like to grow up\nquickly, it has a voracious appetite, eating\na hundred leaves a day.\n\nIts body is soft and weak. In nature, its\nperpetual fate is to be seen by others as food.\n\nIf you touch the feeler on top of its head, it will\nrelease a horrible stink to protect itself.\n\nIf you touch the feeler on top of its head, it will\nrelease a horrible stink to protect itself.\n\nFor protection, it releases a horrible stench from\nthe antenna on its head to drive away enemies.\n\nIts short feet are tipped with suction pads that\nenable it to tirelessly climb slopes and walls.",
+              "genus": "Worm Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Caterpie",
+              "pokedexId": 10,
+              "shape": "ARMOR",
+              "slug": "caterpie"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjlz01gp22xf8g5adyal",
+                    "name": "Bug",
+                    "slug": "bug"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhsl2q08e222xfexizbxyg",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Caterpie",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Caterpie",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "10",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 20,
+            "defense": 55,
+            "height": 7,
+            "hp": 50,
+            "isDefault": true,
+            "slug": "metapod",
+            "specialAttack": 25,
+            "specialDefense": 25,
+            "speed": 30,
+            "sprites": { "frontDefault": { "path": "pokemon/11.png" } },
+            "weight": 99,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhslj708eq22xfh2azatel",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Metapod",
+                    "slug": "metapod"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhslho08ee22xf60rc4hpw",
+              "color": "GREEN",
+              "description": "This POKéMON is\nvulnerable to\nattack while its\fshell is soft,\nexposing its weak\nand tender body.\n\nThis POKéMON is\nvulnerable to\nattack while its\fshell is soft,\nexposing its weak\nand tender body.\n\nHardens its shell\nto protect itself.\nHowever, a large\fimpact may cause\nit to pop out of\nits shell.\n\nInside the shell,\nit is soft and\nweak as it pre­\fpares to evolve.\nIt stays motion­\nless in the shell.\n\nIt prepares for\nevolution by har­\ndening its shell\fas much as possi­\nble to protect its\nsoft body.\n\nThis is its pre-\nevolved form. At\nthis stage, it can\fonly harden, so it\nremains motionless\nto avoid attack.\n\nThe shell covering this POKéMON’s body\nis as hard as an iron slab.\nMETAPOD does not move very much.\fIt stays still because it is preparing\nits soft innards for evolution inside\nthe hard shell.\n\nThe shell covering this POKéMON’s body\nis as hard as an iron slab.\nMETAPOD does not move very much.\fIt stays still because it is preparing\nits soft innards for evolution inside\nthe hard shell.\n\nIts shell is as hard as an iron slab.\nA METAPOD does not move very much\nbecause it is preparing its soft innards\nfor evolution inside the shell.\n\nEven though it is encased in a sturdy\nshell, the body inside is tender.\nIt can’t withstand a harsh attack.\n\nThis POKéMON is vulnerable to attack\nwhile its shell is soft, exposing its weak\nand tender body.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nInside the shell, it is soft and\nweak as it prepares to evolve.\nIt stays motionless in the shell.\n\nIt prepares for evolution by hardening\nits shell as much as possible\nto protect its soft body.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nA steel-hard shell protects its\ntender body. It quietly endures\nhardships while awaiting evolution.\n\nA steel-hard shell protects its tender body.\nIt quietly endures hardships while\nawaiting evolution.\n\nThis Pokémon is vulnerable to attack while its shell\nis soft, exposing its weak and tender body.\n\nThe shell covering this Pokémon’s body is as hard as an\niron slab. Metapod does not move very much. It stays still\nbecause it is preparing its soft innards for evolution inside\nthe hard shell.\n\nThe shell covering this Pokémon’s body is as hard as an\niron slab. Metapod does not move very much.\nIt stays still because it is preparing its soft innards for\nevolution inside the hard shell.\n\nIts shell is filled with its soft innards. It doesn’t\nmove much because of the risk it might\ncarelessly spill its innards out.\n\nIts shell is hard, but it’s still just a bug shell.\nIt’s been known to break, so intense battles\nwith it should be avoided.\n\nIts shell is filled with a thick liquid. All of the\ncells throughout its body are being rebuilt in\npreparation for evolution.\n\nIts hard shell doesn’t crack a bit even if Pikipek\npecks at it, but it will tip over, spilling out\nits insides.\n\nHardens its shell to protect itself. However, a\nlarge impact may cause it to pop out of its shell.\n\nHardens its shell to protect itself. However, a\nlarge impact may cause it to pop out of its shell.\n\nIt is waiting for the moment to evolve. At this\nstage, it can only harden, so it remains\nmotionless to avoid attack.\n\nEven though it is encased in a sturdy shell,\nthe body inside is tender. It can’t withstand a\nharsh attack.",
+              "genus": "Cocoon Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Metapod",
+              "pokedexId": 11,
+              "shape": "SQUIGGLE",
+              "slug": "metapod"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjlz01gp22xf8g5adyal",
+                    "name": "Bug",
+                    "slug": "bug"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhslhs08eh22xf3ykqh3i2",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Metapod",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Metapod",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "11",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 45,
+            "defense": 50,
+            "height": 11,
+            "hp": 60,
+            "isDefault": true,
+            "slug": "butterfree",
+            "specialAttack": 90,
+            "specialDefense": 80,
+            "speed": 70,
+            "sprites": { "frontDefault": { "path": "pokemon/12.png" } },
+            "weight": 320,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhsmro08gn22xf4o5p16xu",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Butterfree",
+                    "slug": "butterfree"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhsmnu08es22xf1cjs5rac",
+              "color": "WHITE",
+              "description": "In battle, it\nflaps its wings\nat high speed to\frelease highly\ntoxic dust into\nthe air.\n\nIn battle, it\nflaps its wings\nat high speed to\frelease highly\ntoxic dust into\nthe air.\n\nIts wings, covered\nwith poisonous\npowders, repel\fwater. This\nallows it to fly\nin the rain.\n\nIt collects honey\nevery day. It rubs\nhoney onto the\fhairs on its legs\nto carry it back\nto its nest.\n\nWater-repellent\npowder on its\nwings enables it\fto collect honey,\neven in the heav­\niest of rains.\n\nIt flits from\nflower to flower,\ncollecting honey.\fIt can even\nidentify distant\nflowers in bloom.\n\nBUTTERFREE has a superior ability to\nsearch for delicious honey from\nflowers.\fIt can even search out, extract, and\ncarry honey from flowers that are\nblooming over six miles from its nest.\n\nBUTTERFREE has a superior ability to\nsearch for delicious honey from\nflowers.\fIt can even search out, extract, and\ncarry honey from flowers that are\nblooming over six miles from its nest.\n\nIt has a superior ability to search for\ndelicious honey from flowers. It can seek,\nextract, and carry honey from flowers\nblooming over six miles away.\n\nThe wings are protected by rain-repellent\ndust. As a result, this POKéMON can fly\nabout even in rain.\n\nIn battle, it flaps its wings at great\nspeed to release highly toxic dust into\nthe air.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt collects honey every day. It rubs\nhoney onto the hairs on its legs\nto carry it back to its nest.\n\nWater-repellent powder on its\nwings enables it to collect honey,\neven in the heaviest of rains.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt loves the honey of flowers and\ncan locate flower patches that\nhave even tiny amounts of pollen.\n\nIt loves the honey of flowers and can locate\nflower patches that have even tiny amounts\nof pollen.\n\nThe wings are protected by rain-repellent dust.\nAs a result, this Pokémon can fly about even\nin rain.\n\nButterfree has a superior ability to search for delicious honey\nfrom flowers. It can even search out, extract, and carry honey\nfrom flowers that are blooming over six miles from its nest.\n\nButterfree has a superior ability to search for delicious honey\nfrom flowers. It can even search out, extract, and carry honey\nfrom flowers that are blooming over six miles from its nest.\n\nClose examination of its large eyes reveals that\neach eye is composed of a myriad of tiny eyes.\n\nWhen attacked by other Pokémon, it defends\nitself by scattering its poisonous scales and\nfluttering its wings.\n\nIts wings are covered in toxic scales. If it finds\nbird Pokémon going after Caterpie, Butterfree\nsprinkles its scales on them to drive them off.\n\nNectar from pretty flowers is its favorite food.\nIn fields of flowers, it has heated battles with\nCutiefly for territory.\n\nIts wings, covered with poisonous powder, repel\nwater. This allows it to fly in the rain.\n\nIts wings, covered with poisonous powder, repel\nwater. This allows it to fly in the rain.\n\nIn battle, it flaps its wings at great speed to\nrelease highly toxic dust into the air.\n\nIt collects honey every day. It rubs honey onto\nthe hairs on its legs to carry it back to its nest.",
+              "genus": "Butterfly Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Butterfree",
+              "pokedexId": 12,
+              "shape": "BUG_WINGS",
+              "slug": "butterfree"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjlz01gp22xf8g5adyal",
+                    "name": "Bug",
+                    "slug": "bug"
+                  }
+                },
+                {
+                  "slot": 2,
+                  "node": {
+                    "id": "TYPcl2hhnjlc01gl22xf22w3af7i",
+                    "name": "Flying",
+                    "slug": "flying"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhsmnz08ex22xfgdbz2020",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Butterfree",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Butterfree",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "12",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": true,
+            "slug": "pikachu",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/25.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxvv00izw22xf6brr40al",
+                    "formName": null,
+                    "formSlug": null,
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Pikachu",
+                    "slug": "pikachu"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxvqk0ixx22xf0uephl1a",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": false,
+            "slug": "pikachu-world-cap",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/10160.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxxch0ji222xfedsu2cvc",
+                    "formName": "World Cap",
+                    "formSlug": "world-cap",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "World Cap Pikachu",
+                    "slug": "pikachu-world-cap"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxx8z0jg522xfbgpv0c24",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "formName": {
+                        "value": "World Cap",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      "name": {
+                        "value": "World Cap Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 80,
+            "defense": 50,
+            "height": 4,
+            "hp": 45,
+            "isDefault": false,
+            "slug": "pikachu-starter",
+            "specialAttack": 75,
+            "specialDefense": 60,
+            "speed": 120,
+            "sprites": { "frontDefault": { "path": "pokemon/10158.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxx8s0jg122xf3atu5alp",
+                    "formName": null,
+                    "formSlug": "starter",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Partner Pikachu",
+                    "slug": "pikachu-starter"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxx6t0jfv22xf7zbfga4g",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "name": {
+                        "value": "Partner Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": false,
+            "slug": "pikachu-partner-cap",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/10148.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxx6m0jfr22xfdm1adz9f",
+                    "formName": "Partner Cap",
+                    "formSlug": "partner-cap",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Partner Cap Pikachu",
+                    "slug": "pikachu-partner-cap"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxx2r0jdu22xf77z3hv37",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "formName": {
+                        "value": "Partner Cap",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      "name": {
+                        "value": "Partner Cap Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": false,
+            "slug": "pikachu-alola-cap",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/10099.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxx2i0jdq22xfhzhu21sv",
+                    "formName": "Alola Cap",
+                    "formSlug": "alola-cap",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Alola Cap Pikachu",
+                    "slug": "pikachu-alola-cap"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxwwx0jbt22xfc5bddggu",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "formName": {
+                        "value": "Alola Cap",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      "name": {
+                        "value": "Alola Cap Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": false,
+            "slug": "pikachu-kalos-cap",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/10098.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxwwr0jbp22xfdxss1d6o",
+                    "formName": "Kalos Cap",
+                    "formSlug": "kalos-cap",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Kalos Cap Pikachu",
+                    "slug": "pikachu-kalos-cap"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxwsn0j9s22xfdrfx4q4r",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "formName": {
+                        "value": "Kalos Cap",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      "name": {
+                        "value": "Kalos Cap Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": false,
+            "slug": "pikachu-unova-cap",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/10097.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxwsg0j9o22xfbu1f3cfv",
+                    "formName": "Unova Cap",
+                    "formSlug": "unova-cap",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Unova Cap Pikachu",
+                    "slug": "pikachu-unova-cap"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxwon0j7r22xfdc54h54y",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "formName": {
+                        "value": "Unova Cap",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      "name": {
+                        "value": "Unova Cap Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "node": {
+            "attack": 55,
+            "defense": 40,
+            "height": 4,
+            "hp": 35,
+            "isDefault": false,
+            "slug": "pikachu-sinnoh-cap",
+            "specialAttack": 50,
+            "specialDefense": 50,
+            "speed": 90,
+            "sprites": { "frontDefault": { "path": "pokemon/10096.png" } },
+            "weight": 60,
+            "forms": {
+              "totalCount": 1,
+              "edges": [
+                {
+                  "node": {
+                    "id": "PKFcl2hhxwog0j7n22xf93h44c81",
+                    "formName": "Sinnoh Cap",
+                    "formSlug": "sinnoh-cap",
+                    "isBattleOnly": false,
+                    "isDefault": true,
+                    "name": "Sinnoh Cap Pikachu",
+                    "slug": "pikachu-sinnoh-cap"
+                  }
+                }
+              ]
+            },
+            "species": {
+              "id": "PKScl2hhxvqg0ixs22xf5265ebnd",
+              "color": "YELLOW",
+              "description": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nWhen several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.\n\nIt keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.\n\nThis intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.\n\nIt raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.\n\nWhen it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.\n\nWhenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.\n\nThis POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.\n\nIt stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.\n\nIt has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.\n\nWhen several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.\n\nIt lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.\n\nIf it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.\n\nIt occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.\n\nThis intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.\n\nIt raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.\n\nIt raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.\n\nIt has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.\n\nWhenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.\n\nThis Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.\n\nA plan was recently announced to gather\nmany Pikachu and make an electric power plant.\n\nIt’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.\n\nIts nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.\n\nWhile sleeping, it generates electricity in the\nsacs in its cheeks. If it’s not getting enough\nsleep, it will be able to use only weak electricity.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nThis forest-dwelling Pokémon stores electricity\nin its cheeks, so you’ll feel a tingly shock\nif you touch it.\n\nPikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
+              "genus": "Mouse Pokémon",
+              "habitat": "FOREST",
+              "isBaby": false,
+              "isLegendary": false,
+              "isMythical": false,
+              "name": "Pikachu",
+              "pokedexId": 25,
+              "shape": "QUADRUPED",
+              "slug": "pikachu"
+            },
+            "types": {
+              "edges": [
+                {
+                  "slot": 1,
+                  "node": {
+                    "id": "TYPcl2hhnjm101gv22xf61mxhpiu",
+                    "name": "Electric",
+                    "slug": "electric"
+                  }
+                }
+              ]
+            }
+          },
+          "objectID": "POKcl2hhxwkf0j5q22xf2b34g4ia",
+          "_highlightResult": {
+            "node": {
+              "forms": {
+                "edges": [
+                  {
+                    "node": {
+                      "formName": {
+                        "value": "Sinnoh Cap",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      "name": {
+                        "value": "Sinnoh Cap Pikachu",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    }
+                  }
+                ]
+              },
+              "species": {
+                "name": {
+                  "value": "Pikachu",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                },
+                "pokedexId": {
+                  "value": "25",
+                  "matchLevel": "none",
+                  "matchedWords": []
+                }
+              }
+            }
+          }
+        }
+      ],
+      "nbHits": 753,
+      "page": 0,
+      "nbPages": 38,
+      "hitsPerPage": 20,
+      "facets": {
+        "node.types.edges.node.name": {
+          "Water": 115,
+          "Psychic": 88,
+          "Grass": 76,
+          "Flying": 75,
+          "Electric": 69,
+          "Normal": 67,
+          "Dragon": 66,
+          "Ground": 66,
+          "Steel": 59,
+          "Ghost": 58,
+          "Poison": 56,
+          "Rock": 56,
+          "Fairy": 54,
+          "Dark": 53,
+          "Ice": 52,
+          "Fighting": 51,
+          "Bug": 50,
+          "Fire": 50
+        }
+      },
+      "exhaustiveFacetsCount": true,
+      "exhaustiveNbHits": true,
+      "exhaustiveTypo": true,
+      "query": "",
+      "params": "filters=node.forms.totalCount%20%3E%200&query=&maxValuesPerFacet=20&highlightPreTag=__ais-highlight__&highlightPostTag=__%2Fais-highlight__&page=0&facets=%5B%22node.types.edges.node.name%22%5D&tagFilters=",
+      "index": "local_pokemon",
+      "renderingContent": {},
+      "processingTimeMS": 6
+    }
+  ]
+}

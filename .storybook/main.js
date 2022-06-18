@@ -56,6 +56,7 @@ module.exports = {
           ),
           "@/graphql": path.resolve(__dirname, "../src/graphql"),
           "@/lib": path.resolve(__dirname, "../src/lib"),
+          "@/mocks/handlers": path.resolve(__dirname, "../src/mocks/handlers"),
           "@/stores": path.resolve(__dirname, "../src/stores"),
           ...[
             "sad",
@@ -69,6 +70,7 @@ module.exports = {
             "pencil",
             "user-circle",
             "loading-alt",
+            "check",
           ].reduce((icons, name) => {
             return {
               ...icons,

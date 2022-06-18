@@ -8,7 +8,9 @@ import { useToasts, useTeam, useTeams } from "@/stores";
 import { debounceActions } from "@/lib";
 import vueRouter from "storybook-vue3-router";
 import { initialize, mswDecorator } from "msw-storybook-addon";
+import type { DecoratorFunction } from "@storybook/csf";
 import "../src/assets/base.css";
+import { handlers } from "@/mocks/handlers";
 
 initialize();
 
@@ -27,7 +29,7 @@ app.use(
   })
 );
 
-export const decorators = [
+export const decorators: DecoratorFunction[] = [
   mswDecorator,
   vueRouter(),
   (story) => {
@@ -51,6 +53,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  msw: {
+    handlers,
   },
   viewport: {
     viewports: {

@@ -11,11 +11,4 @@ fragment pokemonSpeciesFields on PokemonSpecies {
   isMythical
   pokedexId
   shape
-  varieties {
-    edges {
-      node {
-        ...pokemonFields
-      }
-    }
-  }
 }

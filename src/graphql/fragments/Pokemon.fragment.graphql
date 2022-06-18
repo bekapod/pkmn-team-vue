@@ -1,14 +1,19 @@
 fragment pokemonFields on Pokemon {
   id
+  slug
   attack
   defense
   specialAttack
   specialDefense
   speed
   hp
-  moves {
+  isDefault
+  types {
     edges {
-      ...pokemonMoveFields
+      slot
+      node {
+        ...typeFields
+      }
     }
   }
   forms {
@@ -16,6 +21,14 @@ fragment pokemonFields on Pokemon {
       node {
         ...pokemonFormFields
       }
+    }
+  }
+  species {
+    ...pokemonSpeciesFields
+  }
+  sprites {
+    frontDefault {
+      path
     }
   }
 }

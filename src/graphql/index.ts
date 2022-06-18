@@ -460,6 +460,10 @@ export type Pokemon = Node & {
   weight: Scalars["Int"];
 };
 
+export type PokemonFormsArgs = {
+  isBattleOnly?: InputMaybe<Scalars["Boolean"]>;
+};
+
 export type PokemonAbilityConnection = {
   __typename?: "PokemonAbilityConnection";
   edges?: Maybe<Array<PokemonAbilityEdge>>;
@@ -673,6 +677,8 @@ export type Query = {
   move?: Maybe<Move>;
   moves: MoveConnection;
   node?: Maybe<Node>;
+  pokemon: PokemonConnection;
+  pokemonOne?: Maybe<Pokemon>;
   pokemonSpecies: PokemonSpeciesConnection;
   pokemonSpeciesOne?: Maybe<PokemonSpecies>;
   team?: Maybe<Team>;
@@ -718,6 +724,15 @@ export type QueryMovesArgs = {
 };
 
 export type QueryNodeArgs = {
+  id: Scalars["ID"];
+};
+
+export type QueryPokemonArgs = {
+  after?: InputMaybe<Scalars["ID"]>;
+  first?: InputMaybe<Scalars["Int"]>;
+};
+
+export type QueryPokemonOneArgs = {
   id: Scalars["ID"];
 };
 
@@ -1051,33 +1066,20 @@ export type TeamMemberMoveFieldsFragment = {
 export type PokemonFieldsFragment = {
   __typename?: "Pokemon";
   id: string;
+  slug: string;
   attack: number;
   defense: number;
   specialAttack: number;
   specialDefense: number;
   speed: number;
   hp: number;
-  moves: {
-    __typename?: "PokemonMoveConnection";
+  isDefault: boolean;
+  types: {
+    __typename?: "PokemonTypeConnection";
     edges?: Array<{
-      __typename?: "PokemonMoveEdge";
-      learnMethod: MoveLearnMethod;
-      levelLearnedAt: number;
-      id: string;
-      node: {
-        __typename?: "Move";
-        id: string;
-        name: string;
-        slug: string;
-        accuracy?: number | null;
-        damageClass: DamageClass;
-        effect?: string | null;
-        effectChance?: number | null;
-        power?: number | null;
-        pp?: number | null;
-        target: MoveTarget;
-        type: { __typename?: "Type"; id: string; name: string; slug: string };
-      };
+      __typename?: "PokemonTypeEdge";
+      slot: number;
+      node: { __typename?: "Type"; id: string; name: string; slug: string };
     }> | null;
   };
   forms: {
@@ -1086,42 +1088,44 @@ export type PokemonFieldsFragment = {
       __typename?: "PokemonFormEdge";
       node: {
         __typename?: "PokemonForm";
-        types: {
-          __typename?: "PokemonFormTypeConnection";
-          edges?: Array<{
-            __typename?: "PokemonFormTypeEdge";
-            slot: number;
-            node: {
-              __typename?: "Type";
-              id: string;
-              name: string;
-              slug: string;
-            };
-          }> | null;
-        };
-        sprites: {
-          __typename?: "PokemonSprites";
-          frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
-        };
+        id: string;
+        formName?: string | null;
+        isDefault: boolean;
+        isBattleOnly: boolean;
+        name: string;
+        slug: string;
       };
     }> | null;
   };
-};
-
-export type PokemonFormFieldsFragment = {
-  __typename?: "PokemonForm";
-  types: {
-    __typename?: "PokemonFormTypeConnection";
-    edges?: Array<{
-      __typename?: "PokemonFormTypeEdge";
-      slot: number;
-      node: { __typename?: "Type"; id: string; name: string; slug: string };
-    }> | null;
+  species: {
+    __typename?: "PokemonSpecies";
+    id: string;
+    name: string;
+    slug: string;
+    color: Color;
+    description?: string | null;
+    genus: string;
+    habitat?: Habitat | null;
+    isBaby: boolean;
+    isLegendary: boolean;
+    isMythical: boolean;
+    pokedexId: number;
+    shape?: Shape | null;
   };
   sprites: {
     __typename?: "PokemonSprites";
     frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
   };
+};
+
+export type PokemonFormFieldsFragment = {
+  __typename?: "PokemonForm";
+  id: string;
+  formName?: string | null;
+  isDefault: boolean;
+  isBattleOnly: boolean;
+  name: string;
+  slug: string;
 };
 
 export type PokemonSpeciesFieldsFragment = {
@@ -1138,79 +1142,6 @@ export type PokemonSpeciesFieldsFragment = {
   isMythical: boolean;
   pokedexId: number;
   shape?: Shape | null;
-  varieties: {
-    __typename?: "PokemonConnection";
-    edges?: Array<{
-      __typename?: "PokemonEdge";
-      node: {
-        __typename?: "Pokemon";
-        id: string;
-        attack: number;
-        defense: number;
-        specialAttack: number;
-        specialDefense: number;
-        speed: number;
-        hp: number;
-        moves: {
-          __typename?: "PokemonMoveConnection";
-          edges?: Array<{
-            __typename?: "PokemonMoveEdge";
-            learnMethod: MoveLearnMethod;
-            levelLearnedAt: number;
-            id: string;
-            node: {
-              __typename?: "Move";
-              id: string;
-              name: string;
-              slug: string;
-              accuracy?: number | null;
-              damageClass: DamageClass;
-              effect?: string | null;
-              effectChance?: number | null;
-              power?: number | null;
-              pp?: number | null;
-              target: MoveTarget;
-              type: {
-                __typename?: "Type";
-                id: string;
-                name: string;
-                slug: string;
-              };
-            };
-          }> | null;
-        };
-        forms: {
-          __typename?: "PokemonFormConnection";
-          edges?: Array<{
-            __typename?: "PokemonFormEdge";
-            node: {
-              __typename?: "PokemonForm";
-              types: {
-                __typename?: "PokemonFormTypeConnection";
-                edges?: Array<{
-                  __typename?: "PokemonFormTypeEdge";
-                  slot: number;
-                  node: {
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  };
-                }> | null;
-              };
-              sprites: {
-                __typename?: "PokemonSprites";
-                frontDefault?: {
-                  __typename?: "PokemonSprite";
-                  path: string;
-                } | null;
-              };
-            };
-          }> | null;
-        };
-      };
-    }> | null;
-  };
 };
 
 export type TeamFieldsFragment = {
@@ -1235,42 +1166,39 @@ export type TeamFieldsFragment = {
         pokemon: {
           __typename?: "Pokemon";
           id: string;
+          slug: string;
           attack: number;
           defense: number;
           specialAttack: number;
           specialDefense: number;
           speed: number;
           hp: number;
+          isDefault: boolean;
           species: {
             __typename?: "PokemonSpecies";
             name: string;
             pokedexId: number;
+            id: string;
+            slug: string;
+            color: Color;
+            description?: string | null;
+            genus: string;
+            habitat?: Habitat | null;
+            isBaby: boolean;
+            isLegendary: boolean;
+            isMythical: boolean;
+            shape?: Shape | null;
           };
-          moves: {
-            __typename?: "PokemonMoveConnection";
+          types: {
+            __typename?: "PokemonTypeConnection";
             edges?: Array<{
-              __typename?: "PokemonMoveEdge";
-              learnMethod: MoveLearnMethod;
-              levelLearnedAt: number;
-              id: string;
+              __typename?: "PokemonTypeEdge";
+              slot: number;
               node: {
-                __typename?: "Move";
+                __typename?: "Type";
                 id: string;
                 name: string;
                 slug: string;
-                accuracy?: number | null;
-                damageClass: DamageClass;
-                effect?: string | null;
-                effectChance?: number | null;
-                power?: number | null;
-                pp?: number | null;
-                target: MoveTarget;
-                type: {
-                  __typename?: "Type";
-                  id: string;
-                  name: string;
-                  slug: string;
-                };
               };
             }> | null;
           };
@@ -1280,28 +1208,21 @@ export type TeamFieldsFragment = {
               __typename?: "PokemonFormEdge";
               node: {
                 __typename?: "PokemonForm";
-                types: {
-                  __typename?: "PokemonFormTypeConnection";
-                  edges?: Array<{
-                    __typename?: "PokemonFormTypeEdge";
-                    slot: number;
-                    node: {
-                      __typename?: "Type";
-                      id: string;
-                      name: string;
-                      slug: string;
-                    };
-                  }> | null;
-                };
-                sprites: {
-                  __typename?: "PokemonSprites";
-                  frontDefault?: {
-                    __typename?: "PokemonSprite";
-                    path: string;
-                  } | null;
-                };
+                id: string;
+                formName?: string | null;
+                isDefault: boolean;
+                isBattleOnly: boolean;
+                name: string;
+                slug: string;
               };
             }> | null;
+          };
+          sprites: {
+            __typename?: "PokemonSprites";
+            frontDefault?: {
+              __typename?: "PokemonSprite";
+              path: string;
+            } | null;
           };
         };
       };
@@ -1316,34 +1237,35 @@ export type TeamMemberFieldsFragment = {
   pokemon: {
     __typename?: "Pokemon";
     id: string;
+    slug: string;
     attack: number;
     defense: number;
     specialAttack: number;
     specialDefense: number;
     speed: number;
     hp: number;
-    species: { __typename?: "PokemonSpecies"; name: string; pokedexId: number };
-    moves: {
-      __typename?: "PokemonMoveConnection";
+    isDefault: boolean;
+    species: {
+      __typename?: "PokemonSpecies";
+      name: string;
+      pokedexId: number;
+      id: string;
+      slug: string;
+      color: Color;
+      description?: string | null;
+      genus: string;
+      habitat?: Habitat | null;
+      isBaby: boolean;
+      isLegendary: boolean;
+      isMythical: boolean;
+      shape?: Shape | null;
+    };
+    types: {
+      __typename?: "PokemonTypeConnection";
       edges?: Array<{
-        __typename?: "PokemonMoveEdge";
-        learnMethod: MoveLearnMethod;
-        levelLearnedAt: number;
-        id: string;
-        node: {
-          __typename?: "Move";
-          id: string;
-          name: string;
-          slug: string;
-          accuracy?: number | null;
-          damageClass: DamageClass;
-          effect?: string | null;
-          effectChance?: number | null;
-          power?: number | null;
-          pp?: number | null;
-          target: MoveTarget;
-          type: { __typename?: "Type"; id: string; name: string; slug: string };
-        };
+        __typename?: "PokemonTypeEdge";
+        slot: number;
+        node: { __typename?: "Type"; id: string; name: string; slug: string };
       }> | null;
     };
     forms: {
@@ -1352,28 +1274,18 @@ export type TeamMemberFieldsFragment = {
         __typename?: "PokemonFormEdge";
         node: {
           __typename?: "PokemonForm";
-          types: {
-            __typename?: "PokemonFormTypeConnection";
-            edges?: Array<{
-              __typename?: "PokemonFormTypeEdge";
-              slot: number;
-              node: {
-                __typename?: "Type";
-                id: string;
-                name: string;
-                slug: string;
-              };
-            }> | null;
-          };
-          sprites: {
-            __typename?: "PokemonSprites";
-            frontDefault?: {
-              __typename?: "PokemonSprite";
-              path: string;
-            } | null;
-          };
+          id: string;
+          formName?: string | null;
+          isDefault: boolean;
+          isBattleOnly: boolean;
+          name: string;
+          slug: string;
         };
       }> | null;
+    };
+    sprites: {
+      __typename?: "PokemonSprites";
+      frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
     };
   };
 };
@@ -1420,42 +1332,39 @@ export type CreateTeamMutation = {
           pokemon: {
             __typename?: "Pokemon";
             id: string;
+            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
             hp: number;
+            isDefault: boolean;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
+              id: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              shape?: Shape | null;
             };
-            moves: {
-              __typename?: "PokemonMoveConnection";
+            types: {
+              __typename?: "PokemonTypeConnection";
               edges?: Array<{
-                __typename?: "PokemonMoveEdge";
-                learnMethod: MoveLearnMethod;
-                levelLearnedAt: number;
-                id: string;
+                __typename?: "PokemonTypeEdge";
+                slot: number;
                 node: {
-                  __typename?: "Move";
+                  __typename?: "Type";
                   id: string;
                   name: string;
                   slug: string;
-                  accuracy?: number | null;
-                  damageClass: DamageClass;
-                  effect?: string | null;
-                  effectChance?: number | null;
-                  power?: number | null;
-                  pp?: number | null;
-                  target: MoveTarget;
-                  type: {
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  };
                 };
               }> | null;
             };
@@ -1465,28 +1374,21 @@ export type CreateTeamMutation = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  types: {
-                    __typename?: "PokemonFormTypeConnection";
-                    edges?: Array<{
-                      __typename?: "PokemonFormTypeEdge";
-                      slot: number;
-                      node: {
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      };
-                    }> | null;
-                  };
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
+                  id: string;
+                  formName?: string | null;
+                  isDefault: boolean;
+                  isBattleOnly: boolean;
+                  name: string;
+                  slug: string;
                 };
               }> | null;
+            };
+            sprites: {
+              __typename?: "PokemonSprites";
+              frontDefault?: {
+                __typename?: "PokemonSprite";
+                path: string;
+              } | null;
             };
           };
         };
@@ -1523,42 +1425,39 @@ export type RemoveTeamMutation = {
           pokemon: {
             __typename?: "Pokemon";
             id: string;
+            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
             hp: number;
+            isDefault: boolean;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
+              id: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              shape?: Shape | null;
             };
-            moves: {
-              __typename?: "PokemonMoveConnection";
+            types: {
+              __typename?: "PokemonTypeConnection";
               edges?: Array<{
-                __typename?: "PokemonMoveEdge";
-                learnMethod: MoveLearnMethod;
-                levelLearnedAt: number;
-                id: string;
+                __typename?: "PokemonTypeEdge";
+                slot: number;
                 node: {
-                  __typename?: "Move";
+                  __typename?: "Type";
                   id: string;
                   name: string;
                   slug: string;
-                  accuracy?: number | null;
-                  damageClass: DamageClass;
-                  effect?: string | null;
-                  effectChance?: number | null;
-                  power?: number | null;
-                  pp?: number | null;
-                  target: MoveTarget;
-                  type: {
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  };
                 };
               }> | null;
             };
@@ -1568,28 +1467,21 @@ export type RemoveTeamMutation = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  types: {
-                    __typename?: "PokemonFormTypeConnection";
-                    edges?: Array<{
-                      __typename?: "PokemonFormTypeEdge";
-                      slot: number;
-                      node: {
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      };
-                    }> | null;
-                  };
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
+                  id: string;
+                  formName?: string | null;
+                  isDefault: boolean;
+                  isBattleOnly: boolean;
+                  name: string;
+                  slug: string;
                 };
               }> | null;
+            };
+            sprites: {
+              __typename?: "PokemonSprites";
+              frontDefault?: {
+                __typename?: "PokemonSprite";
+                path: string;
+              } | null;
             };
           };
         };
@@ -1626,42 +1518,39 @@ export type UpdateTeamMutation = {
           pokemon: {
             __typename?: "Pokemon";
             id: string;
+            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
             hp: number;
+            isDefault: boolean;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
+              id: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              shape?: Shape | null;
             };
-            moves: {
-              __typename?: "PokemonMoveConnection";
+            types: {
+              __typename?: "PokemonTypeConnection";
               edges?: Array<{
-                __typename?: "PokemonMoveEdge";
-                learnMethod: MoveLearnMethod;
-                levelLearnedAt: number;
-                id: string;
+                __typename?: "PokemonTypeEdge";
+                slot: number;
                 node: {
-                  __typename?: "Move";
+                  __typename?: "Type";
                   id: string;
                   name: string;
                   slug: string;
-                  accuracy?: number | null;
-                  damageClass: DamageClass;
-                  effect?: string | null;
-                  effectChance?: number | null;
-                  power?: number | null;
-                  pp?: number | null;
-                  target: MoveTarget;
-                  type: {
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  };
                 };
               }> | null;
             };
@@ -1671,28 +1560,21 @@ export type UpdateTeamMutation = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  types: {
-                    __typename?: "PokemonFormTypeConnection";
-                    edges?: Array<{
-                      __typename?: "PokemonFormTypeEdge";
-                      slot: number;
-                      node: {
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      };
-                    }> | null;
-                  };
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
+                  id: string;
+                  formName?: string | null;
+                  isDefault: boolean;
+                  isBattleOnly: boolean;
+                  name: string;
+                  slug: string;
                 };
               }> | null;
+            };
+            sprites: {
+              __typename?: "PokemonSprites";
+              frontDefault?: {
+                __typename?: "PokemonSprite";
+                path: string;
+              } | null;
             };
           };
         };
@@ -1731,42 +1613,39 @@ export type AllTeamsQuery = {
               pokemon: {
                 __typename?: "Pokemon";
                 id: string;
+                slug: string;
                 attack: number;
                 defense: number;
                 specialAttack: number;
                 specialDefense: number;
                 speed: number;
                 hp: number;
+                isDefault: boolean;
                 species: {
                   __typename?: "PokemonSpecies";
                   name: string;
                   pokedexId: number;
+                  id: string;
+                  slug: string;
+                  color: Color;
+                  description?: string | null;
+                  genus: string;
+                  habitat?: Habitat | null;
+                  isBaby: boolean;
+                  isLegendary: boolean;
+                  isMythical: boolean;
+                  shape?: Shape | null;
                 };
-                moves: {
-                  __typename?: "PokemonMoveConnection";
+                types: {
+                  __typename?: "PokemonTypeConnection";
                   edges?: Array<{
-                    __typename?: "PokemonMoveEdge";
-                    learnMethod: MoveLearnMethod;
-                    levelLearnedAt: number;
-                    id: string;
+                    __typename?: "PokemonTypeEdge";
+                    slot: number;
                     node: {
-                      __typename?: "Move";
+                      __typename?: "Type";
                       id: string;
                       name: string;
                       slug: string;
-                      accuracy?: number | null;
-                      damageClass: DamageClass;
-                      effect?: string | null;
-                      effectChance?: number | null;
-                      power?: number | null;
-                      pp?: number | null;
-                      target: MoveTarget;
-                      type: {
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      };
                     };
                   }> | null;
                 };
@@ -1776,28 +1655,21 @@ export type AllTeamsQuery = {
                     __typename?: "PokemonFormEdge";
                     node: {
                       __typename?: "PokemonForm";
-                      types: {
-                        __typename?: "PokemonFormTypeConnection";
-                        edges?: Array<{
-                          __typename?: "PokemonFormTypeEdge";
-                          slot: number;
-                          node: {
-                            __typename?: "Type";
-                            id: string;
-                            name: string;
-                            slug: string;
-                          };
-                        }> | null;
-                      };
-                      sprites: {
-                        __typename?: "PokemonSprites";
-                        frontDefault?: {
-                          __typename?: "PokemonSprite";
-                          path: string;
-                        } | null;
-                      };
+                      id: string;
+                      formName?: string | null;
+                      isDefault: boolean;
+                      isBattleOnly: boolean;
+                      name: string;
+                      slug: string;
                     };
                   }> | null;
+                };
+                sprites: {
+                  __typename?: "PokemonSprites";
+                  frontDefault?: {
+                    __typename?: "PokemonSprite";
+                    path: string;
+                  } | null;
                 };
               };
             };
@@ -1848,42 +1720,39 @@ export type TeamByIdQuery = {
           pokemon: {
             __typename?: "Pokemon";
             id: string;
+            slug: string;
             attack: number;
             defense: number;
             specialAttack: number;
             specialDefense: number;
             speed: number;
             hp: number;
+            isDefault: boolean;
             species: {
               __typename?: "PokemonSpecies";
               name: string;
               pokedexId: number;
+              id: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              shape?: Shape | null;
             };
-            moves: {
-              __typename?: "PokemonMoveConnection";
+            types: {
+              __typename?: "PokemonTypeConnection";
               edges?: Array<{
-                __typename?: "PokemonMoveEdge";
-                learnMethod: MoveLearnMethod;
-                levelLearnedAt: number;
-                id: string;
+                __typename?: "PokemonTypeEdge";
+                slot: number;
                 node: {
-                  __typename?: "Move";
+                  __typename?: "Type";
                   id: string;
                   name: string;
                   slug: string;
-                  accuracy?: number | null;
-                  damageClass: DamageClass;
-                  effect?: string | null;
-                  effectChance?: number | null;
-                  power?: number | null;
-                  pp?: number | null;
-                  target: MoveTarget;
-                  type: {
-                    __typename?: "Type";
-                    id: string;
-                    name: string;
-                    slug: string;
-                  };
                 };
               }> | null;
             };
@@ -1893,28 +1762,21 @@ export type TeamByIdQuery = {
                 __typename?: "PokemonFormEdge";
                 node: {
                   __typename?: "PokemonForm";
-                  types: {
-                    __typename?: "PokemonFormTypeConnection";
-                    edges?: Array<{
-                      __typename?: "PokemonFormTypeEdge";
-                      slot: number;
-                      node: {
-                        __typename?: "Type";
-                        id: string;
-                        name: string;
-                        slug: string;
-                      };
-                    }> | null;
-                  };
-                  sprites: {
-                    __typename?: "PokemonSprites";
-                    frontDefault?: {
-                      __typename?: "PokemonSprite";
-                      path: string;
-                    } | null;
-                  };
+                  id: string;
+                  formName?: string | null;
+                  isDefault: boolean;
+                  isBattleOnly: boolean;
+                  name: string;
+                  slug: string;
                 };
               }> | null;
+            };
+            sprites: {
+              __typename?: "PokemonSprites";
+              frontDefault?: {
+                __typename?: "PokemonSprite";
+                path: string;
+              } | null;
             };
           };
         };
@@ -1970,6 +1832,17 @@ export const MoveFieldsFragmentDoc = gql`
   }
   ${TypeFieldsFragmentDoc}
 `;
+export const PokemonMoveFieldsFragmentDoc = gql`
+  fragment pokemonMoveFields on PokemonMoveEdge {
+    id: cursor
+    learnMethod
+    levelLearnedAt
+    node {
+      ...moveFields
+    }
+  }
+  ${MoveFieldsFragmentDoc}
+`;
 export const TeamMemberMoveFieldsFragmentDoc = gql`
   fragment teamMemberMoveFields on TeamMemberMove {
     id
@@ -1982,59 +1855,22 @@ export const TeamMemberMoveFieldsFragmentDoc = gql`
   }
   ${MoveFieldsFragmentDoc}
 `;
-export const PokemonMoveFieldsFragmentDoc = gql`
-  fragment pokemonMoveFields on PokemonMoveEdge {
-    id: cursor
-    learnMethod
-    levelLearnedAt
-    node {
-      ...moveFields
-    }
+export const TrainerFieldsFragmentDoc = gql`
+  fragment trainerFields on Trainer {
+    id
+    username
+    picture
   }
-  ${MoveFieldsFragmentDoc}
 `;
 export const PokemonFormFieldsFragmentDoc = gql`
   fragment pokemonFormFields on PokemonForm {
-    types {
-      edges {
-        slot
-        node {
-          ...typeFields
-        }
-      }
-    }
-    sprites {
-      frontDefault {
-        path
-      }
-    }
-  }
-  ${TypeFieldsFragmentDoc}
-`;
-export const PokemonFieldsFragmentDoc = gql`
-  fragment pokemonFields on Pokemon {
     id
-    attack
-    defense
-    specialAttack
-    specialDefense
-    speed
-    hp
-    moves {
-      edges {
-        ...pokemonMoveFields
-      }
-    }
-    forms {
-      edges {
-        node {
-          ...pokemonFormFields
-        }
-      }
-    }
+    formName
+    isDefault
+    isBattleOnly
+    name
+    slug
   }
-  ${PokemonMoveFieldsFragmentDoc}
-  ${PokemonFormFieldsFragmentDoc}
 `;
 export const PokemonSpeciesFieldsFragmentDoc = gql`
   fragment pokemonSpeciesFields on PokemonSpecies {
@@ -2050,22 +1886,46 @@ export const PokemonSpeciesFieldsFragmentDoc = gql`
     isMythical
     pokedexId
     shape
-    varieties {
+  }
+`;
+export const PokemonFieldsFragmentDoc = gql`
+  fragment pokemonFields on Pokemon {
+    id
+    slug
+    attack
+    defense
+    specialAttack
+    specialDefense
+    speed
+    hp
+    isDefault
+    types {
       edges {
+        slot
         node {
-          ...pokemonFields
+          ...typeFields
         }
       }
     }
+    forms {
+      edges {
+        node {
+          ...pokemonFormFields
+        }
+      }
+    }
+    species {
+      ...pokemonSpeciesFields
+    }
+    sprites {
+      frontDefault {
+        path
+      }
+    }
   }
-  ${PokemonFieldsFragmentDoc}
-`;
-export const TrainerFieldsFragmentDoc = gql`
-  fragment trainerFields on Trainer {
-    id
-    username
-    picture
-  }
+  ${TypeFieldsFragmentDoc}
+  ${PokemonFormFieldsFragmentDoc}
+  ${PokemonSpeciesFieldsFragmentDoc}
 `;
 export const TeamMemberFieldsFragmentDoc = gql`
   fragment teamMemberFields on TeamMember {
