@@ -19,7 +19,7 @@
     >
       <div
         class="col-span-3 px-3 pb-3"
-        :class="{ 'overflow-y-auto pr-0': isContainerColumns }"
+        :class="{ 'overflow-y-auto': isContainerColumns }"
       >
         <div
           ref="badges"
@@ -87,7 +87,7 @@
           :speed="speed"
         />
 
-        <h2 class="heading mt-6">Abilities</h2>
+        <h2 class="mb-2 mt-6 text-lg font-bold">Abilities</h2>
         <ul class="mt-3 space-y-3" v-if="sortedAbilities.length > 0">
           <Ability
             as="li"
@@ -104,10 +104,13 @@
         class="col-span-2"
         :class="{ 'overflow-y-auto': isContainerColumns }"
       >
-        <h2 class="heading mt-6" :class="{ 'mt-0': isContainerColumns }">
+        <h2
+          class="mb-4 mt-6 px-3 text-lg font-bold"
+          :class="{ 'sr-only': isContainerColumns }"
+        >
           Moves
         </h2>
-        <ul>
+        <ul :class="{ 'pt-1': isContainerColumns }">
           <Move
             as="li"
             v-for="{ id, move, learnMethod, levelLearnedAt } in moves"
@@ -117,7 +120,6 @@
             :effect-chance="move.effectChance"
             :type="move.type"
             :damage-class="move.damageClass"
-            :pp="move.pp"
             :accuracy="move.accuracy"
             :power="move.power"
             :target="move.target"
@@ -249,9 +251,5 @@ const isBadgesRoomy = computed(() => badgesWidth.value >= 368);
 
 .badge-icon {
   @apply mr-0.5 h-5 w-5 shrink-0;
-}
-
-.heading {
-  @apply mb-2 text-lg font-bold;
 }
 </style>

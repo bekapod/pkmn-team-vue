@@ -81,43 +81,11 @@
     @apply bg-red-vivid-400;
   }
 
-  .move-line-template {
-    @apply grid;
-    grid-template: theme("spacing.5") / 1fr 1fr 1fr;
-  }
-
-  .move-line-template[aria-expanded="true"] {
-    grid-template: theme("spacing.5") theme("spacing.11") / 1fr 1fr 1fr;
-  }
-
-  .move-line-template::before,
-  .team-member-move-template::before {
-    content: "";
-    @apply absolute -top-1 left-0 block h-2 w-full;
-    background-image: var(--type-gradient);
-  }
-
-  .move-line-template-compressed {
-    grid-template: theme("spacing.5") theme("spacing.5") / 0.75fr 1.25fr;
-  }
-
-  .move-line-template-compressed[aria-expanded="true"] {
-    grid-template: theme("spacing.5") theme("spacing.5") theme("spacing.11") / 0.75fr 1.25fr;
-  }
-
-  .move-line-template-compressed .move-line-template-actions {
-    @apply col-span-2 w-full justify-between;
-  }
-
-  .move-line-template-compressed .move-line-template-details {
-    @apply col-span-2 mt-2;
-  }
-
-  .pokemon-line-template {
+  .with-type-gradient {
     --outdent: 0px;
   }
 
-  .pokemon-line-template::before {
+  .with-type-gradient::before {
     content: "";
     @apply type-gradient absolute -top-1 block h-2;
     left: calc(var(--outdent) * -1);
@@ -125,7 +93,7 @@
   }
 
   .type-tag {
-    @apply inline-block rounded-tl-sm rounded-br-sm px-2 text-sm font-bold uppercase text-white;
+    @apply inline-block rounded-tl rounded-br py-1 px-2 text-sm font-bold uppercase text-white;
     text-shadow: 0 1px 0px theme("colors.cool-grey.900"),
       1px 0 0px theme("colors.cool-grey.800");
     background-color: var(--type-color);
