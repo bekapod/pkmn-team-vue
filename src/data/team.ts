@@ -34,13 +34,11 @@ export const parseTeam = (
         specialAttack: member?.node?.pokemon?.specialAttack,
         specialDefense: member?.node?.pokemon?.specialDefense,
         speed: member?.node?.pokemon?.speed,
-        types: member?.node?.pokemon?.forms?.edges?.[0].node.types?.edges?.map(
-          (type) => ({
-            name: type?.node?.name,
-            slug: type?.node?.slug,
-            slot: type?.slot,
-          })
-        ),
+        types: member?.node?.pokemon?.types?.edges?.map((type) => ({
+          name: type?.node?.name,
+          slug: type?.node?.slug,
+          slot: type?.slot,
+        })),
       },
     })),
   });

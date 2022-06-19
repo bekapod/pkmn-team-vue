@@ -1020,26 +1020,6 @@ export type MoveFieldsFragment = {
   type: { __typename?: "Type"; id: string; name: string; slug: string };
 };
 
-export type PokemonMoveFieldsFragment = {
-  __typename?: "PokemonMoveEdge";
-  learnMethod: MoveLearnMethod;
-  levelLearnedAt: number;
-  node: {
-    __typename?: "Move";
-    id: string;
-    name: string;
-    slug: string;
-    accuracy?: number | null;
-    damageClass: DamageClass;
-    effect?: string | null;
-    effectChance?: number | null;
-    power?: number | null;
-    pp?: number | null;
-    target: MoveTarget;
-    type: { __typename?: "Type"; id: string; name: string; slug: string };
-  };
-};
-
 export type TeamMemberMoveFieldsFragment = {
   __typename?: "TeamMemberMove";
   id: string;
@@ -1079,6 +1059,7 @@ export type PokemonFieldsFragment = {
       __typename?: "PokemonAbilityEdge";
       slot: number;
       isHidden: boolean;
+      id: string;
       node: {
         __typename?: "Ability";
         id: string;
@@ -1093,6 +1074,7 @@ export type PokemonFieldsFragment = {
     edges?: Array<{
       __typename?: "PokemonTypeEdge";
       slot: number;
+      id: string;
       node: { __typename?: "Type"; id: string; name: string; slug: string };
     }> | null;
   };
@@ -1117,6 +1099,7 @@ export type PokemonFieldsFragment = {
       __typename?: "PokemonMoveEdge";
       learnMethod: MoveLearnMethod;
       levelLearnedAt: number;
+      id: string;
       node: {
         __typename?: "Move";
         id: string;
@@ -1231,6 +1214,7 @@ export type TeamFieldsFragment = {
               __typename?: "PokemonAbilityEdge";
               slot: number;
               isHidden: boolean;
+              id: string;
               node: {
                 __typename?: "Ability";
                 id: string;
@@ -1245,6 +1229,7 @@ export type TeamFieldsFragment = {
             edges?: Array<{
               __typename?: "PokemonTypeEdge";
               slot: number;
+              id: string;
               node: {
                 __typename?: "Type";
                 id: string;
@@ -1274,6 +1259,7 @@ export type TeamFieldsFragment = {
               __typename?: "PokemonMoveEdge";
               learnMethod: MoveLearnMethod;
               levelLearnedAt: number;
+              id: string;
               node: {
                 __typename?: "Move";
                 id: string;
@@ -1344,6 +1330,7 @@ export type TeamMemberFieldsFragment = {
         __typename?: "PokemonAbilityEdge";
         slot: number;
         isHidden: boolean;
+        id: string;
         node: {
           __typename?: "Ability";
           id: string;
@@ -1358,6 +1345,7 @@ export type TeamMemberFieldsFragment = {
       edges?: Array<{
         __typename?: "PokemonTypeEdge";
         slot: number;
+        id: string;
         node: { __typename?: "Type"; id: string; name: string; slug: string };
       }> | null;
     };
@@ -1382,6 +1370,7 @@ export type TeamMemberFieldsFragment = {
         __typename?: "PokemonMoveEdge";
         learnMethod: MoveLearnMethod;
         levelLearnedAt: number;
+        id: string;
         node: {
           __typename?: "Move";
           id: string;
@@ -1476,6 +1465,7 @@ export type CreateTeamMutation = {
                 __typename?: "PokemonAbilityEdge";
                 slot: number;
                 isHidden: boolean;
+                id: string;
                 node: {
                   __typename?: "Ability";
                   id: string;
@@ -1490,6 +1480,7 @@ export type CreateTeamMutation = {
               edges?: Array<{
                 __typename?: "PokemonTypeEdge";
                 slot: number;
+                id: string;
                 node: {
                   __typename?: "Type";
                   id: string;
@@ -1519,6 +1510,7 @@ export type CreateTeamMutation = {
                 __typename?: "PokemonMoveEdge";
                 learnMethod: MoveLearnMethod;
                 levelLearnedAt: number;
+                id: string;
                 node: {
                   __typename?: "Move";
                   id: string;
@@ -1611,6 +1603,7 @@ export type RemoveTeamMutation = {
                 __typename?: "PokemonAbilityEdge";
                 slot: number;
                 isHidden: boolean;
+                id: string;
                 node: {
                   __typename?: "Ability";
                   id: string;
@@ -1625,6 +1618,7 @@ export type RemoveTeamMutation = {
               edges?: Array<{
                 __typename?: "PokemonTypeEdge";
                 slot: number;
+                id: string;
                 node: {
                   __typename?: "Type";
                   id: string;
@@ -1654,6 +1648,7 @@ export type RemoveTeamMutation = {
                 __typename?: "PokemonMoveEdge";
                 learnMethod: MoveLearnMethod;
                 levelLearnedAt: number;
+                id: string;
                 node: {
                   __typename?: "Move";
                   id: string;
@@ -1746,6 +1741,7 @@ export type UpdateTeamMutation = {
                 __typename?: "PokemonAbilityEdge";
                 slot: number;
                 isHidden: boolean;
+                id: string;
                 node: {
                   __typename?: "Ability";
                   id: string;
@@ -1760,6 +1756,7 @@ export type UpdateTeamMutation = {
               edges?: Array<{
                 __typename?: "PokemonTypeEdge";
                 slot: number;
+                id: string;
                 node: {
                   __typename?: "Type";
                   id: string;
@@ -1789,6 +1786,7 @@ export type UpdateTeamMutation = {
                 __typename?: "PokemonMoveEdge";
                 learnMethod: MoveLearnMethod;
                 levelLearnedAt: number;
+                id: string;
                 node: {
                   __typename?: "Move";
                   id: string;
@@ -1883,6 +1881,7 @@ export type AllTeamsQuery = {
                     __typename?: "PokemonAbilityEdge";
                     slot: number;
                     isHidden: boolean;
+                    id: string;
                     node: {
                       __typename?: "Ability";
                       id: string;
@@ -1897,6 +1896,7 @@ export type AllTeamsQuery = {
                   edges?: Array<{
                     __typename?: "PokemonTypeEdge";
                     slot: number;
+                    id: string;
                     node: {
                       __typename?: "Type";
                       id: string;
@@ -1926,6 +1926,7 @@ export type AllTeamsQuery = {
                     __typename?: "PokemonMoveEdge";
                     learnMethod: MoveLearnMethod;
                     levelLearnedAt: number;
+                    id: string;
                     node: {
                       __typename?: "Move";
                       id: string;
@@ -1998,6 +1999,7 @@ export type PokemonByIdQuery = {
         __typename?: "PokemonAbilityEdge";
         slot: number;
         isHidden: boolean;
+        id: string;
         node: {
           __typename?: "Ability";
           id: string;
@@ -2012,6 +2014,7 @@ export type PokemonByIdQuery = {
       edges?: Array<{
         __typename?: "PokemonTypeEdge";
         slot: number;
+        id: string;
         node: { __typename?: "Type"; id: string; name: string; slug: string };
       }> | null;
     };
@@ -2036,6 +2039,7 @@ export type PokemonByIdQuery = {
         __typename?: "PokemonMoveEdge";
         learnMethod: MoveLearnMethod;
         levelLearnedAt: number;
+        id: string;
         node: {
           __typename?: "Move";
           id: string;
@@ -2131,6 +2135,7 @@ export type TeamByIdQuery = {
                 __typename?: "PokemonAbilityEdge";
                 slot: number;
                 isHidden: boolean;
+                id: string;
                 node: {
                   __typename?: "Ability";
                   id: string;
@@ -2145,6 +2150,7 @@ export type TeamByIdQuery = {
               edges?: Array<{
                 __typename?: "PokemonTypeEdge";
                 slot: number;
+                id: string;
                 node: {
                   __typename?: "Type";
                   id: string;
@@ -2174,6 +2180,7 @@ export type TeamByIdQuery = {
                 __typename?: "PokemonMoveEdge";
                 learnMethod: MoveLearnMethod;
                 levelLearnedAt: number;
+                id: string;
                 node: {
                   __typename?: "Move";
                   id: string;
@@ -2285,16 +2292,6 @@ export const PokemonFormFieldsFragmentDoc = gql`
     slug
   }
 `;
-export const PokemonMoveFieldsFragmentDoc = gql`
-  fragment pokemonMoveFields on PokemonMoveEdge {
-    learnMethod
-    levelLearnedAt
-    node {
-      ...moveFields
-    }
-  }
-  ${MoveFieldsFragmentDoc}
-`;
 export const PokemonSpeciesFieldsFragmentDoc = gql`
   fragment pokemonSpeciesFields on PokemonSpecies {
     id
@@ -2324,6 +2321,7 @@ export const PokemonFieldsFragmentDoc = gql`
     isDefault
     abilities {
       edges {
+        id: cursor
         slot
         isHidden
         node {
@@ -2333,6 +2331,7 @@ export const PokemonFieldsFragmentDoc = gql`
     }
     types {
       edges {
+        id: cursor
         slot
         node {
           ...typeFields
@@ -2348,7 +2347,12 @@ export const PokemonFieldsFragmentDoc = gql`
     }
     moves {
       edges {
-        ...pokemonMoveFields
+        id: cursor
+        learnMethod
+        levelLearnedAt
+        node {
+          ...moveFields
+        }
       }
     }
     species {
@@ -2363,7 +2367,7 @@ export const PokemonFieldsFragmentDoc = gql`
   ${AbilityFieldsFragmentDoc}
   ${TypeFieldsFragmentDoc}
   ${PokemonFormFieldsFragmentDoc}
-  ${PokemonMoveFieldsFragmentDoc}
+  ${MoveFieldsFragmentDoc}
   ${PokemonSpeciesFieldsFragmentDoc}
 `;
 export const TeamMemberFieldsFragmentDoc = gql`

@@ -13,7 +13,7 @@
       <ShowIcon v-else class="mr-2 h-6 w-6" />
       {{ name }}
     </div>
-    <p class="mt-2 mb-0">{{ effect }}</p>
+    <p v-if="effect" class="mt-2 mb-0">{{ effect }}</p>
   </component>
 </template>
 
@@ -33,7 +33,7 @@ defineProps({
   },
   effect: {
     type: String,
-    required: true,
+    required: false,
   },
   isHidden: {
     type: Boolean,

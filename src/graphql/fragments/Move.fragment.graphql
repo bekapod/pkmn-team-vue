@@ -14,14 +14,6 @@ fragment moveFields on Move {
   }
 }
 
-fragment pokemonMoveFields on PokemonMoveEdge {
-  learnMethod
-  levelLearnedAt
-  node {
-    ...moveFields
-  }
-}
-
 fragment teamMemberMoveFields on TeamMemberMove {
   id
   slot

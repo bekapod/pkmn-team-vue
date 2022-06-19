@@ -10,6 +10,7 @@ fragment pokemonFields on Pokemon {
   isDefault
   abilities {
     edges {
+      id: cursor
       slot
       isHidden
       node {
@@ -19,6 +20,7 @@ fragment pokemonFields on Pokemon {
   }
   types {
     edges {
+      id: cursor
       slot
       node {
         ...typeFields
@@ -34,7 +36,12 @@ fragment pokemonFields on Pokemon {
   }
   moves {
     edges {
-      ...pokemonMoveFields
+      id: cursor
+      learnMethod
+      levelLearnedAt
+      node {
+        ...moveFields
+      }
     }
   }
   species {

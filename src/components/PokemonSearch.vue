@@ -131,6 +131,7 @@
             :sprite="search.selectedPokemon.defaultSprite"
             :abilities="search.selectedPokemon.abilities"
             :types="search.selectedPokemon.types"
+            :moves="search.selectedPokemon.moves"
             :hp="search.selectedPokemon.hp"
             :attack="search.selectedPokemon.attack"
             :defense="search.selectedPokemon.defense"

@@ -1,10 +1,37 @@
-import type { Maybe, PokemonFieldsFragment } from "@/graphql";
+import {
+  MoveLearnMethod,
+  type Maybe,
+  type PokemonFieldsFragment,
+} from "@/graphql";
 import { z } from "zod";
-import { Ability } from "./ability";
-import { Move } from "./move";
+import { Ability, parseAbility } from "./ability";
+import { Move, parseMove } from "./move";
 import { parsePokemonForm, PokemonForm } from "./pokemon-form";
 import { parsePokemonSpecies, PokemonSpecies } from "./pokemon-species";
-import { Type } from "./type";
+import { parseType, Type } from "./type";
+
+export const PokemonMove = z.object({
+  id: z.string(),
+  move: Move,
+  learnMethod: z.nativeEnum(MoveLearnMethod),
+  levelLearnedAt: z.number(),
+});
+export type PokemonMove = z.infer<typeof PokemonMove>;
+
+export const PokemonAbility = z.object({
+  id: z.string(),
+  slot: z.number(),
+  isHidden: z.boolean(),
+  ability: Ability,
+});
+export type PokemonAbility = z.infer<typeof PokemonAbility>;
+
+export const PokemonType = z.object({
+  id: z.string(),
+  slot: z.number(),
+  type: Type,
+});
+export type PokemonType = z.infer<typeof PokemonType>;
 
 export const Pokemon = z.object({
   id: z.string(),
@@ -20,9 +47,9 @@ export const Pokemon = z.object({
   species: PokemonSpecies,
   speed: z.number(),
   defaultSprite: z.string(),
-  types: z.array(Type),
-  abilities: z.array(Ability),
-  moves: z.array(Move),
+  types: z.array(PokemonType),
+  abilities: z.array(PokemonAbility),
+  moves: z.array(PokemonMove),
 });
 export type Pokemon = z.infer<typeof Pokemon>;
 
@@ -46,38 +73,23 @@ export const parsePokemon = (
     speed: pokemon?.speed,
     defaultSprite: pokemon?.sprites.frontDefault?.path,
     types: pokemon?.types.edges?.map((type) => ({
-      id: type.node.id,
-      name: type.node.name,
-      slug: type.node.slug,
+      id: type.id,
       slot: type.slot,
+      type: parseType(type.node),
     })),
     abilities:
       pokemon?.abilities?.edges?.map((ability) => ({
-        id: ability.node.id,
-        name: ability.node.name,
-        slug: ability.node.slug,
-        effect: ability.node.effect,
+        id: ability.id,
         slot: ability.slot,
         isHidden: ability.isHidden,
+        ability: parseAbility(ability.node),
       })) ?? [],
     moves:
       pokemon?.moves?.edges?.map((move) => ({
-        id: move.node.id,
-        name: move.node.name,
-        slug: move.node.slug,
-        accuracy: move.node.accuracy ?? undefined,
-        pp: move.node.pp ?? undefined,
-        power: move.node.power ?? undefined,
-        damageclass: move.node.damageClass ?? undefined,
-        effect: move.node.effect ?? undefined,
-        effectChance: move.node.effectChance ?? undefined,
-        target: move.node.target,
+        id: move.id,
         learnMethod: move.learnMethod,
         levelLearnedAt: move.levelLearnedAt,
-        type: {
-          name: move.node.type.name,
-          slug: move.node.type.slug,
-        },
+        move: parseMove(move.node),
       })) ?? [],
   });
 };

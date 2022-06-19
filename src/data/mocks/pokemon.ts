@@ -1,17 +1,9 @@
 import { parsePokemon, type Pokemon } from "../pokemon";
 import { parsePokemonSpecies, type PokemonSpecies } from "../pokemon-species";
-import {
-  Color,
-  DamageClass,
-  Habitat,
-  MoveLearnMethod,
-  MoveTarget,
-  Shape,
-  type PokemonFieldsFragment,
-} from "@/graphql";
+import type { PokemonFieldsFragment } from "@/graphql";
 import { parsePokemonForm, type PokemonForm } from "../pokemon-form";
 
-export const charmanderFields: PokemonFieldsFragment = {
+export const charmanderFields = {
   id: "POKcl2hi363o0ve322xf1k8a38zo",
   attack: 52,
   defense: 43,
@@ -29,6 +21,7 @@ export const charmanderFields: PokemonFieldsFragment = {
   abilities: {
     edges: [
       {
+        id: "PKAcl2hi363x0ve622xfff5u0o4x",
         slot: 3,
         isHidden: true,
         node: {
@@ -40,6 +33,7 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKAcl2hi363v0ve522xf7dcn8da9",
         slot: 1,
         isHidden: false,
         node: {
@@ -69,19 +63,20 @@ export const charmanderFields: PokemonFieldsFragment = {
   moves: {
     edges: [
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi363y0ve722xf33vngrvj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpx01h722xfbmtogf21",
           accuracy: 85,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Punch",
           power: 80,
           pp: 20,
           slug: "mega-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -90,19 +85,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi363z0ve822xf01apf2nj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpy01h922xfcg770px5",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Fire Punch",
           power: 75,
           pp: 15,
           slug: "fire-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -111,19 +107,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36400ve922xf8f717tvs",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvz01hb22xf6pyw9a55",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Punch",
           power: 75,
           pp: 15,
           slug: "thunder-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -132,19 +129,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi36410vea22xf1l07ch0o",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnlvz01hc22xfhzh99vz6",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Scratch",
           power: 40,
           pp: 35,
           slug: "scratch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -153,19 +151,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36420veb22xf1zebbwoy",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnib01hg22xf2h1y85k4",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Attack by two stages.",
           effectChance: null,
           name: "Swords Dance",
           power: null,
           pp: 20,
           slug: "swords-dance",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -174,19 +173,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi36440vec22xf7mp5b01v",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnid01hj22xf92bn42as",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Wing Attack",
           power: 60,
           pp: 35,
           slug: "wing-attack",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -195,19 +195,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36450ved22xf1yrh24nm",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnvy01hr22xf0q4f2qit",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Kick",
           power: 120,
           pp: 5,
           slug: "mega-kick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -216,19 +217,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36470vee22xf4ygd9ef3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnpoe01i022xfd8c5fyug",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Body Slam",
           power: 85,
           pp: 15,
           slug: "body-slam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -237,19 +239,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi364b0vef22xfg9l66p9b",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnpwb01ia22xf55mg0d7y",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 30,
           name: "Bite",
           power: 60,
           pp: 25,
           slug: "bite",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -258,19 +261,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi364c0veg22xfejhb6ohq",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnq4001ib22xf0rf63nue",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by one stage.",
           effectChance: null,
           name: "Growl",
           power: null,
           pp: 40,
           slug: "growl",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -279,19 +283,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi364d0veh22xfalwmbapq",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 4,
         node: {
           id: "MOVcl2hhnqjl01ii22xfha531fc5",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Ember",
           power: 40,
           pp: 25,
           slug: "ember",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -300,19 +305,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi364e0vei22xf038y7n55",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 24,
         node: {
           id: "MOVcl2hhns0g01ij22xfbao7g0zf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Flamethrower",
           power: 90,
           pp: 15,
           slug: "flamethrower",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -321,19 +327,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364e0vej22xf0a311zhk",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhns0g01ij22xfbao7g0zf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Flamethrower",
           power: 90,
           pp: 15,
           slug: "flamethrower",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -342,12 +349,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi364g0vek22xf9xbr90n5",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnucm01iy22xfaog38jeq",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Inflicts twice the damage the user received from the last physical hit it took.",
           effectChance: null,
@@ -355,7 +363,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "counter",
-          target: MoveTarget.SpecificMove,
+          target: "SPECIFIC_MOVE",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -364,12 +372,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi364j0vel22xfe2iudr1i",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 32,
         node: {
           id: "MOVcl2hhnv1k01jd22xf394u519p",
           accuracy: 85,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Prevents the target from fleeing and inflicts damage for 2-5 turns.",
           effectChance: 100,
@@ -377,7 +386,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 35,
           pp: 15,
           slug: "fire-spin",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -386,12 +395,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364j0vem22xf1kkhgso0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jd22xf394u519p",
           accuracy: 85,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Prevents the target from fleeing and inflicts damage for 2-5 turns.",
           effectChance: 100,
@@ -399,7 +409,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 35,
           pp: 15,
           slug: "fire-spin",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -408,12 +418,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364k0ven22xfhlp03ayd",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnwgi01jl22xf192me7cw",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User digs underground, dodging all attacks, and hits next turn.",
           effectChance: null,
@@ -421,7 +432,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 80,
           pp: 10,
           slug: "dig",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gn22xf9jas906v",
             name: "Ground",
@@ -430,19 +441,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi364p0veo22xfh2iabp61",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 8,
         node: {
           id: "MOVcl2hhnzd801k222xfbh8ubzp8",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's accuracy by one stage.",
           effectChance: null,
           name: "Smokescreen",
           power: null,
           pp: 20,
           slug: "smokescreen",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -451,19 +463,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364t0vep22xf88xi2zar",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho05101kk22xf0amxcu7e",
           accuracy: 85,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Fire Blast",
           power: 110,
           pp: 5,
           slug: "fire-blast",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -472,19 +485,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364u0veq22xfgrwr12jh",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho0qq01kn22xfbk08hqij",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Swift",
           power: 60,
           pp: 20,
           slug: "swift",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -493,19 +507,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364x0ver22xf7f9yhzeo",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -514,19 +529,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi364y0ves22xfets49h19",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01lf22xfguiva2kb",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 30,
           name: "Rock Slide",
           power: 75,
           pp: 10,
           slug: "rock-slide",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -535,19 +551,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi364z0vet22xf25o69esd",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 20,
         node: {
           id: "MOVcl2hho59r01ll22xf1si48je7",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has an increased chance for a critical hit.",
           effectChance: null,
           name: "Slash",
           power: 70,
           pp: 20,
           slug: "slash",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -556,12 +573,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36510veu22xfgixdev5q",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gv01lm22xf8u6oe276",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
           effectChance: null,
@@ -569,7 +587,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "substitute",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -578,12 +596,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36520vev22xf7d8g74cz",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73q01lv22xf8k0dh4nb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
           effectChance: 30,
@@ -591,7 +610,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 50,
           pp: 15,
           slug: "snore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -600,19 +619,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36530vew22xf5qye6n6d",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x601m422xfa6nk52xi",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents any moves from hitting the user this turn.",
           effectChance: null,
           name: "Protect",
           power: null,
           pp: 10,
           slug: "protect",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -621,19 +641,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi36540vex22xfec5nb2j8",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 28,
         node: {
           id: "MOVcl2hho8x701m622xfa5vf4qwf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Speed by two stages.",
           effectChance: null,
           name: "Scary Face",
           power: null,
           pp: 10,
           slug: "scary-face",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -642,19 +663,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36550vey22xfcmok85cr",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x701m622xfa5vf4qwf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Speed by two stages.",
           effectChance: null,
           name: "Scary Face",
           power: null,
           pp: 10,
           slug: "scary-face",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -663,19 +685,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi36560vez22xfbzsib5ng",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x901m922xf4aeh7lmx",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User pays half its max HP to max out its Attack.",
           effectChance: null,
           name: "Belly Drum",
           power: null,
           pp: 10,
           slug: "belly-drum",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -684,19 +707,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36570vf022xfgtx2brln",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xm01mm22xf4my42vak",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Hits every turn for 2-3 turns, then confuses the user.",
           effectChance: null,
           name: "Outrage",
           power: 120,
           pp: 10,
           slug: "outrage",
-          target: MoveTarget.RandomOpponent,
+          target: "RANDOM_OPPONENT",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -705,19 +729,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36590vf122xfd6ye39xl",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wn01mp22xf8ioi7fyh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the user's HP from lowering below 1 this turn.",
           effectChance: null,
           name: "Endure",
           power: null,
           pp: 10,
           slug: "endure",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -726,19 +751,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365a0vf222xfgqurdot7",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wp01ms22xfac2e9n21",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Cannot lower the target's HP below 1.",
           effectChance: null,
           name: "False Swipe",
           power: 40,
           pp: 40,
           slug: "false-swipe",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -747,12 +773,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365c0vf322xfaxd23bwt",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoavf01mz22xf2un43xmf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.",
           effectChance: null,
@@ -760,7 +787,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "attract",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -769,12 +796,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365d0vf422xfeyic85in",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocip01n022xf57hm9oqu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Randomly uses one of the user's other three moves.  Only works if the user is sleeping.",
           effectChance: null,
@@ -782,7 +810,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "sleep-talk",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -791,19 +819,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi365g0vf522xf0r40ehvc",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 12,
         node: {
           id: "MOVcl2hhociy01nb22xfhk9s7he1",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Dragon Breath",
           power: 60,
           pp: 20,
           slug: "dragon-breath",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -812,12 +841,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365h0vf622xf56e43st1",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocyl01nh22xfa9oi813j",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Defense by one stage.",
           effectChance: 30,
@@ -825,7 +855,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 100,
           pp: 15,
           slug: "iron-tail",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -834,12 +864,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi365i0vf722xf36jxgkd9",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocym01ni22xf7z57e34e",
           accuracy: 95,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to raise the user's Attack by one stage.",
           effectChance: 10,
@@ -847,7 +878,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 50,
           pp: 35,
           slug: "metal-claw",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -856,19 +887,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365k0vf822xf7gl5551y",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9801nr22xf3dp71ncu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to sunny for five turns.",
           effectChance: null,
           name: "Sunny Day",
           power: null,
           pp: 5,
           slug: "sunny-day",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -877,12 +909,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365l0vf922xf1o7160yl",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9801ns22xfebxn5b6a",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Defense by one stage.",
           effectChance: 20,
@@ -890,7 +923,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 80,
           pp: 15,
           slug: "crunch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -899,12 +932,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi365m0vfa22xf8z449gx3",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9b01nw22xfg7sp6d5k",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to raise all of the user's stats by one stage.",
           effectChance: 10,
@@ -912,7 +946,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 60,
           pp: 5,
           slug: "ancient-power",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -921,19 +955,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365o0vfb22xf6yb98xs0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9y01o122xf5aa1a2cp",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Hits once for every conscious Pokémon the trainer has.",
           effectChance: null,
           name: "Beat Up",
           power: null,
           pp: 10,
           slug: "beat-up",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -942,19 +977,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365p0vfc22xf1rhbd1mt",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhofcq01o722xf9xc7edc1",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Heat Wave",
           power: 95,
           pp: 10,
           slug: "heat-wave",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -963,19 +999,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365q0vfd22xf2gyf55ln",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoflr01ob22xf73ikgiqx",
           accuracy: 85,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Burns the target.",
           effectChance: null,
           name: "Will-O-Wisp",
           power: null,
           pp: 15,
           slug: "will-o-wisp",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -984,19 +1021,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365r0vfe22xff3qd7lc7",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeq01od22xfcemue0v0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power doubles if user is burned, paralyzed, or poisoned.",
           effectChance: null,
           name: "Facade",
           power: 70,
           pp: 20,
           slug: "facade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1005,19 +1043,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365s0vff22xf7zkn8gc2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ok22xf3wljberm",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Ally's next move inflicts half more damage.",
           effectChance: null,
           name: "Helping Hand",
           power: null,
           pp: 20,
           slug: "helping-hand",
-          target: MoveTarget.Ally,
+          target: "ALLY",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1026,19 +1065,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365t0vfg22xf2rjueq7w",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokew01ou22xf1dbeckru",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Destroys Reflect and Light Screen.",
           effectChance: null,
           name: "Brick Break",
           power: 75,
           pp: 15,
           slug: "brick-break",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -1047,12 +1087,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365v0vfh22xf6mvmd2w9",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokys01pp22xf2fu673do",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "If there be weather, this move has doubled power and the weather's type.",
           effectChance: null,
@@ -1060,7 +1101,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 50,
           pp: 10,
           slug: "weather-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1069,12 +1110,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365x0vfi22xf158e3417",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokyv01pt22xf4n71eqm1",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Lowers the user's Special Attack by two stages after inflicting damage.",
           effectChance: 100,
@@ -1082,7 +1124,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 130,
           pp: 5,
           slug: "overheat",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1091,12 +1133,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365y0vfj22xf1bjhafj1",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hholk501pv22xf5wzi91t2",
           accuracy: 95,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Speed by one stage.",
           effectChance: 100,
@@ -1104,7 +1147,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 60,
           pp: 15,
           slug: "rock-tomb",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -1113,19 +1156,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi365z0vfk22xf287d7olr",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhomt401qf22xfc5ff3kzj",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Dragon Claw",
           power: 80,
           pp: 15,
           slug: "dragon-claw",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -1134,19 +1178,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36600vfl22xfas7e9807",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhooat01qr22xfejuabido",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Attack and Speed by one stage.",
           effectChance: null,
           name: "Dragon Dance",
           power: null,
           pp: 20,
           slug: "dragon-dance",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -1155,19 +1200,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36620vfm22xf8xcr4b4f",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorhd01rg22xfdz1i8nwl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Throws held item at the target; power depends on the item.",
           effectChance: null,
           name: "Fling",
           power: null,
           pp: 10,
           slug: "fling",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -1176,12 +1222,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi36630vfn22xfcyv62b6o",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 40,
         node: {
           id: "MOVcl2hhorxf01s022xfdd6l1kyq",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User takes 1/3 the damage inflicted in recoil.  Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
@@ -1189,7 +1236,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 120,
           pp: 15,
           slug: "flare-blitz",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1198,12 +1245,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36630vfo22xfeld8hln0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorxf01s022xfdd6l1kyq",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User takes 1/3 the damage inflicted in recoil.  Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
@@ -1211,7 +1259,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 120,
           pp: 15,
           slug: "flare-blitz",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1220,19 +1268,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36640vfp22xf0qnhaejl",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhot4201sc22xf97a1dmtc",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Dragon Pulse",
           power: 85,
           pp: 10,
           slug: "dragon-pulse",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -1241,19 +1290,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi36660vfq22xf16led0wy",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhot4301sd22xfe5esh07d",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 20,
           name: "Dragon Rush",
           power: 100,
           pp: 10,
           slug: "dragon-rush",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -1262,19 +1312,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36670vfr22xf1x8gfwpe",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouoz01sr22xfe3n87exp",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has an increased chance for a critical hit.",
           effectChance: null,
           name: "Shadow Claw",
           power: 70,
           pp: 15,
           slug: "shadow-claw",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -1283,12 +1334,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi36680vfs22xfd4dferc0",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 17,
         node: {
           id: "MOVcl2hhoupi01su22xf0g8q5dz8",
           accuracy: 95,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to burn the target and a $effect_chance% chance to make the target flinch.",
           effectChance: 10,
@@ -1296,7 +1348,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 65,
           pp: 15,
           slug: "fire-fang",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1305,12 +1357,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi36680vft22xf78rmaeno",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoupi01su22xf0g8q5dz8",
           accuracy: 95,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to burn the target and a $effect_chance% chance to make the target flinch.",
           effectChance: 10,
@@ -1318,7 +1371,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 65,
           pp: 15,
           slug: "fire-fang",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1327,19 +1380,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi366d0vfu22xfhs4c6mfy",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ft01uu22xfb2643cj7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if it's used more than once per turn.",
           effectChance: null,
           name: "Round",
           power: 60,
           pp: 15,
           slug: "round",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1348,19 +1402,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi366f0vfv22xfb7w77t4o",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3g601va22xf2r5g2jv0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has double power if the user has no held item.",
           effectChance: null,
           name: "Acrobatics",
           power: 55,
           pp: 15,
           slug: "acrobatics",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -1369,19 +1424,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hi366g0vfw22xfgmfr5c5g",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 36,
         node: {
           id: "MOVcl2hhp3g901vf22xf1ou6cfs7",
           accuracy: 50,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 100,
           name: "Inferno",
           power: 100,
           pp: 5,
           slug: "inferno",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1390,12 +1446,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hi366h0vfx22xfhz1v5t8m",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ga01vh22xfa4r87xbb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "With Water Pledge, doubles the effect chance of friendly Pokémon's moves for four turns.",
           effectChance: null,
@@ -1403,7 +1460,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: 80,
           pp: 10,
           slug: "fire-pledge",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -1412,19 +1469,20 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hi366i0vfy22xf1ss694le",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3xf01vn22xfe7s8f7z1",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Ends wild battles.  Forces trainers to switch Pokémon.",
           effectChance: null,
           name: "Dragon Tail",
           power: 60,
           pp: 10,
           slug: "dragon-tail",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gy22xf94gb3oai",
             name: "Dragon",
@@ -1433,12 +1491,13 @@ export const charmanderFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hi366j0vfz22xf24wn4egs",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp4bd01vo22xf7hox7o6k",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Raises the user's Attack and Special Attack by one stage each.",
           effectChance: null,
@@ -1446,7 +1505,7 @@ export const charmanderFields: PokemonFieldsFragment = {
           power: null,
           pp: 30,
           slug: "work-up",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1458,22 +1517,23 @@ export const charmanderFields: PokemonFieldsFragment = {
   },
   species: {
     id: "PKScl2hi363k0ve022xfavup78rc",
-    color: Color.Red,
+    color: "RED",
     description:
       "It has a preference for hot things. When it rains,\nsteam is said to spout from the tip of its tail.\n\nFrom the time it is born, a flame burns at the tip\nof its tail. Its life would end if the flame were to\ngo out.",
     genus: "Lizard Pokémon",
-    habitat: Habitat.Mountain,
+    habitat: "MOUNTAIN",
     isBaby: false,
     isLegendary: false,
     isMythical: false,
     name: "Charmander",
     pokedexId: 4,
-    shape: Shape.Upright,
+    shape: "UPRIGHT",
     slug: "charmander",
   },
   types: {
     edges: [
       {
+        id: "PKTcl2hi363u0ve422xfcemy7fbw",
         slot: 1,
         node: {
           id: "TYPcl2hhnjm001gs22xf5d5ycl44",
@@ -1483,7 +1543,7 @@ export const charmanderFields: PokemonFieldsFragment = {
       },
     ],
   },
-};
+} as PokemonFieldsFragment;
 
 export const charmanderSpecies: PokemonSpecies = parsePokemonSpecies(
   charmanderFields.species
@@ -1495,7 +1555,7 @@ export const charmanderForm: PokemonForm = parsePokemonForm(
 
 export const charmander: Pokemon = parsePokemon(charmanderFields);
 
-export const pikachuFields: PokemonFieldsFragment = {
+export const pikachuFields = {
   id: "POKcl2hhxwwx0jbt22xfc5bddggu",
   attack: 55,
   defense: 40,
@@ -1513,6 +1573,7 @@ export const pikachuFields: PokemonFieldsFragment = {
   abilities: {
     edges: [
       {
+        id: "PKAcl2hhxwx40jbv22xfhdmp9i9h",
         slot: 1,
         isHidden: false,
         node: {
@@ -1524,6 +1585,7 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKAcl2hhxwx50jbw22xf12s08myf",
         slot: 3,
         isHidden: true,
         node: {
@@ -1553,19 +1615,20 @@ export const pikachuFields: PokemonFieldsFragment = {
   moves: {
     edges: [
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwx60jbx22xf373t5ofq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpx01h722xfbmtogf21",
           accuracy: 85,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Punch",
           power: 80,
           pp: 20,
           slug: "mega-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1574,12 +1637,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwx70jby22xfcxnu113v",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpx01h822xfe7iy2wls",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Scatters money on the ground worth five times the user's level.",
           effectChance: null,
@@ -1587,7 +1651,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: 40,
           pp: 20,
           slug: "pay-day",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1596,19 +1660,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwx90jbz22xf93z6eodj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvz01hb22xf6pyw9a55",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Punch",
           power: 75,
           pp: 15,
           slug: "thunder-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1617,19 +1682,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwxb0jc022xfdg4h50ci",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 28,
         node: {
           id: "MOVcl2hhnnie01hn22xf5e24egk5",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Slam",
           power: 80,
           pp: 20,
           slug: "slam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1638,19 +1704,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwxj0jc122xf6xr264eg",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnvy01hr22xf0q4f2qit",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Kick",
           power: 120,
           pp: 5,
           slug: "mega-kick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1659,19 +1726,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwxm0jc222xf6a1xddvo",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnpoe01i022xfd8c5fyug",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Body Slam",
           power: 85,
           pp: 15,
           slug: "body-slam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1680,19 +1748,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwxp0jc322xffnln32vq",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnpol01i522xf8wiuc3n9",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Defense by one stage.",
           effectChance: null,
           name: "Tail Whip",
           power: null,
           pp: 30,
           slug: "tail-whip",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1701,19 +1770,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwxu0jc422xfgzpo5nkl",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnq4001ib22xf0rf63nue",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by one stage.",
           effectChance: null,
           name: "Growl",
           power: null,
           pp: 40,
           slug: "growl",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1722,19 +1792,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwxy0jc522xffi2qc9da",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnsen01in22xf0sq75tv1",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage and can hit Dive users.",
           effectChance: null,
           name: "Surf",
           power: 90,
           pp: 15,
           slug: "surf",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -1743,19 +1814,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwy10jc622xfg03dhlsq",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnv1k01je22xf193se22u",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Shock",
           power: 40,
           pp: 30,
           slug: "thunder-shock",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1764,19 +1836,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwy40jc722xffr6afa18",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 36,
         node: {
           id: "MOVcl2hhnv1k01jf22xf0exh5r8t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunderbolt",
           power: 90,
           pp: 15,
           slug: "thunderbolt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1785,19 +1858,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwy50jc822xfcg0q6a6c",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jf22xf0exh5r8t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunderbolt",
           power: 90,
           pp: 15,
           slug: "thunderbolt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1806,19 +1880,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwya0jc922xfblxwcigg",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 4,
         node: {
           id: "MOVcl2hhnw2e01jg22xff0247k6l",
           accuracy: 90,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Paralyzes the target.",
           effectChance: null,
           name: "Thunder Wave",
           power: null,
           pp: 20,
           slug: "thunder-wave",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1827,19 +1902,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwya0jca22xf0vj35zmq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2e01jg22xff0247k6l",
           accuracy: 90,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Paralyzes the target.",
           effectChance: null,
           name: "Thunder Wave",
           power: null,
           pp: 20,
           slug: "thunder-wave",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1848,19 +1924,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwyg0jcb22xf7t11aygd",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 44,
         node: {
           id: "MOVcl2hhnw2f01jh22xfeely24rp",
           accuracy: 70,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Thunder",
           power: 110,
           pp: 10,
           slug: "thunder",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1869,19 +1946,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwyh0jcc22xf9f33e3g0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2f01jh22xfeely24rp",
           accuracy: 70,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Thunder",
           power: 110,
           pp: 10,
           slug: "thunder",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -1890,12 +1968,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwyk0jcd22xf7pekcd8x",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnwgi01jl22xf192me7cw",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User digs underground, dodging all attacks, and hits next turn.",
           effectChance: null,
@@ -1903,7 +1982,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: 80,
           pp: 10,
           slug: "dig",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gn22xf9jas906v",
             name: "Ground",
@@ -1912,19 +1991,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwyq0jce22xfa4ek9kkh",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 24,
         node: {
           id: "MOVcl2hhnxc901jr22xfdr6s97no",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Speed by two stages.",
           effectChance: null,
           name: "Agility",
           power: null,
           pp: 30,
           slug: "agility",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -1933,19 +2013,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwyr0jcf22xf7fz04qch",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnxc901jr22xfdr6s97no",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Speed by two stages.",
           effectChance: null,
           name: "Agility",
           power: null,
           pp: 30,
           slug: "agility",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -1954,19 +2035,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwyv0jcg22xfhghjbrpb",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnxcb01js22xfcd9i74wr",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Quick Attack",
           power: 40,
           pp: 30,
           slug: "quick-attack",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1975,19 +2057,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwyz0jch22xf1q8thbsg",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 8,
         node: {
           id: "MOVcl2hhnzd501jy22xf947587xv",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's evasion by one stage.",
           effectChance: null,
           name: "Double Team",
           power: null,
           pp: 15,
           slug: "double-team",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -1996,19 +2079,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwz20jci22xf96h37w6o",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 40,
         node: {
           id: "MOVcl2hhnzda01k722xfbjei5l73",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from special attacks by 50% for five turns.",
           effectChance: null,
           name: "Light Screen",
           power: null,
           pp: 30,
           slug: "light-screen",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -2017,19 +2101,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwz20jcj22xf19ux68cj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzda01k722xfbjei5l73",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from special attacks by 50% for five turns.",
           effectChance: null,
           name: "Light Screen",
           power: null,
           pp: 30,
           slug: "light-screen",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -2038,19 +2123,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwz80jck22xf3kxnh1j2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzdb01k922xfasuu4ja3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from physical attacks by half.",
           effectChance: null,
           name: "Reflect",
           power: null,
           pp: 20,
           slug: "reflect",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -2059,19 +2145,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzo0jcl22xfbrrbdbf6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho0qq01kn22xfbk08hqij",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Swift",
           power: 60,
           pp: 20,
           slug: "swift",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2080,19 +2167,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzq0jcm22xf81cpccsw",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -2101,12 +2189,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzr0jcn22xf3lj90hce",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gv01lm22xf8u6oe276",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
           effectChance: null,
@@ -2114,7 +2203,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "substitute",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2123,19 +2212,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzs0jco22xf52qo4mas",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gx01lq22xf80z7bx0j",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Takes the target's item.",
           effectChance: null,
           name: "Thief",
           power: 60,
           pp: 25,
           slug: "thief",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -2144,12 +2234,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzt0jcp22xf28v350ut",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73q01lv22xf8k0dh4nb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
           effectChance: 30,
@@ -2157,7 +2248,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: 50,
           pp: 15,
           slug: "snore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2166,12 +2257,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzu0jcq22xf4ighbi51",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73s01m122xfdxevh4xl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Inflicts more damage when the user has less HP remaining, with a maximum of 200 power.",
           effectChance: null,
@@ -2179,7 +2271,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "reversal",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -2188,19 +2280,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzv0jcr22xf1u2uagdb",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x601m422xfa6nk52xi",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents any moves from hitting the user this turn.",
           effectChance: null,
           name: "Protect",
           power: null,
           pp: 10,
           slug: "protect",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2209,19 +2302,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxwzw0jcs22xfdj7rh8i4",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hho8x801m822xf14wg0yfv",
           accuracy: 75,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Confuses the target.",
           effectChance: null,
           name: "Sweet Kiss",
           power: null,
           pp: 10,
           slug: "sweet-kiss",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -2230,19 +2324,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxwzy0jct22xf12td08qs",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wn01mp22xf8ioi7fyh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the user's HP from lowering below 1 this turn.",
           effectChance: null,
           name: "Endure",
           power: null,
           pp: 10,
           slug: "endure",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2251,19 +2346,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx010jcu22xfbv7zg7kp",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hho9wo01mq22xf1ywde89e",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by two stages.",
           effectChance: null,
           name: "Charm",
           power: null,
           pp: 20,
           slug: "charm",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -2272,19 +2368,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx020jcv22xf20a8gci9",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wo01mq22xf1ywde89e",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by two stages.",
           effectChance: null,
           name: "Charm",
           power: null,
           pp: 20,
           slug: "charm",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -2293,19 +2390,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx040jcw22xf614yhy9y",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 20,
         node: {
           id: "MOVcl2hhoanb01mv22xfa55dhq3d",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Spark",
           power: 65,
           pp: 20,
           slug: "spark",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2314,12 +2412,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx050jcx22xfaw3b30cz",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoavf01mz22xf2un43xmf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.",
           effectChance: null,
@@ -2327,7 +2426,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "attract",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2336,12 +2435,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx070jcy22xf4xx4be6q",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocip01n022xf57hm9oqu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Randomly uses one of the user's other three moves.  Only works if the user is sleeping.",
           effectChance: null,
@@ -2349,7 +2449,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "sleep-talk",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2358,12 +2458,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx090jcz22xf7jivc7qs",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocj001nd22xf6oag3slp",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Forces the target to repeat its last used move every turn for 2 to 6 turns.",
           effectChance: null,
@@ -2371,7 +2472,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "encore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2380,12 +2481,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0a0jd022xf3fe938sx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocyl01nh22xfa9oi813j",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Defense by one stage.",
           effectChance: 30,
@@ -2393,7 +2495,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: 100,
           pp: 15,
           slug: "iron-tail",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -2402,19 +2504,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0c0jd122xfcvz50lgn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9701nq22xfhkjw5yz3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to rain for five turns.",
           effectChance: null,
           name: "Rain Dance",
           power: null,
           pp: 5,
           slug: "rain-dance",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -2423,12 +2526,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0d0jd222xfhcn919md",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhofcn01o322xfhtcb0mrb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.",
           effectChance: null,
@@ -2436,7 +2540,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "uproar",
-          target: MoveTarget.RandomOpponent,
+          target: "RANDOM_OPPONENT",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2445,19 +2549,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0e0jd322xf3uoc8by7",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeq01od22xfcemue0v0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power doubles if user is burned, paralyzed, or poisoned.",
           effectChance: null,
           name: "Facade",
           power: 70,
           pp: 20,
           slug: "facade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2466,19 +2571,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0g0jd422xf09ykgfhp",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ok22xf3wljberm",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Ally's next move inflicts half more damage.",
           effectChance: null,
           name: "Helping Hand",
           power: null,
           pp: 20,
           slug: "helping-hand",
-          target: MoveTarget.Ally,
+          target: "ALLY",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2487,19 +2593,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0h0jd522xfadabhhgs",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokew01ou22xf1dbeckru",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Destroys Reflect and Light Screen.",
           effectChance: null,
           name: "Brick Break",
           power: 75,
           pp: 15,
           slug: "brick-break",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -2508,19 +2615,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx0m0jd622xfgtpa2lw2",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 16,
         node: {
           id: "MOVcl2hhopzu01r622xf83sx1on0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Hits through Protect and Detect.",
           effectChance: null,
           name: "Feint",
           power: 30,
           pp: 10,
           slug: "feint",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2529,19 +2637,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0n0jd722xfgm5dc0wn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorhd01rg22xfdz1i8nwl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Throws held item at the target; power depends on the item.",
           effectChance: null,
           name: "Fling",
           power: null,
           pp: 10,
           slug: "fling",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -2550,19 +2659,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx0o0jd822xf63ebaar0",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhouoy01sn22xf61wd5naz",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Special Attack by two stages.",
           effectChance: null,
           name: "Nasty Plot",
           power: null,
           pp: 20,
           slug: "nasty-plot",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -2571,19 +2681,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0p0jd922xf6w8cajf4",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouoy01sn22xf61wd5naz",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Special Attack by two stages.",
           effectChance: null,
           name: "Nasty Plot",
           power: null,
           pp: 20,
           slug: "nasty-plot",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -2592,19 +2703,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx0q0jda22xf33745zw6",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 32,
         node: {
           id: "MOVcl2hhovt501t522xfaat611iv",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Discharge",
           power: 80,
           pp: 15,
           slug: "discharge",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2613,12 +2725,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0r0jdb22xf6duc1bh5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoxtn01th22xff77471gi",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Inflicts more damage to heavier targets, with a maximum of 120 power.",
           effectChance: null,
@@ -2626,7 +2739,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "grass-knot",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -2635,12 +2748,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx0s0jdc22xfd8jzafmg",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 12,
         node: {
           id: "MOVcl2hhozfo01uk22xf0dst6s3l",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Power is higher when the user has greater Speed than the target, up to a maximum of 150.",
           effectChance: null,
@@ -2648,7 +2762,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "electro-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2657,12 +2771,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0t0jdd22xf7lt9fx30",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhozfo01uk22xf0dst6s3l",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Power is higher when the user has greater Speed than the target, up to a maximum of 150.",
           effectChance: null,
@@ -2670,7 +2785,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "electro-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2679,19 +2794,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0u0jde22xfhebydpjf",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ft01uu22xfb2643cj7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if it's used more than once per turn.",
           effectChance: null,
           name: "Round",
           power: 60,
           pp: 15,
           slug: "round",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2700,19 +2816,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0v0jdf22xf9k6960of",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ga01vj22xfctg34hf8",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "User must switch out after attacking.",
           effectChance: null,
           name: "Volt Switch",
           power: 70,
           pp: 20,
           slug: "volt-switch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2721,19 +2838,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0w0jdg22xf7xw71s11",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp4be01vp22xfa8np1ir7",
           accuracy: 95,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Lowers the target's Speed by one stage.",
           effectChance: 100,
           name: "Electroweb",
           power: 55,
           pp: 15,
           slug: "electroweb",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2742,19 +2860,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0x0jdh22xf1rte8ypd",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp4be01vq22xfbr8x35ar",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User receives 1/4 the damage it inflicts in recoil.",
           effectChance: null,
           name: "Wild Charge",
           power: 90,
           pp: 15,
           slug: "wild-charge",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2763,19 +2882,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0y0jdi22xfe2ak2kga",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp7k901x322xfg9n9h0an",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Drains 75% of the damage inflicted to heal the user.",
           effectChance: null,
           name: "Draining Kiss",
           power: 50,
           pp: 10,
           slug: "draining-kiss",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -2784,12 +2904,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx0z0jdj22xf4kj5eu30",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp7zh01x922xfhvnl5ymu",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Attack by one stage.",
           effectChance: 10,
@@ -2797,7 +2918,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "play-rough",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -2806,19 +2927,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx100jdk22xfalmua1hj",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhp7zj01xf22xf7uuqahcn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by one stage.",
           effectChance: 100,
           name: "Play Nice",
           power: null,
           pp: 20,
           slug: "play-nice",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -2827,12 +2949,13 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxx120jdl22xf18495h1h",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhpc0401xu22xfd2z6ccdd",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "For five turns, prevents all Pokémon on the ground from sleeping and strengthens their electric moves to 1.5× their power.",
           effectChance: null,
@@ -2840,7 +2963,7 @@ export const pikachuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "electric-terrain",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2849,19 +2972,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxx130jdm22xf6a999pbg",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhpc0601xz22xfbwnfgq20",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 100,
           name: "Nuzzle",
           power: 20,
           pp: 20,
           slug: "nuzzle",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2870,19 +2994,20 @@ export const pikachuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhxx150jdn22xf1rd0c5cb",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhph9m023e22xf7i4j53uq",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Rising Voltage",
           power: 70,
           pp: 20,
           slug: "rising-voltage",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -2894,22 +3019,23 @@ export const pikachuFields: PokemonFieldsFragment = {
   },
   species: {
     id: "PKScl2hhxvqg0ixs22xf5265ebnd",
-    color: Color.Yellow,
+    color: "YELLOW",
     description:
       "Pikachu that can generate powerful electricity\nhave cheek sacs that are extra soft and\nsuper stretchy.\n\nWhen Pikachu meet, they’ll touch their tails\ntogether and exchange electricity through them\nas a form of greeting.",
     genus: "Mouse Pokémon",
-    habitat: Habitat.Forest,
+    habitat: "FOREST",
     isBaby: false,
     isLegendary: false,
     isMythical: false,
     name: "Pikachu",
     pokedexId: 25,
-    shape: Shape.Quadruped,
+    shape: "QUADRUPED",
     slug: "pikachu",
   },
   types: {
     edges: [
       {
+        id: "PKTcl2hhxwx30jbu22xf43zwcpr9",
         slot: 1,
         node: {
           id: "TYPcl2hhnjm101gv22xf61mxhpiu",
@@ -2919,7 +3045,7 @@ export const pikachuFields: PokemonFieldsFragment = {
       },
     ],
   },
-};
+} as PokemonFieldsFragment;
 
 export const pikachuSpecies: PokemonSpecies = parsePokemonSpecies(
   pikachuFields.species
@@ -2931,7 +3057,7 @@ export const pikachuForm: PokemonForm = parsePokemonForm(
 
 export const pikachu: Pokemon = parsePokemon(pikachuFields);
 
-export const haunterFields: PokemonFieldsFragment = {
+export const haunterFields = {
   id: "POKcl2hhw1ia0ffr22xf28wl6lik",
   attack: 50,
   defense: 45,
@@ -2949,6 +3075,7 @@ export const haunterFields: PokemonFieldsFragment = {
   abilities: {
     edges: [
       {
+        id: "PKAcl2hhw1ih0ffu22xf6tfcf9p1",
         slot: 1,
         isHidden: false,
         node: {
@@ -2977,19 +3104,20 @@ export const haunterFields: PokemonFieldsFragment = {
   moves: {
     edges: [
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1ii0ffv22xf9qb3d45x",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpy01h922xfcg770px5",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Fire Punch",
           power: 75,
           pp: 15,
           slug: "fire-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -2998,19 +3126,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1ik0ffw22xf8dx0hq6g",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvy01ha22xfci51gqsy",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to freeze the target.",
           effectChance: 10,
           name: "Ice Punch",
           power: 75,
           pp: 15,
           slug: "ice-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju701gx22xfc48r3mqg",
             name: "Ice",
@@ -3019,19 +3148,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1il0ffx22xfd78p7wk5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvz01hb22xf6pyw9a55",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Punch",
           power: 75,
           pp: 15,
           slug: "thunder-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -3040,19 +3170,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1io0ffy22xf6gl87tqz",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jf22xf0exh5r8t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunderbolt",
           power: 90,
           pp: 15,
           slug: "thunderbolt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -3061,12 +3192,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1ir0ffz22xf75640sst",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnxc801jo22xf42z719nd",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -3074,7 +3206,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "psychic",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -3083,19 +3215,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1is0fg022xf0b7c4x14",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnxc901jp22xffd997p28",
           accuracy: 60,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Puts the target to sleep.",
           effectChance: null,
           name: "Hypnosis",
           power: null,
           pp: 20,
           slug: "hypnosis",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -3104,19 +3237,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1iu0fg122xf0j89cqk7",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 30,
         node: {
           id: "MOVcl2hhnxcc01jv22xf98ot416m",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts damage equal to the user's level.",
           effectChance: null,
           name: "Night Shade",
           power: null,
           pp: 15,
           slug: "night-shade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3125,19 +3259,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1iw0fg222xfedoe5uew",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnzd801k322xf81rydq7b",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Confuses the target.",
           effectChance: null,
           name: "Confuse Ray",
           power: null,
           pp: 10,
           slug: "confuse-ray",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3146,19 +3281,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1iy0fg322xfehd40ik3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzdf01ke22xff15lbi6v",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User faints.",
           effectChance: null,
           name: "Self-Destruct",
           power: 200,
           pp: 5,
           slug: "self-destruct",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3167,19 +3303,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1iz0fg422xf77bg80p1",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnzdg01kg22xfbfk47m07",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Lick",
           power: 30,
           pp: 30,
           slug: "lick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3188,12 +3325,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1j20fg522xfe5ur48bq",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 60,
         node: {
           id: "MOVcl2hho0qu01kw22xf5f6k6adt",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Only works on sleeping Pokémon.  Drains half the damage inflicted to heal the user.",
           effectChance: null,
@@ -3201,7 +3339,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 100,
           pp: 15,
           slug: "dream-eater",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -3210,19 +3348,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1j50fg622xf84m4dfgl",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -3231,12 +3370,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1j60fg722xf81r61910",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gv01lm22xf8u6oe276",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
           effectChance: null,
@@ -3244,7 +3384,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "substitute",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3253,19 +3393,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1j70fg822xf73crg1qb",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gx01lq22xf80z7bx0j",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Takes the target's item.",
           effectChance: null,
           name: "Thief",
           power: 60,
           pp: 25,
           slug: "thief",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3274,12 +3415,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1j90fg922xf6iv57qo7",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73q01lv22xf8k0dh4nb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
           effectChance: 30,
@@ -3287,7 +3429,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 50,
           pp: 15,
           slug: "snore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3296,12 +3438,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1ja0fga22xfcbnxexyx",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 20,
         node: {
           id: "MOVcl2hho73r01lw22xfbhwgf5cg",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Ghosts pay half their max HP to hurt the target every turn.  Others decrease Speed but raise Attack and Defense.",
           effectChance: null,
@@ -3309,7 +3452,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "curse",
-          target: MoveTarget.SpecificMove,
+          target: "SPECIFIC_MOVE",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3318,19 +3461,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1jb0fgb22xf0ilv33r7",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 16,
         node: {
           id: "MOVcl2hho73t01m222xfgcqrh1ta",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the PP of the target's last used move by 4.",
           effectChance: null,
           name: "Spite",
           power: null,
           pp: 10,
           slug: "spite",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3339,19 +3483,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jc0fgc22xf88p0hrjm",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x601m422xfa6nk52xi",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents any moves from hitting the user this turn.",
           effectChance: null,
           name: "Protect",
           power: null,
           pp: 10,
           slug: "protect",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3360,19 +3505,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jd0fgd22xf19r48pee",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x701m622xfa5vf4qwf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Speed by two stages.",
           effectChance: null,
           name: "Scary Face",
           power: null,
           pp: 10,
           slug: "scary-face",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3381,19 +3527,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1je0fge22xf9txvelaa",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x901ma22xf5012gkag",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to poison the target.",
           effectChance: 30,
           name: "Sludge Bomb",
           power: 90,
           pp: 10,
           slug: "sludge-bomb",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gm22xf18mj5i7v",
             name: "Poison",
@@ -3402,12 +3549,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1jg0fgf22xf27lqhnzv",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 54,
         node: {
           id: "MOVcl2hho8xc01mg22xf9o0u0vbh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "If the user faints this turn, the target automatically will, too.",
           effectChance: null,
@@ -3415,7 +3563,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "destiny-bond",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3424,12 +3572,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jh0fgg22xf0s8662f3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xe01mi22xfec2d1kjf",
           accuracy: 95,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Speed by one stage.",
           effectChance: 100,
@@ -3437,7 +3586,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 55,
           pp: 15,
           slug: "icy-wind",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnju701gx22xfc48r3mqg",
             name: "Ice",
@@ -3446,19 +3595,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1ji0fgh22xffog92mvh",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xn01mo22xfaf2jfars",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Drains half the damage inflicted to heal the user.",
           effectChance: null,
           name: "Giga Drain",
           power: 75,
           pp: 10,
           slug: "giga-drain",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -3467,19 +3617,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jj0fgi22xf23mvhwg8",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wn01mp22xf8ioi7fyh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the user's HP from lowering below 1 this turn.",
           effectChance: null,
           name: "Endure",
           power: null,
           pp: 10,
           slug: "endure",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3488,19 +3639,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1jl0fgj22xfff599ull",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhoanc01my22xfcvch5sbj",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the target from leaving battle.",
           effectChance: null,
           name: "Mean Look",
           power: null,
           pp: 5,
           slug: "mean-look",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3509,12 +3661,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jm0fgk22xfa6vohuyz",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoavf01mz22xf2un43xmf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.",
           effectChance: null,
@@ -3522,7 +3675,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "attract",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3531,12 +3684,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jn0fgl22xfgbl819la",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocip01n022xf57hm9oqu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Randomly uses one of the user's other three moves.  Only works if the user is sleeping.",
           effectChance: null,
@@ -3544,7 +3698,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "sleep-talk",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3553,12 +3707,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jq0fgm22xf4gx3bhxj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocj001nd22xf6oag3slp",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Forces the target to repeat its last used move every turn for 2 to 6 turns.",
           effectChance: null,
@@ -3566,7 +3721,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "encore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3575,19 +3730,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1js0fgn22xf4i7bg4e5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9701nq22xfhkjw5yz3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to rain for five turns.",
           effectChance: null,
           name: "Rain Dance",
           power: null,
           pp: 5,
           slug: "rain-dance",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -3596,19 +3752,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jt0fgo22xfhlbnchnb",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9801nr22xf3dp71ncu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to sunny for five turns.",
           effectChance: null,
           name: "Sunny Day",
           power: null,
           pp: 5,
           slug: "sunny-day",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -3617,12 +3774,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1jv0fgp22xf002m1qj4",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 48,
         node: {
           id: "MOVcl2hhof9c01nx22xf4c8m4pb7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 20,
@@ -3630,7 +3788,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 80,
           pp: 15,
           slug: "shadow-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3639,12 +3797,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jw0fgq22xf05on5al2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9c01nx22xf4c8m4pb7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 20,
@@ -3652,7 +3811,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 80,
           pp: 15,
           slug: "shadow-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3661,12 +3820,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jx0fgr22xffjhafi6u",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhofcn01o322xfhtcb0mrb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.",
           effectChance: null,
@@ -3674,7 +3834,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "uproar",
-          target: MoveTarget.RandomOpponent,
+          target: "RANDOM_OPPONENT",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3683,19 +3843,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1jz0fgs22xf7uk3cizh",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoflr01ob22xf73ikgiqx",
           accuracy: 85,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Burns the target.",
           effectChance: null,
           name: "Will-O-Wisp",
           power: null,
           pp: 15,
           slug: "will-o-wisp",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -3704,19 +3865,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1k00fgt22xf7mcr3x9d",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeq01od22xfcemue0v0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power doubles if user is burned, paralyzed, or poisoned.",
           effectChance: null,
           name: "Facade",
           power: 70,
           pp: 20,
           slug: "facade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -3725,12 +3887,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1k20fgu22xfc147fmho",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01oj22xf0tyvaica",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "For the next few turns, the target can only use damaging moves.",
           effectChance: null,
@@ -3738,7 +3901,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "taunt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3747,19 +3910,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1k30fgv22xf8s1b8yud",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ol22xf2ts50g7w",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User and target swap items.",
           effectChance: null,
           name: "Trick",
           power: null,
           pp: 10,
           slug: "trick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -3768,19 +3932,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1k50fgw22xf3imwfys5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokey01oz22xf547tc2vk",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User and target swap abilities.",
           effectChance: null,
           name: "Skill Swap",
           power: null,
           pp: 10,
           slug: "skill-swap",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -3789,19 +3954,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1k70fgx22xf1yfhg0bc",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhomt001q322xf00038oib",
           accuracy: null,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Shadow Punch",
           power: 60,
           pp: 20,
           slug: "shadow-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3810,19 +3976,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1k70fgy22xf8wpjf4rf",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhomt001q322xf00038oib",
           accuracy: null,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Shadow Punch",
           power: 60,
           pp: 20,
           slug: "shadow-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -3831,19 +3998,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1k90fgz22xfhd3af4zu",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 12,
         node: {
           id: "MOVcl2hhoqmh01rd22xf83scdx98",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power is doubled if the target has already moved this turn.",
           effectChance: null,
           name: "Payback",
           power: 50,
           pp: 10,
           slug: "payback",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3852,19 +4020,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1k90fh022xf7t5tdllv",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoqmh01rd22xf83scdx98",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power is doubled if the target has already moved this turn.",
           effectChance: null,
           name: "Payback",
           power: 50,
           pp: 10,
           slug: "payback",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3873,19 +4042,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kb0fh122xf7lz7et1d",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorhd01rg22xfdz1i8nwl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Throws held item at the target; power depends on the item.",
           effectChance: null,
           name: "Fling",
           power: null,
           pp: 10,
           slug: "fling",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3894,19 +4064,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1kc0fh222xf9vwr1ttd",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 36,
         node: {
           id: "MOVcl2hhorr701rv22xf4t6t655p",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Only works if the target is about to use a damaging move.",
           effectChance: null,
           name: "Sucker Punch",
           power: 70,
           pp: 5,
           slug: "sucker-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3915,19 +4086,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kd0fh322xf94ts3rw0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhosda01s422xf4xrg0gtj",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to poison the target.",
           effectChance: 30,
           name: "Poison Jab",
           power: 80,
           pp: 20,
           slug: "poison-jab",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gm22xf18mj5i7v",
             name: "Poison",
@@ -3936,19 +4108,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1ke0fh422xf3zodcyy3",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 42,
         node: {
           id: "MOVcl2hhosz201s522xfh0vb45er",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 20,
           name: "Dark Pulse",
           power: 80,
           pp: 15,
           slug: "dark-pulse",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3957,19 +4130,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1ke0fh522xf9hgg7lqo",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhosz201s522xfh0vb45er",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 20,
           name: "Dark Pulse",
           power: 80,
           pp: 15,
           slug: "dark-pulse",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -3978,12 +4152,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kf0fh622xfh98ggl3f",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoued01si22xf5vhkh7rt",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -3991,7 +4166,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "energy-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -4000,19 +4175,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kh0fh722xfhzwu2iaf",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouoz01sr22xfe3n87exp",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has an increased chance for a critical hit.",
           effectChance: null,
           name: "Shadow Claw",
           power: 70,
           pp: 15,
           slug: "shadow-claw",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -4021,12 +4197,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kj0fh822xf44swdqw0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhovt401t322xf3doi0ljb",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "For five turns, slower Pokémon will act before faster Pokémon.",
           effectChance: null,
@@ -4034,7 +4211,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "trick-room",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4043,12 +4220,13 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kp0fh922xfb7t88vmj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoyhl01u622xfa9kkdmw1",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "All Pokémon's Defense and Special Defense are swapped for 5 turns.",
           effectChance: null,
@@ -4056,7 +4234,7 @@ export const haunterFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "wonder-room",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4065,19 +4243,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kr0fha22xf69rlagql",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoym601u822xfbnmzb9my",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts double damage if the target is Poisoned.",
           effectChance: null,
           name: "Venoshock",
           power: 65,
           pp: 10,
           slug: "venoshock",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gm22xf18mj5i7v",
             name: "Poison",
@@ -4086,19 +4265,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kw0fhb22xfcr1j7ydn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoz9t01ug22xf9l6d3ccb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to poison the target.",
           effectChance: 10,
           name: "Sludge Wave",
           power: 95,
           pp: 10,
           slug: "sludge-wave",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gm22xf18mj5i7v",
             name: "Poison",
@@ -4107,19 +4287,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1kz0fhc22xfhew289e2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp0di01uq22xf19hzcfpl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Calculates damage with the target's attacking stat.",
           effectChance: null,
           name: "Foul Play",
           power: 95,
           pp: 15,
           slug: "foul-play",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -4128,19 +4309,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1l20fhd22xf13tygdmx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ft01uu22xfb2643cj7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if it's used more than once per turn.",
           effectChance: null,
           name: "Round",
           power: 60,
           pp: 15,
           slug: "round",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4149,19 +4331,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1l50fhe22xfc8v5balg",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3fy01v022xfekmrgng6",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User switches places with the friendly Pokémon opposite it.",
           effectChance: null,
           name: "Ally Switch",
           power: null,
           pp: 15,
           slug: "ally-switch",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4170,19 +4353,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhw1l70fhf22xf8t1t2xg5",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 24,
         node: {
           id: "MOVcl2hhp3g101v422xf3h8zdv3t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if the target has a major status ailment.",
           effectChance: null,
           name: "Hex",
           power: 65,
           pp: 10,
           slug: "hex",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -4191,19 +4375,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1l80fhg22xffzhx6q9p",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3g101v422xf3h8zdv3t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if the target has a major status ailment.",
           effectChance: null,
           name: "Hex",
           power: 65,
           pp: 10,
           slug: "hex",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -4212,19 +4397,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhw1lf0fhh22xfh2c8ejs6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhpc0501xv22xf6jerd84b",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Dazzling Gleam",
           power: 80,
           pp: 10,
           slug: "dazzling-gleam",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -4233,19 +4419,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhw1lk0fhi22xf4j1sc9fx",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhphjx023g22xf6xkl5zss",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: 100,
           name: "Skitter Smack",
           power: 70,
           pp: 10,
           slug: "skitter-smack",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gp22xf8g5adyal",
             name: "Bug",
@@ -4254,19 +4441,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhw1lo0fhj22xf4vccer0e",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhphlq023j22xfdv5th3cp",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Poltergeist",
           power: 110,
           pp: 5,
           slug: "poltergeist",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -4275,19 +4463,20 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhw1lr0fhk22xf2sve0fe8",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhphlq023k22xf359g9xsi",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Corrosive Gas",
           power: null,
           pp: 40,
           slug: "corrosive-gas",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gm22xf18mj5i7v",
             name: "Poison",
@@ -4299,22 +4488,23 @@ export const haunterFields: PokemonFieldsFragment = {
   },
   species: {
     id: "PKScl2hhw1i60ffo22xf4i691ngr",
-    color: Color.Purple,
+    color: "PURPLE",
     description:
       "Its tongue is made of gas. If licked, its victim\nstarts shaking constantly until death\neventually comes.\n\nIf you get the feeling of being watched in darkness\nwhen nobody is around, Haunter is there.",
     genus: "Gas Pokémon",
-    habitat: Habitat.Cave,
+    habitat: "CAVE",
     isBaby: false,
     isLegendary: false,
     isMythical: false,
     name: "Haunter",
     pokedexId: 93,
-    shape: Shape.Arms,
+    shape: "ARMS",
     slug: "haunter",
   },
   types: {
     edges: [
       {
+        id: "PKTcl2hhw1ih0fft22xf44cl288s",
         slot: 2,
         node: {
           id: "TYPcl2hhnjlc01gm22xf18mj5i7v",
@@ -4323,6 +4513,7 @@ export const haunterFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKTcl2hhw1ig0ffs22xfb8vse8us",
         slot: 1,
         node: {
           id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
@@ -4332,7 +4523,7 @@ export const haunterFields: PokemonFieldsFragment = {
       },
     ],
   },
-};
+} as PokemonFieldsFragment;
 
 export const haunterSpecies: PokemonSpecies = parsePokemonSpecies(
   haunterFields.species
@@ -4344,7 +4535,7 @@ export const haunterForm: PokemonForm = parsePokemonForm(
 
 export const haunter: Pokemon = parsePokemon(haunterFields);
 
-export const jirachiFields: PokemonFieldsFragment = {
+export const jirachiFields = {
   id: "POKcl2hhquo7043122xfhyfg6nr3",
   attack: 100,
   defense: 100,
@@ -4362,6 +4553,7 @@ export const jirachiFields: PokemonFieldsFragment = {
   abilities: {
     edges: [
       {
+        id: "PKAcl2hhquoh043422xf44f5cmw1",
         slot: 1,
         isHidden: false,
         node: {
@@ -4390,19 +4582,20 @@ export const jirachiFields: PokemonFieldsFragment = {
   moves: {
     edges: [
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquoi043522xf7lm8fh8f",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpx01h722xfbmtogf21",
           accuracy: 85,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Punch",
           power: 80,
           pp: 20,
           slug: "mega-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4411,19 +4604,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquoj043622xfc3k8adx5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpy01h922xfcg770px5",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Fire Punch",
           power: 75,
           pp: 15,
           slug: "fire-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -4432,19 +4626,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquol043722xfac95d9j0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvy01ha22xfci51gqsy",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to freeze the target.",
           effectChance: 10,
           name: "Ice Punch",
           power: 75,
           pp: 15,
           slug: "ice-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju701gx22xfc48r3mqg",
             name: "Ice",
@@ -4453,19 +4648,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquom043822xfcknl0f8b",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvz01hb22xf6pyw9a55",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Punch",
           power: 75,
           pp: 15,
           slug: "thunder-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -4474,19 +4670,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquon043922xfcb8fhf8u",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnvy01hr22xf0q4f2qit",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Kick",
           power: 120,
           pp: 5,
           slug: "mega-kick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4495,19 +4692,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquor043a22xfa30k3gdn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnpoe01i022xfd8c5fyug",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Body Slam",
           power: 85,
           pp: 15,
           slug: "body-slam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4516,19 +4714,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhquot043b22xfg00r03kp",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 77,
         node: {
           id: "MOVcl2hhnpok01i422xfgj325jkw",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User receives 1/3 the damage inflicted in recoil.",
           effectChance: null,
           name: "Double-Edge",
           power: 120,
           pp: 15,
           slug: "double-edge",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4537,19 +4736,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquox043c22xf5z029lm6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnucj01it22xf7sxc6ug8",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "User foregoes its next turn to recharge.",
           effectChance: null,
           name: "Hyper Beam",
           power: 150,
           pp: 5,
           slug: "hyper-beam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4558,19 +4758,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqup9043d22xf26qvfnaq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jf22xf0exh5r8t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunderbolt",
           power: 90,
           pp: 15,
           slug: "thunderbolt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -4579,19 +4780,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqupc043e22xf1acr4qkx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2e01jg22xff0247k6l",
           accuracy: 90,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Paralyzes the target.",
           effectChance: null,
           name: "Thunder Wave",
           power: null,
           pp: 20,
           slug: "thunder-wave",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -4600,19 +4802,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqupi043f22xf0b5e9s8y",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2f01jh22xfeely24rp",
           accuracy: 70,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Thunder",
           power: 110,
           pp: 10,
           slug: "thunder",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -4621,19 +4824,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqupn043g22xf4jjveytz",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnxc801jn22xfdg2cf6lw",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to confuse the target.",
           effectChance: 10,
           name: "Confusion",
           power: 50,
           pp: 25,
           slug: "confusion",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4642,12 +4846,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqupq043h22xfbee51sln",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 42,
         node: {
           id: "MOVcl2hhnxc801jo22xf42z719nd",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -4655,7 +4860,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "psychic",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4664,12 +4869,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqupq043i22xfcyy4259r",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnxc801jo22xf42z719nd",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -4677,7 +4883,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "psychic",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4686,19 +4892,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqupz043j22xfeyxifemi",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzda01k722xfbjei5l73",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from special attacks by 50% for five turns.",
           effectChance: null,
           name: "Light Screen",
           power: null,
           pp: 30,
           slug: "light-screen",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4707,19 +4914,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquq2043k22xf1oz1ajcy",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzdb01k922xfasuu4ja3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from physical attacks by half.",
           effectChance: null,
           name: "Reflect",
           power: null,
           pp: 20,
           slug: "reflect",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4728,19 +4936,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquq5043l22xf7hpj0xbq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzdd01kc22xfcr57fibu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Randomly selects and uses any move in the game.",
           effectChance: null,
           name: "Metronome",
           power: null,
           pp: 10,
           slug: "metronome",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4749,19 +4958,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhquq8043m22xf31r70pq6",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 7,
         node: {
           id: "MOVcl2hho0qq01kn22xfbk08hqij",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Swift",
           power: 60,
           pp: 20,
           slug: "swift",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4770,19 +4980,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquq8043n22xf1roeacn5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho0qq01kn22xfbk08hqij",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Swift",
           power: 60,
           pp: 20,
           slug: "swift",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4791,19 +5002,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqc043o22xfc5ztdjng",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho0qs01kr22xfbycicw33",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Special Defense by two stages.",
           effectChance: null,
           name: "Amnesia",
           power: null,
           pp: 20,
           slug: "amnesia",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4812,19 +5024,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhquqh043p22xfbbpeal03",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 63,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4833,19 +5046,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqi043q22xfh5t83x1d",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -4854,12 +5068,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqo043r22xfdj8t5wzt",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gv01lm22xf8u6oe276",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
           effectChance: null,
@@ -4867,7 +5082,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "substitute",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4876,12 +5091,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqr043s22xfbtiy9wn1",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73q01lv22xf8k0dh4nb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
           effectChance: 30,
@@ -4889,7 +5105,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 50,
           pp: 15,
           slug: "snore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4898,19 +5114,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqt043t22xfbufna2k2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x601m422xfa6nk52xi",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents any moves from hitting the user this turn.",
           effectChance: null,
           name: "Protect",
           power: null,
           pp: 10,
           slug: "protect",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4919,12 +5136,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqv043u22xf1u4dck5s",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xe01mi22xfec2d1kjf",
           accuracy: 95,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Speed by one stage.",
           effectChance: 100,
@@ -4932,7 +5150,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 55,
           pp: 15,
           slug: "icy-wind",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnju701gx22xfc48r3mqg",
             name: "Ice",
@@ -4941,19 +5159,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquqy043v22xf92790wlb",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xn01mn22xf93v54xf5",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to a sandstorm for five turns.",
           effectChance: null,
           name: "Sandstorm",
           power: null,
           pp: 10,
           slug: "sandstorm",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -4962,19 +5181,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqur1043w22xfcrar5cx4",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wn01mp22xf8ioi7fyh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the user's HP from lowering below 1 this turn.",
           effectChance: null,
           name: "Endure",
           power: null,
           pp: 10,
           slug: "endure",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -4983,19 +5203,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqur3043x22xf7w17gks5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wo01mq22xf1ywde89e",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by two stages.",
           effectChance: null,
           name: "Charm",
           power: null,
           pp: 20,
           slug: "charm",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -5004,12 +5225,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqura043y22xf90cthd3k",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocip01n022xf57hm9oqu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Randomly uses one of the user's other three moves.  Only works if the user is sleeping.",
           effectChance: null,
@@ -5017,7 +5239,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "sleep-talk",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5026,12 +5248,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqurg043z22xfgfk2f5t2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocit01n522xf1sao8e0h",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Protects the user's field from major status ailments and confusion for five turns.",
           effectChance: null,
@@ -5039,7 +5262,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 25,
           slug: "safeguard",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5048,12 +5271,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqurj044022xfgdl7g0j9",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhociz01nc22xfcy5a946j",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Allows the trainer to switch out the user and pass effects along to its replacement.",
           effectChance: null,
@@ -5061,7 +5285,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 40,
           slug: "baton-pass",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5070,12 +5294,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqurl044122xf8kkugazm",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocj001nd22xf6oag3slp",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Forces the target to repeat its last used move every turn for 2 to 6 turns.",
           effectChance: null,
@@ -5083,7 +5308,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "encore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5092,19 +5317,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqurq044222xf8kqvd88b",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9701nq22xfhkjw5yz3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to rain for five turns.",
           effectChance: null,
           name: "Rain Dance",
           power: null,
           pp: 5,
           slug: "rain-dance",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -5113,19 +5339,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqurs044322xf5pm7h485",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9801nr22xf3dp71ncu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to sunny for five turns.",
           effectChance: null,
           name: "Sunny Day",
           power: null,
           pp: 5,
           slug: "sunny-day",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -5134,12 +5361,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqurz044422xf09un4k16",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9c01nx22xf4c8m4pb7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 20,
@@ -5147,7 +5375,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 80,
           pp: 15,
           slug: "shadow-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -5156,19 +5384,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqus1044522xfb3z46gus",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 70,
         node: {
           id: "MOVcl2hhof9c01ny22xfh4rm9cyf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Hits the target two turns later.",
           effectChance: null,
           name: "Future Sight",
           power: 120,
           pp: 10,
           slug: "future-sight",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5177,19 +5406,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqus2044622xfdjo9144f",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9c01ny22xfh4rm9cyf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Hits the target two turns later.",
           effectChance: null,
           name: "Future Sight",
           power: 120,
           pp: 10,
           slug: "future-sight",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5198,12 +5428,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqus3044722xf33u55ji7",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhofcn01o322xfhtcb0mrb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.",
           effectChance: null,
@@ -5211,7 +5442,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "uproar",
-          target: MoveTarget.RandomOpponent,
+          target: "RANDOM_OPPONENT",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5220,19 +5451,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqus5044822xf3gp2fdhg",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeq01od22xfcemue0v0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power doubles if user is burned, paralyzed, or poisoned.",
           effectChance: null,
           name: "Facade",
           power: 70,
           pp: 20,
           slug: "facade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5241,19 +5473,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqus6044922xffuuxfkz8",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 14,
         node: {
           id: "MOVcl2hhoket01ok22xf3wljberm",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Ally's next move inflicts half more damage.",
           effectChance: null,
           name: "Helping Hand",
           power: null,
           pp: 20,
           slug: "helping-hand",
-          target: MoveTarget.Ally,
+          target: "ALLY",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5262,19 +5495,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqus7044a22xf4k5j0isj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ok22xf3wljberm",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Ally's next move inflicts half more damage.",
           effectChance: null,
           name: "Helping Hand",
           power: null,
           pp: 20,
           slug: "helping-hand",
-          target: MoveTarget.Ally,
+          target: "ALLY",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5283,19 +5517,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqus8044b22xfhvacf31y",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ol22xf2ts50g7w",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User and target swap items.",
           effectChance: null,
           name: "Trick",
           power: null,
           pp: 10,
           slug: "trick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5304,12 +5539,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqusa044c22xf7e4lh0qg",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhokeu01on22xfdskyf10a",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "User will recover half its max HP at the end of the next turn.",
           effectChance: null,
@@ -5317,7 +5553,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "wish",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5326,19 +5562,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquse044d22xf1nyv5khd",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokey01oz22xf547tc2vk",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User and target swap abilities.",
           effectChance: null,
           name: "Skill Swap",
           power: null,
           pp: 10,
           slug: "skill-swap",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5347,12 +5584,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqusg044e22xfea0n2rcx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokey01p022xfdkqz8emg",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Prevents the target from using any moves that the user also knows.",
           effectChance: null,
@@ -5360,7 +5598,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "imprison",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5369,12 +5607,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqusj044f22xf3ik2ggnq",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 49,
         node: {
           id: "MOVcl2hhokyr01pn22xf5r3u49ow",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to raise the user's Attack by one stage.",
           effectChance: 20,
@@ -5382,7 +5621,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "meteor-mash",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -5391,19 +5630,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqusl044g22xfert7df75",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 84,
         node: {
           id: "MOVcl2hholt501q022xf0eczaz25",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Defense and Special Defense by one stage.",
           effectChance: null,
           name: "Cosmic Power",
           power: null,
           pp: 20,
           slug: "cosmic-power",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5412,19 +5652,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqusm044h22xf7jiia1mu",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hholt501q022xf0eczaz25",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Defense and Special Defense by one stage.",
           effectChance: null,
           name: "Cosmic Power",
           power: null,
           pp: 20,
           slug: "cosmic-power",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5433,19 +5674,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqusq044i22xfgdr2eooq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhomt301qc22xf5qskgvr2",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Defense by two stages.",
           effectChance: null,
           name: "Iron Defense",
           power: null,
           pp: 15,
           slug: "iron-defense",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -5454,12 +5696,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqusr044j22xf46c143wt",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhooas01qp22xf7ywe30ql",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Raises the user's Special Attack and Special Defense by one stage.",
           effectChance: null,
@@ -5467,7 +5710,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "calm-mind",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5476,19 +5719,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqusv044k22xf5syi0a4i",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 98,
         node: {
           id: "MOVcl2hhoom401qv22xfeebtced4",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Hits the target two turns later.",
           effectChance: null,
           name: "Doom Desire",
           power: 140,
           pp: 5,
           slug: "doom-desire",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -5497,12 +5741,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqusw044l22xfehbra7ce",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 35,
         node: {
           id: "MOVcl2hhoom401qy22xfawgv02vj",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Disables moves and immunities that involve flying or levitating for five turns.",
           effectChance: null,
@@ -5510,7 +5755,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "gravity",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5519,12 +5764,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqusx044m22xfek7qacf3",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 56,
         node: {
           id: "MOVcl2hhoopg01r322xf8dn55j1o",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "User faints.  Its replacement has its HP fully restored and any major status effect removed.",
           effectChance: null,
@@ -5532,7 +5778,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "healing-wish",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5541,19 +5787,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqusz044n22xf4d708b05",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhopzw01rb22xf2b8xaob5",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User must switch out after attacking.",
           effectChance: null,
           name: "U-turn",
           power: 70,
           pp: 20,
           slug: "u-turn",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gp22xf8g5adyal",
             name: "Bug",
@@ -5562,19 +5809,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqut1044o22xf7j9q0mtu",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorhd01rg22xfdz1i8nwl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Throws held item at the target; power depends on the item.",
           effectChance: null,
           name: "Fling",
           power: null,
           pp: 10,
           slug: "fling",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -5583,12 +5831,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqut3044p22xf411vbwg1",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 91,
         node: {
           id: "MOVcl2hhorhh01rt22xf4rdq2zut",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Can only be used after all of the user's other moves have been used.",
           effectChance: null,
@@ -5596,7 +5845,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 140,
           pp: 5,
           slug: "last-resort",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5605,19 +5854,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqut4044q22xfhxz61lnl",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorxf01s222xf7w7b8qz2",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Aura Sphere",
           power: 80,
           pp: 20,
           slug: "aura-sphere",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -5626,19 +5876,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqut5044r22xfgxgo2xgz",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhote701sf22xf0k3a0m6r",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Drains half the damage inflicted to heal the user.",
           effectChance: null,
           name: "Drain Punch",
           power: 75,
           pp: 10,
           slug: "drain-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -5647,12 +5898,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqut7044s22xfg9k2hi4u",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoued01si22xf5vhkh7rt",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -5660,7 +5912,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "energy-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -5669,19 +5921,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqut8044t22xf3x2mfe1c",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouox01sm22xff2g9bg3p",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User foregoes its next turn to recharge.",
           effectChance: null,
           name: "Giga Impact",
           power: 150,
           pp: 5,
           slug: "giga-impact",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5690,19 +5943,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqut9044u22xf95zs2he0",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 28,
         node: {
           id: "MOVcl2hhovk401sy22xf7lkneikc",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 20,
           name: "Zen Headbutt",
           power: 80,
           pp: 15,
           slug: "zen-headbutt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5711,19 +5965,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquta044v22xf34cl9pv3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhovk401sy22xf7lkneikc",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 20,
           name: "Zen Headbutt",
           power: 80,
           pp: 15,
           slug: "zen-headbutt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5732,12 +5987,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutb044w22xf5vbsfgrw",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhovpq01t022xf4nlxatmy",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -5745,7 +6001,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 80,
           pp: 10,
           slug: "flash-cannon",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -5754,12 +6010,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutd044x22xff8gz71t2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhovt401t322xf3doi0ljb",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "For five turns, slower Pokémon will act before faster Pokémon.",
           effectChance: null,
@@ -5767,7 +6024,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "trick-room",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5776,19 +6033,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqute044y22xf7o2nh7fq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhowzw01tc22xf3vusfwwo",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 30,
           name: "Iron Head",
           power: 80,
           pp: 15,
           slug: "iron-head",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -5797,19 +6055,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutf044z22xf7fcjbljx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoxtn01tg22xf4u5pcd2o",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Causes damage when opposing Pokémon switch in.",
           effectChance: null,
           name: "Stealth Rock",
           power: null,
           pp: 20,
           slug: "stealth-rock",
-          target: MoveTarget.OpponentsField,
+          target: "OPPONENTS_FIELD",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -5818,12 +6077,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutg045022xf8ec55i2h",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoxtn01th22xff77471gi",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Inflicts more damage to heavier targets, with a maximum of 120 power.",
           effectChance: null,
@@ -5831,7 +6091,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "grass-knot",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -5840,12 +6100,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquti045122xfd0nibmhq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoyhl01u722xfboapf0k0",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Inflicts damage based on the target's Defense, not Special Defense.",
           effectChance: null,
@@ -5853,7 +6114,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 80,
           pp: 10,
           slug: "psyshock",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5862,19 +6123,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutk045222xfgd7rfmfq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoz9r01uc22xf2jz7dm4e",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Negates held items for five turns.",
           effectChance: null,
           name: "Magic Room",
           power: null,
           pp: 10,
           slug: "magic-room",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5883,19 +6145,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutl045322xf4zufbddq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ft01uu22xfb2643cj7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if it's used more than once per turn.",
           effectChance: null,
           name: "Round",
           power: 60,
           pp: 15,
           slug: "round",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -5904,12 +6167,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutm045422xf7uy6am3l",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3fw01uy22xfb1nk2bou",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Power is higher the more the user's stats have been raised, to a maximum of 31×.",
           effectChance: null,
@@ -5917,7 +6181,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 20,
           pp: 10,
           slug: "stored-power",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5926,19 +6190,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhquto045522xf5w74a740",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3fy01v022xfekmrgng6",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User switches places with the friendly Pokémon opposite it.",
           effectChance: null,
           name: "Ally Switch",
           power: null,
           pp: 15,
           slug: "ally-switch",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -5947,12 +6212,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutp045622xfejygcjie",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp7zh01x922xfhvnl5ymu",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Attack by one stage.",
           effectChance: 10,
@@ -5960,7 +6226,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "play-rough",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -5969,19 +6235,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhqutr045722xf5zccahu6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhpc0501xv22xf6jerd84b",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Dazzling Gleam",
           power: 80,
           pp: 10,
           slug: "dazzling-gleam",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -5990,19 +6257,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhqutt045822xf75rj7t8p",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 21,
         node: {
           id: "MOVcl2hhpgmh023122xf1z0r47fb",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: null,
           effectChance: null,
           name: "Life Dew",
           power: null,
           pp: 10,
           slug: "life-dew",
-          target: MoveTarget.UserAndAllies,
+          target: "USER_AND_ALLIES",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -6011,12 +6279,13 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhqutu045922xf5y5ggjvz",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhpgtt023622xf3oas27v6",
           accuracy: 95,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Inflicts damage, and the user takes damage equal to half of its max HP, rounded up.",
           effectChance: null,
@@ -6024,7 +6293,7 @@ export const jirachiFields: PokemonFieldsFragment = {
           power: 140,
           pp: 5,
           slug: "steel-beam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -6033,19 +6302,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhqutv045a22xfd7rz51o3",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhph2q023722xf0z5z58y7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Expanding Force",
           power: 80,
           pp: 10,
           slug: "expanding-force",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6054,19 +6324,20 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhqutw045b22xf2y709k3m",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhph2r023a22xfameo5h4g",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: 100,
           name: "Meteor Beam",
           power: 120,
           pp: 10,
           slug: "meteor-beam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -6078,22 +6349,23 @@ export const jirachiFields: PokemonFieldsFragment = {
   },
   species: {
     id: "PKScl2hhquo3042y22xfbjw4ej2k",
-    color: Color.Yellow,
+    color: "YELLOW",
     description:
       "Once every 1,000 years, the singing of a pure\nvoice will rouse this Pokémon from its near-\nperpetual slumber. It wakes for only seven days.\n\nIt’s believed that when this Pokémon wakes from\nits 1,000-year slumber, it will grant any wishes\nwritten on the notes attached to its head.",
     genus: "Wish Pokémon",
-    habitat: Habitat.Mountain,
+    habitat: "MOUNTAIN",
     isBaby: false,
     isLegendary: false,
     isMythical: true,
     name: "Jirachi",
     pokedexId: 385,
-    shape: Shape.Humanoid,
+    shape: "HUMANOID",
     slug: "jirachi",
   },
   types: {
     edges: [
       {
+        id: "PKTcl2hhquod043222xff1k33i5q",
         slot: 1,
         node: {
           id: "TYPcl2hhnjm001gr22xf5yx63ucl",
@@ -6102,6 +6374,7 @@ export const jirachiFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKTcl2hhquoe043322xf9jaqeqxa",
         slot: 2,
         node: {
           id: "TYPcl2hhnjm101gw22xfdmev7gbg",
@@ -6111,7 +6384,7 @@ export const jirachiFields: PokemonFieldsFragment = {
       },
     ],
   },
-};
+} as PokemonFieldsFragment;
 
 export const jirachiSpecies: PokemonSpecies = parsePokemonSpecies(
   jirachiFields.species
@@ -6123,7 +6396,7 @@ export const jirachiForm: PokemonForm = parsePokemonForm(
 
 export const jirachi: Pokemon = parsePokemon(jirachiFields);
 
-export const hoOhFields: PokemonFieldsFragment = {
+export const hoOhFields = {
   id: "POKcl2hhq6f4032c22xf9o2w4dhh",
   attack: 130,
   defense: 90,
@@ -6141,6 +6414,7 @@ export const hoOhFields: PokemonFieldsFragment = {
   abilities: {
     edges: [
       {
+        id: "PKAcl2hhq6fi032f22xfbunibw24",
         slot: 1,
         isHidden: false,
         node: {
@@ -6152,6 +6426,7 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKAcl2hhq6fj032g22xf5k0l4ej9",
         slot: 3,
         isHidden: true,
         node: {
@@ -6180,19 +6455,20 @@ export const hoOhFields: PokemonFieldsFragment = {
   moves: {
     edges: [
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6fm032h22xf8gvq7739",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnnid01hi22xfdnopfp09",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage and can hit Pokémon in the air.",
           effectChance: null,
           name: "Gust",
           power: 40,
           pp: 35,
           slug: "gust",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -6201,12 +6477,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6fo032i22xf191wee6b",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnnid01hk22xf55q2a8a1",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Immediately ends wild battles.  Forces trainers to switch Pokémon.",
           effectChance: null,
@@ -6214,7 +6491,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "whirlwind",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6223,12 +6500,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6fq032j22xf556yefsn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnie01hl22xf3d9g5nko",
           accuracy: 95,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User flies high into the air, dodging all attacks, and hits next turn.",
           effectChance: null,
@@ -6236,7 +6514,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 90,
           pp: 15,
           slug: "fly",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -6245,19 +6523,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6ft032k22xfh1b155t6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhns0g01ij22xfbao7g0zf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Flamethrower",
           power: 90,
           pp: 15,
           slug: "flamethrower",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6266,19 +6545,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6fv032l22xfbrtubh56",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnucj01it22xf7sxc6ug8",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "User foregoes its next turn to recharge.",
           effectChance: null,
           name: "Hyper Beam",
           power: 150,
           pp: 5,
           slug: "hyper-beam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6287,19 +6567,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6fy032m22xf1l5x5qeg",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1h01j622xf87xsb2l0",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Requires a turn to charge before attacking.",
           effectChance: null,
           name: "Solar Beam",
           power: 120,
           pp: 10,
           slug: "solar-beam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -6308,12 +6589,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6fz032n22xf1yecgjn3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jd22xf394u519p",
           accuracy: 85,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Prevents the target from fleeing and inflicts damage for 2-5 turns.",
           effectChance: 100,
@@ -6321,7 +6603,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 35,
           pp: 15,
           slug: "fire-spin",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6330,19 +6612,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6g1032o22xf29dtaqna",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jf22xf0exh5r8t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunderbolt",
           power: 90,
           pp: 15,
           slug: "thunderbolt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -6351,19 +6634,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6g2032p22xfc44kg686",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2e01jg22xff0247k6l",
           accuracy: 90,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Paralyzes the target.",
           effectChance: null,
           name: "Thunder Wave",
           power: null,
           pp: 20,
           slug: "thunder-wave",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -6372,19 +6656,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6g4032q22xfcu6p0qtq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2f01jh22xfeely24rp",
           accuracy: 70,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Thunder",
           power: 110,
           pp: 10,
           slug: "thunder",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -6393,19 +6678,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6g7032r22xfef3f89i5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw8701jj22xfdnwcefm8",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage and can hit Dig users.",
           effectChance: null,
           name: "Earthquake",
           power: 100,
           pp: 10,
           slug: "earthquake",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gn22xf9jas906v",
             name: "Ground",
@@ -6414,12 +6700,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6g9032s22xf135m88hd",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnxc801jo22xf42z719nd",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -6427,7 +6714,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "psychic",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6436,19 +6723,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6gd032t22xfemid3lmz",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 45,
         node: {
           id: "MOVcl2hhnzd601jz22xf16wddo6r",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Heals the user by half its max HP.",
           effectChance: null,
           name: "Recover",
           power: null,
           pp: 10,
           slug: "recover",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6457,19 +6745,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gf032u22xfcmmhcbf8",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzda01k722xfbjei5l73",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from special attacks by 50% for five turns.",
           effectChance: null,
           name: "Light Screen",
           power: null,
           pp: 30,
           slug: "light-screen",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6478,19 +6767,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gg032v22xfc6ty0rr1",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzdb01k922xfasuu4ja3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from physical attacks by half.",
           effectChance: null,
           name: "Reflect",
           power: null,
           pp: 20,
           slug: "reflect",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6499,19 +6789,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6gh032w22xf4l755sbt",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 72,
         node: {
           id: "MOVcl2hho05101kk22xf0amxcu7e",
           accuracy: 85,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Fire Blast",
           power: 110,
           pp: 5,
           slug: "fire-blast",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6520,19 +6811,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gi032x22xfhy26ci4y",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho05101kk22xf0amxcu7e",
           accuracy: 85,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Fire Blast",
           power: 110,
           pp: 5,
           slug: "fire-blast",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6541,19 +6833,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gk032y22xf5f29b1jm",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho0qq01kn22xfbk08hqij",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Swift",
           power: 60,
           pp: 20,
           slug: "swift",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6562,12 +6855,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6gn032z22xfb4s93ezk",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 90,
         node: {
           id: "MOVcl2hho0uu01l122xfd5hs97ax",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User charges for one turn before attacking.  Has a $effect_chance% chance to make the target flinch.",
           effectChance: 30,
@@ -6575,7 +6869,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 140,
           pp: 5,
           slug: "sky-attack",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -6584,19 +6878,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gq033022xf0bwb22o0",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6605,12 +6900,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gr033122xf2o2bepf4",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gv01lm22xf8u6oe276",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
           effectChance: null,
@@ -6618,7 +6914,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "substitute",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6627,12 +6923,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gu033222xf1pb90akf",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73q01lv22xf8k0dh4nb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
           effectChance: 30,
@@ -6640,7 +6937,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 50,
           pp: 15,
           slug: "snore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6649,19 +6946,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6gw033322xfdd6hc8fx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x601m422xfa6nk52xi",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents any moves from hitting the user this turn.",
           effectChance: null,
           name: "Protect",
           power: null,
           pp: 10,
           slug: "protect",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6670,19 +6968,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6h0033422xfdm6uhkzw",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xn01mn22xf93v54xf5",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to a sandstorm for five turns.",
           effectChance: null,
           name: "Sandstorm",
           power: null,
           pp: 10,
           slug: "sandstorm",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -6691,19 +6990,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6h1033522xfcbd61keo",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8xn01mo22xfaf2jfars",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Drains half the damage inflicted to heal the user.",
           effectChance: null,
           name: "Giga Drain",
           power: 75,
           pp: 10,
           slug: "giga-drain",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -6712,19 +7012,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6h3033622xf6zg9fr84",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wn01mp22xf8ioi7fyh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the user's HP from lowering below 1 this turn.",
           effectChance: null,
           name: "Endure",
           power: null,
           pp: 10,
           slug: "endure",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6733,12 +7034,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6h5033722xf99lbfwd5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoanb01mx22xf5x000mjf",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to raise the user's Defense by one stage.",
           effectChance: 10,
@@ -6746,7 +7048,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 70,
           pp: 25,
           slug: "steel-wing",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -6755,12 +7057,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6h7033822xf9iis5k0m",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocip01n022xf57hm9oqu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Randomly uses one of the user's other three moves.  Only works if the user is sleeping.",
           effectChance: null,
@@ -6768,7 +7071,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "sleep-talk",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6777,12 +7080,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6ha033922xfg12a9e9i",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 18,
         node: {
           id: "MOVcl2hhocit01n522xf1sao8e0h",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Protects the user's field from major status ailments and confusion for five turns.",
           effectChance: null,
@@ -6790,7 +7094,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 25,
           slug: "safeguard",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6799,12 +7103,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6ha033a22xfdztvgmj5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocit01n522xf1sao8e0h",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Protects the user's field from major status ailments and confusion for five turns.",
           effectChance: null,
@@ -6812,7 +7117,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 25,
           slug: "safeguard",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -6821,12 +7126,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6hb033b22xfbqun60xy",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 54,
         node: {
           id: "MOVcl2hhociv01n722xfe40d1570",
           accuracy: 95,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to burn the target.  Lets frozen Pokémon thaw themselves.",
           effectChance: 50,
@@ -6834,7 +7140,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 100,
           pp: 5,
           slug: "sacred-fire",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6843,19 +7149,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hg033c22xf0xtqbp45",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9701nq22xfhkjw5yz3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to rain for five turns.",
           effectChance: null,
           name: "Rain Dance",
           power: null,
           pp: 5,
           slug: "rain-dance",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -6864,19 +7171,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6hh033d22xf6biafsat",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 63,
         node: {
           id: "MOVcl2hhof9801nr22xf3dp71ncu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to sunny for five turns.",
           effectChance: null,
           name: "Sunny Day",
           power: null,
           pp: 5,
           slug: "sunny-day",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6885,19 +7193,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hi033e22xf562bduy6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9801nr22xf3dp71ncu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to sunny for five turns.",
           effectChance: null,
           name: "Sunny Day",
           power: null,
           pp: 5,
           slug: "sunny-day",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -6906,12 +7215,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6hk033f22xf1sd47rnk",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhof9b01nw22xfg7sp6d5k",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to raise all of the user's stats by one stage.",
           effectChance: 10,
@@ -6919,7 +7229,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 60,
           pp: 5,
           slug: "ancient-power",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjld01go22xf8n121bkd",
             name: "Rock",
@@ -6928,12 +7238,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hm033g22xf7ndl6dp4",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9c01nx22xf4c8m4pb7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 20,
@@ -6941,7 +7252,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 80,
           pp: 15,
           slug: "shadow-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlz01gq22xf3a2eh33i",
             name: "Ghost",
@@ -6950,19 +7261,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6hn033h22xfgf72fjx6",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 81,
         node: {
           id: "MOVcl2hhof9c01ny22xfh4rm9cyf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Hits the target two turns later.",
           effectChance: null,
           name: "Future Sight",
           power: 120,
           pp: 10,
           slug: "future-sight",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6971,19 +7283,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hq033i22xf1ei110nx",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9c01ny22xfh4rm9cyf",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Hits the target two turns later.",
           effectChance: null,
           name: "Future Sight",
           power: 120,
           pp: 10,
           slug: "future-sight",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -6992,19 +7305,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hs033j22xfb2vw2slc",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhofcq01o722xf9xc7edc1",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
           name: "Heat Wave",
           power: 95,
           pp: 10,
           slug: "heat-wave",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -7013,19 +7327,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hu033k22xfdas05fc2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoflr01ob22xf73ikgiqx",
           accuracy: 85,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Burns the target.",
           effectChance: null,
           name: "Will-O-Wisp",
           power: null,
           pp: 15,
           slug: "will-o-wisp",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -7034,19 +7349,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hw033l22xf3azv36yg",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeq01od22xfcemue0v0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power doubles if user is burned, paralyzed, or poisoned.",
           effectChance: null,
           name: "Facade",
           power: 70,
           pp: 20,
           slug: "facade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7055,19 +7371,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hy033m22xf606g2xrn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ok22xf3wljberm",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Ally's next move inflicts half more damage.",
           effectChance: null,
           name: "Helping Hand",
           power: null,
           pp: 20,
           slug: "helping-hand",
-          target: MoveTarget.Ally,
+          target: "ALLY",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7076,12 +7393,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6hz033n22xfgohghet8",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokey01p022xfdkqz8emg",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Prevents the target from using any moves that the user also knows.",
           effectChance: null,
@@ -7089,7 +7407,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "imprison",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7098,19 +7416,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6i2033o22xf9kz7g662",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokyn01pi22xf7jte20yp",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Hyper Voice",
           power: 90,
           pp: 10,
           slug: "hyper-voice",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7119,12 +7438,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6i3033p22xf6gu1d6qd",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhokys01pp22xf2fu673do",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "If there be weather, this move has doubled power and the weather's type.",
           effectChance: null,
@@ -7132,7 +7452,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 50,
           pp: 10,
           slug: "weather-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7141,12 +7461,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6i3033q22xfcneg2x1f",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokys01pp22xf2fu673do",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "If there be weather, this move has doubled power and the weather's type.",
           effectChance: null,
@@ -7154,7 +7475,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 50,
           pp: 10,
           slug: "weather-ball",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7163,12 +7484,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6i6033r22xfdh1r71gb",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokyv01pt22xf4n71eqm1",
           accuracy: 90,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Lowers the user's Special Attack by two stages after inflicting damage.",
           effectChance: 100,
@@ -7176,7 +7498,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 130,
           pp: 5,
           slug: "overheat",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -7185,19 +7507,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6i8033s22xfdbkpcbyk",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 36,
         node: {
           id: "MOVcl2hhomt101q422xfefvdcuye",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 10,
           name: "Extrasensory",
           power: 80,
           pp: 20,
           slug: "extrasensory",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7206,12 +7529,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6ia033t22xf4sz1atct",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 27,
         node: {
           id: "MOVcl2hhooas01qp22xf7ywe30ql",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Raises the user's Special Attack and Special Defense by one stage.",
           effectChance: null,
@@ -7219,7 +7543,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "calm-mind",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7228,12 +7552,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6ia033u22xfdadog1gq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhooas01qp22xf7ywe30ql",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Raises the user's Special Attack and Special Defense by one stage.",
           effectChance: null,
@@ -7241,7 +7566,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "calm-mind",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7250,12 +7575,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6ij033v22xfafzg0uih",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorxf01s022xfdd6l1kyq",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "User takes 1/3 the damage inflicted in recoil.  Has a $effect_chance% chance to burn the target.",
           effectChance: 10,
@@ -7263,7 +7589,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 120,
           pp: 15,
           slug: "flare-blitz",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -7272,19 +7598,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6ik033w22xfhqq4bzt3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhot4101s922xffii0fasm",
           accuracy: 95,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 30,
           name: "Air Slash",
           power: 75,
           pp: 15,
           slug: "air-slash",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -7293,19 +7620,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6im033x22xf3t0p6jet",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoued01sj22xf7sah5un7",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User receives 1/3 the damage inflicted in recoil.",
           effectChance: null,
           name: "Brave Bird",
           power: 120,
           pp: 15,
           slug: "brave-bird",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -7314,12 +7642,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6in033y22xf5qp5g4dq",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouee01sk22xf9vf7803r",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
           effectChance: 10,
@@ -7327,7 +7656,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "earth-power",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gn22xf9jas906v",
             name: "Ground",
@@ -7336,19 +7665,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6io033z22xf27urb2fr",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouox01sm22xff2g9bg3p",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User foregoes its next turn to recharge.",
           effectChance: null,
           name: "Giga Impact",
           power: 150,
           pp: 5,
           slug: "giga-impact",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7357,19 +7687,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6iq034022xf3icodddw",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhovk401sy22xf7lkneikc",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 20,
           name: "Zen Headbutt",
           power: 80,
           pp: 15,
           slug: "zen-headbutt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7378,19 +7709,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6is034122xf234o4owd",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhowzw01tc22xf3vusfwwo",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to make the target flinch.",
           effectChance: 30,
           name: "Iron Head",
           power: 80,
           pp: 15,
           slug: "iron-head",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -7399,19 +7731,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6ix034222xfg7oyca7y",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ft01uu22xfb2643cj7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if it's used more than once per turn.",
           effectChance: null,
           name: "Round",
           power: 60,
           pp: 15,
           slug: "round",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7420,12 +7753,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6j1034322xf82gh148h",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3xf01vl22xfg56lf67l",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Speed by one stage.",
           effectChance: 100,
@@ -7433,7 +7767,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 60,
           pp: 20,
           slug: "bulldoze",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gn22xf9jas906v",
             name: "Ground",
@@ -7442,12 +7776,13 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhq6j3034422xfba2i2ht4",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhpc0201xl22xfezsn1b0g",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Special Attack by one stage.",
           effectChance: 100,
@@ -7455,7 +7790,7 @@ export const hoOhFields: PokemonFieldsFragment = {
           power: 75,
           pp: 10,
           slug: "mystical-fire",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -7464,19 +7799,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6j5034522xf048h3equ",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 99,
         node: {
           id: "MOVcl2hhpcv9020022xf5mrc4yhk",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Removes the user's fire type after inflicting damage.",
           effectChance: null,
           name: "Burn Up",
           power: 130,
           pp: 5,
           slug: "burn-up",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gs22xf5d5ycl44",
             name: "Fire",
@@ -7485,19 +7821,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhq6j6034622xf59yh6jbe",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 9,
         node: {
           id: "MOVcl2hhpgmh023122xf1z0r47fb",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: null,
           effectChance: null,
           name: "Life Dew",
           power: null,
           pp: 10,
           slug: "life-dew",
-          target: MoveTarget.UserAndAllies,
+          target: "USER_AND_ALLIES",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -7506,19 +7843,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhq6j8034722xf7katgq77",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhphno023o22xfc4ul49u8",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Dual Wingbeat",
           power: 40,
           pp: 10,
           slug: "dual-wingbeat",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gl22xf22w3af7i",
             name: "Flying",
@@ -7527,19 +7865,20 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Tutor,
+        id: "PKMcl2hhq6jb034822xfdfeudhdv",
+        learnMethod: "TUTOR",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhphnp023p22xfdk0179nl",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: 30,
           name: "Scorching Sands",
           power: 70,
           pp: 10,
           slug: "scorching-sands",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gn22xf9jas906v",
             name: "Ground",
@@ -7551,21 +7890,22 @@ export const hoOhFields: PokemonFieldsFragment = {
   },
   species: {
     id: "PKScl2hhq6ew032922xf6v9igrc1",
-    color: Color.Red,
+    color: "RED",
     description: "",
     genus: "Rainbow Pokémon",
-    habitat: Habitat.Rare,
+    habitat: "RARE",
     isBaby: false,
     isLegendary: true,
     isMythical: false,
     name: "Ho-Oh",
     pokedexId: 250,
-    shape: Shape.Wings,
+    shape: "WINGS",
     slug: "ho-oh",
   },
   types: {
     edges: [
       {
+        id: "PKTcl2hhq6fg032e22xf604dfddt",
         slot: 2,
         node: {
           id: "TYPcl2hhnjlc01gl22xf22w3af7i",
@@ -7574,6 +7914,7 @@ export const hoOhFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKTcl2hhq6fd032d22xf2joyftq7",
         slot: 1,
         node: {
           id: "TYPcl2hhnjm001gs22xf5d5ycl44",
@@ -7583,7 +7924,7 @@ export const hoOhFields: PokemonFieldsFragment = {
       },
     ],
   },
-};
+} as PokemonFieldsFragment;
 
 export const hoOhSpecies: PokemonSpecies = parsePokemonSpecies(
   hoOhFields.species
@@ -7595,7 +7936,7 @@ export const hoOhForm: PokemonForm = parsePokemonForm(
 
 export const hoOh: Pokemon = parsePokemon(hoOhFields);
 
-export const pichuFields: PokemonFieldsFragment = {
+export const pichuFields = {
   id: "POKcl2hhxmly0iw522xfdqsbfb2g",
   attack: 40,
   defense: 15,
@@ -7613,6 +7954,7 @@ export const pichuFields: PokemonFieldsFragment = {
   abilities: {
     edges: [
       {
+        id: "PKAcl2hhxmm50iw722xf6wqbahl0",
         slot: 1,
         isHidden: false,
         node: {
@@ -7624,6 +7966,7 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
+        id: "PKAcl2hhxmm60iw822xff639abre",
         slot: 3,
         isHidden: true,
         node: {
@@ -7663,19 +8006,20 @@ export const pichuFields: PokemonFieldsFragment = {
   moves: {
     edges: [
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmm80iw922xfgkxt8g9c",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlpx01h722xfbmtogf21",
           accuracy: 85,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Punch",
           power: 80,
           pp: 20,
           slug: "mega-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7684,19 +8028,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmma0iwa22xfcwubgqq6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnlvz01hb22xf6pyw9a55",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Punch",
           power: 75,
           pp: 15,
           slug: "thunder-punch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -7705,19 +8050,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmb0iwb22xf6u7pdx6o",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnnvy01hr22xf0q4f2qit",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Inflicts regular damage with no additional effect.",
           effectChance: null,
           name: "Mega Kick",
           power: 120,
           pp: 5,
           slug: "mega-kick",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7726,19 +8072,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmd0iwc22xfgqy4eevc",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnpoe01i022xfd8c5fyug",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Body Slam",
           power: 85,
           pp: 15,
           slug: "body-slam",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7747,19 +8094,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmmf0iwd22xf3jdh2peu",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnpol01i522xf8wiuc3n9",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Defense by one stage.",
           effectChance: null,
           name: "Tail Whip",
           power: null,
           pp: 30,
           slug: "tail-whip",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7768,19 +8116,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmg0iwe22xfe8332ja7",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnsen01in22xf0sq75tv1",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Inflicts regular damage and can hit Dive users.",
           effectChance: null,
           name: "Surf",
           power: 90,
           pp: 15,
           slug: "surf",
-          target: MoveTarget.AllOtherPokemon,
+          target: "ALL_OTHER_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -7789,19 +8138,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmmj0iwf22xfhiwf0d4i",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 1,
         node: {
           id: "MOVcl2hhnv1k01je22xf193se22u",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunder Shock",
           power: 40,
           pp: 30,
           slug: "thunder-shock",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -7810,19 +8160,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmk0iwg22xf6kbi3py4",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnv1k01jf22xf0exh5r8t",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 10,
           name: "Thunderbolt",
           power: 90,
           pp: 15,
           slug: "thunderbolt",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -7831,19 +8182,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmml0iwh22xf1l5ici5o",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2e01jg22xff0247k6l",
           accuracy: 90,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Paralyzes the target.",
           effectChance: null,
           name: "Thunder Wave",
           power: null,
           pp: 20,
           slug: "thunder-wave",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -7852,19 +8204,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmm0iwi22xfco028f6e",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnw2f01jh22xfeely24rp",
           accuracy: 70,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 30,
           name: "Thunder",
           power: 110,
           pp: 10,
           slug: "thunder",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -7873,19 +8226,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmq0iwj22xf3ye8077v",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzda01k722xfbjei5l73",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from special attacks by 50% for five turns.",
           effectChance: null,
           name: "Light Screen",
           power: null,
           pp: 30,
           slug: "light-screen",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7894,19 +8248,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmr0iwk22xfg8q7djpi",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhnzdb01k922xfasuu4ja3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Reduces damage from physical attacks by half.",
           effectChance: null,
           name: "Reflect",
           power: null,
           pp: 20,
           slug: "reflect",
-          target: MoveTarget.UsersField,
+          target: "USERS_FIELD",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7915,19 +8270,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmt0iwl22xf808i6zy3",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho0qq01kn22xfbk08hqij",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Swift",
           power: 60,
           pp: 20,
           slug: "swift",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7936,19 +8292,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmu0iwm22xf12i80u79",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho59o01le22xf8f1j1nzn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "User sleeps for two turns, completely healing itself.",
           effectChance: null,
           name: "Rest",
           power: null,
           pp: 10,
           slug: "rest",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gw22xfdmev7gbg",
             name: "Psychic",
@@ -7957,12 +8314,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmv0iwn22xfgntaf9a5",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho5gv01lm22xf8u6oe276",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
           effectChance: null,
@@ -7970,7 +8328,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "substitute",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -7979,12 +8337,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmw0iwo22xf6k7h52sw",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73q01lv22xf8k0dh4nb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
           effectChance: 30,
@@ -7992,7 +8351,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: 50,
           pp: 15,
           slug: "snore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8001,12 +8360,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmmy0iwp22xfcp63fjrk",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73r01lx22xf5dcj43wv",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Inflicts more damage when the user has less HP remaining, with a maximum of 200 power.",
           effectChance: null,
@@ -8014,7 +8374,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "flail",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8023,12 +8383,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmmz0iwq22xfbf896qdb",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho73s01m122xfdxevh4xl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Inflicts more damage when the user has less HP remaining, with a maximum of 200 power.",
           effectChance: null,
@@ -8036,7 +8397,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "reversal",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlc01gk22xf53sefoxh",
             name: "Fighting",
@@ -8045,19 +8406,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmn00iwr22xfdv3wbj3a",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho8x601m422xfa6nk52xi",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents any moves from hitting the user this turn.",
           effectChance: null,
           name: "Protect",
           power: null,
           pp: 10,
           slug: "protect",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8066,19 +8428,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmn10iws22xf31ugf33y",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 8,
         node: {
           id: "MOVcl2hho8x801m822xf14wg0yfv",
           accuracy: 75,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Confuses the target.",
           effectChance: null,
           name: "Sweet Kiss",
           power: null,
           pp: 10,
           slug: "sweet-kiss",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -8087,19 +8450,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmn40iwt22xf7afv7huj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wn01mp22xf8ioi7fyh",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Prevents the user's HP from lowering below 1 this turn.",
           effectChance: null,
           name: "Endure",
           power: null,
           pp: 10,
           slug: "endure",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8108,19 +8472,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmn50iwu22xfevtoh0ev",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 20,
         node: {
           id: "MOVcl2hho9wo01mq22xf1ywde89e",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by two stages.",
           effectChance: null,
           name: "Charm",
           power: null,
           pp: 20,
           slug: "charm",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -8129,19 +8494,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmn60iwv22xfah419v12",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hho9wo01mq22xf1ywde89e",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by two stages.",
           effectChance: null,
           name: "Charm",
           power: null,
           pp: 20,
           slug: "charm",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -8150,12 +8516,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmn90iww22xf1fej8joj",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoavf01mz22xf2un43xmf",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.",
           effectChance: null,
@@ -8163,7 +8530,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "attract",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8172,12 +8539,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmna0iwx22xfgg0a71dn",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocip01n022xf57hm9oqu",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Randomly uses one of the user's other three moves.  Only works if the user is sleeping.",
           effectChance: null,
@@ -8185,7 +8553,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "sleep-talk",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8194,12 +8562,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmnc0iwy22xf3w482g7t",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocis01n322xfgy3s3gzz",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Randomly inflicts damage with power from 40 to 120 or heals the target for 1/4 its max HP.",
           effectChance: null,
@@ -8207,7 +8576,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 15,
           slug: "present",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8216,12 +8585,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmnd0iwz22xf0ir81yve",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocj001nd22xf6oag3slp",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Forces the target to repeat its last used move every turn for 2 to 6 turns.",
           effectChance: null,
@@ -8229,7 +8599,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 5,
           slug: "encore",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8238,12 +8608,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmne0ix022xfbh913ttl",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhocyl01nh22xfa9oi813j",
           accuracy: 75,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Defense by one stage.",
           effectChance: 30,
@@ -8251,7 +8622,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: 100,
           pp: 15,
           slug: "iron-tail",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm001gr22xf5yx63ucl",
             name: "Steel",
@@ -8260,19 +8631,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmng0ix122xfc3ly1nur",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9701nq22xfhkjw5yz3",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Changes the weather to rain for five turns.",
           effectChance: null,
           name: "Rain Dance",
           power: null,
           pp: 5,
           slug: "rain-dance",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm001gt22xffefca2w0",
             name: "Water",
@@ -8281,12 +8653,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmnh0ix222xfey0cdthz",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhof9y01o222xf6xws5en7",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Can only be used as the first move after the user enters battle.  Causes the target to flinch.",
           effectChance: 100,
@@ -8294,7 +8667,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: 40,
           pp: 10,
           slug: "fake-out",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8303,12 +8676,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmni0ix322xfg4f6bzal",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhofcn01o322xfhtcb0mrb",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.",
           effectChance: null,
@@ -8316,7 +8690,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "uproar",
-          target: MoveTarget.RandomOpponent,
+          target: "RANDOM_OPPONENT",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8325,19 +8699,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmnj0ix422xf2gph9fyk",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeq01od22xfcemue0v0",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Power doubles if user is burned, paralyzed, or poisoned.",
           effectChance: null,
           name: "Facade",
           power: 70,
           pp: 20,
           slug: "facade",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8346,12 +8721,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmnk0ix522xfdlbgha55",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokes01oi22xf7bc764kl",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "Raises the user's Special Defense by one stage.  User's Electric moves have doubled power next turn.",
           effectChance: null,
@@ -8359,7 +8735,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "charge",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -8368,19 +8744,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmnl0ix622xf1zxz68o2",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoket01ok22xf3wljberm",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Ally's next move inflicts half more damage.",
           effectChance: null,
           name: "Helping Hand",
           power: null,
           pp: 20,
           slug: "helping-hand",
-          target: MoveTarget.Ally,
+          target: "ALLY",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8389,12 +8766,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmnm0ix722xf9n2j85sd",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhokeu01on22xfdskyf10a",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "User will recover half its max HP at the end of the next turn.",
           effectChance: null,
@@ -8402,7 +8780,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "wish",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8411,19 +8789,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmno0ix822xf70gjfx79",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hholqd01pz22xfd4ns8bkc",
           accuracy: 100,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack and Defense by one stage.",
           effectChance: null,
           name: "Tickle",
           power: null,
           pp: 20,
           slug: "tickle",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8432,19 +8811,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmns0ix922xf181lgy0k",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhorhd01rg22xfdz1i8nwl",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Throws held item at the target; power depends on the item.",
           effectChance: null,
           name: "Fling",
           power: null,
           pp: 10,
           slug: "fling",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -8453,19 +8833,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmnu0ixa22xfh8px4qdl",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 16,
         node: {
           id: "MOVcl2hhouoy01sn22xf61wd5naz",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Special Attack by two stages.",
           effectChance: null,
           name: "Nasty Plot",
           power: null,
           pp: 20,
           slug: "nasty-plot",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -8474,19 +8855,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmnv0ixb22xfcm6o6a6n",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhouoy01sn22xf61wd5naz",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Raises the user's Special Attack by two stages.",
           effectChance: null,
           name: "Nasty Plot",
           power: null,
           pp: 20,
           slug: "nasty-plot",
-          target: MoveTarget.User,
+          target: "USER",
           type: {
             id: "TYPcl2hhnju801gz22xfczrp9pd3",
             name: "Dark",
@@ -8495,12 +8877,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmnx0ixc22xfb5xc46ho",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhoxtn01th22xff77471gi",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect:
             "Inflicts more damage to heavier targets, with a maximum of 120 power.",
           effectChance: null,
@@ -8508,7 +8891,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 20,
           slug: "grass-knot",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gu22xf4wjx3rxh",
             name: "Grass",
@@ -8517,19 +8900,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmnz0ixd22xfbkwwcjso",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ft01uu22xfb2643cj7",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Has double power if it's used more than once per turn.",
           effectChance: null,
           name: "Round",
           power: 60,
           pp: 15,
           slug: "round",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8538,19 +8922,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmo20ixe22xf1n0g9c32",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp3ga01vj22xfctg34hf8",
           accuracy: 100,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "User must switch out after attacking.",
           effectChance: null,
           name: "Volt Switch",
           power: 70,
           pp: 20,
           slug: "volt-switch",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -8559,19 +8944,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmo30ixf22xf197mhd8m",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp4be01vp22xfa8np1ir7",
           accuracy: 95,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Lowers the target's Speed by one stage.",
           effectChance: 100,
           name: "Electroweb",
           power: 55,
           pp: 15,
           slug: "electroweb",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -8580,19 +8966,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmo40ixg22xf1cuqcyau",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp4be01vq22xfbr8x35ar",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "User receives 1/4 the damage it inflicts in recoil.",
           effectChance: null,
           name: "Wild Charge",
           power: 90,
           pp: 15,
           slug: "wild-charge",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -8601,19 +8988,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Egg,
+        id: "PKMcl2hhxmo50ixh22xf6jh8fo98",
+        learnMethod: "EGG",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp6wj01x022xf9oxo07rd",
           accuracy: null,
-          damageClass: DamageClass.Special,
+          damageClass: "SPECIAL",
           effect: "Never misses.",
           effectChance: null,
           name: "Disarming Voice",
           power: 40,
           pp: 15,
           slug: "disarming-voice",
-          target: MoveTarget.AllOpponents,
+          target: "ALL_OPPONENTS",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -8622,12 +9010,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmo60ixi22xf22zj76dy",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhp7zh01x922xfhvnl5ymu",
           accuracy: 90,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect:
             "Has a $effect_chance% chance to lower the target's Attack by one stage.",
           effectChance: 10,
@@ -8635,7 +9024,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: 90,
           pp: 10,
           slug: "play-rough",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnju801h022xffc81hsk5",
             name: "Fairy",
@@ -8644,19 +9033,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmo70ixj22xfe6rc7cc7",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 4,
         node: {
           id: "MOVcl2hhp7zj01xf22xf7uuqahcn",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect: "Lowers the target's Attack by one stage.",
           effectChance: 100,
           name: "Play Nice",
           power: null,
           pp: 20,
           slug: "play-nice",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjlb01gj22xfhrvig92v",
             name: "Normal",
@@ -8665,12 +9055,13 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.Machine,
+        id: "PKMcl2hhxmo90ixk22xf1yfu7lm6",
+        learnMethod: "MACHINE",
         levelLearnedAt: 0,
         node: {
           id: "MOVcl2hhpc0401xu22xfd2z6ccdd",
           accuracy: null,
-          damageClass: DamageClass.Status,
+          damageClass: "STATUS",
           effect:
             "For five turns, prevents all Pokémon on the ground from sleeping and strengthens their electric moves to 1.5× their power.",
           effectChance: null,
@@ -8678,7 +9069,7 @@ export const pichuFields: PokemonFieldsFragment = {
           power: null,
           pp: 10,
           slug: "electric-terrain",
-          target: MoveTarget.EntireField,
+          target: "ENTIRE_FIELD",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -8687,19 +9078,20 @@ export const pichuFields: PokemonFieldsFragment = {
         },
       },
       {
-        learnMethod: MoveLearnMethod.LevelUp,
+        id: "PKMcl2hhxmoa0ixl22xf7yg831nl",
+        learnMethod: "LEVEL_UP",
         levelLearnedAt: 12,
         node: {
           id: "MOVcl2hhpc0601xz22xfbwnfgq20",
           accuracy: 100,
-          damageClass: DamageClass.Physical,
+          damageClass: "PHYSICAL",
           effect: "Has a $effect_chance% chance to paralyze the target.",
           effectChance: 100,
           name: "Nuzzle",
           power: 20,
           pp: 20,
           slug: "nuzzle",
-          target: MoveTarget.SelectedPokemon,
+          target: "SELECTED_POKEMON",
           type: {
             id: "TYPcl2hhnjm101gv22xf61mxhpiu",
             name: "Electric",
@@ -8711,22 +9103,23 @@ export const pichuFields: PokemonFieldsFragment = {
   },
   species: {
     id: "PKScl2hhxmlt0iw222xf2jsj81u1",
-    color: Color.Yellow,
+    color: "YELLOW",
     description:
       "Despite its small size, it can zap even adult\nhumans. However, if it does so, it also\nsurprises itself.\n\nThe electric sacs in its cheeks are small. If even a\nlittle electricity leaks, it becomes shocked.",
     genus: "Tiny Mouse Pokémon",
-    habitat: Habitat.Forest,
+    habitat: "FOREST",
     isBaby: true,
     isLegendary: false,
     isMythical: false,
     name: "Pichu",
     pokedexId: 172,
-    shape: Shape.Quadruped,
+    shape: "QUADRUPED",
     slug: "pichu",
   },
   types: {
     edges: [
       {
+        id: "PKTcl2hhxmm40iw622xfadfbfo0t",
         slot: 1,
         node: {
           id: "TYPcl2hhnjm101gv22xf61mxhpiu",
@@ -8736,7 +9129,7 @@ export const pichuFields: PokemonFieldsFragment = {
       },
     ],
   },
-};
+} as PokemonFieldsFragment;
 
 export const pichuSpecies: PokemonSpecies = parsePokemonSpecies(
   pichuFields.species

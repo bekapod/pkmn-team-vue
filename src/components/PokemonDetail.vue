@@ -92,9 +92,9 @@
           <Ability
             as="li"
             v-for="ability in sortedAbilities"
-            :key="ability.slug"
-            :name="ability.name"
-            :effect="ability.effect"
+            :key="ability.id"
+            :name="ability.ability.name"
+            :effect="ability.ability.effect"
             :is-hidden="ability.isHidden"
           />
         </ul>
@@ -110,11 +110,19 @@
         <ul>
           <Move
             as="li"
-            v-for="move in moves"
-            :key="move.id"
+            v-for="{ id, move, learnMethod, levelLearnedAt } in moves"
+            :key="id"
             :name="move.name"
             :effect="move.effect"
             :effect-chance="move.effectChance"
+            :type="move.type"
+            :damage-class="move.damageClass"
+            :pp="move.pp"
+            :accuracy="move.accuracy"
+            :power="move.power"
+            :target="move.target"
+            :learn-method="learnMethod"
+            :level-learned-at="levelLearnedAt"
           />
         </ul>
       </div>
@@ -131,7 +139,7 @@ import Ability from "@/components/Ability.vue";
 import Move from "@/components/Move.vue";
 import PokemonLine from "@/components/PokemonLine.vue";
 import PokemonStats from "@/components/PokemonStats.vue";
-import { Ability as AbilityT, Move as MoveT, Type } from "@/data";
+import { PokemonAbility, PokemonMove, PokemonType } from "@/data";
 import { sortBySlot } from "@/lib";
 
 const props = defineProps({
@@ -192,27 +200,30 @@ const props = defineProps({
     default: undefined,
   },
   abilities: {
-    type: Array as PropType<AbilityT[]>,
-    validator: (prop: AbilityT[]) =>
-      Array.isArray(prop) && prop.every((a) => AbilityT.safeParse(a).success),
+    type: Array as PropType<PokemonAbility[]>,
+    validator: (prop: PokemonAbility[]) =>
+      Array.isArray(prop) &&
+      prop.every((a) => PokemonAbility.safeParse(a).success),
     required: false,
     default() {
       return [];
     },
   },
   moves: {
-    type: Array as PropType<MoveT[]>,
-    validator: (prop: MoveT[]) =>
-      Array.isArray(prop) && prop.every((m) => MoveT.safeParse(m).success),
+    type: Array as PropType<PokemonMove[]>,
+    validator: (prop: PokemonMove[]) =>
+      Array.isArray(prop) &&
+      prop.every((m) => PokemonMove.safeParse(m).success),
     required: false,
     default() {
       return [];
     },
   },
   types: {
-    type: Array as PropType<Type[]>,
-    validator: (prop: Type[]) =>
-      Array.isArray(prop) && prop.every((t) => Type.safeParse(t).success),
+    type: Array as PropType<PokemonType[]>,
+    validator: (prop: PokemonType[]) =>
+      Array.isArray(prop) &&
+      prop.every((t) => PokemonType.safeParse(t).success),
     required: false,
     default() {
       return [];

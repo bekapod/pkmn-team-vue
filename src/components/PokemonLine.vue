@@ -1,9 +1,9 @@
 <template>
   <div
-    class="pokemon-line-template relative flex h-24 items-center"
+    class="with-type-gradient relative flex h-24 items-center bg-white"
     :style="{
       '--outdent': outdent,
-      '--type-gradient': getTypeGradient(sortedTypes.map(t => t.slug)),
+      '--type-gradient': getTypeGradient(sortedTypes.map(t => t.type.slug)),
     } as any"
   >
     <img
@@ -19,8 +19,8 @@
         #{{ pokedexId }} {{ name }}
       </component>
       <ul class="flex flex-wrap gap-3">
-        <li v-for="t in sortedTypes" :key="t.slug">
-          <TypeTag :name="t.name" :slug="t.slug" />
+        <li v-for="t in sortedTypes" :key="t.type.slug">
+          <TypeTag :name="t.type.name" :slug="t.type.slug" />
         </li>
       </ul>
     </div>
@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { computed, type PropType } from "vue";
 import TypeTag from "./TypeTag.vue";
-import { Type } from "@/data";
+import { PokemonType } from "@/data";
 import { sortBySlot, getTypeGradient } from "@/lib";
 
 const props = defineProps({
@@ -53,9 +53,10 @@ const props = defineProps({
     default: undefined,
   },
   types: {
-    type: Array as PropType<Type[]>,
-    validator: (prop: Type[]) =>
-      Array.isArray(prop) && prop.every((t) => Type.safeParse(t).success),
+    type: Array as PropType<PokemonType[]>,
+    validator: (prop: PokemonType[]) =>
+      Array.isArray(prop) &&
+      prop.every((t) => PokemonType.safeParse(t).success),
     required: false,
     default() {
       return [];
