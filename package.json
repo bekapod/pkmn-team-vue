@@ -22,7 +22,7 @@
     "@headlessui/vue": "^1.6.4",
     "@sentry/tracing": "^7.1.1",
     "@sentry/vue": "^7.1.1",
-    "@vueuse/components": "^8.7.3",
+    "@vueuse/core": "^8.7.4",
     "algoliasearch": "^4.13.1",
     "graphql-tag": "^2.12.6",
     "pinia": "^2.0.14",

@@ -10,7 +10,7 @@
         { label: 'Spd', value: speed },
       ]"
       :key="stat.label"
-      class="flex items-center py-2 px-3"
+      class="flex items-center rounded-tl rounded-br py-2 px-3"
       :class="{
         'bg-green-vivid-200':
           highestStat === stat.value && highestStat !== lowestStat,

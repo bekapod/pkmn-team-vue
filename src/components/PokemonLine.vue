@@ -15,9 +15,9 @@
       lazy="true"
     />
     <div class="ml-4">
-      <div class="text-md mb-2 font-bold leading-none">
+      <component :is="nameAs" class="text-md mb-2 font-bold leading-none">
         #{{ pokedexId }} {{ name }}
-      </div>
+      </component>
       <ul class="flex flex-wrap gap-3">
         <li v-for="t in sortedTypes" :key="t.slug">
           <TypeTag :name="t.name" :slug="t.slug" />
@@ -41,6 +41,11 @@ const props = defineProps({
   name: {
     type: String,
     required: true,
+  },
+  nameAs: {
+    type: [String, Object],
+    required: false,
+    default: "div",
   },
   sprite: {
     type: String,

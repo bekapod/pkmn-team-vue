@@ -8,7 +8,7 @@
       'border-indigo-50 bg-white text-indigo-700': !isHidden,
     }"
   >
-    <div class="flex items-center text-sm font-bold uppercase">
+    <div class="flex items-center font-bold">
       <HideIcon v-if="isHidden" class="mr-2 h-6 w-6" />
       <ShowIcon v-else class="mr-2 h-6 w-6" />
       {{ name }}

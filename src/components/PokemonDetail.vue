@@ -1,8 +1,9 @@
 <template>
-  <div
+  <section
     class="flex flex-col overflow-hidden rounded-tl-lg rounded-br-lg bg-white pt-1"
   >
     <PokemonLine
+      name-as="h1"
       :pokedex-id="pokedexId"
       :name="name"
       :sprite="sprite"
@@ -10,12 +11,30 @@
     />
 
     <div
-      class="flex-1 overflow-y-auto xl:grid xl:grid-cols-5 xl:gap-3 xl:overflow-hidden"
+      ref="container"
+      class="flex-1 overflow-y-auto"
+      :class="{
+        'grid grid-cols-5 gap-3 overflow-hidden': isContainerColumns,
+      }"
     >
-      <div class="col-span-3 px-3 pb-3 xl:overflow-y-auto xl:pr-0">
-        <div class="grid grid-cols-3 gap-2 md:grid-cols-1 lg:grid-cols-3">
+      <div
+        class="col-span-3 px-3 pb-3"
+        :class="{ 'overflow-y-auto pr-0': isContainerColumns }"
+      >
+        <div
+          ref="badges"
+          class="grid gap-2"
+          :class="{
+            'grid-cols-3': isBadgesRoomy,
+            'grid-cols-1': !isBadgesRoomy,
+          }"
+        >
           <span
-            class="badge col-span-3 bg-indigo-50 md:col-span-1 lg:col-span-3"
+            class="badge bg-indigo-50"
+            :class="{
+              'col-span-3': isBadgesRoomy,
+              'col-span-1': !isBadgesRoomy,
+            }"
             >{{ genus }}</span
           >
           <span
@@ -68,6 +87,7 @@
           :speed="speed"
         />
 
+        <h2 class="heading mt-6">Abilities</h2>
         <ul class="mt-3 space-y-3" v-if="sortedAbilities.length > 0">
           <Ability
             as="li"
@@ -80,23 +100,38 @@
         </ul>
       </div>
 
-      <ul>
-        <li v-for="move in moves" :key="move.id">
-          {{ move.name }}
-        </li>
-      </ul>
+      <div
+        class="col-span-2"
+        :class="{ 'overflow-y-auto': isContainerColumns }"
+      >
+        <h2 class="heading mt-6" :class="{ 'mt-0': isContainerColumns }">
+          Moves
+        </h2>
+        <ul>
+          <Move
+            as="li"
+            v-for="move in moves"
+            :key="move.id"
+            :name="move.name"
+            :effect="move.effect"
+            :effect-chance="move.effectChance"
+          />
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { computed, type PropType } from "vue";
+import { useElementSize } from "@vueuse/core";
+import { computed, ref, type PropType } from "vue";
 import CheckIcon from "@/assets/icons/check.svg";
 import XIcon from "@/assets/icons/x.svg";
 import Ability from "@/components/Ability.vue";
+import Move from "@/components/Move.vue";
 import PokemonLine from "@/components/PokemonLine.vue";
 import PokemonStats from "@/components/PokemonStats.vue";
-import { Ability as AbilityT, Move, Type } from "@/data";
+import { Ability as AbilityT, Move as MoveT, Type } from "@/data";
 import { sortBySlot } from "@/lib";
 
 const props = defineProps({
@@ -166,9 +201,9 @@ const props = defineProps({
     },
   },
   moves: {
-    type: Array as PropType<Move[]>,
-    validator: (prop: Move[]) =>
-      Array.isArray(prop) && prop.every((m) => Move.safeParse(m).success),
+    type: Array as PropType<MoveT[]>,
+    validator: (prop: MoveT[]) =>
+      Array.isArray(prop) && prop.every((m) => MoveT.safeParse(m).success),
     required: false,
     default() {
       return [];
@@ -186,14 +221,26 @@ const props = defineProps({
 });
 
 const sortedAbilities = computed(() => sortBySlot(props.abilities));
+
+const container = ref(null);
+const { width: containerWidth } = useElementSize(container);
+const isContainerColumns = computed(() => containerWidth.value > 720);
+
+const badges = ref(null);
+const { width: badgesWidth } = useElementSize(badges);
+const isBadgesRoomy = computed(() => badgesWidth.value >= 368);
 </script>
 
 <style scoped>
 .badge {
-  @apply inline-flex items-center justify-center py-1 px-2 text-center text-sm font-bold uppercase;
+  @apply inline-flex items-center justify-center rounded-tl rounded-br py-1 px-2 text-center text-sm font-bold uppercase;
 }
 
 .badge-icon {
-  @apply mr-1 h-5 w-5;
+  @apply mr-0.5 h-5 w-5 shrink-0;
+}
+
+.heading {
+  @apply mb-2 text-lg font-bold;
 }
 </style>
