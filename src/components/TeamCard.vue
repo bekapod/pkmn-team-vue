@@ -76,7 +76,7 @@ const props = defineProps({
 });
 
 const allSortedTypes = sortBySlug(
-  props.members.flatMap((m) => m.pokemon.types)
+  props.members.flatMap((m) => m.pokemon.types.map((pt) => pt.type))
 ).map((t) => t.slug);
 
 const formattedCreatedAt = new Intl.DateTimeFormat("en-GB", {

@@ -18,20 +18,22 @@ const csf: Meta = {
   argTypes: {
     "remove-member": { action: "@remove-member" },
     "remove-move": { action: "@remove-move" },
+    "find-member": { action: "@find-member" },
   },
 };
 
 const Template: Story = ({
   "remove-member": removeMember,
   "remove-move": removeMove,
+  "find-member": findMember,
   ...args
 }) => ({
   components: { Team },
   setup() {
-    return { args, removeMember, removeMove };
+    return { args, removeMember, removeMove, findMember };
   },
   template: `
-    <Team v-bind="args" @remove-member="removeMember" @remove-move="removeMove" />
+    <Team v-bind="args" @remove-member="removeMember" @remove-move="removeMove" @find-member="findMember" />
   `,
 });
 

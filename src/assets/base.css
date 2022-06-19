@@ -81,6 +81,46 @@
     @apply bg-red-vivid-400;
   }
 
+  .icon-button {
+    @apply rounded-full p-2;
+  }
+
+  .icon-button--primary {
+    @apply bg-indigo-50 text-indigo-800 hover:bg-indigo-100;
+  }
+
+  .icon-button--destructive {
+    @apply bg-red-vivid-50 text-red-vivid-700 hover:bg-red-vivid-100;
+  }
+
+  .icon-button__icon {
+    @apply h-5 w-5;
+  }
+
+  .menu {
+    @apply focus-visible:manual-focus absolute right-0 mt-2 w-56 origin-top-right rounded-md border-2 border-cool-grey-100 bg-cool-grey-50 py-2 shadow-lg;
+  }
+
+  .menu-button {
+    @apply flex w-full p-2 text-sm font-medium;
+  }
+
+  .menu-button--active {
+    @apply bg-cool-grey-100;
+  }
+
+  .menu-button__icon {
+    @apply mr-1 h-5 w-5;
+  }
+
+  .menu-button--primary {
+    @apply text-indigo-800;
+  }
+
+  .menu-button--destructive {
+    @apply text-red-vivid-600;
+  }
+
   .with-type-gradient {
     --outdent: 0px;
   }

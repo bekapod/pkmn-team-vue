@@ -73,6 +73,8 @@ module.exports = {
             "check",
             "hide",
             "show",
+            "cog",
+            "dots-vertical-rounded",
           ].reduce((icons, name) => {
             return {
               ...icons,

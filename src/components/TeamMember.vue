@@ -1,23 +1,64 @@
 <template>
-  <li class="relative flex list-none flex-col rounded-br-xl bg-white">
-    <PokemonLine
-      :pokedex-id="pokemon.species.pokedexId"
-      :name="pokemon.defaultForm.name"
-      :sprite="pokemon.defaultSprite"
-      :types="pokemon.types"
-      class="cursor-grab active:cursor-grabbing"
-    />
+  <li
+    ref="container"
+    class="relative flex list-none flex-col rounded-br-xl bg-white"
+  >
+    <div class="relative flex items-center justify-between pr-3">
+      <PokemonLine
+        :pokedex-id="pokemon.species.pokedexId"
+        :name="pokemon.defaultForm.name"
+        :sprite="pokemon.defaultSprite"
+        :types="pokemon.types"
+        class="pokemon cursor-grab active:cursor-grabbing"
+      />
 
-    <button
-      class="absolute top-4 right-4 rounded-md text-indigo-900 hover:text-red-vivid-400 focus-visible:outline-red-vivid-400"
-      @click="$emit('remove', id)"
-    >
-      <span class="sr-only">Remove team member</span>
-      <TrashIcon aria-hidden="true" class="h-5 w-5" />
-    </button>
+      <Menu as="div" class="relative inline-block text-left">
+        <MenuButton class="icon-button icon-button--primary">
+          <span class="sr-only">Open options</span>
+          <DotsVerticalRoundedIcon
+            class="icon-button__icon"
+            aria-hidden="true"
+          />
+        </MenuButton>
+
+        <Transition
+          enter-active-class="transition ease-out duration-100"
+          enter-from-class="transform opacity-0 scale-95"
+          enter-to-class="transform opacity-100 scale-100"
+          leave-active-class="transition ease-in duration-75"
+          leave-from-class="transform opacity-100 scale-100"
+          leave-to-class="transform opacity-0 scale-95"
+        >
+          <MenuItems class="menu">
+            <MenuItem v-slot="{ active }">
+              <button
+                type="button"
+                class="menu-button menu-button--primary"
+                :class="{ 'menu-button--active': active }"
+                disabled
+              >
+                <CogIcon aria-hidden="true" class="menu-button__icon" />
+                <span>More configuration</span>
+              </button>
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <button
+                type="button"
+                class="menu-button menu-button--destructive"
+                :class="{ 'menu-button--active': active }"
+                @click="$emit('remove', id)"
+              >
+                <TrashIcon aria-hidden="true" class="menu-button__icon" />
+                <span>Remove team member</span>
+              </button>
+            </MenuItem>
+          </MenuItems>
+        </Transition>
+      </Menu>
+    </div>
 
     <PokemonStats
-      class="mb-2 p-3"
+      class="mb-2 px-3"
       :hp="pokemon.hp"
       :attack="pokemon.attack"
       :defense="pokemon.defense"
@@ -40,7 +81,7 @@
       <li v-for="i in 4 - moves.length" :key="i">
         <button
           type="button"
-          class="flex h-full w-full cursor-pointer items-center justify-center rounded-br-lg border-2 border-dashed border-cool-grey-100"
+          class="flex h-full w-full cursor-pointer items-center justify-center rounded-tl-lg rounded-br-lg border-2 border-dashed border-cool-grey-100"
         >
           <span class="sr-only">Add move</span>
           <MehBlankIcon class="h-5 w-5 text-cool-grey-200" />
@@ -51,14 +92,16 @@
 </template>
 
 <script setup lang="ts">
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import TeamMemberMove from "./TeamMemberMove.vue";
 import type { PropType } from "vue";
+import CogIcon from "@/assets/icons/cog.svg";
+import DotsVerticalRoundedIcon from "@/assets/icons/dots-vertical-rounded.svg";
 import MehBlankIcon from "@/assets/icons/meh-blank.svg";
 import TrashIcon from "@/assets/icons/trash.svg";
 import PokemonLine from "@/components/PokemonLine.vue";
 import PokemonStats from "@/components/PokemonStats.vue";
 import { Pokemon, TeamMemberMove as TeamMemberMoveT } from "@/data";
-undefined;
 
 defineProps({
   id: {
@@ -89,3 +132,9 @@ defineEmits<{
   (e: "remove-move", id: string, moveId: string): void;
 }>();
 </script>
+
+<style scoped>
+.pokemon {
+  position: static;
+}
+</style>

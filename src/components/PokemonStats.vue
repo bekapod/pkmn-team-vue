@@ -12,9 +12,9 @@
       :key="stat.label"
       class="flex items-center rounded-tl rounded-br py-2 px-3"
       :class="{
-        'bg-green-vivid-200':
+        'bg-green-vivid-50':
           highestStat === stat.value && highestStat !== lowestStat,
-        'bg-red-vivid-100':
+        'bg-red-vivid-50':
           lowestStat === stat.value && highestStat !== lowestStat,
       }"
     >
