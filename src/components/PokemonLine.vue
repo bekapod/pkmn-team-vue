@@ -12,7 +12,7 @@
       :alt="`${name} sprite`"
       width="72"
       height="72"
-      lazy="true"
+      loading="lazy"
     />
     <div class="ml-4">
       <component :is="nameAs" class="text-md mb-2 font-bold leading-none">
