@@ -172,16 +172,18 @@ import {
   ListboxOptions,
   ListboxOption,
 } from "@headlessui/vue";
+import { vIntersectionObserver } from "@vueuse/components";
 import algoliasearch from "algoliasearch/lite";
 import { computed, ref } from "vue";
 import {
   AisInstantSearch,
   AisSearchBox,
-  AisHits,
+  AisInfiniteHits,
   AisRefinementList,
   AisConfigure,
   AisPagination,
 } from "vue-instantsearch/vue3/es";
+import { RecycleScroller } from "vue-virtual-scroller";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 import CheckIcon from "@/assets/icons/check.svg";
 import ChevronDownIcon from "@/assets/icons/chevron-down.svg";
@@ -189,6 +191,7 @@ import PokemonDetail from "@/components/PokemonDetail.vue";
 import PokemonLine from "@/components/PokemonLine.vue";
 import { parsePokemon } from "@/data";
 import { useSearch } from "@/stores";
+import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 
 const searchClient = algoliasearch(
   "VKYNMD4NA5",
