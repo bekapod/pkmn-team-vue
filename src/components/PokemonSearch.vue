@@ -9,33 +9,14 @@
     <slot name="header-bar"></slot>
 
     <AisSearchBox>
-      <template v-slot="{ currentRefinement, isSearchStalled, refine }">
-        <FormKit
-          :aria-busy="isSearchStalled"
-          type="form"
-          :classes="{
-            form: `flex flex-col items-stretch relative self-center w-full sm:items-center sm:flex-row`,
-            messages: 'sr-only',
-          }"
-          :actions="false"
-          :model-value="{ search: currentRefinement }"
-          @submit="(data) => refine(data.search)"
-        >
-          <FormKit
-            type="search"
-            name="search"
-            label="Search"
-            placeholder="Search for a Pokemon&hellip;"
-            outer-class="flex-1 w-full sm:w-auto sm:mb-0 "
-            label-class="sr-only"
-            :input-class="{
-              'text-center sm:text-left px-4 text-lg font-bold rounded-tl-lg rounded-br-lg': true,
-              'md:max-w-3xl': false,
-            }"
-          />
-
-          <FormKit type="submit" outer-class="sr-only">Search</FormKit>
-        </FormKit>
+      <template v-slot="{ currentRefinement, refine }">
+        <input
+          type="search"
+          :value="currentRefinement"
+          placeholder="Search for a Pokemon&hellip;"
+          class="w-full rounded-tl-lg rounded-br-lg p-4 text-center text-lg font-bold sm:text-left"
+          @input="refine(($event.currentTarget as HTMLInputElement).value)"
+        />
       </template>
     </AisSearchBox>
 
