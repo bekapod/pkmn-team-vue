@@ -105,7 +105,7 @@
         :class="{ 'overflow-y-auto': isContainerColumns }"
       >
         <h2
-          class="mb-4 mt-6 px-3 text-lg font-bold"
+          class="my-4 px-3 text-lg font-bold"
           :class="{ 'sr-only': isContainerColumns }"
         >
           Moves

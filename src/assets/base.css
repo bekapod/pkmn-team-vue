@@ -53,8 +53,24 @@
     @apply relative flex w-full items-center overflow-hidden rounded-tl-lg rounded-br-lg border-none py-3 px-6 text-center text-lg font-bold uppercase leading-10 shadow transition-colors duration-300 ease-out disabled:opacity-75 sm:w-auto;
   }
 
+  .button--small {
+    @apply p-3 text-base;
+  }
+
   .button__icon {
     @apply relative -left-2 h-5 w-5;
+  }
+
+  .button__icon--right {
+    @apply left-auto -right-2;
+  }
+
+  .button--small .button__icon {
+    @apply -left-1;
+  }
+
+  .button--small .button__icon--right {
+    @apply left-auto -right-1;
   }
 
   .button--primary {

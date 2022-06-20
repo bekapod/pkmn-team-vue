@@ -4,6 +4,7 @@
       type="button"
       class="button button--secondary py-2"
       :disabled="!team.id"
+      @click="team.isFindingMember = true"
     >
       <SearchAltIcon class="button__icon" aria-hidden="true" />
       Find Pokemon

@@ -10,6 +10,7 @@ import { client } from "@/lib";
 type TeamState = Partial<Team> & {
   deletedMembers: string[];
   dirty: boolean;
+  isFindingMember: boolean;
   members: TeamMember[];
 };
 
@@ -23,6 +24,7 @@ export const useTeam = defineStore("team", {
       createdBy: undefined,
       deletedMembers: [],
       dirty: false,
+      isFindingMember: false,
     };
   },
   getters: {
@@ -41,7 +43,12 @@ export const useTeam = defineStore("team", {
           id,
         });
         const parsed = parseTeam(data.team);
-        this.$state = { ...parsed, dirty: false, deletedMembers: [] };
+        this.$state = {
+          ...parsed,
+          dirty: false,
+          deletedMembers: [],
+          isFindingMember: false,
+        };
 
         return { error: null, data: parsed };
       } catch (error) {
@@ -136,7 +143,12 @@ export const useTeam = defineStore("team", {
           { token }
         );
         const parsed = parseTeam(data.createTeam);
-        this.$state = { ...parsed, dirty: false, deletedMembers: [] };
+        this.$state = {
+          ...parsed,
+          dirty: false,
+          deletedMembers: [],
+          isFindingMember: false,
+        };
         toasts.addToast(successToast);
         return { error: null, data: parsed };
       } catch (error) {
@@ -176,7 +188,12 @@ export const useTeam = defineStore("team", {
             { token }
           );
           const parsed = parseTeam(data.removeTeam);
-          this.$state = { ...parsed, dirty: false, deletedMembers: [] };
+          this.$state = {
+            ...parsed,
+            dirty: false,
+            deletedMembers: [],
+            isFindingMember: false,
+          };
           toasts.addToast(successToast);
           return { error: null, data: parsed };
         } catch (error) {

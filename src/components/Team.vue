@@ -22,7 +22,7 @@
       <button
         type="button"
         class="flex h-full w-full cursor-pointer items-center justify-center rounded-br-xl border-4 border-dashed border-cool-grey-200 bg-cool-grey-100"
-        @click="$emit('find-member')"
+        @click="handleFindTeamMember"
       >
         <span class="sr-only">Add team member</span>
         <MehBlankIcon class="h-10 w-10 text-cool-grey-300" />
@@ -47,5 +47,9 @@ const emit = defineEmits<{
 const handleRemoveMember = (id: string) => {
   team.removeMember(id);
   emit("remove-member", id);
+};
+const handleFindTeamMember = () => {
+  team.isFindingMember = true;
+  emit("find-member");
 };
 </script>

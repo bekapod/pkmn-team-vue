@@ -3,9 +3,5 @@ fragment teamMemberFields on TeamMember {
   slot
   pokemon {
     ...pokemonFields
-    species {
-      name
-      pokedexId
-    }
   }
 }

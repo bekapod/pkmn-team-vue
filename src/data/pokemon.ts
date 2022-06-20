@@ -46,7 +46,7 @@ export const Pokemon = z.object({
   specialDefense: z.number(),
   species: PokemonSpecies,
   speed: z.number(),
-  defaultSprite: z.string(),
+  defaultSprite: z.string().optional(),
   types: z.array(PokemonType),
   abilities: z.array(PokemonAbility),
   moves: z.array(PokemonMove),
@@ -71,7 +71,7 @@ export const parsePokemon = (
     specialDefense: pokemon?.specialDefense,
     species: parsePokemonSpecies(pokemon?.species),
     speed: pokemon?.speed,
-    defaultSprite: pokemon?.sprites.frontDefault?.path,
+    defaultSprite: pokemon?.sprites.frontDefault?.path ?? undefined,
     types: pokemon?.types.edges?.map((type) => ({
       id: type.id,
       slot: type.slot,
