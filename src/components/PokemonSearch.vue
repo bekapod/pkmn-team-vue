@@ -6,7 +6,7 @@
   >
     <AisConfigure :hits-per-page.camel="100" :filters="filters" />
 
-    <slot></slot>
+    <slot name="header-bar"></slot>
 
     <AisSearchBox>
       <template v-slot="{ currentRefinement, isSearchStalled, refine }">
@@ -39,90 +39,117 @@
       </template>
     </AisSearchBox>
 
-    <Listbox v-model="selectedTypes" multiple>
-      <div class="relative">
-        <ListboxButton class="button button--secondary button--small my-2">
-          Filter by type
-          <span
-            v-if="selectedTypes.length > 0"
-            class="ml-2 h-6 min-w-6 rounded-full bg-indigo-500 px-2 text-sm leading-6"
-          >
-            {{ selectedTypes.length }}
-          </span>
-          <ChevronDownIcon class="button__icon button__icon--right" />
-        </ListboxButton>
-        <AisRefinementList
-          attribute="node.types.edges.node.name"
-          operator="and"
-          :limit="20"
-        >
-          <template v-slot="{ items }">
-            <Transition
-              leave-active-class="transition ease-in duration-100"
-              leave-from-class="opacity-100"
-              leave-to-class="opacity-0"
+    <div class="flex items-center justify-between">
+      <Listbox v-model="selectedTypes" multiple>
+        <div class="relative">
+          <ListboxButton class="button button--secondary button--small my-2">
+            Filter by type
+            <span
+              v-if="selectedTypes.length > 0"
+              class="ml-2 h-6 min-w-6 rounded-full bg-indigo-500 px-2 text-sm leading-6"
             >
-              <ListboxOptions
-                class="focus-visible:manual-focus absolute left-0 z-10 max-h-52 w-full max-w-xs overflow-y-auto rounded-br-lg bg-white shadow-lg"
+              {{ selectedTypes.length }}
+            </span>
+            <ChevronDownIcon class="button__icon button__icon--right" />
+          </ListboxButton>
+          <AisRefinementList
+            attribute="node.types.edges.node.name"
+            operator="and"
+            :limit="20"
+          >
+            <template v-slot="{ items }">
+              <Transition
+                leave-active-class="transition ease-in duration-100"
+                leave-from-class="opacity-100"
+                leave-to-class="opacity-0"
               >
-                <ListboxOption
-                  v-for="item in items"
-                  :key="item.value"
-                  :value="item.value"
+                <ListboxOptions
+                  class="focus-visible:manual-focus absolute left-0 z-10 max-h-52 w-full max-w-xs overflow-y-auto rounded-br-lg bg-white shadow-lg"
                 >
-                  <template v-slot="{ active, selected }">
-                    <span
-                      class="flex justify-between py-2 px-3 font-medium"
-                      :class="{
-                        [`bg-${item.value.toLowerCase()}`]: active || selected,
-                        [`text-${item.value.toLowerCase()}-contrast`]: active,
-                        'bg-opacity-50': selected && !active,
-                      }"
-                    >
-                      <span>{{ item.label }}</span>
-                      <CheckIcon
-                        v-if="selected"
-                        aria-hidden="true"
-                        class="h-6 w-6"
-                      />
-                      <span v-else>
-                        {{ item.count.toLocaleString() }}
+                  <ListboxOption
+                    v-for="item in items"
+                    :key="item.value"
+                    :value="item.value"
+                  >
+                    <template v-slot="{ active, selected }">
+                      <span
+                        class="flex justify-between py-2 px-3 font-medium"
+                        :class="{
+                          [`bg-${item.value.toLowerCase()}`]:
+                            active || selected,
+                          [`text-${item.value.toLowerCase()}-contrast`]: active,
+                          'bg-opacity-50': selected && !active,
+                        }"
+                      >
+                        <span>{{ item.label }}</span>
+                        <CheckIcon
+                          v-if="selected"
+                          aria-hidden="true"
+                          class="h-6 w-6"
+                        />
+                        <span v-else>
+                          {{ item.count.toLocaleString() }}
+                        </span>
                       </span>
-                    </span>
-                  </template>
-                </ListboxOption>
-              </ListboxOptions>
-            </Transition>
-          </template>
-        </AisRefinementList>
-      </div>
-    </Listbox>
+                    </template>
+                  </ListboxOption>
+                </ListboxOptions>
+              </Transition>
+            </template>
+          </AisRefinementList>
+        </div>
+      </Listbox>
+
+      <slot name="toolbar-end"></slot>
+    </div>
 
     <div
       class="relative flex-1 overflow-hidden md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3"
     >
-      <AisHits
+      <AisInfiniteHits
         :transformItems="transformPokemonItems"
         class="relative h-full overflow-hidden rounded-tl-lg rounded-br-lg bg-white md:rounded-br-none"
       >
-        <template v-slot="{ items }">
-          <ul class="scroller">
-            <li v-for="item of items" :key="item.id">
+        <template v-slot="{ items, refineNext, isLastPage }">
+          <RecycleScroller
+            class="scroller"
+            :items="items"
+            :item-size="96"
+            key-field="id"
+          >
+            <template v-slot="{ item, index }">
               <PokemonLine
                 role="button"
+                :ref="`item_${index}`"
                 :id="item.id"
                 :name="item.defaultForm.name"
                 :pokedex-id="item.species.pokedexId"
                 :sprite="item.defaultSprite"
                 :types="item.types"
                 tabindex="0"
-                class="focus-visible:manual-focus relative top-1 focus-visible:outline-offset-[-8px]"
+                class="focus-visible:manual-focus relative pt-1.5 before:top-0 focus-visible:outline-offset-[-8px]"
                 @click="search.selectPokemon(item.id)"
               />
-            </li>
-          </ul>
+            </template>
+            <template #after v-if="!isLastPage">
+              <button
+                type="button"
+                class="button button--secondary w-full justify-center rounded-tl-none"
+                v-intersection-observer="
+                  ([{ isIntersecting }]) => {
+                    if (isIntersecting) {
+                      refineNext();
+                    }
+                  }
+                "
+                @click="refineNext"
+              >
+                Load more
+              </button>
+            </template>
+          </RecycleScroller>
         </template>
-      </AisHits>
+      </AisInfiniteHits>
 
       <div
         class="absolute top-0 left-0 h-full overflow-hidden md:static lg:col-span-2"
@@ -156,12 +183,17 @@
             :special-defense="search.selectedPokemon.specialDefense"
             :speed="search.selectedPokemon.speed"
             @click="search.clearSelectedPokemon()"
-          />
+          >
+            <template #actions>
+              <slot
+                name="member-actions"
+                :pokemon="search.selectedPokemon"
+              ></slot>
+            </template>
+          </PokemonDetail>
         </Transition>
       </div>
     </div>
-
-    <AisPagination hidden />
   </AisInstantSearch>
 </template>
 
@@ -181,7 +213,6 @@ import {
   AisInfiniteHits,
   AisRefinementList,
   AisConfigure,
-  AisPagination,
 } from "vue-instantsearch/vue3/es";
 import { RecycleScroller } from "vue-virtual-scroller";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";

@@ -25,6 +25,7 @@
     "@vueuse/components": "^8.7.4",
     "@vueuse/core": "^8.7.4",
     "algoliasearch": "^4.13.1",
+    "cuid": "^2.1.8",
     "graphql-tag": "^2.12.6",
     "pinia": "^2.0.14",
     "vue": "^3.2.36",

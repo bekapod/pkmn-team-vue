@@ -55,7 +55,6 @@ describe("useTeam", () => {
     expect(team.dirty).toEqual(true);
     vitest.advanceTimersByTime(1000);
     team.addMember({
-      id: "3",
       slot: 3,
       pokemon: haunter,
     });
@@ -71,7 +70,7 @@ describe("useTeam", () => {
         pokemon: expect.any(Object),
       },
       {
-        id: "3",
+        id: expect.any(String),
         slot: 3,
         pokemon: expect.any(Object),
       },

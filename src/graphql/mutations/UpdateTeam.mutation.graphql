@@ -1,4 +1,8 @@
-mutation UpdateTeam($input: UpdateTeamInput!) {
+mutation UpdateTeam($input: UpdateTeamInput!, $removedIds: [ID!]!) {
+  removeTeamMembers(ids: $removedIds) {
+    id
+  }
+
   updateTeam(updateTeamInput: $input) {
     ...teamFields
   }

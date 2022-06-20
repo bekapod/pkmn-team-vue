@@ -21,6 +21,7 @@
         class="col-span-3 px-3 pb-3"
         :class="{ 'overflow-y-auto': isContainerColumns }"
       >
+        <slot name="actions"></slot>
         <div
           ref="badges"
           class="grid gap-2"

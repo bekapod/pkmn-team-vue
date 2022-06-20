@@ -65,13 +65,11 @@
 </template>
 
 <script setup lang="ts">
-import { useAuth0 } from "@auth0/auth0-vue";
-import { ref, computed, watch, type PropType } from "vue";
+import { ref, computed, watch } from "vue";
 import type { FormKitGroupValue } from "@formkit/core";
 import PencilIcon from "@/assets/icons/pencil.svg";
 import { useTeam } from "@/stores";
 
-const { getAccessTokenSilently } = useAuth0();
 const team = useTeam();
 const mode = ref("display");
 const input = ref<{ $el: HTMLInputElement } | null>(null);
@@ -84,13 +82,6 @@ let timer;
 const emit = defineEmits<{
   (e: "team-renamed", name: string): void;
 }>();
-const props = defineProps({
-  authTimeout: {
-    type: Number as PropType<number>,
-    required: false,
-    default: 60,
-  },
-});
 
 watch([input, button], async ([newInput, newButton], [oldInput, oldButton]) => {
   if (newInput && !newButton && oldButton) {
@@ -107,10 +98,7 @@ const submitHandler = async (formData: FormKitGroupValue) => {
   timer = window.setInterval(() => {
     timeTaken.value += 1;
   }, 1000);
-  const token = await getAccessTokenSilently({
-    timeoutInSeconds: props.authTimeout,
-  }).catch(() => "");
-  const { data } = await team.setName(formData["team-name"] as string, token);
+  const { data } = await team.setName(formData["team-name"] as string);
   if (data) {
     mode.value = "display";
     emit("team-renamed", data);

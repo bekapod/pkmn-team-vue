@@ -1,17 +1,20 @@
 import * as Sentry from "@sentry/vue";
+import cuid from "cuid";
 import { defineStore } from "pinia";
 import { useToasts } from "./toasts";
 import { useTrainer } from "./trainer";
 import type { Team, TeamMember } from "@/data";
 import { parseTeam } from "@/data";
 import { getSdk, type UpdateTeamMutationVariables } from "@/graphql";
-import { client } from "@/lib";
+import { authInstance, client } from "@/lib";
 
-type TeamState = Partial<Team> & {
+type Member = TeamMember & { isNew?: boolean };
+
+type TeamState = Partial<Omit<Team, "members">> & {
   deletedMembers: string[];
   dirty: boolean;
   isFindingMember: boolean;
-  members: TeamMember[];
+  members: Member[];
 };
 
 export const useTeam = defineStore("team", {
@@ -61,7 +64,7 @@ export const useTeam = defineStore("team", {
         return { error, data: null };
       }
     },
-    async setName(name: string, token: string) {
+    async setName(name: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -80,12 +83,14 @@ export const useTeam = defineStore("team", {
 
       if (this.id) {
         try {
+          const token = await authInstance.getAccessTokenSilently();
           const data = await getSdk(client).UpdateTeam(
             {
               input: {
                 id: this.id,
                 name: name,
               },
+              removedIds: [],
             },
             { token }
           );
@@ -115,7 +120,7 @@ export const useTeam = defineStore("team", {
         return { error: "Team has not been set", data: null };
       }
     },
-    async create(name: string, token: string) {
+    async create(name: string) {
       const toasts = useToasts();
 
       const errorToast = {
@@ -133,6 +138,7 @@ export const useTeam = defineStore("team", {
       toasts.removeToast(successToast);
 
       try {
+        const token = await authInstance.getAccessTokenSilently();
         const data = await getSdk(client).CreateTeam(
           {
             input: {
@@ -162,7 +168,7 @@ export const useTeam = defineStore("team", {
         return { error, data: null };
       }
     },
-    async remove(token: string) {
+    async remove() {
       const toasts = useToasts();
 
       const errorToast = {
@@ -180,6 +186,7 @@ export const useTeam = defineStore("team", {
       toasts.removeToast(successToast);
 
       if (this.id) {
+        const token = await authInstance.getAccessTokenSilently();
         try {
           const data = await getSdk(client).RemoveTeam(
             {
@@ -215,16 +222,26 @@ export const useTeam = defineStore("team", {
       }
     },
     removeMember(id: string) {
+      const member = this.members.find(
+        (currentMember) => currentMember.id === id
+      );
       this.members = this.members.filter(
         (currentMember) => currentMember.id !== id
       );
-      this.deletedMembers.push(id);
-      this.dirty = true;
-      this.saveMembers();
+      if (!member?.isNew) {
+        this.deletedMembers.push(id);
+        this.dirty = true;
+        this.saveMembers();
+      }
       return [this.members, this.deletedMembers];
     },
-    addMember(member: TeamMember) {
-      this.members.push(member);
+    addMember(member: Omit<TeamMember, "id" | "slot">) {
+      this.members.push({
+        ...member,
+        id: cuid(),
+        slot: this.members.length,
+        isNew: true,
+      });
       this.dirty = true;
       this.saveMembers();
       return this.members;
@@ -253,27 +270,32 @@ export const useTeam = defineStore("team", {
 
       if (this.dirty) {
         try {
-          // const membersToDelete: UpdateTeamMutationVariables['input']["membersToDelete"] =
-          //   this.deletedMembers;
+          const token = await authInstance.getAccessTokenSilently();
+          const membersToDelete: UpdateTeamMutationVariables["removedIds"] =
+            this.deletedMembers;
 
           const membersToUpdate: UpdateTeamMutationVariables["input"]["members"] =
             this.members.map((member) => ({
-              id: member.id,
+              id: member.isNew ? undefined : member.id,
               slot: member.slot,
               pokemonId: member.pokemon.id,
             }));
 
-          const data = await getSdk(client).UpdateTeam({
-            input: {
-              id: this.id,
-              name: this.name,
-              // membersToDelete,
-              members: membersToUpdate,
+          const data = await getSdk(client).UpdateTeam(
+            {
+              input: {
+                id: this.id,
+                name: this.name,
+                members: membersToUpdate,
+              },
+              removedIds: membersToDelete,
             },
-          });
+            { token }
+          );
           const parsed = parseTeam(data.updateTeam);
           this.members = parsed.members;
           this.dirty = false;
+          this.deletedMembers = [];
           toasts.addToast(successToast);
           return parsed.members;
         } catch {

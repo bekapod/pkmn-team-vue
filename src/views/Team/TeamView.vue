@@ -37,21 +37,65 @@
                 <PokemonSearch
                   class="w-full rounded-br-xl rounded-tl-xl bg-cool-grey-100 p-4"
                 >
-                  <div
-                    class="-mx-4 -mt-4 mb-4 flex items-center justify-between rounded-tl-xl bg-indigo-600 py-2 px-4"
-                  >
-                    <h1 class="text-sm font-bold uppercase text-white">
-                      Find a team member
-                    </h1>
+                  <template #header-bar>
+                    <div
+                      class="-mx-4 -mt-4 mb-4 flex items-center justify-between rounded-tl-xl bg-indigo-600 py-2 px-4"
+                    >
+                      <h1 class="text-sm font-bold uppercase text-white">
+                        Find a team member
+                      </h1>
+                      <button
+                        type="button"
+                        class="icon-button p-0 text-white"
+                        @click="team.isFindingMember = false"
+                      >
+                        <span class="sr-only">Close search</span>
+                        <XIcon class="h-7 w-7" />
+                      </button>
+                    </div>
+                  </template>
+
+                  <template #toolbar-end>
+                    <ol v-if="team.members.length > 0" class="flex gap-3">
+                      <li
+                        v-for="member in team.members"
+                        :key="member.id"
+                        class="flex items-center rounded-tl-lg rounded-br-lg bg-white pr-2"
+                      >
+                        <span class="sr-only">{{
+                          member.pokemon.defaultForm.name
+                        }}</span>
+                        <img
+                          loading="lazy"
+                          :src="imageBasePath + member.pokemon.defaultSprite"
+                          :alt="`${member.pokemon.defaultForm.name} sprite`"
+                          width="48"
+                          height="56"
+                        />
+                        <button
+                          type="button"
+                          class="icon-button icon-button--destructive ml-2"
+                          @click="team.removeMember(member.id)"
+                        >
+                          <span class="sr-only"
+                            >Remove {{ member.pokemon.defaultForm.name }} from
+                            team</span
+                          >
+                          <TrashIcon class="icon-button__icon" />
+                        </button>
+                      </li>
+                    </ol>
+                  </template>
+
+                  <template #member-actions="{ pokemon }">
                     <button
                       type="button"
-                      class="icon-button p-0 text-white"
-                      @click="team.isFindingMember = false"
+                      class="button button--primary"
+                      @click="team.addMember({ pokemon })"
                     >
-                      <span class="sr-only">Close search</span>
-                      <XIcon class="h-7 w-7" />
+                      Add to team
                     </button>
-                  </div>
+                  </template>
                 </PokemonSearch>
               </DialogPanel>
             </TransitionChild>
@@ -83,6 +127,7 @@ import {
   DialogPanel,
 } from "@headlessui/vue";
 import { ref, defineAsyncComponent } from "vue";
+import TrashIcon from "@/assets/icons/trash.svg";
 import XIcon from "@/assets/icons/x.svg";
 import Notification from "@/components/Notification.vue";
 import Team from "@/components/Team.vue";
@@ -100,6 +145,11 @@ const props = defineProps({
 });
 
 const team = useTeam();
+
+const imageBasePath = import.meta.env.VITE_CLOUDINARY_BASE_PATH.replace(
+  "image/upload",
+  "image/upload/t_pokemon_sprite"
+);
 
 const fetch = async () => {
   const res = await team.get(props.id);

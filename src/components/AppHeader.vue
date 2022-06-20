@@ -236,7 +236,6 @@ const {
   loginWithRedirect: login,
   logout: originalLogout,
   isAuthenticated,
-  getAccessTokenSilently,
 } = useAuth0();
 
 const me = useTrainer();
@@ -245,8 +244,7 @@ watch(
   isAuthenticated,
   async (value) => {
     if (value) {
-      const token = await getAccessTokenSilently().catch(() => "");
-      me.getMe(token);
+      me.getMe();
     }
   },
   { immediate: true }

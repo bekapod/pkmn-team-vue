@@ -348,6 +348,7 @@ export type Mutation = {
   removeItem: Item;
   removeMove: Move;
   removeTeam: Team;
+  removeTeamMembers: Array<TeamMember>;
   removeType: RemovedType;
   updateAbility: Ability;
   updateEggGroup: EggGroup;
@@ -399,6 +400,10 @@ export type MutationRemoveMoveArgs = {
 
 export type MutationRemoveTeamArgs = {
   id: Scalars["ID"];
+};
+
+export type MutationRemoveTeamMembersArgs = {
+  ids: Array<Scalars["ID"]>;
 };
 
 export type MutationRemoveTypeArgs = {
@@ -1193,21 +1198,6 @@ export type TeamFieldsFragment = {
           speed: number;
           hp: number;
           isDefault: boolean;
-          species: {
-            __typename?: "PokemonSpecies";
-            name: string;
-            pokedexId: number;
-            id: string;
-            slug: string;
-            color: Color;
-            description?: string | null;
-            genus: string;
-            habitat?: Habitat | null;
-            isBaby: boolean;
-            isLegendary: boolean;
-            isMythical: boolean;
-            shape?: Shape | null;
-          };
           abilities: {
             __typename?: "PokemonAbilityConnection";
             edges?: Array<{
@@ -1281,6 +1271,21 @@ export type TeamFieldsFragment = {
               };
             }> | null;
           };
+          species: {
+            __typename?: "PokemonSpecies";
+            id: string;
+            name: string;
+            slug: string;
+            color: Color;
+            description?: string | null;
+            genus: string;
+            habitat?: Habitat | null;
+            isBaby: boolean;
+            isLegendary: boolean;
+            isMythical: boolean;
+            pokedexId: number;
+            shape?: Shape | null;
+          };
           sprites: {
             __typename?: "PokemonSprites";
             frontDefault?: {
@@ -1309,21 +1314,6 @@ export type TeamMemberFieldsFragment = {
     speed: number;
     hp: number;
     isDefault: boolean;
-    species: {
-      __typename?: "PokemonSpecies";
-      name: string;
-      pokedexId: number;
-      id: string;
-      slug: string;
-      color: Color;
-      description?: string | null;
-      genus: string;
-      habitat?: Habitat | null;
-      isBaby: boolean;
-      isLegendary: boolean;
-      isMythical: boolean;
-      shape?: Shape | null;
-    };
     abilities: {
       __typename?: "PokemonAbilityConnection";
       edges?: Array<{
@@ -1387,6 +1377,21 @@ export type TeamMemberFieldsFragment = {
         };
       }> | null;
     };
+    species: {
+      __typename?: "PokemonSpecies";
+      id: string;
+      name: string;
+      slug: string;
+      color: Color;
+      description?: string | null;
+      genus: string;
+      habitat?: Habitat | null;
+      isBaby: boolean;
+      isLegendary: boolean;
+      isMythical: boolean;
+      pokedexId: number;
+      shape?: Shape | null;
+    };
     sprites: {
       __typename?: "PokemonSprites";
       frontDefault?: { __typename?: "PokemonSprite"; path: string } | null;
@@ -1444,21 +1449,6 @@ export type CreateTeamMutation = {
             speed: number;
             hp: number;
             isDefault: boolean;
-            species: {
-              __typename?: "PokemonSpecies";
-              name: string;
-              pokedexId: number;
-              id: string;
-              slug: string;
-              color: Color;
-              description?: string | null;
-              genus: string;
-              habitat?: Habitat | null;
-              isBaby: boolean;
-              isLegendary: boolean;
-              isMythical: boolean;
-              shape?: Shape | null;
-            };
             abilities: {
               __typename?: "PokemonAbilityConnection";
               edges?: Array<{
@@ -1531,6 +1521,21 @@ export type CreateTeamMutation = {
                   };
                 };
               }> | null;
+            };
+            species: {
+              __typename?: "PokemonSpecies";
+              id: string;
+              name: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              pokedexId: number;
+              shape?: Shape | null;
             };
             sprites: {
               __typename?: "PokemonSprites";
@@ -1582,21 +1587,6 @@ export type RemoveTeamMutation = {
             speed: number;
             hp: number;
             isDefault: boolean;
-            species: {
-              __typename?: "PokemonSpecies";
-              name: string;
-              pokedexId: number;
-              id: string;
-              slug: string;
-              color: Color;
-              description?: string | null;
-              genus: string;
-              habitat?: Habitat | null;
-              isBaby: boolean;
-              isLegendary: boolean;
-              isMythical: boolean;
-              shape?: Shape | null;
-            };
             abilities: {
               __typename?: "PokemonAbilityConnection";
               edges?: Array<{
@@ -1670,6 +1660,21 @@ export type RemoveTeamMutation = {
                 };
               }> | null;
             };
+            species: {
+              __typename?: "PokemonSpecies";
+              id: string;
+              name: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              pokedexId: number;
+              shape?: Shape | null;
+            };
             sprites: {
               __typename?: "PokemonSprites";
               frontDefault?: {
@@ -1686,10 +1691,12 @@ export type RemoveTeamMutation = {
 
 export type UpdateTeamMutationVariables = Exact<{
   input: UpdateTeamInput;
+  removedIds: Array<Scalars["ID"]> | Scalars["ID"];
 }>;
 
 export type UpdateTeamMutation = {
   __typename?: "Mutation";
+  removeTeamMembers: Array<{ __typename?: "TeamMember"; id: string }>;
   updateTeam: {
     __typename?: "Team";
     id: string;
@@ -1720,21 +1727,6 @@ export type UpdateTeamMutation = {
             speed: number;
             hp: number;
             isDefault: boolean;
-            species: {
-              __typename?: "PokemonSpecies";
-              name: string;
-              pokedexId: number;
-              id: string;
-              slug: string;
-              color: Color;
-              description?: string | null;
-              genus: string;
-              habitat?: Habitat | null;
-              isBaby: boolean;
-              isLegendary: boolean;
-              isMythical: boolean;
-              shape?: Shape | null;
-            };
             abilities: {
               __typename?: "PokemonAbilityConnection";
               edges?: Array<{
@@ -1807,6 +1799,21 @@ export type UpdateTeamMutation = {
                   };
                 };
               }> | null;
+            };
+            species: {
+              __typename?: "PokemonSpecies";
+              id: string;
+              name: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              pokedexId: number;
+              shape?: Shape | null;
             };
             sprites: {
               __typename?: "PokemonSprites";
@@ -1860,21 +1867,6 @@ export type AllTeamsQuery = {
                 speed: number;
                 hp: number;
                 isDefault: boolean;
-                species: {
-                  __typename?: "PokemonSpecies";
-                  name: string;
-                  pokedexId: number;
-                  id: string;
-                  slug: string;
-                  color: Color;
-                  description?: string | null;
-                  genus: string;
-                  habitat?: Habitat | null;
-                  isBaby: boolean;
-                  isLegendary: boolean;
-                  isMythical: boolean;
-                  shape?: Shape | null;
-                };
                 abilities: {
                   __typename?: "PokemonAbilityConnection";
                   edges?: Array<{
@@ -1947,6 +1939,21 @@ export type AllTeamsQuery = {
                       };
                     };
                   }> | null;
+                };
+                species: {
+                  __typename?: "PokemonSpecies";
+                  id: string;
+                  name: string;
+                  slug: string;
+                  color: Color;
+                  description?: string | null;
+                  genus: string;
+                  habitat?: Habitat | null;
+                  isBaby: boolean;
+                  isLegendary: boolean;
+                  isMythical: boolean;
+                  pokedexId: number;
+                  shape?: Shape | null;
                 };
                 sprites: {
                   __typename?: "PokemonSprites";
@@ -2114,21 +2121,6 @@ export type TeamByIdQuery = {
             speed: number;
             hp: number;
             isDefault: boolean;
-            species: {
-              __typename?: "PokemonSpecies";
-              name: string;
-              pokedexId: number;
-              id: string;
-              slug: string;
-              color: Color;
-              description?: string | null;
-              genus: string;
-              habitat?: Habitat | null;
-              isBaby: boolean;
-              isLegendary: boolean;
-              isMythical: boolean;
-              shape?: Shape | null;
-            };
             abilities: {
               __typename?: "PokemonAbilityConnection";
               edges?: Array<{
@@ -2201,6 +2193,21 @@ export type TeamByIdQuery = {
                   };
                 };
               }> | null;
+            };
+            species: {
+              __typename?: "PokemonSpecies";
+              id: string;
+              name: string;
+              slug: string;
+              color: Color;
+              description?: string | null;
+              genus: string;
+              habitat?: Habitat | null;
+              isBaby: boolean;
+              isLegendary: boolean;
+              isMythical: boolean;
+              pokedexId: number;
+              shape?: Shape | null;
             };
             sprites: {
               __typename?: "PokemonSprites";
@@ -2376,10 +2383,6 @@ export const TeamMemberFieldsFragmentDoc = gql`
     slot
     pokemon {
       ...pokemonFields
-      species {
-        name
-        pokedexId
-      }
     }
   }
   ${PokemonFieldsFragmentDoc}
@@ -2420,7 +2423,10 @@ export const RemoveTeamDocument = gql`
   ${TeamFieldsFragmentDoc}
 `;
 export const UpdateTeamDocument = gql`
-  mutation UpdateTeam($input: UpdateTeamInput!) {
+  mutation UpdateTeam($input: UpdateTeamInput!, $removedIds: [ID!]!) {
+    removeTeamMembers(ids: $removedIds) {
+      id
+    }
     updateTeam(updateTeamInput: $input) {
       ...teamFields
     }
