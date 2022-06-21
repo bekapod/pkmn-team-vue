@@ -12,7 +12,7 @@ describe("useTrainer", () => {
 
   test("getting a trainer", async () => {
     const trainer = useTrainer();
-    await trainer.getMe("");
+    await trainer.getMe();
     expect(trainer.id).toEqual("TRA123");
     expect(trainer.username).toEqual("A user");
     expect(trainer.picture).toEqual(

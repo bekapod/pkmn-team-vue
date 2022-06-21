@@ -26,7 +26,7 @@ describe("useTeam", () => {
   test("setting the team name", async () => {
     const team = useTeam();
     await team.get("team-id");
-    await team.setName("A new team name!", "");
+    await team.setName("A new team name!");
     expect(team.id).toEqual("team-id");
     expect(team.name).toEqual("A new team name!");
   });
@@ -55,7 +55,6 @@ describe("useTeam", () => {
     expect(team.dirty).toEqual(true);
     vitest.advanceTimersByTime(1000);
     team.addMember({
-      slot: 3,
       pokemon: haunter,
     });
     expect(team.dirty).toEqual(true);

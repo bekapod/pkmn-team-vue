@@ -97,6 +97,11 @@ export const handlers = {
       (req, res, ctx) => {
         return res(
           ctx.data({
+            removeTeamMembers: Array.isArray(req.variables.removedIds)
+              ? req.variables.removedIds.map((id) => ({ id }))
+              : req.variables.removedIds
+              ? [{ id: req.variables.removedIds }]
+              : [],
             updateTeam: {
               __typename: "Team",
               id: req.variables.input.id,
@@ -107,11 +112,9 @@ export const handlers = {
                 edges: [
                   ...(!req.variables.input.members
                     ? team.members.edges?.filter((member) =>
-                        // @ts-expect-error
-                        Array.isArray(req.variables.membersToDelete)
-                          ? // @ts-expect-error
-                            !req.variables.membersToDelete.find(
-                              (deleted: string) => deleted === member.node.id
+                        Array.isArray(req.variables.removedIds)
+                          ? !req.variables.removedIds.find(
+                              (id) => id === member.node.id
                             )
                           : true
                       ) ?? []

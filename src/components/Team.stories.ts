@@ -44,13 +44,9 @@ Default.decorators = [
     team.id = "team-id";
     team.name = "A team name!";
     team.addMember({
-      id: "1",
-      slot: 1,
       pokemon: charmander,
     });
     team.addMember({
-      id: "2",
-      slot: 2,
       pokemon: pikachu,
       moves: [
         {
@@ -77,8 +73,6 @@ Default.decorators = [
       ],
     });
     team.addMember({
-      id: "3",
-      slot: 3,
       pokemon: haunter,
       moves: [
         {
