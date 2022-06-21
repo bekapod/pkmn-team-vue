@@ -7,9 +7,6 @@ import { useTeam, useTrainer } from "@/stores";
 
 const csf: Meta = {
   component: TeamName,
-  args: {
-    authTimeout: 0.5,
-  },
   argTypes: {
     teamRenamed: { action: "@team-renamed" },
   },

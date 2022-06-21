@@ -7,9 +7,6 @@ import { useTrainer } from "@/stores";
 
 const csf: Meta = {
   component: TeamCreator,
-  args: {
-    authTimeout: 0.5,
-  },
   argTypes: {
     teamCreated: { action: "@team-created" },
   },

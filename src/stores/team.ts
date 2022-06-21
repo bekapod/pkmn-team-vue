@@ -6,7 +6,7 @@ import { useTrainer } from "./trainer";
 import type { Team, TeamMember } from "@/data";
 import { parseTeam } from "@/data";
 import { getSdk, type UpdateTeamMutationVariables } from "@/graphql";
-import { authInstance, client } from "@/lib";
+import { client } from "@/lib";
 
 type Member = TeamMember & { isNew?: boolean };
 
@@ -83,7 +83,7 @@ export const useTeam = defineStore("team", {
 
       if (this.id) {
         try {
-          const token = await authInstance.getAccessTokenSilently();
+          const token = await this.auth.getAccessTokenSilently();
           const data = await getSdk(client).UpdateTeam(
             {
               input: {
@@ -138,7 +138,7 @@ export const useTeam = defineStore("team", {
       toasts.removeToast(successToast);
 
       try {
-        const token = await authInstance.getAccessTokenSilently();
+        const token = await this.auth.getAccessTokenSilently();
         const data = await getSdk(client).CreateTeam(
           {
             input: {
@@ -186,7 +186,7 @@ export const useTeam = defineStore("team", {
       toasts.removeToast(successToast);
 
       if (this.id) {
-        const token = await authInstance.getAccessTokenSilently();
+        const token = await this.auth.getAccessTokenSilently();
         try {
           const data = await getSdk(client).RemoveTeam(
             {
@@ -270,7 +270,7 @@ export const useTeam = defineStore("team", {
 
       if (this.dirty) {
         try {
-          const token = await authInstance.getAccessTokenSilently();
+          const token = await this.auth.getAccessTokenSilently();
           const membersToDelete: UpdateTeamMutationVariables["removedIds"] =
             this.deletedMembers;
 

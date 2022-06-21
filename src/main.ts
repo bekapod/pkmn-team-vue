@@ -5,7 +5,7 @@ import { createPinia } from "pinia";
 import { createApp } from "vue";
 import App from "./App.vue";
 import formkitConfig from "./formkit.config";
-import { authInstance, debounceActions } from "./lib";
+import { auth, authInstance, debounceActions } from "./lib";
 import router from "./router";
 
 const app = createApp(App);
@@ -30,6 +30,7 @@ app.use(router);
 
 const pinia = createPinia();
 pinia.use(debounceActions);
+pinia.use(auth);
 app.use(pinia);
 
 app.mount("#app");

@@ -1,5 +1,7 @@
 import type { PiniaPluginContext } from "pinia";
 import { debounce } from "lodash";
+import { authInstance } from "./auth";
+import { markRaw } from "vue";
 
 export const debounceActions = ({ options, store }: PiniaPluginContext) => {
   if (options.debounce) {
@@ -12,4 +14,8 @@ export const debounceActions = ({ options, store }: PiniaPluginContext) => {
       return debouncedActions;
     }, {} as Record<string, ReturnType<typeof debounce>>);
   }
+};
+
+export const auth = ({ store }: PiniaPluginContext) => {
+  store.auth0 = markRaw(authInstance);
 };

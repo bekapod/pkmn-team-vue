@@ -2,7 +2,7 @@ import * as Sentry from "@sentry/vue";
 import { defineStore } from "pinia";
 import { parseTrainer, type Trainer } from "@/data";
 import { getSdk } from "@/graphql";
-import { authInstance, client } from "@/lib";
+import { client } from "@/lib";
 
 export const useTrainer = defineStore("trainer", {
   state: () => {
@@ -15,7 +15,7 @@ export const useTrainer = defineStore("trainer", {
   actions: {
     async getMe() {
       try {
-        const token = await authInstance.getAccessTokenSilently();
+        const token = await this.auth.getAccessTokenSilently();
         const data = await getSdk(client).Me({}, { token });
         const parsedMe = parseTrainer(data.me);
         this.$state = parsedMe;
