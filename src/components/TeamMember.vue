@@ -12,7 +12,7 @@
         class="pokemon cursor-grab active:cursor-grabbing"
       />
 
-      <Menu as="div" class="relative inline-block text-left">
+      <Menu v-if="canEdit" as="div" class="relative inline-block text-left">
         <MenuButton class="icon-button icon-button--primary">
           <span class="sr-only">Open options</span>
           <DotsVerticalRoundedIcon
@@ -107,6 +107,10 @@ defineProps({
   id: {
     type: String,
     required: true,
+  },
+  canEdit: {
+    type: Boolean,
+    default: false,
   },
   pokemon: {
     type: Object as PropType<Pokemon>,

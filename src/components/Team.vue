@@ -7,6 +7,7 @@
       :key="member.id"
       v-bind="member"
       :data-testid="`team-member-${member.id}`"
+      :can-edit="team.canEdit"
       @remove="handleRemoveMember"
       @remove-move="(id, moveId) => $emit('remove-move', id, moveId)"
       class="h-[21.25rem]"
@@ -23,10 +24,17 @@
         type="button"
         class="flex h-full w-full cursor-pointer items-center justify-center rounded-br-xl border-4 border-dashed border-cool-grey-200 bg-cool-grey-100"
         @click="handleFindTeamMember"
+        v-if="team.canEdit"
       >
         <span class="sr-only">Add team member</span>
         <MehBlankIcon class="h-10 w-10 text-cool-grey-300" />
       </button>
+      <span
+        v-else
+        class="flex h-full w-full cursor-pointer items-center justify-center rounded-br-xl border-4 border-dashed border-cool-grey-200 bg-cool-grey-100"
+      >
+        <MehBlankIcon class="h-10 w-10 text-cool-grey-300" />
+      </span>
     </li>
   </ol>
 </template>

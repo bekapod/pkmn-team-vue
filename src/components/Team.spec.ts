@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen, within } from "@testing-library/vue";
-import { useTeam } from "@/stores";
+import { useTeam, useTrainer } from "@/stores";
 import {
   charmander,
   pikachu,
@@ -15,7 +15,7 @@ import Meta from "./Team.stories";
 import Team from "./Team.vue";
 import { globalPlugins } from "@/test-helpers";
 
-const setup = (props = {}) => {
+const setup = (props = {}, trainerId?: string) => {
   const team = useTeam();
   team.id = "1";
   team.name = "A team name!";
@@ -82,6 +82,9 @@ const setup = (props = {}) => {
       ],
     },
   ];
+  team.createdBy = { id: trainerId as unknown as string, username: "" };
+  const trainer = useTrainer();
+  trainer.id = trainerId;
   return render(Team, {
     props: { ...Meta.args, ...props },
     global: {
@@ -133,7 +136,7 @@ test("renders the member's moves", () => {
 });
 
 test("emits remove-member event when remove button is clicked", async () => {
-  const { emitted } = setup();
+  const { emitted } = setup({}, "TRA-123");
   expect(emitted()).not.toHaveProperty("remove-member");
   userEvent.click(screen.getAllByRole("button", { name: "Open options" })[1]);
   userEvent.click(
