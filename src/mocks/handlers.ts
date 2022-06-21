@@ -1,4 +1,5 @@
 import { charmanderFields, haunterFields, pikachuFields } from "@/data/mocks";
+import cuid from "cuid";
 import { graphql, rest } from "msw";
 import type {
   TeamByIdQuery,
@@ -128,7 +129,7 @@ export const handlers = {
                         ].find(({ id }) => id === member.pokemonId)!;
                         return {
                           node: {
-                            id: member.id!,
+                            id: member.id ?? cuid(),
                             slot: member.slot!,
                             pokemon: pokemon,
                           },

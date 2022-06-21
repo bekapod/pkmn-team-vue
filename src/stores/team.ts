@@ -297,9 +297,15 @@ export const useTeam = defineStore("team", {
           this.dirty = false;
           this.deletedMembers = [];
           toasts.addToast(successToast);
+          console.log("finished");
           return parsed.members;
-        } catch {
-          // TODO: add retry link
+        } catch (error) {
+          Sentry.captureException(error, {
+            level: "error",
+            extra: {
+              id: this.id,
+            },
+          });
           toasts.addToast(errorToast);
         }
       } else {

@@ -93,7 +93,7 @@ const setup = (props = {}) => {
 test("renders the members", () => {
   setup();
   expect(screen.getByText(/#4 charmander/i)).toBeInTheDocument();
-  expect(screen.getByText(/#25 pikachu/i)).toBeInTheDocument();
+  expect(screen.getByText(/#25 alola cap pikachu/i)).toBeInTheDocument();
   expect(screen.getByText(/#93 haunter/i)).toBeInTheDocument();
 });
 
@@ -132,11 +132,12 @@ test("renders the member's moves", () => {
   ).toBeInTheDocument();
 });
 
-test("emits remove-member event when remove button is clicked", () => {
+test("emits remove-member event when remove button is clicked", async () => {
   const { emitted } = setup();
   expect(emitted()).not.toHaveProperty("remove-member");
+  userEvent.click(screen.getAllByRole("button", { name: "Open options" })[1]);
   userEvent.click(
-    screen.getAllByRole("button", { name: "Remove team member" })[1]
+    await screen.findByRole("menuitem", { name: "Remove team member" })
   );
   expect(emitted()).toHaveProperty("remove-member", [["2"]]);
 });

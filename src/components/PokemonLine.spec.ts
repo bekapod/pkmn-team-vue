@@ -5,7 +5,10 @@ import { haunter } from "@/data/mocks";
 const setup = (props = {}) =>
   render(PokemonLine, {
     props: {
-      ...haunter,
+      pokedexId: haunter.species.pokedexId,
+      name: haunter.defaultForm.name,
+      sprite: haunter.defaultSprite,
+      types: haunter.types,
       ...props,
     },
   });

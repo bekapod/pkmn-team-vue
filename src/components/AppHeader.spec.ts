@@ -17,6 +17,7 @@ vitest.mock("@auth0/auth0-vue", () => {
       isAuthenticated: ref(false),
       error: ref(null),
     }),
+    createAuth0: vitest.fn(),
   };
 });
 
