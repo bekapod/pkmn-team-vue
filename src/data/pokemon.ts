@@ -1,14 +1,14 @@
-import {
-  MoveLearnMethod,
-  type Maybe,
-  type PokemonFieldsFragment,
-} from "@/graphql";
 import { z } from "zod";
 import { Ability, parseAbility } from "./ability";
 import { Move, parseMove } from "./move";
 import { parsePokemonForm, PokemonForm } from "./pokemon-form";
 import { parsePokemonSpecies, PokemonSpecies } from "./pokemon-species";
 import { parseType, Type } from "./type";
+import {
+  MoveLearnMethod,
+  type Maybe,
+  type PokemonFieldsFragment,
+} from "@/graphql";
 
 export const PokemonMove = z.object({
   id: z.string(),

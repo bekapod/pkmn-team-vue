@@ -1,6 +1,6 @@
-import type { PiniaPluginContext } from "pinia";
 import { debounce } from "lodash";
 import { authInstance } from "./auth";
+import type { PiniaPluginContext } from "pinia";
 
 export const debounceActions = ({ options, store }: PiniaPluginContext) => {
   if (options.debounce) {

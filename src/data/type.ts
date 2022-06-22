@@ -1,5 +1,5 @@
-import type { TypeFieldsFragment } from "@/graphql";
 import { z } from "zod";
+import type { TypeFieldsFragment } from "@/graphql";
 
 export const Type = z.object({
   id: z.string(),

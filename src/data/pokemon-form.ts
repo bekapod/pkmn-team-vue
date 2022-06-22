@@ -1,5 +1,5 @@
-import type { Maybe, PokemonFormFieldsFragment } from "@/graphql";
 import { z } from "zod";
+import type { Maybe, PokemonFormFieldsFragment } from "@/graphql";
 
 export const PokemonForm = z.object({
   id: z.string(),

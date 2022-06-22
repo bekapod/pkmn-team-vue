@@ -1,8 +1,7 @@
-import { pikachu } from "@/data/mocks";
-import { setActivePinia, createPinia, type PiniaPluginContext } from "pinia";
+import { setActivePinia, createPinia } from "pinia";
 import { createApp } from "vue";
 import { useSearch } from "./search";
-import { useTeams } from "./teams";
+import { pikachu } from "@/data/mocks";
 
 vitest.useFakeTimers();
 

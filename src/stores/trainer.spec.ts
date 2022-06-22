@@ -8,6 +8,7 @@ describe("useTrainer", () => {
     const pinia = createPinia();
     pinia.use(({ store }: PiniaPluginContext) => {
       store.auth = {
+        // eslint-disable-next-line
         // @ts-ignore
         getAccessTokenSilently: () => Promise.resolve("mock-token"),
       };

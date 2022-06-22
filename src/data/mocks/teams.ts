@@ -1,4 +1,3 @@
-import type { TeamFieldsFragment } from "@/graphql";
 import {
   charmanderFields,
   haunterFields,
@@ -7,6 +6,7 @@ import {
   pichuFields,
   pikachuFields,
 } from "./pokemon";
+import type { TeamFieldsFragment } from "@/graphql";
 
 export const teamAFields: TeamFieldsFragment = {
   id: "1",

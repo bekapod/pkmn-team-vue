@@ -1,8 +1,8 @@
 import { z } from "zod";
+import { parsePokemon } from "./pokemon";
 import { TeamMember } from "./team-member";
 import { parseTrainer, Trainer } from "./trainer";
 import type { Maybe, TeamFieldsFragment } from "@/graphql";
-import { parsePokemon } from "./pokemon";
 
 export const Team = z.object({
   id: z.string(),

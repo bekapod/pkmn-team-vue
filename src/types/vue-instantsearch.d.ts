@@ -1,6 +1,6 @@
 declare module "vue-instantsearch/vue3/es" {
-  import Vue from "vue";
   import { SearchClient } from "algoliasearch";
+  import Vue from "vue";
 
   export interface SearchItem {
     value: string;
@@ -21,7 +21,7 @@ declare module "vue-instantsearch/vue3/es" {
     | "name:desc"
     | "isRefined";
 
-  export type Sorter = SortKey[] | Function;
+  export type Sorter = SortKey[] | (() => void);
 
   export class AisAutocomplete extends Vue {
     escapeHTML?: boolean;
@@ -98,14 +98,12 @@ declare module "vue-instantsearch/vue3/es" {
 
   export class AisInstantSearch extends Vue {
     searchClient: SearchClient;
-    insightsClient?: Function;
     indexName: string;
     routing?: {
       router?: unknown;
       stateMapping?: unknown;
     };
     stalledSearchDelay?: number;
-    searchFunction?: Function;
     initialUiState?: object;
   }
 

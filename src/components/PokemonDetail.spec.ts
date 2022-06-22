@@ -1,6 +1,6 @@
-import { haunter } from "@/data/mocks";
 import { render, screen, within } from "@testing-library/vue";
 import PokemonDetail from "./PokemonDetail.vue";
+import { haunter } from "@/data/mocks";
 
 const setup = (props = {}) =>
   render(PokemonDetail, {
@@ -48,21 +48,27 @@ test("displays description", () => {
 
 test("displays stats", () => {
   setup();
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByText(/^hp/i).nextSibling).toHaveTextContent(
     haunter.hp.toString()
   );
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByText(/^sp\. atk/i).nextSibling).toHaveTextContent(
     haunter.specialAttack.toString()
   );
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByText(/^sp\. def/i).nextSibling).toHaveTextContent(
     haunter.specialDefense.toString()
   );
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByText(/^atk/i).nextSibling).toHaveTextContent(
     haunter.attack.toString()
   );
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByText(/^def/i).nextSibling).toHaveTextContent(
     haunter.defense.toString()
   );
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByText(/^spd/i).nextSibling).toHaveTextContent(
     haunter.speed.toString()
   );
@@ -76,7 +82,7 @@ test("displays abilities", () => {
   expect(
     within(
       screen.getByRole("heading", { name: "Abilities" })
-        .nextElementSibling as HTMLElement
+        .nextElementSibling as HTMLElement // eslint-disable-line testing-library/no-node-access
     ).getAllByRole("listitem")
   ).toHaveLength(haunter.abilities.length);
   expect(
@@ -90,7 +96,7 @@ test("displays moves", () => {
   expect(
     within(
       screen.getByRole("heading", { name: "Moves" })
-        .nextElementSibling as HTMLElement
+        .nextElementSibling as HTMLElement // eslint-disable-line testing-library/no-node-access
     ).getAllByRole("listitem")
   ).toHaveLength(haunter.moves.length);
   expect(screen.getByText(haunter.moves[0].move.name)).toBeInTheDocument();

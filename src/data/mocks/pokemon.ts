@@ -1,7 +1,7 @@
 import { parsePokemon, type Pokemon } from "../pokemon";
+import { parsePokemonForm, type PokemonForm } from "../pokemon-form";
 import { parsePokemonSpecies, type PokemonSpecies } from "../pokemon-species";
 import type { PokemonFieldsFragment } from "@/graphql";
-import { parsePokemonForm, type PokemonForm } from "../pokemon-form";
 
 export const charmanderFields = {
   id: "POKcl2hi363o0ve322xf1k8a38zo",

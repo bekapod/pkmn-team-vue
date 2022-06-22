@@ -2,6 +2,7 @@ import { server } from "@/mocks/server";
 import "@testing-library/jest-dom";
 import "isomorphic-fetch";
 
+// eslint-disable-next-line
 // @ts-ignore
 window.scrollTo = vitest.fn();
 
@@ -9,6 +10,7 @@ beforeAll(() => {
   server.listen({ onUnhandledRequest: "error" });
   server.events.on("request:start", (req) => {
     const { id } = req;
+    // eslint-disable-next-line
     // @ts-ignore
     window.allMswRequests.set(id, req);
   });
@@ -20,6 +22,7 @@ beforeEach(() => {
 
   document.body.appendChild(toastTeleportTarget);
 
+  // eslint-disable-next-line
   // @ts-ignore
   window.allMswRequests = new Map();
 });

@@ -1,5 +1,5 @@
-import type { AbilityFieldsFragment } from "@/graphql";
 import { z } from "zod";
+import type { AbilityFieldsFragment } from "@/graphql";
 
 export const Ability = z.object({
   id: z.string(),

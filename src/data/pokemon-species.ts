@@ -1,3 +1,4 @@
+import { z } from "zod";
 import {
   Color,
   Habitat,
@@ -5,7 +6,6 @@ import {
   type Maybe,
   type PokemonSpeciesFieldsFragment,
 } from "@/graphql";
-import { z } from "zod";
 
 export const PokemonSpecies = z.object({
   id: z.string(),

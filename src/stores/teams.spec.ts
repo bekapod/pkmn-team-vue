@@ -1,10 +1,5 @@
-import { setActivePinia, createPinia, type PiniaPluginContext } from "pinia";
+import { setActivePinia, createPinia } from "pinia";
 import { createApp } from "vue";
-import { haunter } from "@/data/mocks";
-import { debounceActions } from "@/lib";
-import { useTeam } from "./team";
-import { useTrainer } from "./trainer";
-import { waitFor } from "@testing-library/vue";
 import { useTeams } from "./teams";
 
 vitest.useFakeTimers();

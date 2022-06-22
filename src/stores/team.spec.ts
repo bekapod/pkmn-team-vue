@@ -1,10 +1,10 @@
+import { waitFor } from "@testing-library/vue";
 import { setActivePinia, createPinia, type PiniaPluginContext } from "pinia";
 import { createApp } from "vue";
-import { haunter } from "@/data/mocks";
-import { debounceActions } from "@/lib";
 import { useTeam } from "./team";
 import { useTrainer } from "./trainer";
-import { waitFor } from "@testing-library/vue";
+import { haunter } from "@/data/mocks";
+import { debounceActions } from "@/lib";
 
 vitest.useFakeTimers();
 
@@ -14,6 +14,7 @@ describe("useTeam", () => {
     const pinia = createPinia();
     pinia.use(debounceActions);
     pinia.use(({ store }: PiniaPluginContext) => {
+      // eslint-disable-next-line
       // @ts-ignore
       store.auth = {
         getAccessTokenSilently: vitest.fn().mockReturnValue("mock-token"),
@@ -72,6 +73,7 @@ describe("useTeam", () => {
     expect(team.dirty).toEqual(true);
     vitest.runAllTimers();
     expect(team.id).toEqual("team-id");
+    // eslint-disable-next-line
     // @ts-ignore
     await waitFor(() => expect(window.allMswRequests.size).toBe(2));
     expect(team.members).toEqual([

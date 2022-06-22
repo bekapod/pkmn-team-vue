@@ -1,15 +1,7 @@
-import {
-  charmanderFields,
-  haunterFields,
-  hoOhFields,
-  jirachiFields,
-  pichuFields,
-  pikachuFields,
-  teamAFields,
-  teamBFields,
-} from "@/data/mocks";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import cuid from "cuid";
 import { graphql, rest } from "msw";
+import algoliaMock from "./algolia.json";
 import type {
   TeamByIdQuery,
   TeamByIdQueryVariables,
@@ -20,7 +12,16 @@ import type {
   PokemonByIdQuery,
   PokemonByIdQueryVariables,
 } from "../graphql";
-import algoliaMock from "./algolia.json";
+import {
+  charmanderFields,
+  haunterFields,
+  hoOhFields,
+  jirachiFields,
+  pichuFields,
+  pikachuFields,
+  teamAFields,
+  teamBFields,
+} from "@/data/mocks";
 
 export const handlers = {
   me: [
@@ -165,7 +166,7 @@ export const handlers = {
     ),
   ],
   algolia: [
-    rest.post("https://*.algolia*", (req, res, ctx) => {
+    rest.post("https://*.algolia*", (_req, res, ctx) => {
       return res(ctx.json(algoliaMock));
     }),
   ],

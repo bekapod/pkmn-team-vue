@@ -1,9 +1,9 @@
 import * as Sentry from "@sentry/vue";
 import { defineStore } from "pinia";
-import { parsePokemon, parseTrainer, Pokemon, type Trainer } from "@/data";
+import { useToasts } from "./toasts";
+import { parsePokemon, Pokemon } from "@/data";
 import { getSdk, type Maybe } from "@/graphql";
 import { client } from "@/lib";
-import { useToasts } from "./toasts";
 
 type SearchState = {
   selectedPokemon: Maybe<Pokemon>;

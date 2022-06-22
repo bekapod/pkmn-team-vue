@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
-import { render, screen, waitFor, within } from "@testing-library/vue";
-import { useTeam, useTrainer } from "@/stores";
+import { render, screen, within } from "@testing-library/vue";
+import Meta from "./Team.stories";
+import Team from "./Team.vue";
 import {
   charmander,
   pikachu,
@@ -11,8 +12,7 @@ import {
   rest,
 } from "@/data/mocks";
 import { MoveLearnMethod } from "@/graphql";
-import Meta from "./Team.stories";
-import Team from "./Team.vue";
+import { useTeam, useTrainer } from "@/stores";
 import { globalPlugins } from "@/test-helpers";
 
 const setup = (props = {}, trainerId?: string) => {

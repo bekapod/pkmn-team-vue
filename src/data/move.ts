@@ -1,11 +1,6 @@
 import { z } from "zod";
 import { parseType, Type } from "./type";
-import {
-  DamageClass,
-  MoveLearnMethod,
-  MoveTarget,
-  type MoveFieldsFragment,
-} from "@/graphql";
+import { DamageClass, MoveTarget, type MoveFieldsFragment } from "@/graphql";
 
 export const Move = z.object({
   id: z.string(),

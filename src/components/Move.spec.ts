@@ -1,7 +1,7 @@
-import { explosion, substitute } from "@/data/mocks";
-import { MoveLearnMethod } from "@/graphql";
 import { render, screen } from "@testing-library/vue";
 import Move from "./Move.vue";
+import { explosion, substitute } from "@/data/mocks";
+import { MoveLearnMethod } from "@/graphql";
 
 const setup = (props = {}) =>
   render(Move, {
@@ -18,6 +18,7 @@ test("renders move name", () => {
 
 test("renders move effect", () => {
   setup();
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   expect(screen.getByText(substitute.effect!)).toBeInTheDocument();
 });
 
@@ -29,6 +30,7 @@ test("renders move effect with effect chance", () => {
 test("adds type gradient", () => {
   setup();
   expect(
+    // eslint-disable-next-line testing-library/no-node-access
     screen.getByText(substitute.name).parentElement?.parentElement
   ).toHaveStyle({
     "--type-gradient":
@@ -44,10 +46,14 @@ test("renders move types", () => {
 
 test("renders move power & accuracy", () => {
   setup(explosion);
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByTitle("Power").nextElementSibling).toHaveTextContent(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
     explosion.power?.toString()!
   );
+  // eslint-disable-next-line testing-library/no-node-access
   expect(screen.getByTitle("Accuracy").nextElementSibling).toHaveTextContent(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
     explosion.accuracy?.toString()!
   );
 });

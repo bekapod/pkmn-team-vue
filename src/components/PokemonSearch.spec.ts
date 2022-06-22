@@ -1,9 +1,9 @@
-import { pikachu } from "@/data/mocks";
-import { useSearch } from "@/stores";
-import { globalPlugins } from "@/test-helpers";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
 import PokemonSearch from "./PokemonSearch.vue";
+import { pikachu } from "@/data/mocks";
+import { useSearch } from "@/stores";
+import { globalPlugins } from "@/test-helpers";
 
 const setup = () => {
   return render(PokemonSearch, {
