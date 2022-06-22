@@ -2,6 +2,9 @@ import { server } from "@/mocks/server";
 import "@testing-library/jest-dom";
 import "isomorphic-fetch";
 
+// @ts-ignore
+window.scrollTo = vitest.fn();
+
 beforeAll(() => {
   server.listen({ onUnhandledRequest: "error" });
   server.events.on("request:start", (req) => {

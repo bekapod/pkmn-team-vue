@@ -54,6 +54,12 @@ describe("useTeam", () => {
     expect(team.canEdit).toBe(false);
   });
 
+  test.todo("marks team member for deletion");
+
+  test.todo("doesn't mark new team member for deletion");
+
+  test.todo("adds new team member with id & order");
+
   test.skip("updating team members", async () => {
     const team = useTeam();
     await team.get("team-id");

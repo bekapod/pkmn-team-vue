@@ -1,4 +1,13 @@
-import { charmanderFields, haunterFields, pikachuFields } from "@/data/mocks";
+import {
+  charmanderFields,
+  haunterFields,
+  hoOhFields,
+  jirachiFields,
+  pichuFields,
+  pikachuFields,
+  teamAFields,
+  teamBFields,
+} from "@/data/mocks";
 import cuid from "cuid";
 import { graphql, rest } from "msw";
 import type {
@@ -6,40 +15,12 @@ import type {
   TeamByIdQueryVariables,
   UpdateTeamMutation,
   UpdateTeamMutationVariables,
-  TeamFieldsFragment,
+  AllTeamsQuery,
+  AllTeamsQueryVariables,
+  PokemonByIdQuery,
+  PokemonByIdQueryVariables,
 } from "../graphql";
 import algoliaMock from "./algolia.json";
-
-const team: TeamFieldsFragment = {
-  __typename: "Team" as const,
-  id: "1",
-  name: "A team name!",
-  createdAt: new Date(Date.now()).toISOString(),
-  createdBy: {
-    __typename: "Trainer" as const,
-    id: "TRA123",
-    username: "A user",
-    picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
-  },
-  members: {
-    edges: [
-      {
-        node: {
-          id: "1",
-          slot: 1,
-          pokemon: pikachuFields,
-        },
-      },
-      {
-        node: {
-          id: "2",
-          slot: 2,
-          pokemon: haunterFields,
-        },
-      },
-    ],
-  },
-};
 
 export const handlers = {
   me: [
@@ -56,13 +37,49 @@ export const handlers = {
       );
     }),
   ],
+  allTeams: [
+    graphql.query<AllTeamsQuery, AllTeamsQueryVariables>(
+      "AllTeams",
+      (_req, res, ctx) => {
+        return res(
+          ctx.data({
+            teams: {
+              edges: [{ node: teamAFields }, { node: teamBFields }],
+            },
+          })
+        );
+      }
+    ),
+  ],
   teamById: [
     graphql.query<TeamByIdQuery, TeamByIdQueryVariables>(
       "TeamById",
       (req, res, ctx) => {
+        const teamFields =
+          req.variables.id === teamBFields.id ? teamBFields : teamAFields;
         return res(
           ctx.data({
-            team: { ...team, id: req.variables.id },
+            team: { ...teamFields, id: req.variables.id },
+          })
+        );
+      }
+    ),
+  ],
+  pokemonById: [
+    graphql.query<PokemonByIdQuery, PokemonByIdQueryVariables>(
+      "PokemonById",
+      (req, res, ctx) => {
+        const pokemon = {
+          [pikachuFields.id]: pikachuFields,
+          [charmanderFields.id]: charmanderFields,
+          [haunterFields.id]: haunterFields,
+          [jirachiFields.id]: jirachiFields,
+          [hoOhFields.id]: hoOhFields,
+          [pichuFields.id]: pichuFields,
+        };
+        return res(
+          ctx.data({
+            pokemonOne: pokemon[req.variables.id],
           })
         );
       }
@@ -96,6 +113,9 @@ export const handlers = {
     graphql.mutation<UpdateTeamMutation, UpdateTeamMutationVariables>(
       "UpdateTeam",
       (req, res, ctx) => {
+        const teamFields =
+          req.variables.input.id === teamBFields.id ? teamBFields : teamAFields;
+
         return res(
           ctx.data({
             removeTeamMembers: Array.isArray(req.variables.removedIds)
@@ -106,13 +126,13 @@ export const handlers = {
             updateTeam: {
               __typename: "Team",
               id: req.variables.input.id,
-              name: req.variables.input.name ?? team.name,
+              name: req.variables.input.name ?? teamFields.name,
               createdAt: new Date(Date.now()).toISOString(),
-              createdBy: team.createdBy,
+              createdBy: teamFields.createdBy,
               members: {
                 edges: [
                   ...(!req.variables.input.members
-                    ? team.members.edges?.filter((member) =>
+                    ? teamFields.members.edges?.filter((member) =>
                         Array.isArray(req.variables.removedIds)
                           ? !req.variables.removedIds.find(
                               (id) => id === member.node.id

@@ -36,8 +36,9 @@
               'col-span-3': isBadgesRoomy,
               'col-span-1': !isBadgesRoomy,
             }"
-            >{{ genus }}</span
           >
+            {{ genus }}
+          </span>
           <span
             class="badge bg-yellow-vivid-100"
             :class="{

@@ -1,5 +1,5 @@
 import userEvent from "@testing-library/user-event";
-import { render, screen, within } from "@testing-library/vue";
+import { render, screen, waitFor, within } from "@testing-library/vue";
 import { useTeam, useTrainer } from "@/stores";
 import {
   charmander,
@@ -85,12 +85,15 @@ const setup = (props = {}, trainerId?: string) => {
   team.createdBy = { id: trainerId as unknown as string, username: "" };
   const trainer = useTrainer();
   trainer.id = trainerId;
-  return render(Team, {
-    props: { ...Meta.args, ...props },
-    global: {
-      plugins: globalPlugins,
-    },
-  });
+  return {
+    team,
+    ...render(Team, {
+      props: { ...Meta.args, ...props },
+      global: {
+        plugins: globalPlugins,
+      },
+    }),
+  };
 };
 
 test("renders the members", () => {
@@ -135,14 +138,36 @@ test("renders the member's moves", () => {
   ).toBeInTheDocument();
 });
 
+test("does not allow editing", async () => {
+  setup();
+  expect(
+    screen.queryByRole("button", { name: "Open options" })
+  ).not.toBeInTheDocument();
+  expect(
+    screen.queryByRole("button", { name: "Add team member" })
+  ).not.toBeInTheDocument();
+});
+
 test("emits remove-member event when remove button is clicked", async () => {
-  const { emitted } = setup({}, "TRA-123");
+  const { emitted, team } = setup({}, "TRA-123");
+  vitest.spyOn(team, "removeMember");
   expect(emitted()).not.toHaveProperty("remove-member");
   userEvent.click(screen.getAllByRole("button", { name: "Open options" })[1]);
   userEvent.click(
     await screen.findByRole("menuitem", { name: "Remove team member" })
   );
   expect(emitted()).toHaveProperty("remove-member", [["2"]]);
+  expect(team.removeMember).toHaveBeenCalledWith("2");
+});
+
+test("emits find-member event when empty spot is clicked", async () => {
+  const { emitted, team } = setup({}, "TRA-123");
+  expect(emitted()).not.toHaveProperty("find-member");
+  userEvent.click(
+    screen.getAllByRole("button", { name: "Add team member" })[0]
+  );
+  expect(emitted()).toHaveProperty("find-member");
+  expect(team.isFindingMember).toBe(true);
 });
 
 test("emits remove-move event when remove button on move is clicked", () => {

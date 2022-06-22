@@ -38,3 +38,8 @@ test("adds outdent", () => {
   // eslint-disable-next-line testing-library/no-node-access
   expect(container.firstChild).toHaveStyle({ "--outdent": "1rem" });
 });
+
+test("can render name as alternative element", () => {
+  setup({ nameAs: "h1" });
+  expect(screen.getByRole("heading")).toBeInTheDocument();
+});

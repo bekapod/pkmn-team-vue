@@ -203,7 +203,6 @@ import PokemonDetail from "@/components/PokemonDetail.vue";
 import PokemonLine from "@/components/PokemonLine.vue";
 import { parsePokemon } from "@/data";
 import { useSearch } from "@/stores";
-import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 
 const searchClient = algoliasearch(
   "VKYNMD4NA5",

@@ -22,6 +22,12 @@ Sentry.init({
     }),
   ],
   tracesSampleRate: 1.0,
+  beforeSend: (event) => {
+    if (import.meta.env.DEV) {
+      console.error(event);
+    }
+    return event;
+  },
 });
 app.use(authInstance);
 app.use(createPinia());
