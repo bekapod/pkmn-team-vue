@@ -38,7 +38,7 @@ export const teamAFields: TeamFieldsFragment = {
 };
 
 export const teamBFields: TeamFieldsFragment = {
-  id: "1",
+  id: "2",
   name: "Team B",
   createdAt: new Date(Date.now()).toISOString(),
   createdBy: {
