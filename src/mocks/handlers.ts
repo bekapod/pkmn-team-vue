@@ -143,16 +143,19 @@ export const handlers = {
                     : []),
                   ...(Array.isArray(req.variables.input.members)
                     ? req.variables.input.members.map((member) => {
-                        const pokemon = [
-                          pikachuFields,
-                          haunterFields,
-                          charmanderFields,
-                        ].find(({ id }) => id === member.pokemonId)!;
+                        const pokemon = {
+                          [pikachuFields.id]: pikachuFields,
+                          [charmanderFields.id]: charmanderFields,
+                          [haunterFields.id]: haunterFields,
+                          [jirachiFields.id]: jirachiFields,
+                          [hoOhFields.id]: hoOhFields,
+                          [pichuFields.id]: pichuFields,
+                        };
                         return {
                           node: {
                             id: member.id ?? cuid(),
                             slot: member.slot!,
-                            pokemon: pokemon,
+                            pokemon: pokemon[member.pokemonId!],
                           },
                         };
                       })
