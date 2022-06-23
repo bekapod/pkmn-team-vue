@@ -1,5 +1,6 @@
 import { defineConfig } from "cypress";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config({ path: ".env.test" });
 
 export default defineConfig({

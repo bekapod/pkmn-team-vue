@@ -23,7 +23,7 @@ describe("Teams", () => {
     );
     cy.findByRole("button", { name: /update/i }).click();
     cy.findByRole("heading", { name: /a new team name/i }).should("exist");
-    cy.findByRole("status", { name: /team saved/i }).should("exist");
+    cy.findByRole("status", { name: /team name updated/i }).should("exist");
   });
 
   it("allows searching for new team member", () => {

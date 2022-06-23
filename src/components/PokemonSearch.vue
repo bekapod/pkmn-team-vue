@@ -1,6 +1,6 @@
 <template>
   <AisInstantSearch
-    index-name="local_pokemon"
+    :index-name="indexName"
     :search-client="searchClient"
     class="absolute flex h-full w-full flex-col"
   >
@@ -233,6 +233,8 @@ const filters = computed(() =>
     .filter((filter) => !!filter)
     .join(" AND ")
 );
+
+const indexName = import.meta.env.PROD ? "prod_pokemon" : "local_pokemon";
 </script>
 
 <style scoped>
