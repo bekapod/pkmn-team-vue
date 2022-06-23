@@ -205,8 +205,8 @@ import { parsePokemon } from "@/data";
 import { useSearch } from "@/stores";
 
 const searchClient = algoliasearch(
-  "VKYNMD4NA5",
-  "1c91614f37171fde89fef019bd5dddd0"
+  import.meta.env.VITE_ALGOLIA_APP_ID,
+  import.meta.env.VITE_ALGOLIA_SEARCH_KEY
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
