@@ -2,16 +2,26 @@ import { createAuth0 } from "@auth0/auth0-vue";
 import { app } from "@storybook/vue3";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { plugin as formkitPlugin, defaultConfig } from "@formkit/vue";
-import { createPinia } from "pinia";
+import { createPinia, type PiniaPluginContext } from "pinia";
 import formkitConfig from "@/formkit.config";
 import { useToasts, useTeam, useTeams } from "@/stores";
+import { debounceActions } from "@/lib";
 import vueRouter from "storybook-vue3-router";
 import { initialize, mswDecorator } from "msw-storybook-addon";
+import type { DecoratorFunction } from "@storybook/csf";
 import "../src/assets/base.css";
+import { handlers } from "@/mocks/handlers";
 
 initialize();
 
 const pinia = createPinia();
+pinia.use(debounceActions);
+pinia.use(({ store }: PiniaPluginContext) => {
+  store.auth = {
+    // @ts-ignore
+    getAccessTokenSilently: () => Promise.resolve("mock-token"),
+  };
+});
 app.use(pinia);
 
 app.use(formkitPlugin, defaultConfig({ config: formkitConfig }));
@@ -25,7 +35,7 @@ app.use(
   })
 );
 
-export const decorators = [
+export const decorators: DecoratorFunction[] = [
   mswDecorator,
   vueRouter(),
   (story) => {
@@ -49,6 +59,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  msw: {
+    handlers,
   },
   viewport: {
     viewports: {

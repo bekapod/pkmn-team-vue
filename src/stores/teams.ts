@@ -10,7 +10,7 @@ export const useTeams = defineStore("teams", {
     return { list: [] as Team[] };
   },
   actions: {
-    async getTeams() {
+    async get() {
       try {
         const data = await getSdk(client).AllTeams();
         const parsedTeams =

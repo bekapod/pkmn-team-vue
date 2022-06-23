@@ -5,16 +5,20 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    />
   </head>
   <body>
     <div id="app"></div>
     <div
       aria-live="assertive"
-      class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
+      class="pointer-events-none fixed inset-0 z-20 flex items-end px-4 py-6 sm:items-start sm:p-6"
     >
       <div
         id="toast-teleport-target"
-        class="w-full flex flex-col items-center space-y-4"
+        class="flex w-full flex-col items-center space-y-4"
       ></div>
     </div>
     <script type="module" src="/src/main.ts"></script>

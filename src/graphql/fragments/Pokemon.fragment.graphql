@@ -1,17 +1,16 @@
 fragment pokemonFields on Pokemon {
   id
-  isDefault
   slug
   attack
   defense
   specialAttack
   specialDefense
   speed
-  height
-  weight
   hp
+  isDefault
   abilities {
     edges {
+      id: cursor
       slot
       isHidden
       node {
@@ -19,9 +18,13 @@ fragment pokemonFields on Pokemon {
       }
     }
   }
-  moves {
+  types {
     edges {
-      ...pokemonMoveFields
+      id: cursor
+      slot
+      node {
+        ...typeFields
+      }
     }
   }
   forms {
@@ -29,6 +32,24 @@ fragment pokemonFields on Pokemon {
       node {
         ...pokemonFormFields
       }
+    }
+  }
+  moves {
+    edges {
+      id: cursor
+      learnMethod
+      levelLearnedAt
+      node {
+        ...moveFields
+      }
+    }
+  }
+  species {
+    ...pokemonSpeciesFields
+  }
+  sprites {
+    frontDefault {
+      path
     }
   }
 }

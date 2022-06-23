@@ -15,7 +15,8 @@ test("renders the move title", () => {
 
 test("adds type gradient", () => {
   setup();
-  expect(screen.getByText("Explosion")).toHaveStyle({
+  // eslint-disable-next-line testing-library/no-node-access
+  expect(screen.getByText("Explosion").parentElement).toHaveStyle({
     "--type-gradient":
       "linear-gradient(90deg, var(--colors-physical) 0%, var(--colors-physical) 50%, var(--colors-normal) 50%, var(--colors-normal) 100%)",
   });

@@ -32,7 +32,7 @@ import { useTeams } from "@/stores";
 const teams = useTeams();
 
 const fetchTeams = async () => {
-  const res = await teams.getTeams();
+  const res = await teams.get();
   if (res.error) {
     error.value = res.error;
   }

@@ -5,6 +5,7 @@ require("@rushstack/eslint-patch/modern-module-resolution");
  * @type {import('@types/eslint').Linter.BaseConfig}
  */
 module.exports = {
+  reportUnusedDisableDirectives: true,
   root: true,
   extends: [
     "plugin:vue/vue3-essential",

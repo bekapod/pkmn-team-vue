@@ -10,16 +10,7 @@ fragment moveFields on Move {
   pp
   target
   type {
-    ...moveTypeFields
-  }
-}
-
-fragment pokemonMoveFields on PokemonMoveEdge {
-  id: cursor
-  learnMethod
-  levelLearnedAt
-  node {
-    ...moveFields
+    ...typeFields
   }
 }
 

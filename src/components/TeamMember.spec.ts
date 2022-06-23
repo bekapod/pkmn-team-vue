@@ -38,10 +38,20 @@ test("renders the pokemon's moves", () => {
   expect(screen.getByRole("listitem", { name: /rest/i })).toBeInTheDocument();
 });
 
-test("emits remove event when remove button is clicked", () => {
-  const { emitted } = setup();
+test("does not render options when not editable", async () => {
+  setup();
+  expect(
+    screen.queryByRole("button", { name: "Open options" })
+  ).not.toBeInTheDocument();
+});
+
+test("emits remove event when remove button is clicked", async () => {
+  const { emitted } = setup({ canEdit: true });
   expect(emitted()).not.toHaveProperty("remove");
-  userEvent.click(screen.getByRole("button", { name: "Remove team member" }));
+  userEvent.click(screen.getByRole("button", { name: "Open options" }));
+  userEvent.click(
+    await screen.findByRole("menuitem", { name: "Remove team member" })
+  );
   expect(emitted()).toHaveProperty("remove", [[Meta.args?.id]]);
 });
 

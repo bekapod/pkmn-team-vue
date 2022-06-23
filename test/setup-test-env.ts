@@ -2,13 +2,29 @@ import { server } from "@/mocks/server";
 import "@testing-library/jest-dom";
 import "isomorphic-fetch";
 
-beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
+// eslint-disable-next-line
+// @ts-ignore
+window.scrollTo = vitest.fn();
+
+beforeAll(() => {
+  server.listen({ onUnhandledRequest: "error" });
+  server.events.on("request:start", (req) => {
+    const { id } = req;
+    // eslint-disable-next-line
+    // @ts-ignore
+    window.allMswRequests.set(id, req);
+  });
+});
 
 beforeEach(() => {
   const toastTeleportTarget = document.createElement("div");
   toastTeleportTarget.setAttribute("id", "toast-teleport-target");
 
   document.body.appendChild(toastTeleportTarget);
+
+  // eslint-disable-next-line
+  // @ts-ignore
+  window.allMswRequests = new Map();
 });
 
 afterEach(() => {

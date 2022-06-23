@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
-type Toast = {
-  type: "success" | "error";
+export type Toast = {
+  type: "success" | "error" | "loading";
   title: string;
   content: string;
 };

@@ -7,9 +7,6 @@ import { useTeam, useTrainer } from "@/stores";
 
 const csf: Meta = {
   component: TeamName,
-  args: {
-    authTimeout: 0.5,
-  },
   argTypes: {
     teamRenamed: { action: "@team-renamed" },
   },
@@ -47,30 +44,33 @@ const Template: Story = ({ teamRenamed, ...args }) => ({
 export const DefaultBehaviour = Template.bind({});
 DefaultBehaviour.parameters = {
   msw: {
-    handlers: [
-      graphql.mutation("UpdateTeam", (req, res, ctx) => {
-        return res(
-          ctx.data({
-            updateTeam: {
-              __typename: "Team",
-              id: req.variables.input.id,
-              name: req.variables.input.name,
-              createdAt: new Date(Date.now()).toISOString(),
-              updatedAt: new Date(Date.now()).toISOString(),
-              members: {
-                edges: [],
+    handlers: {
+      updateTeam: [
+        graphql.mutation("UpdateTeam", (req, res, ctx) => {
+          return res(
+            ctx.data({
+              updateTeam: {
+                __typename: "Team",
+                id: req.variables.input.id,
+                name: req.variables.input.name,
+                createdAt: new Date(Date.now()).toISOString(),
+                updatedAt: new Date(Date.now()).toISOString(),
+                members: {
+                  edges: [],
+                },
+                createdBy: {
+                  __typename: "Trainer",
+                  id: "TRA123",
+                  username: "A user",
+                  picture:
+                    "https://placey.bekapod.codes/g/120/120/ffffff/000000",
+                },
               },
-              createdBy: {
-                __typename: "Trainer",
-                id: "TRA123",
-                username: "A user",
-                picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
-              },
-            },
-          })
-        );
-      }),
-    ],
+            })
+          );
+        }),
+      ],
+    },
   },
 };
 DefaultBehaviour.play = async () => {
@@ -97,11 +97,13 @@ InvalidState.play = async () => {
 export const LoadingState = Template.bind({});
 LoadingState.parameters = {
   msw: {
-    handlers: [
-      graphql.mutation("UpdateTeam", (_req, res, ctx) => {
-        return res(ctx.delay("infinite"));
-      }),
-    ],
+    handlers: {
+      updateTeam: [
+        graphql.mutation("UpdateTeam", (_req, res, ctx) => {
+          return res(ctx.delay("infinite"));
+        }),
+      ],
+    },
   },
 };
 LoadingState.play = async () => {
@@ -112,18 +114,20 @@ LoadingState.play = async () => {
 export const ErrorState = Template.bind({});
 ErrorState.parameters = {
   msw: {
-    handlers: [
-      graphql.mutation("UpdateTeam", (_req, res, ctx) => {
-        return res(
-          ctx.errors([
-            {
-              message: "error updating the team",
-              path: ["updateTeam"],
-            },
-          ])
-        );
-      }),
-    ],
+    handlers: {
+      updateTeam: [
+        graphql.mutation("UpdateTeam", (_req, res, ctx) => {
+          return res(
+            ctx.errors([
+              {
+                message: "error updating the team",
+                path: ["updateTeam"],
+              },
+            ])
+          );
+        }),
+      ],
+    },
   },
 };
 ErrorState.play = async () => {

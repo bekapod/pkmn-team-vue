@@ -1,25 +1,28 @@
 <template>
-  <li class="relative list-none" :aria-labelledby="`team-member-move-${id}`">
-    <span
-      :id="`team-member-move-${id}`"
-      class="team-member-move-template relative block cursor-grab rounded-br-lg bg-cool-grey-50 p-4 text-sm font-bold uppercase leading-none text-indigo-900 active:cursor-grabbing"
-      :style="{
+  <li
+    class="with-type-gradient relative flex list-none items-center justify-between overflow-hidden rounded-tl-lg rounded-br-lg bg-cool-grey-50 px-3 pb-1 pt-3"
+    :aria-labelledby="`team-member-move-${id}`"
+    :style="{
         '--type-gradient': getTypeGradient(
           damageClass
             ? [damageClass.toLowerCase(), type.slug]
             : [type.slug]
         ),
       } as any"
+  >
+    <span
+      :id="`team-member-move-${id}`"
+      class="block cursor-grab text-sm font-bold text-indigo-900 active:cursor-grabbing"
     >
       {{ name }}
     </span>
 
     <button
-      class="absolute top-1/2 right-3 -translate-y-1/2 transform rounded-md text-indigo-900 hover:text-red-vivid-400 focus-visible:outline-red-vivid-400"
+      class="icon-button icon-button--destructive bg-[transparent] hover:bg-red-vivid-50"
       @click="$emit('remove', id)"
     >
       <span class="sr-only">Remove move</span>
-      <TrashIcon aria-hidden="true" class="h-5 w-5" />
+      <TrashIcon aria-hidden="true" class="icon-button__icon" />
     </button>
   </li>
 </template>
@@ -38,16 +41,16 @@ defineProps({
   },
   damageClass: {
     type: String as PropType<DamageClass>,
-    required: true,
+    required: false,
     validator: (val: DamageClass) => {
       return Object.values(DamageClass).includes(val);
     },
   },
   type: {
-    type: Object as PropType<Omit<Type, "slot">>,
+    type: Object as PropType<Type>,
     required: true,
     validator: (val: unknown) => {
-      return Type.omit({ slot: true }).safeParse(val).success;
+      return Type.safeParse(val).success;
     },
   },
   name: {
@@ -60,3 +63,9 @@ defineEmits<{
   (e: "remove", id: string): void;
 }>();
 </script>
+
+<style scoped>
+.with-type-gradient::before {
+  top: 0;
+}
+</style>

@@ -2,7 +2,7 @@ import { normal, psychic } from "./types";
 import type { Move } from "../move";
 import { DamageClass, MoveTarget } from "@/graphql";
 
-export const substitute: Move = {
+export const substitute: Omit<Move, "learnMethod" | "levelLearnedAt"> = {
   id: "623bcd4a-da0d-4b47-9b4b-96601d465cc1",
   name: "Substitute",
   slug: "substitute",
@@ -14,7 +14,7 @@ export const substitute: Move = {
     "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks.",
 };
 
-export const slash: Move = {
+export const slash: Omit<Move, "learnMethod" | "levelLearnedAt"> = {
   id: "38335f1b-6c2c-4e63-b046-d9c57edb2501",
   name: "Slash",
   slug: "slash",
@@ -27,7 +27,7 @@ export const slash: Move = {
   effect: "Has an increased chance for a critical hit.",
 };
 
-export const rest: Move = {
+export const rest: Omit<Move, "learnMethod" | "levelLearnedAt"> = {
   id: "b85adec9-3993-436e-b5bd-78056a14c617",
   name: "Rest",
   slug: "rest",
@@ -38,7 +38,7 @@ export const rest: Move = {
   effect: "User sleeps for two turns, completely healing itself.",
 };
 
-export const flash: Move = {
+export const flash: Omit<Move, "learnMethod" | "levelLearnedAt"> = {
   id: "44560082-e180-4a5c-9e65-ceb8251935c6",
   name: "Flash",
   slug: "flash",
@@ -50,7 +50,7 @@ export const flash: Move = {
   effect: "Lowers the target's accuracy by one stage.",
 };
 
-export const explosion: Move = {
+export const explosion: Omit<Move, "learnMethod" | "levelLearnedAt"> = {
   id: "226c7a31-fcbd-4557-b432-8abe86767879",
   name: "Explosion",
   slug: "explosion",

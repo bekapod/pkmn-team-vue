@@ -38,11 +38,7 @@ const csf: Meta = {
   },
 };
 
-export const Default: Story = ({
-  remove,
-  "remove-move": removeMove,
-  ...args
-}) => ({
+const Template: Story = ({ remove, "remove-move": removeMove, ...args }) => ({
   components: { TeamMember },
   setup() {
     return { args, remove, removeMove };
@@ -51,5 +47,10 @@ export const Default: Story = ({
     <ul class="list-none"><TeamMember v-bind="args" @remove="remove" @remove-move="removeMove" /></ul>
   `,
 });
+
+export const Default = Template.bind({});
+
+export const Editable = Template.bind({});
+Editable.args = { canEdit: true };
 
 export default csf;

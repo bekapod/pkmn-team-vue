@@ -5,7 +5,10 @@ import { haunter } from "@/data/mocks";
 const setup = (props = {}) =>
   render(PokemonLine, {
     props: {
-      ...haunter,
+      pokedexId: haunter.species.pokedexId,
+      name: haunter.defaultForm.name,
+      sprite: haunter.defaultSprite,
+      types: haunter.types,
       ...props,
     },
   });
@@ -34,4 +37,9 @@ test("adds outdent", () => {
   const { container } = setup({ outdent: "1rem" });
   // eslint-disable-next-line testing-library/no-node-access
   expect(container.firstChild).toHaveStyle({ "--outdent": "1rem" });
+});
+
+test("can render name as alternative element", () => {
+  setup({ nameAs: "h1" });
+  expect(screen.getByRole("heading")).toBeInTheDocument();
 });

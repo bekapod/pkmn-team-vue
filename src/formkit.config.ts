@@ -4,7 +4,7 @@ const config: Partial<FormKitConfig> = {
   rootClasses(sectionKey, node) {
     const classConfig: Record<string, string | (() => string | undefined)> = {
       outer() {
-        if (["text"].includes(node.props.type)) {
+        if (["text", "search"].includes(node.props.type)) {
           return "flex flex-col";
         }
       },
@@ -12,7 +12,7 @@ const config: Partial<FormKitConfig> = {
       message:
         "w-full mt-3 p-2 pl-10 text-white text-sm font-normal flex items-center bg-red-vivid-500 bg-[url('/icons/error-circle.svg')] bg-[length:1.5rem_1.5rem] bg-no-repeat bg-[center_left_0.5rem] rounded-lg",
       input() {
-        if (["text"].includes(node.props.type)) {
+        if (["text", "search"].includes(node.props.type)) {
           return "w-full p-3 leading-10 md:max-w-3xl";
         }
 

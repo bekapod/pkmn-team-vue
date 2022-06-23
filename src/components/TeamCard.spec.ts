@@ -12,14 +12,17 @@ const setup = (props = {}) =>
       members: [
         {
           id: "1",
+          slot: 1,
           pokemon: charmander,
         },
         {
           id: "2",
+          slot: 2,
           pokemon: pikachu,
         },
         {
           id: "3",
+          slot: 3,
           pokemon: haunter,
         },
       ],
@@ -52,6 +55,6 @@ test("renders the team meta data", () => {
 test("renders the team members", () => {
   setup();
   expect(screen.getByText("#4 Charmander")).toBeInTheDocument();
-  expect(screen.getByText("#25 Pikachu")).toBeInTheDocument();
+  expect(screen.getByText("#25 Alola Cap Pikachu")).toBeInTheDocument();
   expect(screen.getByText("#93 Haunter")).toBeInTheDocument();
 });

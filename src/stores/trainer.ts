@@ -13,8 +13,9 @@ export const useTrainer = defineStore("trainer", {
     } as Partial<Trainer>;
   },
   actions: {
-    async getMe(token: string) {
+    async getMe() {
       try {
+        const token = await this.auth.getAccessTokenSilently();
         const data = await getSdk(client).Me({}, { token });
         const parsedMe = parseTrainer(data.me);
         this.$state = parsedMe;

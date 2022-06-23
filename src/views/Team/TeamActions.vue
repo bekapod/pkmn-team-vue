@@ -4,6 +4,7 @@
       type="button"
       class="button button--secondary py-2"
       :disabled="!team.id"
+      @click="team.isFindingMember = true"
     >
       <SearchAltIcon class="button__icon" aria-hidden="true" />
       Find Pokemon
@@ -31,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import { useAuth0 } from "@auth0/auth0-vue";
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import SearchAltIcon from "@/assets/icons/search-alt.svg";
@@ -39,7 +39,6 @@ import TrashIcon from "@/assets/icons/trash.svg";
 import { useTeam } from "@/stores";
 
 const router = useRouter();
-const { getAccessTokenSilently } = useAuth0();
 const team = useTeam();
 
 const isSubmitting = ref(false);
@@ -52,8 +51,7 @@ const deleteHandler = async () => {
   timer = window.setInterval(() => {
     timeTaken.value += 1;
   }, 1000);
-  const token = await getAccessTokenSilently().catch(() => "");
-  await team.removeTeam(token);
+  await team.remove();
   window.clearInterval(timer);
   timeTaken.value = 0;
   isSubmitting.value = false;

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { Type } from "./type";
-import { DamageClass, MoveTarget } from "@/graphql";
+import { parseType, Type } from "./type";
+import { DamageClass, MoveTarget, type MoveFieldsFragment } from "@/graphql";
 
 export const Move = z.object({
   id: z.string(),
@@ -9,10 +9,26 @@ export const Move = z.object({
   accuracy: z.number().optional(),
   pp: z.number().optional(),
   power: z.number().optional(),
-  damageClass: z.nativeEnum(DamageClass),
+  damageClass: z.nativeEnum(DamageClass).optional(),
   effect: z.string().optional(),
   effectChance: z.number().optional(),
   target: z.nativeEnum(MoveTarget),
-  type: Type.omit({ slot: true }),
+  type: Type,
 });
 export type Move = z.infer<typeof Move>;
+
+export const parseMove = (move: MoveFieldsFragment) => {
+  return Move.parse({
+    id: move.id,
+    name: move.name,
+    slug: move.slug,
+    accuracy: move.accuracy ?? undefined,
+    pp: move.pp ?? undefined,
+    power: move.power ?? undefined,
+    damageClass: move.damageClass ?? undefined,
+    effect: move.effect ?? undefined,
+    effectChance: move.effectChance ?? undefined,
+    target: move.target,
+    type: parseType(move.type),
+  });
+};

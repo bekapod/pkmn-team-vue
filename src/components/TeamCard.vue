@@ -34,7 +34,10 @@
         v-for="member in members"
         :key="member.id"
         outdent="var(--spacing-6)"
-        v-bind="member.pokemon"
+        :pokedex-id="member.pokemon.species.pokedexId"
+        :name="member.pokemon.defaultForm.name"
+        :sprite="member.pokemon.defaultSprite"
+        :types="member.pokemon.types"
       />
     </slot>
   </Card>
@@ -73,7 +76,7 @@ const props = defineProps({
 });
 
 const allSortedTypes = sortBySlug(
-  props.members.flatMap((m) => m.pokemon.types)
+  props.members.flatMap((m) => m.pokemon.types.map((pt) => pt.type))
 ).map((t) => t.slug);
 
 const formattedCreatedAt = new Intl.DateTimeFormat("en-GB", {

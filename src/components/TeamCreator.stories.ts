@@ -7,9 +7,6 @@ import { useTrainer } from "@/stores";
 
 const csf: Meta = {
   component: TeamCreator,
-  args: {
-    authTimeout: 0.5,
-  },
   argTypes: {
     teamCreated: { action: "@team-created" },
   },
@@ -44,30 +41,33 @@ const Template: Story = ({ teamCreated, ...args }) => ({
 export const DefaultBehaviour = Template.bind({});
 DefaultBehaviour.parameters = {
   msw: {
-    handlers: [
-      graphql.mutation("CreateTeam", (req, res, ctx) => {
-        return res(
-          ctx.data({
-            createTeam: {
-              __typename: "Team",
-              id: "ckzomjy5z00004kvg5ux6fy0c",
-              name: req.variables.name,
-              createdAt: new Date(Date.now()).toISOString(),
-              updatedAt: new Date(Date.now()).toISOString(),
-              members: {
-                edges: [],
+    handlers: {
+      createTeam: [
+        graphql.mutation("CreateTeam", (req, res, ctx) => {
+          return res(
+            ctx.data({
+              createTeam: {
+                __typename: "Team",
+                id: "ckzomjy5z00004kvg5ux6fy0c",
+                name: req.variables.name,
+                createdAt: new Date(Date.now()).toISOString(),
+                updatedAt: new Date(Date.now()).toISOString(),
+                members: {
+                  edges: [],
+                },
+                createdBy: {
+                  __typename: "Trainer",
+                  id: "TRA123",
+                  username: "A user",
+                  picture:
+                    "https://placey.bekapod.codes/g/120/120/ffffff/000000",
+                },
               },
-              createdBy: {
-                __typename: "Trainer",
-                id: "TRA123",
-                username: "A user",
-                picture: "https://placey.bekapod.codes/g/120/120/ffffff/000000",
-              },
-            },
-          })
-        );
-      }),
-    ],
+            })
+          );
+        }),
+      ],
+    },
   },
 };
 DefaultBehaviour.play = async () => {
@@ -88,11 +88,13 @@ InvalidState.play = async () => {
 export const LoadingState = Template.bind({});
 LoadingState.parameters = {
   msw: {
-    handlers: [
-      graphql.mutation("CreateTeam", (_req, res, ctx) => {
-        return res(ctx.delay("infinite"));
-      }),
-    ],
+    handlers: {
+      createTeam: [
+        graphql.mutation("CreateTeam", (_req, res, ctx) => {
+          return res(ctx.delay("infinite"));
+        }),
+      ],
+    },
   },
 };
 LoadingState.play = async () => {
@@ -107,18 +109,20 @@ LoadingState.play = async () => {
 export const ErrorState = Template.bind({});
 ErrorState.parameters = {
   msw: {
-    handlers: [
-      graphql.mutation("CreateTeam", (_req, res, ctx) => {
-        return res(
-          ctx.errors([
-            {
-              message: "error creating team members",
-              path: ["createTeam"],
-            },
-          ])
-        );
-      }),
-    ],
+    handlers: {
+      createTeam: [
+        graphql.mutation("CreateTeam", (_req, res, ctx) => {
+          return res(
+            ctx.errors([
+              {
+                message: "error creating team members",
+                path: ["createTeam"],
+              },
+            ])
+          );
+        }),
+      ],
+    },
   },
 };
 ErrorState.play = async () => {
